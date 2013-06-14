@@ -1,5 +1,6 @@
 
 <?php
+
 /*
 * header.php
 *
@@ -8,7 +9,6 @@
 *
 * Description :
 */
-
 require('.\Smarty\libs\Smarty.class.php');
 $smarty = new Smarty();
 
@@ -17,5 +17,7 @@ $smarty->setCompileDir('./templates_c');
 $smarty->setCacheDir('./cache');
 $smarty->setConfigDir('./configs');
 
+$smarty->display('header.tpl');
+$smarty->display('userbar.tpl');
 ?>
 

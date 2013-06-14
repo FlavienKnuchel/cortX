@@ -1,17 +1,15 @@
-/*
- * userbar.tpl
- *
- * Author : CORTxTeam
- * Date : 14.06.2013
- *
- * Description :
- *
- *
- */
+<!--
+userbar.tpl
+Author : CORTxTeam
+Date : 14.06.2013
+Description :
+-->
+
 
 		
 		<footer>	
-			{if $connected == true}
+			<!--{if $connected == true}-->
+            
           	<form method="post" action="login.php">  
                 <label for="login">login</label>
                 <input type="text" name="pseudo" id="login" />   
@@ -21,7 +19,7 @@
                 <input type="image" value="submit" src="/img/userbar/ok50x50.png" />
           	</form>
             
-            {/if}     
+            <!--{/if}  -->   
 		</footer>
 	</body>
 </html>
