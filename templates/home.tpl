@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 * home.tpl
 *
@@ -66,3 +67,16 @@
     //Insert social networks embed code here
     </article>
 </section>
+=======
+/*
+ * home.tpl
+ *
+ * Author : Flavien Knuchel
+ * Date : 14.06.2013
+ *
+ * Description :
+ *
+ *
+ */
+
+>>>>>>> f7d9e1e49a879dde8c6661cfa7b0437b2dce8007
