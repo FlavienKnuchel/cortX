@@ -11,10 +11,10 @@
  */
  
 include 'header.php';
-$smarty->display('home.tpl');
-include 'userbar.php';
 $smarty->assign('NextEventName', 'getMainTopic()');
 $smarty->assign('NextEventDesc', 'getDescription()');
+$smarty->display('home.tpl');
+include 'userbar.php';
 
 
 ?>
