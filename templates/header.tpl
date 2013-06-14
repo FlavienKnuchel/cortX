@@ -2,7 +2,7 @@
 header.tpl
 Author : Flavien Knuchel
 Date : 14.06.2013
-Description :
+Description : general navigation and
 -->
 
 <!Doctype html>
