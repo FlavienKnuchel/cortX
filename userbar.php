@@ -9,6 +9,6 @@
 * Description :
 */
 
-
+$smarty->display('userbar.tpl');
 
 ?>
