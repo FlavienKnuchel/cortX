@@ -17,4 +17,6 @@ $smarty->setCompileDir('./templates_c');
 $smarty->setCacheDir('./cache');
 $smarty->setConfigDir('./configs');
 
+include 'home.php';
+
 ?>

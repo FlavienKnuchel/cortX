@@ -8,6 +8,8 @@
 * Description :
 */
 
+include 'userbar.php';
+include 'header.php';
 
 
 ?>
