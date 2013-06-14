@@ -17,7 +17,7 @@ Description : general navigation and
         <nav>
             <ul>
                 <li>
-                	<img src="../img/TEDx_logo.jpg" alt="logo TEDxLausanne" />
+                	<img src="./img/TEDx_logo.jpg" alt="logo TEDxLausanne" />
                 </li>
                 <li>
                 	<a href="events.php" title="Events">Events</a>
