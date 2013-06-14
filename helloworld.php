@@ -6,7 +6,10 @@
     </head>
     <body>
         <?php
-        print "hello j'aime les poney !";
+        require_once('../tedx-config.php');
+        // Try to log
+        $message = $tedx_manager->login('Penelope', 'anitakevinlove'); // Visitor
+        echo '<strong>' . $message->getMessage() . '</strong><br />'; // Display message
         ?>
     </body>
 </html>
