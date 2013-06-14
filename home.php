@@ -14,6 +14,7 @@
 include 'header.php';
 $smarty->display('home.tpl');
 include 'userbar.php';
+<<<<<<< HEAD
 $smarty->assign('NextEventName', 'getMainTopic()');
 $smarty->assign('NextEventDesc', 'getDescription()');
 
@@ -35,6 +36,8 @@ $smarty->assign('NextEventDesc', 'getDescription()');
 include 'header.php';
 $smarty->display('home.tpl');
 include 'userbar.php';
+=======
+>>>>>>> 78863a779e2558050366fd9a023150a6edc6390b
 
 ?>
 >>>>>>> 78863a779e2558050366fd9a023150a6edc6390b
