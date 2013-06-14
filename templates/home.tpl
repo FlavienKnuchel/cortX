@@ -1,19 +1,17 @@
-/*
-* home.tpl
-*
-* Author : Christophe Rast
-* Date : 14.6.2013
-*
-* Description : Basic structure of the homepage
-*
-*
-*/
+<!--
+home.tpl
+
+Author : Christophe Rast
+Date : 14.6.2013
+
+Description : Basic structure of the homepage
+-->
 <section>
     <section id="nextevent">
         <article>
             <h2>{$NextEventName}</h2>
             <p>{$NextEventDesc}</p>
-            <input type="button" title="Details"/>
+            <input type="button" title="Details" value="Detail"/>
         </article>
         <article>
             <h2>Guests</h2>
