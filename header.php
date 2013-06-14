@@ -18,6 +18,6 @@ $smarty->setCacheDir('./cache');
 $smarty->setConfigDir('./configs');
 
 $smarty->display('header.tpl');
-$smarty->display('userbar.tpl');
+
 ?>
 
