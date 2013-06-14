@@ -2,7 +2,7 @@
  * header.tpl
  *
  * Author : Flavien Knuchel
- * Date : 14.6.2013
+ * Date : 14.06.2013
  *
  * Description :
  *
