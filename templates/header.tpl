@@ -12,6 +12,9 @@
 <!Doctype html>
 <html lang="en">
     <head>
+    <meta charset="utf-8" />
+    <LINK rel="stylesheet" media="all" href="css/design.css" />
+    <title>CORTx</title>
     </head>
     <body>
     
