@@ -7,7 +7,4 @@
 *
 * Description : login management page
 */
-
-
-
 ?>
