@@ -12,6 +12,7 @@
  
 include 'header.php';
 include 'userbar.php';
+$smarty->display('home.tpl');
 
 
 ?>
