@@ -1,4 +1,12 @@
 <?php
+/*
+* Person.class.php
+*
+* Author :
+* Date : 14.6.2013
+*
+* Description :
+*/
 
 // put full path to Smarty.class.php
 require('.\Smarty\libs\Smarty.class.php');
