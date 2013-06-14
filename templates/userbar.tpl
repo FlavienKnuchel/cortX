@@ -7,19 +7,14 @@ Description :
 
 
 		
-		<footer>	
-			<!--{if $connected == true}-->
-            
+		<footer>
           	<form method="post" action="login.php">  
                 <label for="login">login</label>
-                <input type="text" name="pseudo" id="login" />   
-                                      
+                <input type="text" name="pseudo" id="login" />
                 <label for="password">password</label>
                 <input type="password" name="password" id="password" />
-                <input type="image" value="submit" src="/img/userbar/ok50x50.png" />
+                <input type="image" value="submit" src="./img/userbar/ok50x50.png" />
           	</form>
-            
-            <!--{/if}  -->   
 		</footer>
 	</body>
 </html>
