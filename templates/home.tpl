@@ -14,19 +14,19 @@ Description : Basic structure of the homepage
             <input type="button" title="Details" value="Detail"/>
         </article>
         <article>
-            <h2>Guests</h2>
+            <h2>Speakers</h2>
             <ul>
                 <li>
-                    <img src="img/thumbs/guests/guest1.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
                 </li>
                 <li>
-                    <img src="img/guests/guest2.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker2.jpg" alt="Guest" />
                 </li>
                 <li>
-                    <img src="img/guests/guest3.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker3.jpg" alt="Guest" />
                 </li>
                 <li>
-                    <img src="img/guests/guest4.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker4.jpg" alt="Guest" />
                 </li>
             </ul>
         </article>
@@ -35,32 +35,37 @@ Description : Basic structure of the homepage
         
         <div class="video_home">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video2.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video3.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video4.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video5.jpg" alt="Miniature video"/>
+            </a>
+        </div>
+        <div class="video_home">
+            <a href="#">
+                <img src="img/videos/video6.jpg" alt="Miniature video"/>
             </a>
         </div>
         
     </article>
     <article id="socialnet">
-    //Insert social networks embed code here
+    Insert social networks embed code here
     </article>
 </section>
