@@ -10,8 +10,8 @@
  *
  */
 
-include 'userbar.php';
 include 'header.php';
+include 'userbar.php';
 
 
 ?>
