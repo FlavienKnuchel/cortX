@@ -1,5 +1,5 @@
 /*
- * Person.class.php
+ * header.tpl
  *
  * Author : Flavien Knuchel
  * Date : 14.6.2013
