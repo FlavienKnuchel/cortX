@@ -20,23 +20,53 @@ include 'header.php';
     
     <div class="video_media">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
     </div>
     <div class="video_media">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
     </div>
     <div class="video_media">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
     </div>
     <div class="video_media">
             <a href="#">
-                <img src="img/thumbs/video/video1.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
+    </div>
+    <div class="video_media">
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+        </a>
+    </div>
+    <div class="video_media">
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+        </a>
+    </div>
+    <div class="video_media">
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+        </a>
+    </div>
+    <div class="video_media">
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+        </a>
+    </div>
+    <div class="video_media">
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+        </a>
+    </div>
+    <div class="video_media">
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+        </a>
     </div>
     
     

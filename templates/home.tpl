@@ -40,27 +40,27 @@ Description : Basic structure of the homepage
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/videos/video2.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/videos/video3.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/videos/video4.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/videos/video5.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </div>
         <div class="video_home">
             <a href="#">
-                <img src="img/videos/video6.jpg" alt="Miniature video"/>
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </div>
         
