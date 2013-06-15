@@ -6,66 +6,65 @@ Date : 14.6.2013
 
 Description : Basic structure of the homepage
 -->
-<section>
     <section id="nextevent">
         <article>
             <h2>{$NextEventName}</h2>
             <p>{$NextEventDesc}</p>
-            <input type="button" title="Details" value="Detail"/>
+            <input type="button" title="More infos" value="More infos"/>
         </article>
         <article>
             <h2>Speakers</h2>
             <ul>
                 <li>
-                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker2.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker3.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker4.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
+                <li>
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
+                </li>
+
             </ul>
         </article>
     </section>
-    <article id="videotape">
+    <section id="videos">
+        <h2>Vidéos</h2>
+        <ul>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+        </ul>
         
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        
-    </article>
+    </section>
     <article id="socialnet">
-    Insert social networks embed code here
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Youtube</a></li>
+        </ul>
     </article>
-</section>

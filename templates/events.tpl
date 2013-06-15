@@ -7,7 +7,6 @@ Date : 14.6.2013
 Description : template of the events page
 
 -->
-<section>
     <section id="currentevent">
         <article class="desc_event">
             <h2>getMainTopic Event</h2>
@@ -29,4 +28,3 @@ Description : template of the events page
         </article>
     </section>
     <section id="oldevent"></section>
-</section>
