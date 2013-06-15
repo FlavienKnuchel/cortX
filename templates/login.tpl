@@ -1,4 +1,4 @@
-/*
+<!--
  * login.tpl
  *
  * Author : Flavien Knuchel
@@ -7,5 +7,4 @@
  * Description :
  *
  *
- */
-
+-->
