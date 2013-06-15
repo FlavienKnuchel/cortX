@@ -42,6 +42,8 @@ Description : template of the events page
                     </a></li>
             </ul>
         </article>
+        <input type="hidden" name="eventID" value="{$EventID}">
+        <input type="submit" name="register" value="Register" >
     </section>
     <aside id="oldevent">
         <table>
