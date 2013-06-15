@@ -15,16 +15,16 @@ Description : template of the events page
             <p class="date">getStartingDate Event</p>
             <p>getDescription (?) Event</p>
         </article>
-        <article class="slot_event">
-            <div class=slot_detail id="slot1">
+        <ol class="slot_event">
+            <li class=slot_detail id="slot1">
                 <h3>Slot 1</h3>
                 <p>Slot 1 Content </p>
-            </div>
-            <div class=slot_detail id="slot2">
+            </li>
+            <li class=slot_detail id="slot2">
                 <h3>Slot 1</h3>
                 <p>Slot 1 Content </p>
-            </div>
-        </article>
+            </li>
+        </ol>
         <article class="speakers_event">
             <h3>Speakers</h3>
             <ul>
