@@ -35,37 +35,30 @@ Description : Basic structure of the homepage
         </article>
     </section>
     <section id="videos">
-        
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
-        <div class="video_home">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-        </div>
+        <h2>Vidéos</h2>
+        <ul>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+            <li class="video_home">
+                <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+            </li>
+        </ul>
         
     </section>
     <article id="socialnet">
