@@ -10,7 +10,7 @@ Description : Basic structure of the homepage
         <article>
             <h2>{$NextEventName}</h2>
             <p>{$NextEventDesc}</p>
-            <input type="button" title="More infos" value="More infos"/>
+            <a href="events.php">More Infos !</a>
         </article>
         <article>
             <h2>Speakers</h2>
