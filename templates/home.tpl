@@ -16,17 +16,21 @@ Description : Basic structure of the homepage
             <h2>Speakers</h2>
             <ul>
                 <li>
-                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
                 </li>
+                <li>
+                    <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
+                </li>
+
             </ul>
         </article>
     </section>
