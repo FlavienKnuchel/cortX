@@ -6,15 +6,13 @@ Description :
 -->
 
 
-		
-		<footer>
-          	<form method="post" action="login.php">  
-                <label for="login">login</label>
-                <input type="text" name="pseudo" id="login" />
-                <label for="password">password</label>
-                <input type="password" name="password" id="password" />
-                <input type="image" value="submit" src="./img/userbar/ok50x50.png" />
-          	</form>
-		</footer>
-	</body>
+
+<footer>
+    <form method="post" action="login.php">  
+        <input type="text" name="Email adress" placeholder="Email Adress">
+        <input type="password" name="password" placeholder="Password">
+        <input type="image" name="Login" value="submit" src="./img/userbar/ok50x50.png" />
+    </form>
+</footer>
+</body>
 </html>

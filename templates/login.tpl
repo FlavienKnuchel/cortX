@@ -10,7 +10,7 @@
 -->
     <aside id="loginToAccount">
         <h2>I already have an account</h2> <!-- Optionnel, à cacher quand via CSS quand appelé dans userbar -->
-        <form>
+        <form method="POST" action="login.php">
             <input type="text" name="Email adress" placeholder="Email Adress" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="submit" name="Login" value="Log me in">

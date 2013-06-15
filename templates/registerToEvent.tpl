@@ -10,7 +10,7 @@ Description : template of the registration to an event
 <section id="registerToEvent">
         <h2>I don't have an account yet</h2>
         <h3>My coordonates</h3>
-        <form>
+        <form method="post" action="register.php">
             <div id="coordonees">
                 <input type="text" name="Lastname" placeholder="Your name" autofocus required>
                 <input type="text" name="Firstname" placeholder="Your firstname" required>
