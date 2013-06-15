@@ -6,12 +6,11 @@ Date : 14.6.2013
 
 Description : Basic structure of the homepage
 -->
-<section>
     <section id="nextevent">
         <article>
             <h2>{$NextEventName}</h2>
             <p>{$NextEventDesc}</p>
-            <input type="button" title="Details" value="Detail"/>
+            <input type="button" title="More infos" value="Detail"/>
         </article>
         <article>
             <h2>Speakers</h2>
@@ -20,18 +19,18 @@ Description : Basic structure of the homepage
                     <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker2.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker3.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
                 </li>
                 <li>
-                    <img src="img/speakers/small/speaker4.jpg" alt="Guest" />
+                    <img src="img/speakers/small/speaker1.jpg" alt="Guest" />
                 </li>
             </ul>
         </article>
     </section>
-    <article id="videotape">
+    <section id="videos">
         
         <div class="video_home">
             <a href="#">
@@ -64,8 +63,11 @@ Description : Basic structure of the homepage
             </a>
         </div>
         
-    </article>
+    </section>
     <article id="socialnet">
-    Insert social networks embed code here
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Youtube</a></li>
+        </ul>
     </article>
-</section>
