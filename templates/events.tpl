@@ -43,7 +43,7 @@ Description : template of the events page
             </ul>
         </article>
     </section>
-    <section id="oldevent">
+    <aside id="oldevent">
         <table>
             <caption><p>Previous Events</p></caption>
             <thead>
@@ -63,5 +63,5 @@ Description : template of the events page
                 <!-- end section loop -->
             </tbody>
         </table>
-    </section>
+    </aside>
 </section>
