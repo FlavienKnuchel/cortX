@@ -1,0 +1,15 @@
+#footer {
+	position: fixed;
+	height: auto;
+	width: 100%;
+	bottom: 0px;
+	background-color:#FF2B06;
+}
+#options{
+	background-color:#30C;
+	float:left;
+}
+#login {
+	background-color:#0C9;
+	float:left;
+}
