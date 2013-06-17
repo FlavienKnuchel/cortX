@@ -17,7 +17,7 @@ Description :
         <form method="post" action="login.php">  
             <input type="text" name="Email adress" placeholder="Email Adress">
             <input type="password" name="password" placeholder="Password">
-            <input type="image" name="Login" value="submit" src="./img/userbar/ok50x50.png" />
+            <input type="submit" name="Login" value="OK"/>
         </form>
     </div>    
 </footer>

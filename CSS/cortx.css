@@ -1,15 +1,32 @@
 footer {
 	position: fixed;
-	height: auto;
+	height: 30px;
 	width: 100%;
 	bottom: 0px;
 	background-color:#FF2B06;
+	
 }
 #options{
 	background-color:#30C;
 	float:left;
 }
 #login {
+	float:right;
 	background-color:#0C9;
+}
+#home {
+	padding-bottom:30px;
+}
+#home #nextevent, #videos, #socialnet
+{
 	float:left;
 }
+#home #videos ul .video_home
+{
+	float:left;
+}
+#home #nextevent article ul li
+{
+	float:left;
+}
+
