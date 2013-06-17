@@ -1,69 +1,54 @@
 <!--
 events.tpl
 
-Author : Christophe Rast
+Author : Christophe Rast, Noémie Sandoz and Andréane Mercier
 
 Date : 14.6.2013
 Description : template of the events page
 
 -->
 
-<section id="event-detail">
-    <section id="currentevent">
+<section id="event_detail">
+    <section id="current_event">
         <article class="desc_event">
-            <h2>getMainTopic Event</h2>
-            <p class="date">getStartingDate Event</p>
-            <p>getDescription (?) Event</p>
+            <h2>{$mainTopicEvent}</h2>
+            <p class="date">{$startingDateEvent}</p>
+            <p>{$descriptionEvent}</p>
         </article>
-        <ol class="slot_event">
-            <li class=slot_detail id="slot1">
-                <h3>Slot 1</h3>
-                <p>Slot 1 Content </p>
-            </li>
-            <li class=slot_detail id="slot2">
-                <h3>Slot 1</h3>
-                <p>Slot 1 Content </p>
-            </li>
-        </ol>
-        <article class="speakers_event">
-            <h3>Speakers</h3>
+        <a href="events.php">Participate</a>
+        <article class="programme_event">
+            <!-- loop on ol if their is more then one slot-->
+           <ol class="slot_event">
+                <li>Slot {$no_slot}</li>
+                <li>{$startingTime_slot} - {$endingTime_slot}</li>
+                <li>Live presentation : </li>
+                <!-- loop on the li below for teh differents speakers during the slot-->
+                <li>{$position_speaker} {$speaker_name}</li>   
+            </ol>
+        </article>
+        
+        <article class="speakers_photo">
             <ul>
-                <li><a href="speakers.php">
-                        <img src="img/speakers/small/speaker1.jpg"/>
-                    </a></li>
-                <li><a href="speakers.php">
-                        <img src="img/speakers/small/speaker1.jpg"/>
-                    </a></li>
-                <li><a href="speakers.php">
-                        <img src="img/speakers/small/speaker1.jpg"/>
-                    </a></li>
-                <li><a href="speakers.php">
-                        <img src="img/speakers/small/speaker1.jpg"/>
-                    </a></li>
+                <!-- do a loop on <li> -->
+                <li>
+                    <a href="speaker_profil.php">
+                        <p>{$speaker_name}</p>
+                    </a>
+                </li>
             </ul>
-        </article>
-        <input type="hidden" name="eventID" value="{$EventID}">
-        <input type="submit" name="register" value="Register" >
+         </article>
     </section>
+                    
     <aside id="oldevent">
+        <h2>Previous events</h2>
         <table>
-            <caption><p>Previous Events</p></caption>
-            <thead>
+                <!-- section loop on tr -->
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{$event_name}</td>
+                    <td>{$startingDateEvent}</td>
+                    <td>{$locationNameEvent}</td>
+                    <td>{$mainTopicEvent}</td>
                 </tr>
-            </thead>
-            <tbody>
-                <!-- section loop on events -->
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- end section loop -->
-            </tbody>
         </table>
     </aside>
 </section>
