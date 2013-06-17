@@ -11,8 +11,8 @@ include 'header.php';
 /*
  * TODO : assigner clé (id, password) aux valeurs login
  */
-$login = [$_POST['username'],$_POST['password']];
-$tedx_manager->login($login);
+$message = $tedx_manager->login($_POST['username'], $_POST['password']);
+echo $message->getMessage();
 
 
 ?>

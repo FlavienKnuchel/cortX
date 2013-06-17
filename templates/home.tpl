@@ -37,7 +37,7 @@ Description : Basic structure of the homepage
             </article>
         </section>
         <section id="videos">
-            <h2>Vidéos</h2>
+            <h2>Videos</h2>
             <ul>
                 <li class="video_home">
                     <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
