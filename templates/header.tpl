@@ -25,19 +25,19 @@ Description : general navigation and
                 	<a href="home.php"><img src="./img/TEDx_logo.jpg" alt="logo TEDxLausanne" /></a>
                 </li>
                 <li>
-                	<a href="./frontend/events.php" title="Events">Events</a>
+                	<a href="events.php" title="Events">Events</a>
                 </li>
                 <li>
-               		<a href="./frontend/medias.php" title="Medias">Medias</a>
+               		<a href="medias.php" title="Medias">Medias</a>
                 </li>
                 <li>
-                	<a href="./frontend/about.php" title="About">About</a>
+                	<a href="about.php" title="About">About</a>
                 </li>
                 <li>
-                	<a href="./frontend/team.php" title="Team">Team</a>
+                	<a href="team.php" title="Team">Team</a>
                 </li>
                 <li>
-                	<a href="./frontend/speakers.php" title="Speakers">Speakers</a>
+                	<a href="speakers.php" title="Speakers">Speakers</a>
                 </li>
                 
 

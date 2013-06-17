@@ -8,8 +8,8 @@
 *
 * Description : page describing the actual event and the old events
 */
-include '../header.php';
+include 'header.php';
 $smarty->assign('EventID','getNo Event');
 $smarty->display('events.tpl');
-include '../userbar.php';
+include 'userbar.php';
 ?>

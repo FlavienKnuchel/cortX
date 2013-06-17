@@ -8,7 +8,7 @@
 * Description :
 */
 
-include '../header.php';
+include 'header.php';
 
 ?>
 <!doctype html>
@@ -71,6 +71,6 @@ include '../header.php';
     
     
     <?php
-    include '../userbar.php';
+    include 'userbar.php';
     ?>
 </html>

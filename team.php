@@ -8,7 +8,7 @@
 *
 * Description : page describing the different collaborators of the TEDx team
 */
-include '../header.php';
+include 'header.php';
 $smarty->display('team.tpl');
-include '../userbar.php';
+include 'userbar.php';
 ?>
