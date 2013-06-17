@@ -1,3 +1,15 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #333333;
+  background-color: red;
+}
+nav{
+    background-color:#ffffff;
+}
 footer {
 	position: fixed;
 	height: auto;
@@ -19,6 +31,7 @@ footer>p {
 }
 #home {
 	padding-bottom:30px;
+    
 }
 #home #nextevent, #videos, #socialnet
 {
@@ -31,8 +44,11 @@ footer>p {
 #home #nextevent article ul li
 {
 	float:left;
+    
 }
 
-#about{ /* style pour les lightbox css des pages about */
-	
+
+#team, #about {
+    width:90%;
+    margin:0 auto;
 }
