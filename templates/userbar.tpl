@@ -19,7 +19,7 @@ Description :
 
     {else}
         <div id="login">
-            <form method="post" action="login.php">  
+            <form method="post" action="login.php">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <input type="submit" name="Login" value="OK"/>

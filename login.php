@@ -1,4 +1,5 @@
 <?php
+
 /*
  * login.php
  *
@@ -7,20 +8,21 @@
  *
  * Description : login management page
  */
-include 'header.php';
-
-$message = $tedx_manager->login($_POST['username'], $_POST['password']);//login test
-
-if ($message->getStatus()) {//if user is logged
-    echo 'Great you are logged !';
-    //include('thePreviousPageVisited.php');
-} else { //If no
-    echo $message->getMessage();//display error message
-    echo 'Please try again.';
-}//if
-    
-if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'logout') {
+if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'logout') {
+    require_once '../tedx-config.php';
     $tedx_manager->logout();
+    include 'home.php';
+} else {
+    require_once '../tedx-config.php';
+    $message = $tedx_manager->login($_POST['username'], $_POST['password']); //login test
+
+    if ($message->getStatus()) {//if user is logged
+        include 'home.php';
+    } else { //If no
+        echo $message->getMessage();
+        include 'header.php'; //displays bottom bar to allow user to log in again or manage stuff
+        $smarty->display('login.tpl');
+        include 'userbar.php'; //displays bottom bar to allow user to log in again or manage stuff
+    }//if
 }
-include 'userbar.php';//displays bottom bar to allow user to log in again or manage stuff
 ?>
