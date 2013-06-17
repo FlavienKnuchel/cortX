@@ -9,7 +9,6 @@
 * Description :
 */
 
-// put full path to Smarty.class.php
 
 include 'home.php';
 
