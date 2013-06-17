@@ -1,7 +1,7 @@
 
 <?php
 /*
-* speakers.php
+* speaker_profil.php
 *
 * Author : Andréane et Noémie
 * Date : 17.06.2013
