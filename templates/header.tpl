@@ -9,10 +9,8 @@ Description : general navigation and
 <html lang="en">
     <head>
     <meta charset="utf-8" />
+    <LINK rel="stylesheet" media="all" href="css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="css/cortx.css" />
-<!-- css intrusif qui empeche une bonne mise en forme correct T_T
-<LINK rel="stylesheet" media="all" href="css/normalize.css" />
--->
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
     <title>CORTx</title>
         <!--[if IE]>
