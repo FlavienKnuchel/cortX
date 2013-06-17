@@ -5,7 +5,7 @@
  * Author : Anthony Da Silva
  * Date : 17.06.2013
  *
- * Description : home page that calls the header.php and userbar.php
+ * Description : 
  *
  *
  */

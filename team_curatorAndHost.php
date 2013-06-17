@@ -5,13 +5,12 @@
  * Author : Anthony Da Silva
  * Date : 17.06.2013
  *
- * Description : home page that calls the header.php and userbar.php
+ * Description : 
  *
  *
  */
  
-?>
-<head>
+?><head>
     <meta charset="utf-8" />
     <LINK rel="stylesheet" media="all" href="css/cortx.css" />
     <LINK rel="stylesheet" media="all" href="css/normalize.css" />
@@ -22,6 +21,7 @@
         <![endif]-->
 </head>
     
+
 <section id="curator">
 	<article>
         <h1>Curator and hosts</h1>
