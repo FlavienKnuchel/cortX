@@ -9,7 +9,7 @@ Description :
 
 
 
-<div id="footer">
+<footer>
 	<div id="options">
     	<img src="./img/userbar/gears.png" />
     </div>
@@ -20,6 +20,6 @@ Description :
             <input type="image" name="Login" value="submit" src="./img/userbar/ok50x50.png" />
         </form>
     </div>    
-</div>
+</footer>
 </body>
 </html>
