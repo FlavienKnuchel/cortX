@@ -21,7 +21,7 @@ Description : general navigation and
     
         <nav>
             <ul>
-                <li>
+                <li id="header_tedx_logo">
                 	<a href="home.php"><img src="./img/TEDx_logo.jpg" alt="logo TEDxLausanne" /></a>
                 </li>
                 <li>

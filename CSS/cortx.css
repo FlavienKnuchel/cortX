@@ -1,54 +1,115 @@
+/*---------------------------------Body---------------------------------*/
 body {
-  margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 1.4em;
   line-height: 1.5;
   color: #333333;
-  background-color: red;
 }
+/*---------------------------------Top menu---------------------------------*/
 nav{
-    background-color:#ffffff;
+    background-color:#FF2B06;
+    height:60px;
+    padding-top:10px;
+    margin-bottom:100px;
 }
+
+/*Top menu links*/
+nav ul li{
+    height: 100px;
+    width:150px;
+    display:inline;
+    padding-left:100px;
+}
+/* links styling*/
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+/*top menu links interaction*/
+nav ul li a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+/*menu logo alignment*/
+#header_tedx_logo{
+    height:100px;
+    padding:40px;
+    width:248px;
+    background-color: white;
+}
+/*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
-	height: auto;
+	height: 40px;
 	width: 100%;
 	bottom: 0px;
 	background-color:#FF2B06;
-	
 }
-footer>p {
-    display:inline;
-}
-#options{
-	background-color:#30C;
-	float:left;
-}
+
+/*login form alignment*/
 #login {
 	float:right;
-	background-color:#0C9;
 }
-#home {
-	padding-bottom:30px;
-    
-}
-#home #nextevent, #videos, #socialnet
+
+/*---------------------------------homepage---------------------------------*/
+/*speakers*/
+#nextevent article ul li
 {
 	float:left;
 }
-#home #videos ul .video_home
+
+/*videos horizontal alignment*/
+.video_home
 {
-	float:left;
-}
-#home #nextevent article ul li
-{
-	float:left;
-    
+    float:left;
 }
 
 
-#team, #about {
-    width:90%;
-    margin:0 auto;
+/*social icons*/
+#socialnet{
+    clear: both;
+    height:50px;
+}
+
+/*social icons links*/
+#socialnet ul li a{
+    color:black;
+    float:left;
+    margin-right:50px;
+}
+
+/*main event*/
+#nextevent{
+    height:400px;
+}
+
+/*---------------------------------General Content---------------------------------*/
+/*no decoration on the lists*/
+ul li{
+    list-style: none;
+}
+
+/*section elements take full page width*/
+section
+{
+    width:100%
+}
+
+/*article margins*/
+article{
+    margin-bottom:100px;
+}
+
+/*video list*/
+#videos{
+    background-color:lightslategrey;
+    height:160px;
+    padding:20px 0px;
+}
+
+#videos h2{
+    margin-top:0px;
 }

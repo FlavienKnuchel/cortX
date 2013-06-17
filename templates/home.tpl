@@ -6,15 +6,12 @@ Date : 14.6.2013
 
 Description : Basic structure of the homepage
 -->
-    <section id="home">
         <section id="nextevent">
             <article>
                 <h2>{$NextEventName}</h2>
                 <p>{$NextEventDesc}</p>
                 <a href="events.php" class="button" 
                    title="Get more infos and register to this event!">More Infos !</a>
-            </article>
-            <article>
                 <h2>Speakers</h2>
                 <ul>
                     <li>
@@ -70,4 +67,4 @@ Description : Basic structure of the homepage
                 <li><a href="#">Youtube</a></li>
             </ul>
         </article>
-    </section>
+
