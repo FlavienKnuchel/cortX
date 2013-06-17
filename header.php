@@ -17,8 +17,8 @@ $smarty->setCompileDir('./templates_c');
 $smarty->setCacheDir('./cache');
 $smarty->setConfigDir('./configs');
 
-$smarty->display('header.tpl');
 require('../tedx-config.php');
+$smarty->display('header.tpl');
 
 ?>
 
