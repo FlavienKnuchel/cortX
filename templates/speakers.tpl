@@ -1,9 +1,9 @@
 <!--
 speaker.tpl
 
-Author : Flavien Knuchel
+Author : Noémie Sandoz et Andréane Mercier
 
-Date : 14.6.2013
+Date : 17.6.2013
 Description : template of the speaker section
 
 ->
