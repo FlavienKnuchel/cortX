@@ -1,6 +1,6 @@
 <?php
 /*
- * home.php
+ * team_fundraisingAndFinanceTeam.php
  *
  * Author : Anthony Da Silva
  * Date : 17.06.2013
@@ -22,16 +22,18 @@
 </head>
     
 
-<section id="curator">
+<section id="team">
 	<article>
         <h1>Fundraising and finance team</h1>
         <article>
-        	<h2>Sam Gamegie</h2>
-            <h3>Scheduler</h3>
+        	<h2>Gideon Tumong</h2>
             <p>
-            	Originally from eastern Switzerland, he studied engineering at the EPFL in Lausanne and trained in Thessaloniki, Greece and Granada, Spain. More recently, he completed an MBA at the University of Geneva. Simon is in charge of keeping everything and everybody together and on schedule for our TEDxLausanne 2013 event. He currently works as a consultant in construction waste management at Picadus and as quality consultant at Challenge Optimum SA but is always full of new project ideas. Right now, he works on Pages Vertes, a directory of green companies, as well as on Espace Vaud, a space for start-ups, creative people, and non-profit activities. Simon is easily recognized by his unique folding bicycle. Originally from eastern Switzerland, he studied engineering at the EPFL in Lausanne and trained in Thessaloniki, Greece and Granada, Spain. More recently, he completed an MBA at the University of Geneva. Simon is in charge of keeping everything and everybody together and on schedule for our TEDxLausanne 2013 event. He currently works as a consultant in construction waste management at Picadus and as quality consultant at Challenge Optimum SA but is always full of new project ideas. Right now, he works on Pages Vertes, a directory of green companies, as well as on Espace Vaud, a space for start-ups, creative people, and non-profit activities. Simon is easily recognized by his unique folding bicycle.
+            	Originally from Cameroon, Gideon holds an MBA and is currently pursuing his Doctorate of Business Administration. His interests are diverse and he has worked at Texaco, the UNCTAD/ITC and is currently a lecturer of Corporate Finance. He is a proud father of two amazing kids and is passionate about football and the financial markets. He believes TEDxLausanne is a great forum where creative minds meet to share and spread ideas. Gideon thinks every discovery that has shaped and changed the course of mankind for the better starts with an idea. Volunteering his time and expertise to TEDxLausanne brings him immense satisfaction. He leads the Finance &amp; Fundraising team at TEDxLausanne, whose core mission is to create and nourish sustainable partnerships.
             </p>
-            <img src="img/speakers/img.jpg"/>
+            <h2>Vanessa Sedleger</h2>
+            <p>
+            	Vanessa is Swiss German and has lived in the eastern and western Switzerland. She holds a Bachelor in Business Administration and has been working for the last three years at the Swiss Foundation for organ donation (Swisstransplant), where she managed the finance and administration department. Besides that, Vanessa is passionate about theatre, music and musicals. She obtained a Certificate from the Stage Art Musical &amp; Theatre School and was able to play in the &#8220;Parfin de Siècle&#8221; theatre in St. Gallen as well as the &#8220;Reisetheater Zürich&#8221;. Taking a time-out, Vanessa is currently in Berlin to develop her dancing, singing and acting skills and to enjoy the artistic life.
+            </p>
         </article>     
     </article>
 </section>
