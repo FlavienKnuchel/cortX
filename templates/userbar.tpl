@@ -13,10 +13,13 @@ Description :
     {if $loggedin}
         <div id="options">
             <img src="./img/userbar/gears.png" />
+            
         </div>
         <p>Welcome aboard {$username}!</p>
-        <a href="login.php?action=logout">Logout</a>
-
+        
+        <div id="login">
+            <a href="login.php?action=logout">Logout</a>
+        </div>
     {else}
         <div id="login">
             <form method="post" action="login.php">
