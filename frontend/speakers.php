@@ -8,7 +8,7 @@
 *
 * Description : list of all the speakers that participated in this TEDx
 */
-include 'header.php';
+include '../header.php';
 $smarty->display('speakers.tpl');
-include 'userbar.php';
+include '../userbar.php';
 ?>

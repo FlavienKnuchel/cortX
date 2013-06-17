@@ -9,7 +9,7 @@
  * Description :
  */
 
-include 'header.php';
+include '../header.php';
 $smarty->display('about.tpl');
-include 'userbar.php';
+include '../userbar.php';
 ?>
