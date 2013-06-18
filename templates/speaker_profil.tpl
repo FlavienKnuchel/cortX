@@ -1,5 +1,5 @@
 <!--
-speaker.tpl
+speaker_profil.tpl
 
 Author : Noémie Sandoz et Andréane Mercier
 
