@@ -11,6 +11,7 @@ Description : general navigation and
     <meta charset="utf-8" />
     <LINK rel="stylesheet" media="all" href="css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
+    <LINK rel="stylesheet" media="all" href="css/menu.css" />
     <LINK rel="stylesheet" media="all" href="css/cortx.css" />
         
     <title>CORTx</title>
