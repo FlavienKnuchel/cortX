@@ -1,9 +1,9 @@
 
 <?php
 /*
-* user_profil.php
+* user_profil3.php
 *
-* Author : Andréane et Noémie
+* Author : AndrÃ©ane et NoÃ©mie
 * Date : 18.06.2013
 *
 * Description : profil of the user

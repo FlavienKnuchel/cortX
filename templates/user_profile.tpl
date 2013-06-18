@@ -1,5 +1,5 @@
 <!--
-user_profil.tpl
+user_profile.tpl
 
 Author : Noémie Sandoz et Andréane Mercier
 
