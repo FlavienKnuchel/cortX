@@ -3,7 +3,7 @@
 /*
 * user_inscriptions.php
 *
-* Author : Andréane et Noémie
+* Author : AndrÃ©ane et NoÃ©mie
 * Date : 18.06.2013
 *
 * Description : user inscriptions, with old events
