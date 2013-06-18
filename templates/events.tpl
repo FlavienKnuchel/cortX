@@ -11,12 +11,14 @@ Description : template of the events page
 
 <section id="event_detail">
     <section id="current_event">
-        <article class="desc_event">
-            <h2>{$mainTopicEvent}</h2>
-            <p class="date">{$startingDateEvent}</p>
-            <p>{$descriptionEvent}</p>
-        </article>
         <a href="events.php">Participate</a>
+        <article class="desc_event">
+            <h1>TEDxLausanne number:{$firstEvent.no}</h1>
+            <h2>{$firstEvent.mainTopic}</h2>
+            <p class="date">{$firstEvent.startingDate}</p>
+            <p>{$firstEvent.description}</p>
+        </article>
+
         <article class="programme_event">
             <!-- loop on ol if their is more then one slot-->
            <ol class="slot_event">
@@ -43,13 +45,13 @@ Description : template of the events page
     <aside id="oldevents">
         <h2>Previous events</h2>
         <table>
-                <!-- section loop on tr -->
+            {section name=old loop=$events}
                 <tr>
-                    <td>{$eventName}</td>
-                    <td>{$startingDateEvent}</td>
-                    <td>{$locationNameEvent}</td>
-                    <td>{$mainTopicEvent}</td>
+                    <td>{$events[old].no}</td>
+                    <td>{$events[old].mainTopic}</td>
+                    <td>{$events[old].startingDate}</td>
                 </tr>
+            {/section}
         </table>
     </aside>
 </section>

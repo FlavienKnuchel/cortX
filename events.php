@@ -9,32 +9,51 @@
 * Description : page describing the actual event and the old events
 */
 include 'header.php';
+//declare the request arguments
 $searchArgs= array();
+//get back the result of the request
 $messageSearchEvents = $tedx_manager->searchEvents($searchArgs);
-$smarty->assign('eventsList', $messageSearchEvents);
+//get back the list of all the events
 $events=$messageSearchEvents->getContent();
-$firstEvent=$events[0];
-echo $firstEvent->getMainTopic();
+//processing of the event objects in an array
+$eventsList= array();
+foreach($eventsList as $event){ //for each event
+    array_push($eventsList, array( //add it to the event
+        'no'=>$events[0]->getNo(),
+        'mainTopic'=>$events[0]->getMainTopic(),
+        'startingDate'=>$events[0]->getStartingDate(),
+        'endingDate'=>$events[0]->getEndingDate(),
+        'startingTime'=>$events[0]->getStartingTime(),
+        'endingTime'=>$events[0]->getEndingTime(),
+        'isArchived'=>$events[0]->getIsArchived(),
+        'description'=>$events[0]->getDescription()));
+}// end of foreach
 
-class FirstEvent{
-    function __construct(){
 
-}
+//stock the events list in smarty
+$smarty->assign('events', $eventsList);
+//create an array containing all the first event datas
+$firstEvent= array(
+    'no'=>$events[0]->getNo(),
+    'mainTopic'=>$events[0]->getMainTopic(),
+    'startingDate'=>$events[0]->getStartingDate(),
+    'endingDate'=>$events[0]->getEndingDate(),
+    'startingTime'=>$events[0]->getStartingTime(),
+    'endingTime'=>$events[0]->getEndingTime(),
+    'isArchived'=>$events[0]->getIsArchived(),
+    'description'=>$events[0]->getDescription());
 
-}
+
+//stock the first event in smarty
+$smarty->assign('firstEvent', $firstEvent);
 
 
 
-
-$smarty->assign('mainTopicEvent','getMainTopic Event');
-$smarty->assign('startingDateEvent','getStartingDate Event');
-$smarty->assign('descriptionEvent','getDescription Event');
 $smarty->assign('no_slot','getNo Slot');
 $smarty->assign('startingTime_slot','getStartingTime Slot');
 $smarty->assign('endingTime_slot','getEndingTime Slot');
 $smarty->assign('positionSpeaker','getPosition Slot');
 $smarty->assign('speakerName','getSpeaker Name');
-$smarty->assign('eventName','getEvent Name');
 $smarty->assign('locationNameEvent','getLocationName Event');
 $smarty->display('events.tpl');
 include 'userbar.php';
