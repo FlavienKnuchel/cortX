@@ -13,7 +13,6 @@ Description :
     {if $loggedin}
         <div id="options">
             <img src="./img/userbar/gears.png" />
-            
         </div>
         <p>Welcome aboard {$username}!</p>
         

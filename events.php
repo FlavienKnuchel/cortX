@@ -9,6 +9,23 @@
 * Description : page describing the actual event and the old events
 */
 include 'header.php';
+$searchArgs= array();
+$messageSearchEvents = $tedx_manager->searchEvents($searchArgs);
+$smarty->assign('eventsList', $messageSearchEvents);
+$events=$messageSearchEvents->getContent();
+$firstEvent=$events[0];
+echo $firstEvent->getMainTopic();
+
+class FirstEvent{
+    function __construct(){
+
+}
+
+}
+
+
+
+
 $smarty->assign('mainTopicEvent','getMainTopic Event');
 $smarty->assign('startingDateEvent','getStartingDate Event');
 $smarty->assign('descriptionEvent','getDescription Event');

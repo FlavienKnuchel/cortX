@@ -1,19 +1,19 @@
 <!--
-backend_speakers.tpl
+backend_team.tpl
 
 Author : Noémie Sandoz and Andréane Mercier
 Date : 18.6.2013
 
-Description : backend of the speakers page
+Description : backend of the team page
 -->
-        <section id="bk_speakers">
+        <section id="bk_team">
             <article>
-                <h2>Speakers</h2>
+                <h2>Team</h2>
                 
                 <ul>
                     <!-- do a loop on li-->
                     <li>
-                        {$speaker_name} <!-- ATTENTION ajouter boutton modifier et supprimer-->
+                        {$_name} <!-- ATTENTION ajouter boutton modifier et supprimer-->
                     </li>
                 </ul>
                     

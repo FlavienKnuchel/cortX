@@ -2,6 +2,7 @@
 events.tpl
 
 Author : Christophe Rast, Noémie Sandoz and Andréane Mercier
+php: Flavien Knuchel
 
 Date : 14.6.2013
 Description : template of the events page
@@ -23,7 +24,7 @@ Description : template of the events page
                 <li>{$startingTime_slot} - {$endingTime_slot}</li>
                 <li>Live presentation : </li>
                 <!-- loop on the li below for teh differents speakers during the slot-->
-                <li>{$position_speaker} {$speaker_name}</li>   
+                <li>{$positionSpeaker} {$speakerName}</li>
             </ol>
         </article>
         
@@ -32,19 +33,19 @@ Description : template of the events page
                 <!-- do a loop on <li> -->
                 <li>
                     <a href="speaker_profil.php">
-                        <p>{$speaker_name}</p>
+                        <p>{$speakerName}</p>
                     </a>
                 </li>
             </ul>
          </article>
     </section>
                     
-    <aside id="oldevent">
+    <aside id="oldevents">
         <h2>Previous events</h2>
         <table>
                 <!-- section loop on tr -->
                 <tr>
-                    <td>{$event_name}</td>
+                    <td>{$eventName}</td>
                     <td>{$startingDateEvent}</td>
                     <td>{$locationNameEvent}</td>
                     <td>{$mainTopicEvent}</td>

@@ -1,5 +1,5 @@
 <!--
-registerToEvent.tpl
+events_registerToEvent.tpl
 
 Author : Christophe Rast, Noémie Sandoz and Andréane Mercier
 

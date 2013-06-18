@@ -1,5 +1,5 @@
 <!--
-home.tpl
+backend_validation_inscriptions.tpl
 
 Author : Noémie Sandoz and Andréane Mercier
 Date : 18.6.2013
