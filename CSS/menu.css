@@ -5,13 +5,11 @@ nav{
     background-color:#ffffff;    
 }
 nav ul {    
-    
 }
 /*Top menu links*/
 nav ul li{
     display:inline;
     margin-left:5px;
-
 }
 /* links styling*/
 nav ul li a{
@@ -20,12 +18,18 @@ nav ul li a{
     text-transform :uppercase;
     color:#333333;
     line-height:40px;
+    height:50px;
+    padding-bottom:21px;
 }
 
 /*top menu links interaction*/
 nav ul li a:hover{
     text-decoration: none;
-    color:#ff2b06;
+    color:#333333;
+    background-image:url(../img/menu.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+    padding-bottom:21px;
 }
 
 /*menu logo alignment*/
