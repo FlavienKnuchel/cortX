@@ -1,25 +1,25 @@
 /*---------------------------------Top menu---------------------------------*/
 nav{
-    height:60px;
+    height:50px;
     padding-top:10px;
-    margin-bottom:60px;
-    background-color:#ffffff;
-vertical-align:middle;    
+    background-color:#ffffff;    
 }
 nav ul {    
-
+    
 }
 /*Top menu links*/
 nav ul li{
     display:inline;
+    margin-left:5px;
+
 }
 /* links styling*/
 nav ul li a{
     text-decoration:none;
-    font-size: 14px;
+    font-size: 1.4em;
     text-transform :uppercase;
-    color:#222222;
-
+    color:#333333;
+    line-height:40px;
 }
 
 /*top menu links interaction*/
