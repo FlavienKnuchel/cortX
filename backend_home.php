@@ -1,12 +1,11 @@
-
 <?php
 /*
 * backend_home.php
 *
-* Author : Andréane et Noémie
-* Date : 18.06.2013
+* Author : Andreane et Noemie
+* Date : 17.06.2013
 *
-* Description : backend with the links
+* Description : page for the backend menu
 */
 include 'header.php';
 $smarty->display('backend_home.tpl');
