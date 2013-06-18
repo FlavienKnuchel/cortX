@@ -1,16 +1,16 @@
 
 <?php
 /*
-* speaker_profil.php
+* user_inscriptions.php
 *
 * Author : Andréane et Noémie
-* Date : 17.06.2013
+* Date : 18.06.2013
 *
-* Description : profil of the speaker who participated in TEDx
+* Description : user inscriptions, with old events
 */
 include 'header.php';
-$smarty->assign('speaker_name', 'getSpeaker Name');
-$smarty->assign('speaker_description', 'getSpeaker Description');
-$smarty->display('speaker_profil.tpl');
+$smarty->assign('startingDateEvent','getStartingDate Event');
+$smarty->assign('event_name','getName Event');
+$smarty->display('user_inscriptions.tpl');
 include 'userbar.php';
 ?>
