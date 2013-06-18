@@ -8,10 +8,11 @@
  *
  *
 -->
-    <aside id="loginToAccount">
-        <form method="POST" action="login.php">
-            <input type="text" name="Email adress" placeholder="Email Adress" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" name="Login" value="Log me in">
-        </form>
-    </aside>
+<aside id="loginToAccount">
+    <form method="POST" action="login.php">
+        <label>{$errorlogin}</label>
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="Login" value="OK"/>
+    </form>
+</aside>
