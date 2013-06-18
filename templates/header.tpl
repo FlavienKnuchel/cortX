@@ -19,7 +19,7 @@ Description : general navigation and
         <![endif]-->
     </head>
     <body>
-    
+        <div id="content">
         <nav>
             <ul>
                 <li id="header_tedx_logo">
