@@ -32,22 +32,22 @@ Description : Basic structure of the homepage
             
             <ul>
                 <li class="span1">
-                    <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+                    <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
                 </li>
                 <li class="span1">
-                    <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+                    <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
                 </li>
                 <li class="span1">
-                    <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+                    <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
                 </li>
                 <li class="span1">
-                    <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+                    <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
                 </li>
                 <li class="span1">
-                    <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+                    <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
                 </li>
                 <li class="span1">
-                    <a href="#"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
+                    <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="img/videos/video1.jpg" alt="Miniature video"/></a>
                 </li>                
             </ul>            
         </section>

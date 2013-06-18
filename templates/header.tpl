@@ -13,7 +13,16 @@ Description : general navigation and
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
     <LINK rel="stylesheet" media="all" href="css/menu.css" />
     <LINK rel="stylesheet" media="all" href="css/cortx.css" />
-        
+    <LINK rel="stylesheet" media="all" href="css/colorbox.css" />
+        <!-- colorbox javascript-->
+            <script src="jquery/jquery-1.10.1.min.js"></script>
+            <script src="jquery/jquery.colorbox-min.js"></script>
+        {literal} <!-- Avoiding smarty to crash on the javascript code -->
+            <script type="text/javascript">
+                $(document).ready(function(){ $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390})});
+            </script>
+        {/literal}
+        <!-- enf of colorbox javascript-->
     <title>CORTx</title>
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

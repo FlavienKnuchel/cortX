@@ -17,16 +17,17 @@ $messageSearchEvents = $tedx_manager->searchEvents($searchArgs);
 $events=$messageSearchEvents->getContent();
 //processing of the event objects in an array
 $eventsList= array();
-foreach($eventsList as $event){ //for each event
+foreach($events as $event){ //for each event
+
     array_push($eventsList, array( //add it to the event
-        'no'=>$events[0]->getNo(),
-        'mainTopic'=>$events[0]->getMainTopic(),
-        'startingDate'=>$events[0]->getStartingDate(),
-        'endingDate'=>$events[0]->getEndingDate(),
-        'startingTime'=>$events[0]->getStartingTime(),
-        'endingTime'=>$events[0]->getEndingTime(),
-        'isArchived'=>$events[0]->getIsArchived(),
-        'description'=>$events[0]->getDescription()));
+        'no'=>$events[$event]->getNo(),
+        'mainTopic'=>$events[$event]->getMainTopic(),
+        'startingDate'=>$events[$event]->getStartingDate(),
+        'endingDate'=>$events[$event]->getEndingDate(),
+        'startingTime'=>$events[$event]->getStartingTime(),
+        'endingTime'=>$events[$event]->getEndingTime(),
+        'isArchived'=>$events[$event]->getIsArchived(),
+        'description'=>$events[$event]->getDescription()));
 }// end of foreach
 
 
@@ -42,6 +43,8 @@ $firstEvent= array(
     'endingTime'=>$events[0]->getEndingTime(),
     'isArchived'=>$events[0]->getIsArchived(),
     'description'=>$events[0]->getDescription());
+
+print_r($eventsList);
 
 
 //stock the first event in smarty
