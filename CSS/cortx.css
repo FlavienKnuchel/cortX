@@ -1,6 +1,7 @@
 /*---------------------------------Body---------------------------------*/
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:12px;
     background-image:url(../img/background.png);
     margin:0 auto;
 }
@@ -11,43 +12,7 @@ body {
     margin-right:50px;
     */
 }
-/*---------------------------------Top menu---------------------------------*/
-nav{
-    height:60px;
-    padding-top:10px;
-    margin-bottom:60px;
-    background-color:#ffffff;
-vertical-align:middle;    
-}
-nav ul {    
 
-}
-/*Top menu links*/
-nav ul li{
-    display:inline;
-}
-/* links styling*/
-nav ul li a{
-    text-decoration:none;
-    font-size: 14px;
-    text-transform :uppercase;
-    color:#222222;
-
-}
-
-/*top menu links interaction*/
-nav ul li a:hover{
-    text-decoration: none;
-    color:#ff2b06;
-}
-
-/*menu logo alignment*/
-#header_tedx_logo{
-    
-    
-    
-    
-}
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
