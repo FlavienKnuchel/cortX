@@ -15,40 +15,14 @@ $searchArgs= array();
 $messageSearchEvents = $tedx_manager->searchEvents($searchArgs);
 //get back the list of all the events
 $events=$messageSearchEvents->getContent();
-//processing of the event objects in an array
-$eventsList= array();
-foreach($events as $event){ //for each event
-
-    array_push($eventsList, array( //add it to the event
-        'no'=>$events[$event]->getNo(),
-        'mainTopic'=>$events[$event]->getMainTopic(),
-        'startingDate'=>$events[$event]->getStartingDate(),
-        'endingDate'=>$events[$event]->getEndingDate(),
-        'startingTime'=>$events[$event]->getStartingTime(),
-        'endingTime'=>$events[$event]->getEndingTime(),
-        'isArchived'=>$events[$event]->getIsArchived(),
-        'description'=>$events[$event]->getDescription()));
-}// end of foreach
-
-
 //stock the events list in smarty
-$smarty->assign('events', $eventsList);
-//create an array containing all the first event datas
-$firstEvent= array(
-    'no'=>$events[0]->getNo(),
-    'mainTopic'=>$events[0]->getMainTopic(),
-    'startingDate'=>$events[0]->getStartingDate(),
-    'endingDate'=>$events[0]->getEndingDate(),
-    'startingTime'=>$events[0]->getStartingTime(),
-    'endingTime'=>$events[0]->getEndingTime(),
-    'isArchived'=>$events[0]->getIsArchived(),
-    'description'=>$events[0]->getDescription());
-
-print_r($eventsList);
+$smarty->assign('eventsObjects', $events);
+//create an array containing all the slots of the first event
+$smarty->assign('slots',array($tedx_manager->getSlotsFromEvent($events[0])));
 
 
-//stock the first event in smarty
-$smarty->assign('firstEvent', $firstEvent);
+//test location
+echo $tedx_manager->getLocationFromEvent($events[0])->getContent();
 
 
 

@@ -13,10 +13,12 @@ Description : template of the events page
     <section id="current_event">
         <a href="events.php">Participate</a>
         <article class="desc_event">
-            <h1>TEDxLausanne number:{$firstEvent.no}</h1>
-            <h2>{$firstEvent.mainTopic}</h2>
-            <p class="date">{$firstEvent.startingDate}</p>
-            <p>{$firstEvent.description}</p>
+            <h1>TEDxLausanne number:{$eventsObjects[0]->getNo()}</h1>
+            <h2>{$eventsObjects[0]->getMainTopic()}</h2>
+            <h3>{$eventsObjects[0]->getLocationFromEvent($eventsObjects[0])}</h3>
+            <p class="date">{$eventsObjects[0]->getStartingDate()}</p>
+            <p>{$eventsObjects[0]->getDescription()}</p>
+            {$eventsObjects[0]->getSlotsFromEvent()}
         </article>
 
         <article class="programme_event">
@@ -45,13 +47,13 @@ Description : template of the events page
     <aside id="oldevents">
         <h2>Previous events</h2>
         <table>
-            {section name=old loop=$events}
+            {foreach from=$eventsObjects item=old}
                 <tr>
-                    <td>{$events[old].no}</td>
-                    <td>{$events[old].mainTopic}</td>
-                    <td>{$events[old].startingDate}</td>
+                    <td>{$old->getNo()}</td>
+                    <td>{$old->getMainTopic()}</td>
+                    <td>{$old->getStartingDate()}</td>
                 </tr>
-            {/section}
+            {/foreach}
         </table>
     </aside>
 </section>
