@@ -23,7 +23,7 @@ Description : general navigation and
         <nav>
             <ul>
                 <li id="header_tedx_logo">
-                	<a href="home.php"><img src="./img/TEDx_logo.jpg" alt="logo TEDxLausanne" /></a>
+                	<a href="home.php"><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
                 </li>
                 <li>
                 	<a href="events.php" title="Events">Events</a>

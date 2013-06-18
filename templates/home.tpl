@@ -60,11 +60,11 @@ Description : Basic structure of the homepage
             </ul>
             
         </section>
-        <article id="socialnet">
+        <article id="socialnet" class="row">
             <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Youtube</a></li>
+                <li class="offset3 span2"><a href="#" title="Facebook"><img src="img/sociaux/facebook.png"/></a></li>
+                <li class="span2"><a href="#" title="Twitter"><img src="img/sociaux/twitter.png"/></a></li>
+                <li class="span2"><a href="#" title="Youtube"><img src="img/sociaux/youtube.png"/></a></li>
             </ul>
         </article>
 
