@@ -53,8 +53,8 @@ Description : Basic structure of the homepage
         </section>
         <article id="socialnet" class="row">
             <ul>
-                <li class="offset3 span2"><a href="#" title="Facebook"><img src="img/sociaux/facebook.png"/></a></li>
-                <li class="span2"><a href="#" title="Twitter"><img src="img/sociaux/twitter.png"/></a></li>
-                <li class="span2"><a href="#" title="Youtube"><img src="img/sociaux/youtube.png"/></a></li>
+                <li class="offset3 span2"><a href="#" title="Facebook"><img src="img/sociaux/facebook_50px.png"/></a></li>
+                <li class="span2"><a href="#" title="Twitter"><img src="img/sociaux/twitter_50px.png"/></a></li>
+                <li class="span2"><a href="#" title="Youtube"><img src="img/sociaux/youtube_50px.png"/></a></li>
             </ul>
         </article>

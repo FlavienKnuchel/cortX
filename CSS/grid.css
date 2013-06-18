@@ -76,6 +76,7 @@
   }
   .span2 {
     width: 16.666666666666664%;
+    
   }
   .span1 {
     width: 8.333333333333332%;
@@ -129,8 +130,11 @@
     max-width: 1170px;
   }
   [class*="span"] {
+        
     padding-right: 15px;
     padding-left: 15px;
+        
+        
   }
 }
 
