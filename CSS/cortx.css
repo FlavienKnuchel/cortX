@@ -1,44 +1,51 @@
 /*---------------------------------Body---------------------------------*/
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-size: 1.4em;
-  line-height: 1.5;
-  color: #333333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image:url(../img/background.png);
+    margin:0 auto;
+}
+/*---------------------------------content---------------------------------*/
+#content{
+    /*
+    margin-left:50px;
+    margin-right:50px;
+    */
 }
 /*---------------------------------Top menu---------------------------------*/
 nav{
-    background-color:#FF2B06;
     height:60px;
     padding-top:10px;
-    margin-bottom:100px;
+    margin-bottom:60px;
+    background-color:#ffffff;    
 }
+nav ul {    
 
+}
 /*Top menu links*/
 nav ul li{
-    height: 100px;
-    width:150px;
     display:inline;
-    padding-left:100px;
 }
 /* links styling*/
 nav ul li a{
-    color:white;
     text-decoration:none;
+    font-size: 14px;
+    text-transform :uppercase;
+    color:#222222;
+
 }
 
 /*top menu links interaction*/
 nav ul li a:hover{
     text-decoration: none;
-    color: black;
+    color:#ff2b06;
 }
 
 /*menu logo alignment*/
 #header_tedx_logo{
-    height:100px;
-    padding:40px;
-    width:248px;
-    background-color: white;
+    
+    
+    
+    
 }
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
@@ -60,31 +67,6 @@ footer>p{
     float:left;
 }
 /*---------------------------------homepage---------------------------------*/
-/*speakers*/
-#nextevent article ul li
-{
-	float:left;
-}
-
-/*videos horizontal alignment*/
-.video_home
-{
-    float:left;
-}
-
-
-/*social icons*/
-#socialnet{
-    clear: both;
-    height:50px;
-}
-
-/*social icons links*/
-#socialnet ul li a{
-    color:black;
-    float:left;
-    margin-right:50px;
-}
 
 /*main event*/
 #nextevent{
@@ -110,11 +92,15 @@ article{
 
 /*video list*/
 #videos{
-    background-color:lightslategrey;
-    height:160px;
-    padding:20px 0px;
+    background-color:#f0f0f0;
+    height:170px;
+    padding:0px 0px;
+}
+#videos img{
+    margin-top:35px;
 }
 
-#videos h2{
-    margin-top:0px;
+#socialnet{
+    height:135px;
+    text-align:center;
 }

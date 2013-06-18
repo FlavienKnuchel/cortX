@@ -14,8 +14,8 @@
 }
 
 .row {
-  margin-right: -10px;
-  margin-left: -10px;
+  margin-right: 0px;    /* -10px à l'origine*/ 
+  margin-left: 0px;     /* -10px à l'origine*/ 
 }
 
 .row:before,
@@ -76,6 +76,7 @@
   }
   .span2 {
     width: 16.666666666666664%;
+    
   }
   .span1 {
     width: 8.333333333333332%;
@@ -129,8 +130,11 @@
     max-width: 1170px;
   }
   [class*="span"] {
+        
     padding-right: 15px;
     padding-left: 15px;
+        
+        
   }
 }
 

@@ -1,5 +1,5 @@
 <!--
-home.tpl
+backend_speakers.tpl
 
 Author : Noémie Sandoz and Andréane Mercier
 Date : 18.6.2013

@@ -19,25 +19,25 @@ Description : general navigation and
         <![endif]-->
     </head>
     <body>
-    
-        <nav>
+        <div id="content">
+        <nav class="row">
             <ul>
-                <li id="header_tedx_logo">
-                	<a href="home.php"><img src="./img/TEDx_logo.jpg" alt="logo TEDxLausanne" /></a>
+                <li id="header_tedx_logo" class="offset2 span3">
+                	<a href="home.php"><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
                 </li>
-                <li>
+                <li class="span1">
                 	<a href="events.php" title="Events">Events</a>
                 </li>
-                <li>
+                <li class="span1">
                		<a href="medias.php" title="Medias">Medias</a>
                 </li>
-                <li>
+                <li class="span1">
                 	<a href="about.php" title="About">About</a>
                 </li>
-                <li>
+                <li class="span1">
                 	<a href="team.php" title="Team">Team</a>
                 </li>
-                <li>
+                <li class="span1">
                 	<a href="speakers.php" title="Speakers">Speakers</a>
                 </li>
                 
