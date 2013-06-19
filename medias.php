@@ -18,7 +18,7 @@ include 'header.php';
         <title>Medias</title>
     </head>
     
-    <div class="video_media row">
+    <div class="offset2 row video_media row">
         <h1>TEDxLausanne 2013</h1>
         <a href="#">
             <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
@@ -31,17 +31,10 @@ include 'header.php';
         </a>
         <a href="#">
             <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        
+        </a>        
     </div>
     
-    <div class="video_media row">
+    <div class="offset2 row video_media row">
         <h1>TEDxLausanne 2012</h1>
         <a href="#">
             <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
@@ -54,14 +47,8 @@ include 'header.php';
         </a>
         <a href="#">
             <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>    
-    </div>    
+        </a>        
+    </div>
     <?php
     include 'userbar.php';
     ?>

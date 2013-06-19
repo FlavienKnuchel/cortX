@@ -8,8 +8,8 @@ Description : template of the general team page
 
 -->
 
-<section id="team" class="row span12">
-    <article>
+<section id="team">
+    <article class="row offset2 span8">
         <h2>The TEDxLausanne team</h2>
         <p>
         The TEDxLausanne 2013 team of organizers consists of 30 highly-motivated volunteers from very varied backgrounds. Their goal, beyond teaming up to organize an unforgettable event, is to offer a stage to people with innovative and engaging ideas and projects. Beyond the organisation of TEDxLausanne, the volunteers behind the event form a fresh and dynamic community, always evolving and in search for new ideas and projects to share.
@@ -25,25 +25,25 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
     <article class="row">
         <ul>
             <li>
-                <h3 class="offset4 span4"><a href="team_curatorAndHost.php" title="Curator and host">Curator and host</a></h3>
+                <h3 class="offset2 span2"><a href="team_curatorAndHost.php" title="Curator and host">Curator and host</a></h3>
             </li>
             <li>
-                <h3 class="span4"><a href="team_designTeam.php" title="Design Team">Design Team</a></h3>
+                <h3 class="span2"><a href="team_designTeam.php" title="Design Team">Design Team</a></h3>
             </li>
             <li>
-                <h3><a href="team_externalCommunicationTeam.php" title="External communication team">External communication team</a></h3>
+                <h3 class="span2"><a href="team_externalCommunicationTeam.php" title="External communication team">External communication team</a></h3>
             </li>
             <li>
-                <h3><a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team">Fundraising and Finance team</a></h3>
+                <h3 class="span2"><a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team">Fundraising and Finance team</a></h3>
             </li>
             <li>
-                <h3><a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a></h3>
+                <h3 class="row offset2 span2"><a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a></h3>
             </li>
             <li>
-                <h3><a href="team_speakersSelectionTeam.php" title="Speakers selection team">Speakers selection team</a></h3>
+                <h3 class="span2"><a href="team_speakersSelectionTeam.php" title="Speakers selection team">Speakers selection team</a></h3>
             </li>
             <li>
-                <h3><a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team">Quality and substainability team</a></h3>
+                <h3 class="span2"><a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team">Quality and substainability team</a></h3>
             </li>
 
         </ul>
