@@ -11,45 +11,43 @@
 include 'header.php';
 
 ?>
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Medias</title>
-    </head>
     
-    <div class="offset2 row video_media row">
+    <div id="videos_media">        
         <h1>TEDxLausanne 2013</h1>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>        
-    </div>
+        <div class="row">
+            <a href="#" class="offset2 span2">
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            </a>
+           <a href="#" class="span2">
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            </a>
+            <a href="#" class="span2">
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            </a>
+            <a href="#" class="span2">
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            </a>    
+        </div>
     
-    <div class="offset2 row video_media row">
-        <h1>TEDxLausanne 2012</h1>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>
-        <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
-        </a>        
+        <div class="row">
+            <h1>TEDxLausanne 2012</h1>
+                <div class="row">
+                <a href="#" class="offset2 span2">
+                    <img src="img/videos/video1.jpg" alt="Miniature video"/>
+                </a>
+               <a href="#" class="span2">
+                    <img src="img/videos/video1.jpg" alt="Miniature video"/>
+                </a>
+                <a href="#" class="span2">
+                    <img src="img/videos/video1.jpg" alt="Miniature video"/>
+                </a>
+                <a href="#" class="span2">
+                    <img src="img/videos/video1.jpg" alt="Miniature video"/>
+                </a>    
+            </div>
+        </div>
     </div>
+
     <?php
     include 'userbar.php';
     ?>
-</html>

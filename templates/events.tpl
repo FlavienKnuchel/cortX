@@ -11,7 +11,7 @@ Description : template of the events page
 
 <section id="event_detail">
     <section id="current_event">
-        <a href="events.php">Participate</a>
+        <a href="inscription.php">Participate</a>
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($eventsObjects) and isset($firstEventLocation) and !empty($eventsObjects) and !empty($firstEventLocation)}
@@ -19,14 +19,16 @@ Description : template of the events page
                 {section loop=$eventsObjects name=actualEvent}
                     <!-- test to display the first event (last of the array) -->
                     {if $smarty.section.actualEvent.last}
-                            <h1>TEDxLausanne No{$eventsObjects[0]->getNo()}</h1>
-                            <h2>{$eventsObjects[0]->getMainTopic()}</h2>
-                            <h3>{$firstEventLocation->getAddress()}</h3>
-                            <h3>{$firstEventLocation->getName()}</h3>
-                            <h3>{$firstEventLocation->getCity()}</h3>
-                            <h3>{$firstEventLocation->getCountry()}</h3>
-                            <p class="date">{$eventsObjects[0]->getStartingDate()}</p>
-                            <p>{$eventsObjects[0]->getDescription()}</p>
+                            <h1>TEDxLausanne No{$eventsObjects[actualEvent]->getNo()}</h1>
+                            <h2>{$eventsObjects[actualEvent]->getMainTopic()}</h2>
+                            <article class="EventAdress">
+                                <h3>{$firstEventLocation->getAddress()}</h3>
+                                <h3>{$firstEventLocation->getName()}</h3>
+                                <h3>{$firstEventLocation->getCity()}</h3>
+                                <h3>{$firstEventLocation->getCountry()}</h3>
+                            </article>
+                            <p class="date">{$eventsObjects[actualEvent]->getStartingDate()}</p>
+                            <p>{$eventsObjects[actualEvent]->getDescription()}</p>
                         {/if}
                 {/section}
             {else}

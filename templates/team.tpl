@@ -22,30 +22,33 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
  </p>               
     </article>
     
-    <article class="row">
+    <article id="tuile">
         <ul>
+            <div class="row">
             <li>
-                <h3 class="offset2 span2"><a href="team_curatorAndHost.php" title="Curator and host">Curator and host</a></h3>
+                <a href="team_curatorAndHost.php" title="Curator and host"><h3 class="offset2 span2">Curator and host</h3></a>
             </li>
             <li>
-                <h3 class="span2"><a href="team_designTeam.php" title="Design Team">Design Team</a></h3>
+                <a href="team_designTeam.php" title="Design Team"><h3 class="span2">Design Team</h3></a>
             </li>
             <li>
-                <h3 class="span2"><a href="team_externalCommunicationTeam.php" title="External communication team">External communication team</a></h3>
+                <a href="team_externalCommunicationTeam.php" title="External communication team"><h3 class="span2">External communication team</h3></a>
             </li>
             <li>
-                <h3 class="span2"><a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team">Fundraising and Finance team</a></h3>
+                <a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team"><h3 class="span2">Fundraising and Finance team</h3></a>
+            </li>
+            </div>
+            <div class="row">
+            <li>
+                <a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team"><h3 class="offset2 span2">Hospitality and events team</h3></a>
             </li>
             <li>
-                <h3 class="row offset2 span2"><a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a></h3>
+                <a href="team_speakersSelectionTeam.php" title="Speakers selection team"><h3 class="span2">Speakers selection team</h3></a>
             </li>
             <li>
-                <h3 class="span2"><a href="team_speakersSelectionTeam.php" title="Speakers selection team">Speakers selection team</a></h3>
+                <a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team"><h3 class="span2">Quality and substainability team</h3></a>
             </li>
-            <li>
-                <h3 class="span2"><a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team">Quality and substainability team</a></h3>
-            </li>
-
+            </div>
         </ul>
     </article>
 </section>

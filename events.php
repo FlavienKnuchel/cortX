@@ -9,10 +9,8 @@
 * Description : page describing the actual event and the old events
 */
 include 'header.php';
-//declare the request arguments for events
-$searchArgs= array();
-//get back the result of the events request
-$messageSearchEvents = $tedx_manager->searchEvents($searchArgs);
+//get back all the events
+$messageSearchEvents = $tedx_manager->getEvents();
 //if the message is not an error message
 if($messageSearchEvents->getStatus()){
     //get back the list of all the events

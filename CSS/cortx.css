@@ -5,9 +5,12 @@ body {
     background-image:url(../img/background.png);
     margin:0 auto;
 }
+body h3{
+    font-size:2em;
+}
 /*---------------------------------content---------------------------------*/
 #content{
-    
+max-height:90%;
     
     
 }
@@ -15,7 +18,7 @@ body {
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
-	height: 60px;;
+	height: 40px;;
 	width: 100%;
 	bottom: 0px;
 	background-color:#FF2B06;
@@ -23,7 +26,6 @@ footer {
 footer>p{
     display:inline;
 }
-
 /*login form alignment*/
 #login {
 	float:right;
@@ -35,12 +37,12 @@ footer>p{
 
 /*main event*/
 #nextevent{
-    height:400px;
+height:auto;
     
     
 }
 #nextevent ul{
-text-align:center;
+    margin-left:0px;
 }
 
 /*---------------------------------General Content---------------------------------*/
@@ -63,25 +65,60 @@ article{
 /*video list*/
 #videos{
     background-color:#f0f0f0;
-    height:170px;
+    
     padding:0px 0px;
-    text-align:center;
+    /*text-align:center;*/
+}
+#video ul{
+    background-color:#f0f0f0;
+    margin-bottom:50px;
+}
+#video li{
+vertical-align:middle;
 }
 #videos img{
     margin-top:35px;
+    margin-bottom:35px;    
+}
+/*---------------------------------Media---------------------------------*/
+#videos_media{
+    text-align:center;
+}
+
+/*---------------------------------Tuiles---------------------------------*/
+#tuile h3{
+    background-color:#333333;
+    min-width:200px;
+    text-align:center;
+    height: 150px;
+    margin-top:70px;
+    vertical-align:middle;
     
+    color:#e5e5e5;
+}
+#tuile h3:hover{
+    background-color:#626262;
+    color:#e5e5e5;
+    text-decoration:none;
+    line-height:150px;
+    text-align:center;
+}
+#tuile a{
 }
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
-    height:135px;
-    text-align:center;
+    /*height:135px;*/
+    margin-top:20px;
+    margin-bottom:50px;
+    
 }
 #socialnet ul{
 
 }
 #socialnet li{
-    height:135px;
-    line-height:135px;
+    /*height:135px;
+    line-height:135px;*/
+    
 }
 #socialnet li a img{
     width:50px;

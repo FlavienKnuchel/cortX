@@ -129,6 +129,7 @@
   .container {
     max-width: 1170px;
   }
+    
   [class*="span"] {
         
     padding-right: 15px;
