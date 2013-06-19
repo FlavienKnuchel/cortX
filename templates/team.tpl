@@ -22,8 +22,9 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
  </p>               
     </article>
     
-    <article class="row">
+    <article id="tuile">
         <ul>
+            <div class="row">
             <li>
                 <h3 class="offset2 span2"><a href="team_curatorAndHost.php" title="Curator and host">Curator and host</a></h3>
             </li>
@@ -36,8 +37,10 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
             <li>
                 <h3 class="span2"><a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team">Fundraising and Finance team</a></h3>
             </li>
+            </div>
+            <div class="row">
             <li>
-                <h3 class="row offset2 span2"><a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a></h3>
+                <h3 class="offset2 span2"><a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a></h3>
             </li>
             <li>
                 <h3 class="span2"><a href="team_speakersSelectionTeam.php" title="Speakers selection team">Speakers selection team</a></h3>
@@ -45,7 +48,7 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
             <li>
                 <h3 class="span2"><a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team">Quality and substainability team</a></h3>
             </li>
-
+            </div>
         </ul>
     </article>
 </section>
