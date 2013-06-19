@@ -13,12 +13,12 @@ Description : template of the events page
     <section id="current_event">
         <a href="events.php">Participate</a>
         <article class="desc_event">
-            <h1>TEDxLausanne number:{$eventsObjects[0]->getNo()}</h1>
+            <h1>TEDxLausanne No{$eventsObjects[0]->getNo()}</h1>
             <h2>{$eventsObjects[0]->getMainTopic()}</h2>
-            <h3>{$eventsObjects[0]->getLocationFromEvent($eventsObjects[0])}</h3>
+            <h3>{$firstEventLocation}</h3>
             <p class="date">{$eventsObjects[0]->getStartingDate()}</p>
             <p>{$eventsObjects[0]->getDescription()}</p>
-            {$eventsObjects[0]->getSlotsFromEvent()}
+
         </article>
 
         <article class="programme_event">
@@ -47,13 +47,17 @@ Description : template of the events page
     <aside id="oldevents">
         <h2>Previous events</h2>
         <table>
-            {foreach from=$eventsObjects item=old}
-                <tr>
-                    <td>{$old->getNo()}</td>
-                    <td>{$old->getMainTopic()}</td>
-                    <td>{$old->getStartingDate()}</td>
-                </tr>
-            {/foreach}
+            {section loop=$eventsObjects name=oldEvents step=-1}
+                {if $smarty.section.oldEvents.first} {else}
+                    <tr>
+                        <td>{$eventsObjects[oldEvents]->getNo()}</td>
+                        <td>{$eventsObjects[oldEvents]->getMainTopic()}</td>
+                        <td>{$eventsObjects[oldEvents]->getStartingDate()}</td>
+                    </tr>
+                {/if}
+
+
+            {/section}
         </table>
     </aside>
 </section>

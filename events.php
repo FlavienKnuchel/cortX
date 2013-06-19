@@ -9,20 +9,52 @@
 * Description : page describing the actual event and the old events
 */
 include 'header.php';
-//declare the request arguments
+//declare the request arguments for events
 $searchArgs= array();
-//get back the result of the request
+//get back the result of the events request
 $messageSearchEvents = $tedx_manager->searchEvents($searchArgs);
-//get back the list of all the events
-$events=$messageSearchEvents->getContent();
-//stock the events list in smarty
-$smarty->assign('eventsObjects', $events);
-//create an array containing all the slots of the first event
-$smarty->assign('slots',array($tedx_manager->getSlotsFromEvent($events[0])));
+//if the message is not an error message
+if($messageSearchEvents->getStatus()){
+    //get back the list of all the events
+    $events=$messageSearchEvents->getContent();
+    //stock the events list in smarty
+    $smarty->assign('eventsObjects', $events);
+}//if
+else{
+    //display the error message
+    print $messageSearchEvents->getMessage();
+}//else
+
+//get the slots of the first event
+$messageSlots=$tedx_manager->getSlotsFromEvent($events[0]);
+//if the message is not an error message
+if($messageSlots->getStatus()){
+    //get back the list of all the slots
+    $slots=$messageSlots->getContent();
+    //stock the array of slots in smarty
+    $smarty->assign('slots',$slots);
+}
+else{
+    //display error message
+    print $messageSlots->getMessage();
+}
+
+//get the first event location
+$messageFirstEventLocation=$tedx_manager->getLocationFromEvent($events[0]);
+//if the message is not an error
+if($messageSearchEvents->getStatus()){
+    //get the location object
+    $firstEventLocation=$messageFirstEventLocation->getContent();
+    //store the location in smarty
+    $smarty->assign('firstEventLocation', $firstEventLocation);
+}//if
+else{
+    //display the error message
+    print $messageFirstEventLocation->getMessage();
+}//else
 
 
-//test location
-echo $tedx_manager->getLocationFromEvent($events[0])->getContent();
+
 
 
 
