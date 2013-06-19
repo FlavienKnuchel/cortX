@@ -18,58 +18,50 @@ include 'header.php';
         <title>Medias</title>
     </head>
     
-    <div class="video_media">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-    </div>
-    <div class="video_media">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-    </div>
-    <div class="video_media">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-    </div>
-    <div class="video_media">
-            <a href="#">
-                <img src="img/videos/video1.jpg" alt="Miniature video"/>
-            </a>
-    </div>
-    <div class="video_media">
+    <div class="video_media row">
+        <h1>TEDxLausanne 2013</h1>
         <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
         </a>
-    </div>
-    <div class="video_media">
         <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
         </a>
-    </div>
-    <div class="video_media">
         <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
         </a>
-    </div>
-    <div class="video_media">
         <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
         </a>
-    </div>
-    <div class="video_media">
         <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
         </a>
-    </div>
-    <div class="video_media">
         <a href="#">
-            <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
         </a>
+        
     </div>
     
-    
+    <div class="video_media row">
+        <h1>TEDxLausanne 2012</h1>
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
+        </a>
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
+        </a>
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
+        </a>
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
+        </a>
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
+        </a>
+        <a href="#">
+            <img src="img/videos/video1.jpg" alt="Miniature video" class="span2"/>
+        </a>    
+    </div>    
     <?php
     include 'userbar.php';
     ?>

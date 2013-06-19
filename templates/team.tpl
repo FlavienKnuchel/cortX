@@ -8,7 +8,7 @@ Description : template of the general team page
 
 -->
 
-<section id="team">
+<section id="team" class="row span12">
     <article>
         <h2>The TEDxLausanne team</h2>
         <p>
@@ -22,28 +22,28 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
  </p>               
     </article>
     
-    <article>
+    <article class="row">
         <ul>
             <li>
-                <a href="team_curatorAndHost.php" title="Curator and host">Curator and host</a>
+                <h3 class="offset4 span4"><a href="team_curatorAndHost.php" title="Curator and host">Curator and host</a></h3>
             </li>
             <li>
-                <a href="team_designTeam.php" title="Design Team">Design Team</a>
+                <h3 class="span4"><a href="team_designTeam.php" title="Design Team">Design Team</a></h3>
             </li>
             <li>
-                <a href="team_externalCommunicationTeam.php" title="External communication team">External communication team</a>
+                <h3><a href="team_externalCommunicationTeam.php" title="External communication team">External communication team</a></h3>
             </li>
             <li>
-                <a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team">Fundraising and Finance team</a>
+                <h3><a href="team_fundraisingAndFinanceTeam.php" title="Fundraising and Finance team">Fundraising and Finance team</a></h3>
             </li>
             <li>
-                <a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a>
+                <h3><a href="team_hospitalityAndEventsTeam.php" title="Hospitality and events team">Hospitality and events team</a></h3>
             </li>
             <li>
-                <a href="team_speakersSelectionTeam.php" title="Speakers selection team">Speakers selection team</a>
+                <h3><a href="team_speakersSelectionTeam.php" title="Speakers selection team">Speakers selection team</a></h3>
             </li>
             <li>
-                <a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team">Quality and substainability team</a>
+                <h3><a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team">Quality and substainability team</a></h3>
             </li>
 
         </ul>
