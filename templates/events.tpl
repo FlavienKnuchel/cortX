@@ -13,9 +13,12 @@ Description : template of the events page
     <section id="current_event">
         <a href="events.php">Participate</a>
         <article class="desc_event">
-            {if isset($eventsObjects) and isset($firstEventLocation)}
+            <!-- smarty variables existence test -->
+            {if isset($eventsObjects) and isset($firstEventLocation) and !empty($eventsObjects) and !empty($firstEventLocation)}
+                <!-- loop through the events array -->
                 {section loop=$eventsObjects name=actualEvent}
-                        {if $smarty.section.actualEvent.last}
+                    <!-- test to display the first event (last of the array) -->
+                    {if $smarty.section.actualEvent.last}
                             <h1>TEDxLausanne No{$eventsObjects[0]->getNo()}</h1>
                             <h2>{$eventsObjects[0]->getMainTopic()}</h2>
                             <h3>{$firstEventLocation->getAddress()}</h3>
@@ -27,19 +30,34 @@ Description : template of the events page
                         {/if}
                 {/section}
             {else}
-                <h1>Erreur: aucun évènement n'a été trouvé</h1>
+                <!-- display of an error message if the variables aren't set -->
+                <h1>Erreur: No event found</h1>
             {/if}
         </article>
 
         <article class="programme_event">
-            <!-- loop on ol if their is more then one slot-->
-           <ol class="slot_event">
-                <li>Slot {$no_slot}</li>
-                <li>{$startingTime_slot} - {$endingTime_slot}</li>
-                <li>Live presentation : </li>
-                <!-- loop on the li below for teh differents speakers during the slot-->
-                <li>{$positionSpeaker} {$speakerName}</li>
-            </ol>
+            <!-- smarty variables existence test -->
+            {if  isset($startingTime) and isset($slots)}
+                {if !empty($startingTime) and !empty($slots)}
+                    <!-- loop through the slots array and display them-->
+                    {section loop=$slots name=eventSlots}
+                       <ol class="slot_event">
+                            <li>Slot {$slots[eventSlots]->getNo()}</li>
+                            <li>{$slots[eventSlots]->getStartingTime()} - {$slots[eventSlots]->getEndingTime()}</li>
+                            <li>Live presentation : </li>
+                            <!-- loop on the speakers array of the event-->
+
+                            <li>{literal}{$positionSpeaker} {$speakerName}{/literal}</li>
+                        </ol>
+                    {/section}
+                {else}
+                    <!-- displayed when there is no slot -->
+                    <p>No slot scheduled</p>
+                {/if}
+            {else}
+                <!-- display of an error message if the variables aren't set -->
+                <h1>Erreur: No slot found</h1>
+            {/if}
         </article>
         
         <article class="speakers_photo">
