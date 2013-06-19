@@ -11,7 +11,7 @@ Description : template of the events page
 
 <section id="event_detail">
     <section id="current_event">
-        <a href="events.php">Participate</a>
+        <a href="inscription.php">Participate</a>
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($eventsObjects) and isset($firstEventLocation) and !empty($eventsObjects) and !empty($firstEventLocation)}
