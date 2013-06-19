@@ -9,7 +9,6 @@
  *
  *
  */
- 
 include 'header.php';
 $smarty->assign('NextEventName', 'getMainTopic()');
 $smarty->assign('NextEventDesc', 'getDescription()');

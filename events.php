@@ -22,7 +22,8 @@ if($messageSearchEvents->getStatus()){
 }//if
 else{
     //display the error message
-    print $messageSearchEvents->getMessage();
+    print ('<p class="error_msg">');
+    print ($messageSearchEvents->getMessage()."</p>");
 }//else
 
 //get the slots of the first event
@@ -36,7 +37,8 @@ if($messageSlots->getStatus()){
 }
 else{
     //display error message
-    print $messageSlots->getMessage();
+    print ('<p class="error_msg">');
+    print ($messageSlots->getMessage()."</p>");
 }
 
 //get the first event location
@@ -50,7 +52,8 @@ if($messageSearchEvents->getStatus()){
 }//if
 else{
     //display the error message
-    print $messageFirstEventLocation->getMessage();
+    print ('<p class="error_msg">');
+    print ($messageFirstEventLocation->getMessage()."</p>");
 }//else
 
 

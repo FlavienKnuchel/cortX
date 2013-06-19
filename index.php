@@ -9,7 +9,7 @@
 * Description :
 */
 
-
+$smarty->assign('activePage','home');
 include 'home.php';
 
 ?>
