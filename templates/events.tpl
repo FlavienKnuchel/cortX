@@ -13,12 +13,22 @@ Description : template of the events page
     <section id="current_event">
         <a href="events.php">Participate</a>
         <article class="desc_event">
-            <h1>TEDxLausanne No{$eventsObjects[0]->getNo()}</h1>
-            <h2>{$eventsObjects[0]->getMainTopic()}</h2>
-            <h3>{$firstEventLocation}</h3>
-            <p class="date">{$eventsObjects[0]->getStartingDate()}</p>
-            <p>{$eventsObjects[0]->getDescription()}</p>
-
+            {if isset($eventsObjects) and isset($firstEventLocation)}
+                {section loop=$eventsObjects name=actualEvent}
+                        {if $smarty.section.actualEvent.last}
+                            <h1>TEDxLausanne No{$eventsObjects[0]->getNo()}</h1>
+                            <h2>{$eventsObjects[0]->getMainTopic()}</h2>
+                            <h3>{$firstEventLocation->getAddress()}</h3>
+                            <h3>{$firstEventLocation->getName()}</h3>
+                            <h3>{$firstEventLocation->getCity()}</h3>
+                            <h3>{$firstEventLocation->getCountry()}</h3>
+                            <p class="date">{$eventsObjects[0]->getStartingDate()}</p>
+                            <p>{$eventsObjects[0]->getDescription()}</p>
+                        {/if}
+                {/section}
+            {else}
+                <h1>Erreur: aucun évènement n'a été trouvé</h1>
+            {/if}
         </article>
 
         <article class="programme_event">
