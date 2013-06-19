@@ -10,14 +10,18 @@ Description : template of the user inscription
 
 <section id="inscription">
     <article class="form_inscr">
-        <h2>You are applying to {$oldEvent[0]->getMainTopic()}</h2>
-        <p>My motivation</p>
-        <form method="POST" action="user_inscription.php">
-            <input type="text" name="motivation" placeholder="Why should we choose you and not someone else ?" required>
+        {section name=eventTopic loop=$eventsObjects}
+            {if $smarty.section.eventTopic.last}
+                <h2>You are applying to {$eventsObjects[eventTopic]->getMainTopic()}</h2>
+            {/if}
+        {/section}
+        <h3>My motivation</h3>
+        <form method="POST" action="user_inscriptions.php">
+            <input type="text" name="motivation"  value="Test" required>
             <label for="Keyword" title="Describe your interests in 3 words">Keywords:</label>
-            <input type="text" name="Keyword1" placeholder="Keyword" required>
-            <input type="text" name="Keyword2" placeholder="Keyword" required>
-            <input type="text" name="Keyword3" placeholder="Keyword" required>
+            <input type="text" name="Keyword1" value="{$kw1}" required>
+            <input type="text" name="Keyword2" value="{$kw2}" required>
+            <input type="text" name="Keyword3" value="{$kw3}" required>
 
             <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
             <input type="submit" name="Save" value="Save" alt="Save and edit later">
@@ -25,16 +29,34 @@ Description : template of the user inscription
         </form>
     </article>
 
-    <article class="history">
-        <h2>History</h2>
-        <ul>
-            {section name=event start=1 loop=$oldEvent max=10}
-            <li>
-                <a href="events_oldEvents.php?event={$oldEvent[event]->getNo()}">
-                    {$oldEvent[event]->getMainTopic()} the {$oldEvent[event]->getStartingDate()}
-                </a>
-            </li>
-            {/section}
-        </ul>
-    </article>
+    <aside id="oldevents">
+        <h2>Previous events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>Topic</td>
+                    <td>Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                {if isset($eventsObjects)}
+                    {section loop=$eventsObjects name=oldEvents step=-1}
+                    {if $smarty.section.oldEvents.first} {else}
+                        <tr>
+                            <td>{$eventsObjects[oldEvents]->getMainTopic()}</td>
+                            <td>{$eventsObjects[oldEvents]->getStartingDate()}</td>
+                        </tr>
+                    {/if}
+
+
+                {/section}
+            {else}
+                <tr>
+                    <td>No previous events</td>
+                    <td></td>
+                </tr>
+            {/if}
+        </tbody>
+    </table>
+</aside>
 </section>
