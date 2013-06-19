@@ -92,7 +92,8 @@ vertical-align:middle;
     text-align:center;
     height: 150px;
     margin-top:70px;
-    line-height:150px;
+    vertical-align:middle;
+    
     color:#e5e5e5;
 }
 #tuile h3:hover{
