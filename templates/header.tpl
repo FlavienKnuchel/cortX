@@ -39,7 +39,7 @@ Description : general navigation and
                 	<a href="events.php" title="Events" {if $activePage=='events'}id="active"{/if}>Events</a>
                 </li>
                 <li class="span1">
-               		<a href="medias.php" title="Medias"{if $activePage=='medias'}id="active"{/if}>Medias</a>
+               		<a href="medias.php" title="Medias"{if $activePage=='medias'}id="active"{/if}>Videos</a>
                 </li>
                 <li class="span1">
                 	<a href="about.php" title="About"{if $activePage=='about'}id="active"{/if}>About</a>

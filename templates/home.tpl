@@ -46,6 +46,7 @@ Join the global TEDxChange conversation on Facebook & Twitter or sign up for the
 </section>
 
 <section id="videos" class="row">
+    <h2>Videos from previews events</h2>
     <ul>
         <li class="offset2 span2">
             <a class="youtube" href="http://www.youtube.com/embed/lCRp9PussNU?autoplay=1&fs=1&rel=0&enablejsapi=1&playerapiid=ytplayer">
