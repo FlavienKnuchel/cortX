@@ -26,19 +26,19 @@ Join the global TEDxChange conversation on Facebook & Twitter or sign up for the
             <a href="events.php" class="button" title="Get more infos and register to this event!">More Infos !</a>
         </div>
         <article class="span2">
-           <h2>Speakers</h2>
+           <h2>Image de l'event</h2>
         <ul>
         <li>
-        <a href="#">nom</a>
+        <a href="#">une</a>
         </li>
         <li>
-        <a href="#">nom</a>
+        <a href="#">jolie</a>
         </li>
         <li>
-        <a href="#">nom</a>
+        <a href="#">grande</a>
         </li>
         <li>
-        <a href="#">nom</a>
+        <a href="#">image</a>
         </li>
         </ul> 
         </article>
