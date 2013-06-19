@@ -21,12 +21,14 @@ $smarty->display('header.tpl');
 require_once('../tedx-config.php');
 
 if ($tedx_manager->isGranted('registerSpeaker')) {
-    $smarty->assign('userLevel', 'organizator');
     if ($tedx_manager->isGranted('changeRegistrationStatus')) {
-        $smarty->assign('userLevel', 'validator');
         if ($tedx_manager->isGranted('addTeamRole')) {
             $smarty->assign('userLevel', 'admin');
+        } else {
+            $smarty->assign('userLevel', 'validator');
         }
+    } else {
+        $smarty->assign('userLevel', 'organizator');
     }
 } else {
     $smarty->assign('userLevel', 'participant');
