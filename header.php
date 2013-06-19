@@ -39,6 +39,9 @@ if(strstr($_SERVER["REQUEST_URI"],'events')){
                                 if(strstr($_SERVER["REQUEST_URI"],'speakers')){
                                     $smarty->assign('activePage', 'speakers');
                                 }
+                                else{
+                                    $smarty->assign('activePage', 'home');
+                                }
                             }
                     }
             }
