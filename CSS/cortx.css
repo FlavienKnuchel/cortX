@@ -88,9 +88,10 @@ vertical-align:middle;
 /*---------------------------------Tuiles---------------------------------*/
 #tuile h3{
     background-color:#333333;
-    height:100px;
+    min-width:200px;
     text-align:center;
-    vertical-align:middle;
+    height: 150px;
+    margin-top:50px;
 }
 #tuile h3:hover{
     background-color:#626262;   
@@ -98,6 +99,9 @@ vertical-align:middle;
 #tuile a{
     color:#e5e5e5;
     text-decoration:none;
+    line-height:150px;
+    text-align:center;
+    height:150px;
 }
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
