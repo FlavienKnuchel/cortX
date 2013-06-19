@@ -8,22 +8,29 @@ Description : Basic structure of the homepage
 -->
 <section id="nextevent">
     <article class="row">
-        <h2>{$NextEventName}</h2>
-        <p>{$NextEventDesc}</p>
-        <a href="events.php" class="button" title="Get more infos and register to this event!">More Infos !</a>
-        <h2 class="">Speakers</h2>
+        <div class="offset2 span6">
+            <h2>{$NextEventName}</h2>
+            <p>{$NextEventDesc}</p>
+            <a href="events.php" class="button" title="Get more infos and register to this event!">More Infos !</a>
+        </div>
+        <article class="span2">
+           <h2>Speakers</h2>
         <ul>
-        <li class="span2">
-        <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
+        <li>
+        <a href="#">ergsdr</a>
         </li>
-        <li class="span2">
-        <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
+        <li>
+        <a href="#">nom</a>
         </li>
-        <li class="span2">
-        <a href="#"><img src="img/speakers/small/speaker1.jpg" alt="Guest" /></a>
+        <li>
+        <a href="#">nom</a>
         </li>
-        </ul>
-    </article>
+        <li>
+        <a href="#">nom</a>
+        </li>
+        </ul> 
+        </article>
+    </article>    
 </section>
 
 <section id="videos" class="row">

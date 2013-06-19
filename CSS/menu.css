@@ -31,7 +31,10 @@ nav ul li a:hover{
     background-position:bottom center;
     padding-bottom:21px;
 }
-
+#active{
+    background-image:url(../img/menu.png);
+}
 /*menu logo alignment*/
-#header_tedx_logo{
+#header_tedx_logo img{
+    padding-left:-15px;
 }
