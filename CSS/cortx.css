@@ -92,16 +92,17 @@ vertical-align:middle;
     text-align:center;
     height: 150px;
     margin-top:70px;
+    line-height:150px;
+    color:#e5e5e5;
 }
 #tuile h3:hover{
-    background-color:#626262;   
-}
-#tuile a{
+    background-color:#626262;
     color:#e5e5e5;
     text-decoration:none;
     line-height:150px;
     text-align:center;
-    height:150px;
+}
+#tuile a{
 }
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
