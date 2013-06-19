@@ -65,13 +65,15 @@ article{
     background-color:#f0f0f0;
     height:170px;
     padding:0px 0px;
+    text-align:center;
 }
 #videos img{
     margin-top:35px;
+    
 }
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
-    position:fixed;
+    
     height:135px;
     text-align:center;
     
