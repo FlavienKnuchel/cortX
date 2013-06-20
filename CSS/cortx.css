@@ -44,16 +44,17 @@ footer>p{
 
 /*main event*/
 #nextevent{
-height:auto;
-    
-    
+height:auto;    
+}
+#nextevent p{
+    padding-right:10px;
 }
 #nextevent ul{
     margin-left:0px;
 }
 #nextevent img{
     padding-top:50px;
-    padding-left:10px;
+    padding-left:0px;
 }
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
@@ -74,7 +75,12 @@ article{
 
 /*video list*/
 #videos_title{
-    
+    background-color:#f0f0f0;
+    margin-bottom:0px;
+    padding-top:5px;
+    /*padding-left:auto;*/
+    text-align:center;
+    padding-bottom:5px;
 }
 #videos{
     background-color:#f0f0f0;
