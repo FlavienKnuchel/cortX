@@ -4,6 +4,7 @@ body {
     font-size:12px;
     background-image:url(../img/background.png);
     margin:0 auto;
+    
 }
 body h1{
     font-size:2em;
@@ -17,7 +18,7 @@ body h3{
 /*---------------------------------content---------------------------------*/
 #content{
 max-height:100%;
-    
+
     
 }
 
@@ -52,6 +53,7 @@ height:auto;
 }
 #nextevent img{
     padding-top:50px;
+    padding-left:10px;
 }
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
