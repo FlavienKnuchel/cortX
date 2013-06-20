@@ -73,10 +73,10 @@ Description : template of the events page
                     {section loop=$upcomingEvents name=upcoming}
                             <tr>
                                 <a href="events.php">
-                                <td>{$upcomingEvents[upcoming]->getNo()}</td>
-                                <td>{$upcomingEvents[upcoming]->getMainTopic()}</td>
-                                <td>{$upcomingEvents[upcoming]->getStartingDate()}</td>
-                                    </a>
+                                    <td>{$upcomingEvents[upcoming]->getNo()}</td>
+                                    <td>{$upcomingEvents[upcoming]->getMainTopic()}</td>
+                                    <td>{$upcomingEvents[upcoming]->getStartingDate()}</td>
+                                </a>
                             </tr>
                     {/section}
                 {else}

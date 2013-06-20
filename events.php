@@ -26,14 +26,14 @@ if($messsageUpcomingEvent->getStatus()){
     //get back the list of all the events
     $upcomingEvents=$messsageUpcomingEvent->getContent();
     //stock the events list in smarty
-    $smarty->assign('UpcomingEvents', $upcomingEvents);
+    $smarty->assign('upcomingEvents', $upcomingEvents);
 }//if
 else{
     if($messsageUpcomingEvent->getNo()==501){ //if the database connection is OK, but there is no upcoming event
         //set the upcoming events array empty
         $upcomingEvents=array();
         //stock it in smarty
-        $smarty->assign('UpcomingEvents', $upcomingEvents);
+        $smarty->assign('upcomingEvents', $upcomingEvents);
     }//if
     else{//if the error is a real problematic error
         //stock the error in smarty
