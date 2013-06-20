@@ -18,7 +18,7 @@ Description : template of the user inscription
             {/section}
             <h3>Your motivation</h3>
             <form method="POST" action="user_inscriptions.php">
-                <input type="text" name="motivation"  value="{$motivation}" required>
+                <input type="text" name="motivation"  value="{$motivation}" class="big" required>
                 <label for="Keyword" title="Describe your interests in 3 words">Keywords:</label>
                 <input type="text" name="Keyword1" value="{$kw1}" required>
                 <input type="text" name="Keyword2" value="{$kw2}" required>

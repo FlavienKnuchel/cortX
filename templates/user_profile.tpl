@@ -1,29 +1,40 @@
 <!--
 user_profile.tpl
 
-Author : Noémie Sandoz et Andréane Mercier
+Author : Noémie Sandoz et Andréane Mercier, Christophe Rast
 
 Date : 18.6.2013
-Description : template of the user profil
+Description : template of the user profile
 
 -->
+
 <section id="registerToEvent">
-        <h2>My profil</h2>
-        <h3>My co-ordinates</h3>
-        <form method="post" action="register.php">
-            <article class="coordonees">
-                <input type="text" name="Lastname" placeholder="Your name" autofocus required>
-                <input type="text" name="Firstname" placeholder="Your firstname" required>
+    {if isset($loggedin) && $loggedin==TRUE}
+        <h2>My profile</h2>
+        <p class="subtitle">Edit your personnal informations</p>
+        <article class="coordonees">
+            <form method="post" action="user_profile.php">
+                <input type="text" name="Name" placeholder="{$name}" autofocus>
+                <input type="text" name="Firstname" placeholder="{$firstname}">
                 <label for="Date">Date of birth:</label>
-                <input type="date" name="Date" required>
-                <input type="text" name="Adress" placeholder="Your adress" required>
-                <input type="text" name="Town" placeholder="Your town" required>
-                <input type="text" name="Country" placeholder="Your country" required>
-                <input type="email" name="Email" placeholder="Your email" required autocomplete>
-                <input type="tel" name="Phone" placeholder="Your phone number" required>
-                <input type="password" name="Password" placeholder="Choose a password" required>
-                <input type="password" name="ConfirmPassword" placeholder="Confirm your password" required>
-            </article>
-            
-        </form>
+                <input type="date" name="Date" placeholder="{$birthdate}">
+                <input type="text" name="Address" placeholder="{$address}">
+                <input type="text" name="City" placeholder="{$city}">
+                <input type="text" name="Country" placeholder="{$country}" autocomplete>
+                <input type="email" name="Email" placeholder="{$email}"autocomplete>
+                <input type="tel" name="Phone" placeholder="{$phone}">
+                <textarea type="text" name="Description" class="big">{$desc}</textarea>
+                <input type="submit" name="Edit" value="Edit" alt="Edit my informations" >
+            </form>
+        </article>
+        <h2>My password</h2>
+        <p class="subtitle">Edit your password, leave blank if no changes</p>
+        <article id="password">
+            <form method="post" action="user_profile.php">
+                <input type="password" name="Password">
+                <input type="password" name="ConfirmPassword">
+                <input type="submit" name="changePSW" value="Change" alt="Edit my password" >
+            </form>
+        </article>
+    {/if}
 </section>
