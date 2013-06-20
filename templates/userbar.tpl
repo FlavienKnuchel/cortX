@@ -10,14 +10,16 @@ Description :
 
 
 <footer class="row">
-    {if isset($loggedin) && $loggedin==TRUE}
+    {if $loggedin==TRUE}
         <div id="logged">
             {if $userLevel=='participant'}    
-                <a class="offset2 span1" href="" title="My particpations">My participations</a>
+                <a class="offset2 span1" href="" title="My particpations">My registrations</a>
                 <a class="span1" href="" title="My profile">My profile</a>
+            {else}
+
+                <a class="offset2 span1" href="home.php" title="Welcome Page">Home</a>
+                <a class="span1 message" href="backend_home.php" title="Management Area">Management Area</a>
             {/if}
-            <a class="offset2 span1" href="home.php" title="Welcome Page">Home</a>
-            <a class="span1 message" href="backend_home.php" title="Management Area">Management Area</a>
             <p class="span4 message">Welcome aboard {$username} you have the rights of {$userLevel}!</p>
             <a class="offset1 span1" id="logout" href="login.php?action=logout">Logout</a>
         </div>
