@@ -51,13 +51,15 @@ Description : template of the events page
                                 <li>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</li>
                                 <li>Live presentation : </li>
                                <ol>
-                                <li><a href="speaker_profil.php?action=">
+
                                         {if !empty($slotsAndSpeakers[slot].speakers)}
                                             {section name=speaker loop=$slotsAndSpeakers[slot].speakers}
+                                            <li><a href='speaker_profil.php?No={$slotsAndSpeakers[slot].speakers[speaker]->getNo()}'>
                                                 {$slotsAndSpeakers[slot].speakers[speaker]->getFirstName()} {$slotsAndSpeakers[slot].speakers[speaker]->getName()}
+                                                </a></li>
                                             {/section}
                                         {/if}
-                                    </a></li>
+
                                </ol>
                             {/if}
                         </ol>

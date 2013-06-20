@@ -12,9 +12,26 @@ Description : template of the speaker profil
     <article class="speaker_photo">
         <img src="img/speakers/big/speaker.jpg"/>
     </article>
-       
+
     <article class="speaker_nameANDdescription">
-        <h2>{$speaker_name}</h2>
-        <p class="description_speaker">{$speaker_description}</p>
+        {if isset($speaker)}
+            <h2>{$speaker->getName()} {$speaker->getFirstName()}</h2>
+            <h3>Description: </h3>
+            <p>{$speaker->getDescription()}</p>
+            <h3>Country: </h3>
+            <p>{$speaker->getCountry()}</p>
+
+            {if isset($eventsOfSpeaker)}
+                <h3>He made a Talk in these events:</h3>
+                <ul>
+                {section loop=$eventsOfSpeaker name=event}
+                    <li>{$eventsOfSpeaker[event]->getStartingDate()} {$eventsOfSpeaker[event]->getName()}</li>
+                {/section}
+                </ul>
+            {/if}
+
+            {else}
+            <h2>This speaker Number hasn't been found</h2>
+        {/if}
     </article>
 </section>

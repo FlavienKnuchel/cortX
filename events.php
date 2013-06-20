@@ -166,18 +166,9 @@ else{
     $smarty->assign('actualEventLocation', $actualEventLocation);
 }//else
 
-
-
-
-
-
-
-$smarty->assign('no_slot','getNo Slot');
-$smarty->assign('startingTime_slot','getStartingTime Slot');
-$smarty->assign('endingTime_slot','getEndingTime Slot');
-$smarty->assign('positionSpeaker','getPosition Slot');
-$smarty->assign('speakerName','getSpeaker Name');
-$smarty->assign('locationNameEvent','getLocationName Event');
+//display the template
 $smarty->display('events.tpl');
+
+//display the bottom userbar
 include 'userbar.php';
 ?>
