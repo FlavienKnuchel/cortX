@@ -21,7 +21,7 @@ $smarty->setConfigDir('./configs');
 
 //checking the active page (for menu visual)
 
-if(strstr($_SERVER["REQUEST_URI"],'events')){
+if(strstr($_SERVER["REQUEST_URI"],'/events.php')){
     $smarty->assign('activePage', 'events');
 }
     else{

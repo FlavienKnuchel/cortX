@@ -37,8 +37,8 @@ Description : general navigation and
                 	<a href="home.php" ><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
                 </li>
                 <li class="span1">
-                	<a href="events.php" title="Events" id="active" {if $activePage=='inscription'}id="active"{/if}{if $activePage=='events'}id="active"{/if}>Events</a>
-                </li
+                	<a href="events.php" title="Events"{if $activePage=='events'}id="active"{/if}>Events</a>
+                </li>
                 <li class="span1">
                		<a href="medias.php" title="Medias"{if $activePage=='medias'}id="active"{/if}>Videos</a>
                 </li>
