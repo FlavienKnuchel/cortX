@@ -17,7 +17,7 @@ if ($tedx_manager->isLogged()) {
     } else {
         //test des droits
         if ($tedx_manager->isParticipant()) {
-            include 'user_inscription.php';
+            include 'user_inscriptions.php';
         } else {
             include 'backend_home.php';
         }
@@ -27,7 +27,7 @@ if ($tedx_manager->isLogged()) {
         $message = $tedx_manager->login($_POST['username'], $_POST['password']); //login test
         if ($tedx_manager->isLogged()) {
             if ($tedx_manager->isParticipant()) {
-                include 'user_inscription.php';
+                include 'user_inscriptions.php';
             } else {
                 include 'backend_home.php';
             }
