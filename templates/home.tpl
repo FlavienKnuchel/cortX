@@ -14,40 +14,22 @@ Description : Basic structure of the homepage
             <p> <!-- contenu test -->
                 03 April 2013
 
-Our inspired team, in collaboration with TEDxLausanne, is pleased to announce TEDxLausanneChange 2013. This event, themed “positive disruption”, will feature a live stream of the main TEDxChange program in Seattle, Washington and three presentations by dynamic local speakers.
-
-Join us April 3rd at 17:30 for an event that will challenge preconceived ideas, spark discussion, engage leaders and shed light on new perspectives.
-
-Click here for detailed information regarding the location and the full programme of events for TEDxLausanneChange 2013.
-
-Join the global TEDxChange conversation on Facebook & Twitter or sign up for the TEDxLausanne newsletter.
-
+Our inspired team, in collaboration with TEDxLausanne, is pleased to announce TEDxLausanneChange 2013. This event, themed “positive disruption”, will feature a live stream of the main TEDxChange program in Seattle, Washington and three presentations by dynamic local speakers.Join us April 3rd at 17:30 for an event that will challenge preconceived ideas, spark discussion, engage leaders and shed light on new perspectives.
             </p>
             <a href="events.php" class="button" title="Get more infos and register to this event!">More Infos !</a>
         </div>
         <article class="span2">
-           <h2>Image de l'event</h2>
-        <ul>
-        <li>
-        <a href="#">une</a>
-        </li>
-        <li>
-        <a href="#">jolie</a>
-        </li>
-        <li>
-        <a href="#">grande</a>
-        </li>
-        <li>
-        <a href="#">image</a>
-        </li>
-        </ul> 
+           <img src="img/event_now.png"/>
+        
         </article>
     </article>    
 </section>
 
-<section id="videos" class="row">
-    <h2>Videos from previews events</h2>
-    <ul>
+<section>
+    <div class="row">
+    <h2 id="videos_title" class="offset2 span8">Videos from previews events</h2>
+    </div>
+    <ul id="videos" class="row">
         <li class="offset2 span2">
             <a class="youtube" href="http://www.youtube.com/embed/lCRp9PussNU?autoplay=1&fs=1&rel=0&enablejsapi=1&playerapiid=ytplayer">
                 <img src="img/videos/video1.jpg" alt="Miniature video"/>

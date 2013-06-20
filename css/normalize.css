@@ -428,13 +428,13 @@ h6 {
   line-height: 20px;
   text-rendering: optimizelegibility;
 }
-h1,
+/*h1,    apporte trop d'espace entre les titres...
 h2,
 h3 {
   margin-top: 20px;
   margin-bottom: 10px;
   line-height: 40px;
-}
+}*/
 
 h3 {
   line-height: 30px;

@@ -5,12 +5,18 @@ body {
     background-image:url(../img/background.png);
     margin:0 auto;
 }
-body h3{
+body h1{
     font-size:2em;
+}
+body h2{
+    font-size:1.7em;
+}
+body h3{
+    font-size:1.5em;
 }
 /*---------------------------------content---------------------------------*/
 #content{
-max-height:90%;
+max-height:100%;
     
     
 }
@@ -44,7 +50,9 @@ height:auto;
 #nextevent ul{
     margin-left:0px;
 }
-
+#nextevent img{
+    padding-top:50px;
+}
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
 ul li{
@@ -63,22 +71,16 @@ article{
 }
 
 /*video list*/
+#videos_title{
+    
+}
 #videos{
     background-color:#f0f0f0;
-    
-    padding:0px 0px;
-    /*text-align:center;*/
-}
-#video ul{
-    background-color:#f0f0f0;
-    margin-bottom:50px;
-}
-#video li{
-vertical-align:middle;
+    text-align:center;
 }
 #videos img{
     margin-top:35px;
-    margin-bottom:35px;    
+    margin-bottom:35px;  
 }
 /*---------------------------------Media---------------------------------*/
 #videos_media{
@@ -110,6 +112,7 @@ vertical-align:middle;
     /*height:135px;*/
     margin-top:20px;
     margin-bottom:50px;
+    text-align:center;
     
 }
 #socialnet ul{
