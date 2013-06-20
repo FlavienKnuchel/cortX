@@ -21,69 +21,53 @@ $smarty->setConfigDir('./configs');
 
 //checking the active page (for menu visual)
 
-if(strstr($_SERVER["REQUEST_URI"],'/events.php')){
+if (strstr($_SERVER["REQUEST_URI"], '/events.php')) {
     $smarty->assign('activePage', 'events');
-}
-    else{
-        if(strstr($_SERVER["REQUEST_URI"],'medias')){
-            $smarty->assign('activePage', 'medias');
-        }
-            else{
-                if(strstr($_SERVER["REQUEST_URI"],'about')){
-                    $smarty->assign('activePage', 'about');
-                }
-                    else{
-                        if(strstr($_SERVER["REQUEST_URI"],'team')) {
-                            $smarty->assign('activePage', 'team');
-                        }
-                            else{
-                                if(strstr($_SERVER["REQUEST_URI"],'speaker')){
-                                    $smarty->assign('activePage', 'speakers');
-                                }
-                                else{
-                                    if(strstr($_SERVER["REQUEST_URI"],'home')){
+} else {
+    if (strstr($_SERVER["REQUEST_URI"], 'medias')) {
+        $smarty->assign('activePage', 'medias');
+    } else {
+        if (strstr($_SERVER["REQUEST_URI"], 'about')) {
+            $smarty->assign('activePage', 'about');
+        } else {
+            if (strstr($_SERVER["REQUEST_URI"], 'team')) {
+                $smarty->assign('activePage', 'team');
+            } else {
+                if (strstr($_SERVER["REQUEST_URI"], 'speaker')) {
+                    $smarty->assign('activePage', 'speakers');
+                } else {
+                    if (strstr($_SERVER["REQUEST_URI"], 'home')) {
+                        $smarty->assign('activePage', 'home');
+                    } else {
+                        if (strstr($_SERVER["REQUEST_URI"], 'inscription')) {
+                            $smarty->assign('activePage', 'inscription');
+                        } else {
+                            if (strstr($_SERVER["REQUEST_URI"], 'login')) {
+                                $smarty->assign('activePage', 'login');
+                            } else {
+                                if (strstr($_SERVER["REQUEST_URI"], 'backend')) {
+                                    $smarty->assign('activePage', 'backend');
+                                } else {
                                     $smarty->assign('activePage', 'home');
-                                    }
-                                    else{
-                                        if(strstr($_SERVER["REQUEST_URI"],'inscription')){
-                                            $smarty->assign('activePage', 'inscription');
-                                        }
-                                        else{
-                                            if(strstr($_SERVER["REQUEST_URI"],'login')){
-                                                $smarty->assign('activePage', 'login');
-                                            }
-                                            else{
-                                                if(strstr($_SERVER["REQUEST_URI"],'backend')){
-                                                    $smarty->assign('activePage', 'backend');
-                                                }
-                                                else{
-                                                    $smarty->assign('activePage', 'home');
-                                                }
-                                            }
-                                        }
-                                    }
                                 }
                             }
+                        }
                     }
+                }
             }
+        }
     }
+}
 
 
 $smarty->display('header.tpl');
 require_once('../tedx-config.php');
 
-if ($tedx_manager->isGranted('registerSpeaker')) {
-    if ($tedx_manager->isGranted('changeRegistrationStatus')) {
-        if ($tedx_manager->isGranted('addTeamRole')) {
-            $smarty->assign('userLevel', 'admin');
-        } else {
-            $smarty->assign('userLevel', 'validator');
-        }
-    } else {
-        $smarty->assign('userLevel', 'organizator');
+$smarty->assign('loggedin', $tedx_manager->isLogged()); //assign value for smarty test
+if ($tedx_manager->isLogged()) {
+    if ($tedx_manager->isParticipant()) {
+        $smarty->assign('userLevel', 'participant');
     }
-} else {
-    $smarty->assign('userLevel', 'participant');
 }
 ?>
 
