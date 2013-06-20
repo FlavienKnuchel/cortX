@@ -27,7 +27,7 @@ Our inspired team, in collaboration with TEDxLausanne, is pleased to announce TE
 
 <section>
     <div class="row">
-    <h2 id="videos_title" class="offset2 span8">Videos from previews events</h2>
+    <h2 id="videos_title" class="offset2 span3">Videos from previews events</h2>
     </div>
     <ul id="videos" class="row">
         <li class="offset2 span2">
