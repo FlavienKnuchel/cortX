@@ -8,50 +8,120 @@
 *
 * Description : page describing the actual event and the old events
 */
+
+
 include 'header.php';
-//get back all the events
-$messageSearchEvents = $tedx_manager->getEvents();
+
+/*------------------------------Upcoming events------------------------------*/
+//prepare the upcoming event SQL request
+$searchArgsUpcomingEvents = array(
+    'where'       => "StartingDate >= '".date('Y-m-d')."'",
+    'orderBy' => 'StartingDate',
+    'orderByType' => 'ASC'
+);
+//get the upcoming Event
+$messsageUpcomingEvent= $tedx_manager->searchEvents($searchArgsUpcomingEvents);
 //if the message is not an error message
-if($messageSearchEvents->getStatus()){
+if($messsageUpcomingEvent->getStatus()){
     //get back the list of all the events
-    $events=$messageSearchEvents->getContent();
+    $upcomingEvents=$messsageUpcomingEvent->getContent();
     //stock the events list in smarty
-    $smarty->assign('eventsObjects', $events);
+    $smarty->assign('UpcomingEvents', $upcomingEvents);
 }//if
 else{
-    //display the error message
-    print ('<p class="error_msg">');
-    print ($messageSearchEvents->getMessage()."</p>");
+    if($messsageUpcomingEvent->getNo()==501){ //if the database connection is OK, but there is no upcoming event
+        //set the upcoming events array empty
+        $upcomingEvents=array();
+        //stock it in smarty
+        $smarty->assign('UpcomingEvents', $upcomingEvents);
+    }//if
+    else{//if the error is a real problematic error
+        //stock the error in smarty
+        $smarty->assign('errorUpcomingEvents', $messsageUpcomingEvent->getMessage());
+    }//else
 }//else
 
+
+/*------------------------------Old events------------------------------*/
+//prepare the old event SQL request
+$searchArgsOldEvents = array(
+    'where'       => "StartingDate < '".date('Y-m-d')."'",
+    'orderBy' => 'StartingDate',
+    'orderByType' => 'ASC'
+);
+//get the actual Event
+$messageOldEvents= $tedx_manager->searchEvents($searchArgsOldEvents);
+//if the message is not an error message
+if($messageOldEvents->getStatus()){
+    //get back the list of all the events
+    $oldEvents=$messageOldEvents->getContent();
+    //stock the events list in smarty
+    $smarty->assign('oldEvents', $oldEvents);
+}//if
+else{
+    if($messageOldEvents->getNo()==501){ //if the database connection is OK, but there is no upcoming event
+        //set the upcoming events array empty
+        $oldEvents=array();
+        //stock it in smarty
+        $smarty->assign('oldEvents', $oldEvents);
+    }//if
+    else{//if the error is a real problematic error
+        //stock the error in smarty
+        $smarty->assign('errorOldEvents', $messageOldEvents->getMessage());
+    }//else
+}//else
+
+/*------------------------------actual event------------------------------*/
+if(isset($upcomingEvents)){//if the upcoming events array exists
+    //get the actual Event
+    $actualEvent= $upcomingEvents[0];
+    //stock it in smarty
+    $smarty->assign('actualEvent', $actualEvent);
+}//if
+else{ //if the array doesn't exist
+    //no set of the actual event
+}//else
+
+
+
+/*------------------------------actual event slots------------------------------*/
 //get the slots of the first event
-$messageSlots=$tedx_manager->getSlotsFromEvent($events[0]);
+$messageSlots=$tedx_manager->getSlotsFromEvent($actualEvent);
 //if the message is not an error message
 if($messageSlots->getStatus()){
     //get back the list of all the slots
     $slots=$messageSlots->getContent();
     //stock the array of slots in smarty
     $smarty->assign('slots',$slots);
-}
-else{
-    //display error message
-    print ('<p class="error_msg">');
-    print ($messageSlots->getMessage()."</p>");
-}
-
-//get the first event location
-$messageFirstEventLocation=$tedx_manager->getLocationFromEvent($events[0]);
-//if the message is not an error
-if($messageSearchEvents->getStatus()){
-    //get the location object
-    $firstEventLocation=$messageFirstEventLocation->getContent();
-    //store the location in smarty
-    $smarty->assign('firstEventLocation', $firstEventLocation);
 }//if
 else{
-    //display the error message
-    print ('<p class="error_msg">');
-    print ($messageFirstEventLocation->getMessage()."</p>");
+    if($messageSlots->getNo()==501){ //if the database connection is OK, but there is no slot
+        //set the slots array empty
+        $slots=array();
+        //stock it in smarty
+        $smarty->assign('slots', $slots);
+    }//if
+    else{//if the error is a real problematic error
+        //stock the error variable in smarty
+        $smarty->assign('errorSlot', $messageSlots->getMessage());
+    }//else
+}//else
+
+/*------------------------------actual event location------------------------------*/
+//get the actual event location
+$messageActualEventLocation=$tedx_manager->getLocationFromEvent($actualEvent);
+//if the message is not an error
+if($messageActualEventLocation->getStatus()){
+    //get the location object
+    $actualEventLocation=$messageActualEventLocation->getContent();
+    //store the location in smarty
+    $smarty->assign('actualEventLocation', $actualEventLocation);
+}//if
+else{
+    //set the actual Event array empty
+    $actualEventLocation=array();
+    //stock it in smarty
+    $smarty->assign('actualEventLocation', $actualEventLocation);
 }//else
 
 
