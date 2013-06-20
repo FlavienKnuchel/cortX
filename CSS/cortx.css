@@ -207,6 +207,11 @@ textarea{
 section.space {
     margin-top: 20px;
 }
+/*--------------------------------- pages about ---------------------------------*/
+#about{
+    margin:3%;
+    max-width:94%;
+}
 
 /*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
 

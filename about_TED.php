@@ -9,12 +9,15 @@
  *
  *
  */
- 
+
 ?><head>
     <meta charset="utf-8" />
-    <LINK rel="stylesheet" media="all" href="css/cortx.css" />
     <LINK rel="stylesheet" media="all" href="css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
+    <LINK rel="stylesheet" media="all" href="css/menu.css" />
+    <LINK rel="stylesheet" media="all" href="css/cortx.css" />
+    <LINK rel="stylesheet" media="all" href="css/colorbox.css" />
+    <LINK rel="stylesheet" media="all" href="css/tuiles.css" />
     <title>CORTx</title>
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
