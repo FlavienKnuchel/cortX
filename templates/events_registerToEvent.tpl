@@ -26,7 +26,7 @@ Description : template of the registration to an event
         </article>
         <article class="motivation">
             <p class="subtitle">Explain us your motivation</p>
-            <input type="text" name="Motivation" class="big" placeholder="Why should we choose you and not someone else?" required>
+            <textarea type="text" name="Motivation" class="big" required></textarea>
             <label for="Keyword" title="Describe your interests in 3 words">Keywords:</label>
             <input type="text" name="Keyword1" placeholder="Keyword" required>
             <input type="text" name="Keyword2" placeholder="Keyword" required>
