@@ -26,7 +26,7 @@ Description : general navigation and
                     $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                     $(".inline").colorbox({inline:true, width:"50%"});
-                    $('.html').colorbox({ iframe:true, width:"60%", height:"55%"});
+                    $('.html').colorbox({ iframe:true, width:"60%", height:600});
                 });
 
             </script>
