@@ -22,10 +22,10 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
  </p>               
     </article>
     
-    <article id="tuile">
+    <article id="tuile2">
       <ul class="offset2 span8">
             <li>
-                <a href="team_curatorAndHost.php" title="Curator and host"><h3 class=" span2">Curator and host</h3></a>
+                <a href="team_curatorAndHost.php" title="Curator and host"><h3 class=" span2 twoLines">Curator and host</h3></a>
             </li>
             <li>
                 <a href="team_designTeam.php" title="Design Team"><h3 class="span2">Design Team</h3></a>
