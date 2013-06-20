@@ -3,7 +3,7 @@
 /*
 * event.php
 *
-* Author : Andréane et Noémie
+* Author : Andréane et Noémie, Flavien Knuchel
 * Date : 17.06.2013
 *
 * Description : page describing the actual event and the old events
