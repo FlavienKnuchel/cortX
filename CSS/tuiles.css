@@ -1,12 +1,13 @@
 /*---------------------------------Tuiles---------------------------------*/
+
 #tuile h3{
-    background-color:#333333;
+    background-color:#f0f0f0;
     min-width:200px;
     text-align:center;
     height: 150px;
     margin-top:5px;
     margin-bottom: 5px;
-    color:#e5e5e5;
+    color:#333333;
     padding:60px 5px 0 5px;
     margin-right:10px;
 }

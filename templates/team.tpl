@@ -1,7 +1,7 @@
 <!--
 team.tpl
 
-Author : Anthony Da Silva
+Author : Anthony Da Silva et Noemie Sandoz
 
 Date : 17.6.2013
 Description : template of the general team page
@@ -23,8 +23,7 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
     </article>
     
     <article id="tuile">
-        <ul>
-            <div class="offset2 span8">
+      <ul class="offset2 span8">
             <li>
                 <a href="team_curatorAndHost.php" title="Curator and host"><h3 class=" span2">Curator and host</h3></a>
             </li>
@@ -48,7 +47,7 @@ Silke (SilkeZanker.com) is an international coach, facilitator, and associate pr
             <li>
                 <a href="team_qualityAndSubstainabilityTeam.php" title="Quality and substainability team"><h3 class="span2 twoLines bottom">Quality and substainability team</h3></a>
             </li>
-            </div>
+            
         </ul>
     </article>
 </section>
