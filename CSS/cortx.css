@@ -25,20 +25,24 @@ max-height:100%;
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
-	height: 40px;;
+	height: 39px;;
 	width: 100%;
 	bottom: 0px;
 	background-color:#FF2B06;
+    padding-left:26px;
 }
 footer>p{
     display:inline;
 }
 /*login form alignment*/
 footer form{
-    padding-top:5px;
+    padding-top:7px;
 }
 #login {
+    margin-left:5px;
 	text-align:center;
+    width:75px;
+    height:20px;
 }
 #logout {
 	text-align:right;
@@ -127,8 +131,20 @@ input[type=password], input[type=text], input[type=date], input[type=email] , in
     background-color:#ffffff;
     border:1px;
     border-color:#ffffff;
+    height:20px;
  }
-input[type=submit]{
+input[type=submit] {
+    margin-top:3px;
     color:#e5e5e5;
     background-color:#333333;
+    border:1px;
+    border-color:#ffffff;
+    width:130px;
+    height:34px;
+}
+input[type=submit]:hover{
+    color:#e5e5e5;
+    background-color:#626262;
+    border:1px;
+    border-color:#ffffff;
 }
