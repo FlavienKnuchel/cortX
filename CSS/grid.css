@@ -159,5 +159,5 @@ select[class*="span"],
 textarea[class*="span"] {
   float: none;
   margin-right: 0;
-  margin-left: 0;
+  /*margin-left: 0; intrusion dans userbar*/
 }

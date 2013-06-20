@@ -34,12 +34,19 @@ footer>p{
     display:inline;
 }
 /*login form alignment*/
+footer form{
+    padding-top:5px;
+}
 #login {
-	float:right;
+	text-align:center;
 }
-#options{
+#logout {
+	text-align:right;
+}
+
+/*#options{
     float:left;
-}
+}*/
 /*---------------------------------homepage---------------------------------*/
 
 /*main event*/
@@ -102,8 +109,6 @@ article{
     text-align:center;
     height: 150px;
     margin-top:70px;
-    vertical-align:middle;
-    
     color:#e5e5e5;
 }
 #tuile h3:hover{
@@ -113,8 +118,7 @@ article{
     line-height:150px;
     text-align:center;
 }
-#tuile a{
-}
+
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
     /*height:135px;*/
@@ -134,4 +138,12 @@ article{
 #socialnet li a img{
     width:50px;
     height:50px;
+}
+/*---------------------------------Formular and buttons---------------------------------*/
+input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
+    border-radius:10px;
+ }
+input[type=submit]{
+    color:#e5e5e5;
+    background-color:#333333;
 }
