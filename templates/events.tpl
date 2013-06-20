@@ -41,17 +41,25 @@ Description : template of the events page
 
         <article class="programme_event">
             <!-- smarty variables existence test -->
-            {if isset($slots)}
-                {if !empty($slots)}
+            {if isset($slotsAndSpeakers)}
+                {if !empty($slotsAndSpeakers)}
                     <!-- loop through the slots array and display them-->
-                    {section loop=$slots name=eventSlots}
+                    {section loop=$slotsAndSpeakers name=slot}
                        <ol class="slot_event">
-                            <li>Slot {$slots[eventSlots]->getNo()}</li>
-                            <li>{$slots[eventSlots]->getStartingTime()} - {$slots[eventSlots]->getEndingTime()}</li>
-                            <li>Live presentation : </li>
-                            <!-- loop on the speakers array of the event-->
-
-                            <li>{literal}<a href="speaker_profil.php">{$positionSpeaker} {$speakerName}</a>{/literal}</li>
+                           {if !is_null($slotsAndSpeakers[slot].slot)}
+                                <li>Slot {$slotsAndSpeakers[slot].slot->getNo()}</li>
+                                <li>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</li>
+                                <li>Live presentation : </li>
+                               <ol>
+                                <li><a href="speaker_profil.php?action=">
+                                        {if !empty($slotsAndSpeakers[slot].speakers)}
+                                            {section name=speaker loop=$slotsAndSpeakers[slot].speakers}
+                                                {$slotsAndSpeakers[slot].speakers[speaker]->getFirstName()} {$slotsAndSpeakers[slot].speakers[speaker]->getName()}
+                                            {/section}
+                                        {/if}
+                                    </a></li>
+                               </ol>
+                            {/if}
                         </ol>
                     {/section}
                 {else}
