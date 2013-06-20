@@ -25,11 +25,10 @@ max-height:100%;
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
-	height: 39px;;
+	height: 40px;
 	width: 100%;
 	bottom: 0px;
-	background-color:#FF2B06;
-    padding-left:26px;
+	background-color:#FF2B06;    
 }
 footer>p{
     display:inline;
@@ -37,20 +36,40 @@ footer>p{
 /*login form alignment*/
 footer form{
     padding-top:7px;
+    /*padding-left:10px;*/
+    text-align:right;
 }
 #login {
-    margin-left:5px;
+    /*margin-left:5px;*/
 	text-align:center;
-    width:75px;
-    height:20px;
+    width:15%;
+    height:22px;
 }
 #logout {
 	text-align:right;
 }
-
-/*#options{
-    float:left;
-}*/
+#form_log{
+    width:40%;
+    padding-left:5px;
+}
+#logged{
+    text-decoration:none;
+    /*font-size: 1.2em;*/
+    text-transform :uppercase;
+    color:#ffffff;    
+    height:50px;
+}
+#logged a{
+    text-decoration:none; 
+    text-transform :uppercase;
+    color:#ffffff;
+}
+#logged a:hover{
+    color:#333333;
+}
+#logged .message{
+    text-align:center;
+}
 /*---------------------------------homepage---------------------------------*/
 
 /*main event*/
@@ -147,4 +166,55 @@ input[type=submit]:hover{
     background-color:#626262;
     border:1px;
     border-color:#ffffff;
+}
+input .form_closed{
+}
+input .big{
+}
+textarea{
+
+}
+/*---------------------------------Tuiles---------------------------------*/
+
+#tuile h3{
+    background-color:#f0f0f0;
+    min-width:200px;
+    text-align:center;
+    height: 150px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    color:#333333;
+    padding:60px 5px 0 5px;
+    margin-right:10px;
+}
+
+#tuile h3.twoLines {
+    padding-top: 60px;
+}
+
+
+#tuile h3.bottom {
+    margin-bottom: 60px;
+}
+
+
+#tuile h3:hover{
+    background-color:#626262;
+    color:#e5e5e5;
+    text-decoration:none;
+}
+
+section.space {
+    margin-top: 20px;
+}
+
+/*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 728px;
+  }
+    body #tuile h3.twoLines {
+    padding-top: 45px;
+}
 }
