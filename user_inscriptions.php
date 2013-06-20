@@ -10,20 +10,26 @@
  * Description : user inscriptions, with old events
  */
 include 'header.php';
+
 if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays some static text.
 //  Test the status of the registration
     $person = $tedx_manager->getLoggedPerson()->getContent(); //retrieve the loged person
-    $event = $tedx_manager->getParticipation()->getContent()->getEvent(); //TODO with new AS
-    $participant = $tedx_manager->getParticpant($tedx_manager->getLoggedPerson()->getContent()->getNo())->getContent(); //retrieve the participant from the loggedIn person
-//retrieve the status of current registration
+    //TODO with new AS gets current participation
+    $event = $tedx_manager->getParticipation()->getContent()->getEvent();
+    //retrieve the participant from the loggedIn person
+    $participant = $tedx_manager->getParticpant($tedx_manager->getLoggedPerson()->getContent()->getNo())->getContent();
+    //retrieve the status of current registration
     $regStatus = $tedx_manager->getRegistration($event->getNo())->getContent()->getStatus();
-    if ($regStatus == 'submitted' || $regStatus == 'validated' || $regStatus == 'refused' || $regStatus == 'pending') {// --------------- registration is locked
-        //  The content has been saved and submitted for evaluation
-        // the content is grayed and cannot be modified again
-        $smarty->assign(//assigns to smarty the text of the motivation defined by the event and participant
+
+    // --------------- registration is locked if status doesn't match -----------------------------------------
+    if ($regStatus == 'submitted' || $regStatus == 'validated' || $regStatus == 'refused' || $regStatus == 'pending') {
+        //gets the DB content and displays it
+        //assigns to smarty the text of the motivation defined by the event and participant
+        $smarty->assign(
                 'getMotivation', $tedx_manager->getMotivationsByParticipantForEvent(
                         array($participant, $event))->getContent()->getText());
         $args = array($person, $event);
+        //assigns to smarty the text of each keyword of the person
         $arrayKeywords = $tedx_manager->getKeywordsByPersonForEvent($args)->getContent();
         for ($n = 0; $n < 3; $n++) {
             $smarty->assign('getKW' . ($n + 1), $arrayKeywords[$n]->getValue());
@@ -47,11 +53,20 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                 //                 î should be named archiveKeywordFromPersonForEvent
                 $kw = $_POST['Keyword' . ($n + 1)]; // gets the posted KW
                 $args = array($kw, $person, $event); //creat the argument array
-                $msgAddKW = $tedx_manager->addKeywordsToAnEvent($args)->getMessage(); //add the new KW in place of the previous one
+                //add the new KW in place of the previous one
+                $msgAddKW = $tedx_manager->addKeywordsToAnEvent($args);
+                if ($msgAddKW->getStatus()) {
+                    //changeregistrationStatus() to submitted
+                } else {
+                    print ('<p class="error_msg">');
+                    print ("Error during the keyword process:");
+                    print $msgAddKW->getMessage();
+                    print ("</p>");
+                }
             }
         }//end FOR
 // ---- Attendre services des IT pour nom de fonction getMotivation, changer motivation toussa, comme pour keyword
-        if (empyt($_POST['motivation'])) {
+        if (empty($_POST['motivation'])) {
             $args = array($participant, $event);
             // retrieve the motivation
             $oldMotivation = $tedx_manager->getMotivationsByParticipantForEvent($args)->getContent()->getText();
