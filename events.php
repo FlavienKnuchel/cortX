@@ -84,15 +84,57 @@ else{ //if the array doesn't exist
 
 
 
-/*------------------------------actual event slots------------------------------*/
+/*------------------------------actual event slots and speakers------------------------------*/
 //get the slots of the first event
 $messageSlots=$tedx_manager->getSlotsFromEvent($actualEvent);
 //if the message is not an error message
 if($messageSlots->getStatus()){
     //get back the list of all the slots
     $slots=$messageSlots->getContent();
+    //declare the general slots list
+    $slotsAndSpeakers=array();
+    // initializing the counter
+    $counter=0;
+    //for each slot
+    foreach($slots as $slot){
+        //get back the places of this slot
+        $places=$tedx_manager->getPlacesBySlot($slot)->getContent();
+        //stock this slot in the general list
+       // $slotsAndSpeakers[$counter][0]=$slot;
+        //initialize the array of speakers of this slot
+        $thisSlotSpeakers=array();
+
+        if($places!=null){// if there are places in this slot
+            //for each place in this slot
+            foreach($places as $aPlace){
+                // Catch the Speaker's Message with the $aPlace
+                $messageGetSpeakerByPlace = $tedx_manager->getSpeakerByPlace($aPlace);
+                // Get the Speaker, if existing
+                if($messageGetSpeakerByPlace->getStatus()) {
+                    // get the Speaker from message
+                    $aSpeaker = $messageGetSpeakerByPlace->getContent();
+                    //add the speaker to the list
+                    array_push($thisSlotSpeakers, $aSpeaker);
+                }//if
+
+
+            }//foreach
+            //create an array containing the slot and the list of speakers of that slot
+            $thisSlotAndSpeakers=array('slot'=>$slot, 'speakers'=>$thisSlotSpeakers);
+            //add the array we just created to the general slot and speakers list
+            array_push($slotsAndSpeakers, $thisSlotAndSpeakers);
+        }//if
+
+        //increments the counter
+        $counter++;
+        $thisSlotSpeakers=array();
+    }//foreach
     //stock the array of slots in smarty
     $smarty->assign('slots',$slots);
+
+
+    //stock the general slots list in smarty
+    $smarty->assign('slotsAndSpeakers',$slotsAndSpeakers);
 }//if
 else{
     if($messageSlots->getNo()==501){ //if the database connection is OK, but there is no slot
@@ -123,6 +165,7 @@ else{
     //stock it in smarty
     $smarty->assign('actualEventLocation', $actualEventLocation);
 }//else
+
 
 
 
