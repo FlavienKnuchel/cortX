@@ -4,13 +4,37 @@
     min-width:200px;
     text-align:center;
     height: 150px;
-    margin-top:70px;
+    margin-top:5px;
+    margin-bottom: 5px;
     color:#e5e5e5;
+    padding:60px 5px 0 5px;
+    margin-right:10px;
 }
+
+#tuile h3.twoLines {
+    padding-top: 60px;
+}
+
+
+#tuile h3.bottom {
+    margin-bottom: 60px;
+}
+
+
 #tuile h3:hover{
     background-color:#626262;
     color:#e5e5e5;
     text-decoration:none;
-    line-height:150px;
-    text-align:center;
+}
+
+/*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 728px;
+  }
+    body #tuile h3.twoLines {
+    padding-top: 45px;
+
+}
 }
