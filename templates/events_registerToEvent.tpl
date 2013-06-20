@@ -9,13 +9,13 @@ Description : template of the registration to an event
 -->
 <section id="registerToEvent">
         <h2>I don't have an account yet</h2>
-        <h3>My co-ordinates</h3>
+        <h3>My infos</h3>
         <form method="post" action="register.php">
             <article class="coordonees">
                 <input type="text" name="Lastname" placeholder="Your name" autofocus required>
                 <input type="text" name="Firstname" placeholder="Your firstname" required>
                 <label for="Date">Date of birth:</label>
-                <input type="date" name="Date" required>
+                <input type="date" name="Date" placeholder="YYYY-MM-DD"required>
                 <input type="text" name="Adress" placeholder="Your adress" required>
                 <input type="text" name="Town" placeholder="Your town" required>
                 <input type="text" name="Country" placeholder="Your country" required>
