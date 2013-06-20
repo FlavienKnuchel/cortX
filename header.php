@@ -40,7 +40,14 @@ if(strstr($_SERVER["REQUEST_URI"],'events')){
                                     $smarty->assign('activePage', 'speakers');
                                 }
                                 else{
+                                    if(strstr($_SERVER["REQUEST_URI"],'home')){
                                     $smarty->assign('activePage', 'home');
+                                    }
+                                    else{
+                                        if(strstr($_SERVER["REQUEST_URI"],'inscription')){
+                                            $smarty->assign('activePage', 'inscription');
+                                        }
+                                    }
                                 }
                             }
                     }
