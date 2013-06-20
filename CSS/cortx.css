@@ -81,14 +81,14 @@ article{
 }
 
 /*video list*/
-#videos_title{
+/*#videos_title{
     background-color:#f0f0f0;
     margin-bottom:0px;
     padding-top:5px;
-    /*padding-left:auto;*/
+    
     text-align:center;
     padding-bottom:5px;
-}
+}*/
 #videos{
     background-color:#f0f0f0;
     text-align:center;
@@ -141,7 +141,10 @@ article{
 }
 /*---------------------------------Formular and buttons---------------------------------*/
 input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
-    border-radius:10px;
+    border-radius:3px;
+    background-color:#ffffff;
+    border:1px;
+    border-color:#ffffff;
  }
 input[type=submit]{
     color:#e5e5e5;
