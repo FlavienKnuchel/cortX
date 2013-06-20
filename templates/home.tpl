@@ -10,12 +10,8 @@ Description : Basic structure of the homepage
     <article class="row">
         <div class="offset2 span6">
             <h2>{$NextEventName}</h2>
+            <p class="subtitle">getEventStartingDate()</p>
             <p>{$NextEventDesc}</p>
-            <p> <!-- contenu test -->
-                03 April 2013
-
-Our inspired team, in collaboration with TEDxLausanne, is pleased to announce TEDxLausanneChange 2013. This event, themed “positive disruption”, will feature a live stream of the main TEDxChange program in Seattle, Washington and three presentations by dynamic local speakers.Join us April 3rd at 17:30 for an event that will challenge preconceived ideas, spark discussion, engage leaders and shed light on new perspectives.
-            </p>
             <a href="events.php" class="button" title="Get more infos and register to this event!">More Infos !</a>
         </div>
         <article class="span2">
