@@ -65,23 +65,23 @@ require_once('../tedx-config.php');
 
 $smarty->assign('loggedin', $tedx_manager->isLogged()); //assign value for smarty test
 
-/*
+//test the user level 
 if ($tedx_manager->isLogged()) {
-    if ($tedx_manager->isOrganizer()) {
-        $smarty->assign('userLevel', 'organizer');
-    }
     if ($tedx_manager->isParticipant()) {
         $smarty->assign('userLevel', 'participant');
     }
-    if ($tedx_manager->isAdministrator()) {
-        $smarty->assign('userLevel', 'administrator');
+    if ($tedx_manager->isOrganizer()) {
+        $smarty->assign('userLevel', 'organizer');
     }
     if ($tedx_manager->isValidator()) {
         $smarty->assign('userLevel', 'validator');
     }
+    if ($tedx_manager->isAdministrator()) {
+        $smarty->assign('userLevel', 'administrator');
+    }
     if ($tedx_manager->isSuperadmin()) {
         $smarty->assign('userLevel', 'superadmin');
     }
-}*/
+}
 ?>
 
