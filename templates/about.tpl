@@ -1,5 +1,6 @@
 
-<section id="tuile">
+<section id="about">
+    <article class="tuile">
         <ul>
               <article class="offset2 span8 space">
             <li>
@@ -18,5 +19,5 @@
             <a class="html" href="about_TEDxChange.php" title="TEDxChange"><h3  class="span4">TEDxChange</h3></a>
         </li> </article> </ul>
 
-
-    </section>
+    </article>
+</section>

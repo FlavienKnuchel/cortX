@@ -175,8 +175,8 @@ article{
     text-align:center;
     
 }
-#socialnet ul{
-
+#socialnet ul li img{
+   
 }
 #socialnet li{
     /*height:135px;
@@ -184,8 +184,13 @@ article{
     
 }
 #socialnet li a img{
-    width:50px;
-    height:50px;
+    width:90px;
+    height:90px;
+    
+}
+#socialnet li a:hover img{
+    
+    background-color:#ffffff;
 }
 /*---------------------------------Formular and buttons---------------------------------*/
 input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
@@ -234,9 +239,9 @@ textarea{
 }
 
 /*---------------------------------Tuiles---------------------------------*/
-#tuile about {height:150px; width: 40%;;}
+.tuile about {height:150px; width: 40%;;}
 
-#tuile h3{
+.tuile h3{
     background-color:#f0f0f0;
     min-width:200px;
     text-align:center;
@@ -248,17 +253,17 @@ textarea{
     margin-right:10px;
 }
 
-#tuile h3.twoLines {
+.tuile h3.twoLines {
     padding-top: 60px;
 }
 
 
-#tuile h3.bottom {
+.tuile h3.bottom {
     margin-bottom: 60px;
 }
 
 
-#tuile h3:hover{
+.tuile h3:hover{
     background-color:#626262;
     color:#e5e5e5;
     text-decoration:none;
@@ -267,7 +272,7 @@ textarea{
 section.space {
     margin-top: 400px;
 }
-#tuile {margin-top:40px;}
+.tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
 #upcomingEvents {
 margin-top: 65px
@@ -278,8 +283,7 @@ color:#ff2b06;}
 
 /*--------------------------------- pages about ---------------------------------*/
 #about{
-    margin:5%;
-    max-width:90%;
+    margin-top:5%;
 }
 
 #about a {
@@ -292,8 +296,8 @@ color:#ff2b06;}
     }
 /*--------------------------------- pages team ---------------------------------*/
 #team{
-    margin:5%;
-    max-width:90%;
+    margin-top:5%;
+
 }
 
 #team a {

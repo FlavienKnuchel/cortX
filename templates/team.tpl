@@ -17,7 +17,7 @@ Description : template of the general team page
         </p>
     </article>
     
-    <article id="tuile">
+    <article class="tuile">
       <ul class="offset2 span8">
             <li>
                 <a href="team_curatorAndHost.php" class="html" title="Curator and host"><h3 class="span2">Curator and host</h3></a>

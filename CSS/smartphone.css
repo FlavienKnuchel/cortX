@@ -1,38 +1,37 @@
-/*------------------@media smartphone-----------------*/
+/*------------------@media smartphone and tablet-----------------*/
 
-@media screen and (min-width: 770px) {
-    .container {   
-        max-width: 728px;
-    }
-    
-    body #tuile h3.twoLines {
-    padding-top: 45px;
-    padding-top: 45px;
-    }
-}
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 850px) {
     body {
         font-size: 20px;
     }
-    #nextevent{
-        padding-left:5%;
-    }
-    #nextevent img{
-        width:95%;
+    /*-----------------------homepage-----------------------------------*/
+    #nextevent{        
+        max-width:95%;
     }
     #videos_title{
         padding-left:5%;
     }
-    footer form {    
-    text-align:center;   
-    }
     #socialnet .span1{
         display:inline;
+    }
+    #socialnet ul li img{
+        width:20%;
+        height:20%;
+        margin-left:1.45%;
+        margin-right:1.45%;
     }
     #videos .span2{
     display:inline;
     }
-    #tuile h3{
+    #videos{
+       
+    }
+    /*-------------------userbar-----------------------------------*/
+    footer form {    
+    text-align:center;   
+    }
+    /*---------------------------tuiles---------------------------------*/
+    .tuile h3{
     background-color:#f0f0f0;
     min-width:200px;
     text-align:center;
@@ -41,9 +40,23 @@
     margin-bottom: 5px;
     color:#333333;
     padding:35px 5px 0 5px;
-    margin-right:10px;
+    
     }
-    #tuile h3.twoLines {
+    .tuile h3.twoLines {
     padding-top: 20px;
+    }
+    a:focus, a:active, a:hover{
+        outline:none;
+        text-decoration:none;
+    }
+    /*---------------------------events-------------------------------*/
+    #event_detail{
+        max-width:90%;
+        margin-left:5%;
+    }
+    
+    #team{
+        margin:5%;
+        max-width:92%;
     }
 }

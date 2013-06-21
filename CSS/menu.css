@@ -20,8 +20,8 @@ nav ul li a{
     height:50px;
     display:block;
     padding-top:5px;
+    outline:none;
 }
-
 nav a img{
     padding-top:5px;
 }
@@ -33,6 +33,16 @@ nav ul li a:hover{
     background-image:url(../img/menu.png);
     background-repeat:no-repeat;
     background-position:bottom center;
+}
+nav a:active{
+    text-decoration:none;
+    color:#333333;
+    outline:none;
+}
+nav a:focus{
+    text-decoration:none;
+    color:#333333;
+    outline:none;
 }
 /* Display of the active page */
 #active{
