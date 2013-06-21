@@ -6,6 +6,7 @@ Date : 18.6.2013
 
 Description : backend of the team page
 -->
+<div class="row offset2">
         <section id="bk_team">
             <!-- do a loop on div (for all the person in the team) -->
             <div id="members_of_the_team">
@@ -61,4 +62,4 @@ Description : backend of the team page
             
         </form>
         </section>
-
+</div>

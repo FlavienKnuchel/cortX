@@ -6,7 +6,8 @@ Date : 18.6.2013
 
 Description : backend of the events page
 -->
-        <section id="bk_events">
+    <div class="row offset2">
+        <section id="bk_events" class="span8">
             <article id="bk_events_list">
                 <h2>Events</h2>
                 <a href="backend_add_event.php">New event</a>
@@ -18,4 +19,5 @@ Description : backend of the events page
                 </ul>
                  
             </article>
-        
+        </section>
+    </div>
