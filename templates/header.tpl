@@ -9,6 +9,8 @@ Description : general navigation and
 <html lang="en">
     <head>
     <meta charset="utf-8" />
+    <LINK rel="icon" type="image/png" href="img/favicon.ico" />
+
     <LINK rel="stylesheet" media="all" href="css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
     <LINK rel="stylesheet" media="all" href="css/menu.css" />
@@ -25,7 +27,7 @@ Description : general navigation and
                     $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
                     $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-                    $(".inline").colorbox({inline:true, width:"50%"});
+                    $(".inline").colorbox({inline:true, width:"50%"});s
                     $('.html').colorbox({ iframe:true, width:"60%", height:600});
                 });
 
