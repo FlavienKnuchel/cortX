@@ -30,7 +30,6 @@ $text=explode(".",$text);
 //select the first part
 $activeUrl=$text[0];
 //test the first part and react
-echo $activeUrl;
 switch($activeUrl){
     case "events":
     case "event_detail":
