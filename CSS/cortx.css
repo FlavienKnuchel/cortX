@@ -215,6 +215,29 @@ section.space {
     max-width:90%;
 }
 
+#about a {
+    color: #ff2b06;}
+
+
+#about h1 {
+    color: #ff2b06;
+    font-weight:bold;
+    }
+/*--------------------------------- pages team ---------------------------------*/
+#team{
+    margin:5%;
+    max-width:90%;
+}
+
+#team a {
+    color: #ff2b06;}
+
+
+#team h1 {
+    color: #ff2b06;
+    font-weight:bold;
+    }
+
 /*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
 
 @media screen and (min-width: 768px) {
@@ -223,5 +246,4 @@ section.space {
   }
     body #tuile h3.twoLines {
     padding-top: 45px;
-}
 }
