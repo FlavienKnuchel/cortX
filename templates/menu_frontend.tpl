@@ -1,4 +1,7 @@
     <LINK rel="stylesheet" media="all" href="css/cortx.css" />
+    <LINK rel="stylesheet" media="all" href="css/userbar.css" />
+    <LINK rel="stylesheet" media="all" href="css/smartphone.css" />
+    
 <title>CORTx</title>
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

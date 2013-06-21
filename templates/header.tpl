@@ -14,7 +14,9 @@ Description : general navigation and
     <LINK rel="stylesheet" media="all" href="css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
     <LINK rel="stylesheet" media="all" href="css/menu.css" />
-        <LINK rel="stylesheet" media="all" href="css/colorbox.css" />
+    <LINK rel="stylesheet" media="all" href="css/colorbox.css" />
+    
+        
 
         <!-- colorbox javascript-->
             <script src="jquery/jquery-1.10.1.min.js"></script>
