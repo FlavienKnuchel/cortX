@@ -4,12 +4,13 @@
 /*
  * user_inscriptions.php
  *
- * Author : Andréane et Noémie
+ * Author : Andreane et Noemie
  * Date : 18.06.2013
  *
  * Description : user inscriptions, with old events
  */
 include 'header.php';
+include 'menu_frontend.php';
 
 if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays some static text.
 //  Test the status of the registration

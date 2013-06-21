@@ -3,12 +3,13 @@
 /*
 * events_oldEvents.php
 *
-* Author : Andréane et Noémie
+* Author : Andreane et Noemie
 * Date : 17.06.2013
 *
 * Description : page describing the previous events
 */
 include 'header.php';
+include 'menu_frontend.php';
 $smarty->assign('startingDateEvent','getStartingDate Event');
 $smarty->assign('descriptionEvent','getDescription Event');
 $smarty->assign('no_slot','getNo Slot');

@@ -3,12 +3,13 @@
 /*
 * speaker_profil.php
 *
-* Author : Andr�ane et No�mie
+* Author : Andreane et Noemie
 * Date : 17.06.2013
 *
 * Description : profil of the speaker who participated in TEDx
 */
 include 'header.php';
+include 'menu_frontend.php';
 
 if(isset($_GET['No'])){//is the speaker number in the url?
     //get the speaker

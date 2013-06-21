@@ -10,6 +10,7 @@
  *
  */
 include 'header.php';
+include 'menu_frontend.php';
 $smarty->assign('NextEventName', 'getMainTopic()');
 $smarty->assign('NextEventDesc', 'getDescription()');
 $smarty->display('home.tpl');

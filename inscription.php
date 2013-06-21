@@ -10,6 +10,7 @@
  *
  */
 include 'header.php';
+include 'menu_frontend.php';
 $smarty->display('events_registerToEvent.tpl');
 include 'userbar.php';
 

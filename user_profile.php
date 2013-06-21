@@ -4,12 +4,13 @@
 /*
  * user_profile.php
  *
- * Author : Andréane et Noémie, Christophe Rast
+ * Author : Andreane et Noemie, Christophe Rast
  * Date : 18.06.2013
  *
  * Description : profile of the user
  */
 include 'header.php';
+include 'menu_frontend.php';
 if ($tedx_manager->isLogged()) {
     $smarty->assign('loggedin', TRUE);
     $person = $tedx_manager->getLoggedPerson()->getContent();

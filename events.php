@@ -3,7 +3,7 @@
 /*
 * event.php
 *
-* Author : Andréane et Noémie, Flavien Knuchel
+* Author : Andreane et Noemie, Flavien Knuchel
 * Date : 17.06.2013
 *
 * Description : page describing the actual event and the old events
@@ -11,6 +11,7 @@
 
 
 include 'header.php';
+include 'menu_frontend.php';
 
 /*------------------------------Upcoming events------------------------------*/
 //prepare the upcoming event SQL request
