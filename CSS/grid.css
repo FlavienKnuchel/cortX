@@ -3,6 +3,7 @@
   margin-left: auto;
 }
 
+
 .container:before,
 .container:after {
   display: table;
@@ -41,6 +42,7 @@
   .container {
     max-width: 728px;
   }
+    
   [class*="span"] {
     float: left;
   }
@@ -123,7 +125,6 @@
   .container {
     max-width: 940px;
   }
-}
 
 @media screen and (min-width: 1200px) {
   .container {
@@ -138,13 +139,6 @@
         
   }
 }
-
-
-
-
-
-
-
 
 table td[class*="span"],
 table th[class*="span"] {
