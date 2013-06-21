@@ -1,4 +1,7 @@
     <LINK rel="stylesheet" media="all" href="css/cortx.css" />
+    <LINK rel="stylesheet" media="all" href="css/userbar.css" />
+    <LINK rel="stylesheet" media="all" href="css/smartphone.css" />
+    
 <title>CORTx</title>
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -7,8 +10,8 @@
     <body>
         <div id="content">
         <nav class="row">
-            <a href="home.php"class="offset2 span3"><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
-            <ul class="row">
+            <a href="home.php"class="offset2 span3" title="Home"><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
+            <ul>
                     <li class="span1">
                         <a href="events.php"  title="Events"{if $activePage=='events'}id="active"{/if}>Events</a>
                     </li>
@@ -24,7 +27,6 @@
                 <li class="span1">
                 	<a href="speakers.php" title="Speakers"{if $activePage=='speakers'}id="active"{/if}>Speakers</a>
                 </li>
-                <li class="span2"></li>
                 
 
             </ul>

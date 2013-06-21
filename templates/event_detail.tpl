@@ -11,11 +11,11 @@ Description : template of the events page
 
 <section id="event_detail">
     {if isset($userCameFrom)}
-        <a class="button"href='{$userCameFrom}'><p>Retour</p></a>
+        <div class="button"><a href='{$userCameFrom}'>Retour</a></div>
     {/if}
     <section id="current_event">
         {if isset($inscriptionStatus) && $inscriptionStatus}
-            <a class="button" href="inscription.php">Participate</a>
+            <div id="button"><a href="inscription.php">Participate</a></div>
         {/if}
         <article class="desc_event">
             <!-- smarty variables existence test -->
