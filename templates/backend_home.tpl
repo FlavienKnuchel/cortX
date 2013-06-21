@@ -18,7 +18,7 @@ Description : template of the backend home page
                 <a href="backend_speakers.php" title="Speakers"><h3 class=" span2">Speakers</h3></a>
             </li>
             <li>
-                <a href="backend_team" title="Team"><h3 class=" span2">Team</h3></a>
+                <a href="backend_team.php" title="Team"><h3 class=" span2">Team</h3></a>
             </li>
             <li>
                 <a href="backend_account.php" title="Account"><h3 class=" span2">All account</h3></a>
