@@ -8,6 +8,7 @@
 * Description : page for the backend menu
 */
 include 'header.php';
+include 'menu_backend.php';
 $smarty->display('backend_home.tpl');
 include 'userbar.php';
 ?>

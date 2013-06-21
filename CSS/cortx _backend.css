@@ -1,0 +1,227 @@
+/*---------------------------------Body---------------------------------*/
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:12px;
+    background-image:#626262;
+    margin:0 auto;
+    
+}
+body h1{
+    font-size:2em;
+}
+body h2{
+    font-size:1.7em;
+}
+body h3{
+    font-size:1.5em;
+}
+/*---------------------------------content---------------------------------*/
+#content{
+max-height:100%;
+
+    
+}
+
+/*---------------------------------bottom userbar---------------------------------*/
+footer {
+	position: fixed;
+	height: 40px;
+	width: 100%;
+	bottom: 0px;
+	background-color:#FF2B06;    
+}
+footer>p{
+    display:inline;
+}
+/*login form alignment*/
+footer form{
+    padding-top:7px;
+    /*padding-left:10px;*/
+    text-align:right;
+}
+#login {
+    /*margin-left:5px;*/
+	text-align:center;
+    width:15%;
+    height:22px;
+}
+#logout {
+	text-align:right;
+}
+#form_log{
+    width:40%;
+    padding-left:5px;
+}
+#logged{
+    text-decoration:none;
+    /*font-size: 1.2em;*/
+    text-transform :uppercase;
+    color:#ffffff;    
+    height:50px;
+}
+#logged a{
+    text-decoration:none; 
+    text-transform :uppercase;
+    color:#ffffff;
+}
+#logged a:hover{
+    color:#333333;
+}
+#logged .message{
+    text-align:center;
+}
+/*---------------------------------homepage---------------------------------*/
+
+/*main event*/
+#nextevent{
+height:auto;    
+}
+#nextevent p{
+    padding-right:10px;
+}
+#nextevent ul{
+    margin-left:0px;
+}
+#nextevent img{
+    padding-top:50px;
+    padding-left:0px;
+}
+/*---------------------------------General Content---------------------------------*/
+/*no decoration on the lists*/
+ul li{
+    list-style: none;
+}
+
+/*section elements take full page width*/
+section
+{
+    width:100%
+}
+
+/*article margins*/
+article{
+   
+}
+
+/*video list*/
+/*#videos_title{
+    background-color:#f0f0f0;
+    margin-bottom:0px;
+    padding-top:5px;
+    
+    text-align:center;
+    padding-bottom:5px;
+}*/
+#videos{
+    background-color:#f0f0f0;
+    text-align:center;
+}
+#videos img{
+    margin-top:35px;
+    margin-bottom:35px;  
+}
+/*---------------------------------Media---------------------------------*/
+#videos_media{
+    text-align:center;
+}
+/*---------------------------------Social Content---------------------------------*/
+#socialnet{
+    /*height:135px;*/
+    margin-top:20px;
+    margin-bottom:50px;
+    text-align:center;
+    
+}
+#socialnet ul{
+
+}
+#socialnet li{
+    /*height:135px;
+    line-height:135px;*/
+    
+}
+#socialnet li a img{
+    width:50px;
+    height:50px;
+}
+/*---------------------------------Formular and buttons---------------------------------*/
+input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
+    border-radius:3px;
+    background-color:#ffffff;
+    border:1px;
+    border-color:#ffffff;
+    height:20px;
+ }
+input[type=submit] {
+    margin-top:3px;
+    color:#e5e5e5;
+    background-color:#333333;
+    border:1px;
+    border-color:#ffffff;
+    width:130px;
+    height:34px;
+}
+input[type=submit]:hover{
+    color:#e5e5e5;
+    background-color:#626262;
+    border:1px;
+    border-color:#ffffff;
+}
+input .form_closed{
+}
+input .big{
+}
+textarea{
+
+}
+/*---------------------------------Tuiles---------------------------------*/
+
+#tuile h3{
+    background-color:#f0f0f0;
+    min-width:200px;
+    text-align:center;
+    height: 150px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    color:#333333;
+    padding:60px 5px 0 5px;
+    margin-right:10px;
+}
+
+#tuile h3.twoLines {
+    padding-top: 60px;
+}
+
+
+#tuile h3.bottom {
+    margin-bottom: 60px;
+}
+
+
+#tuile h3:hover{
+    background-color:#626262;
+    color:#e5e5e5;
+    text-decoration:none;
+}
+
+section.space {
+    margin-top: 20px;
+}
+/*--------------------------------- pages about ---------------------------------*/
+#about{
+    margin:5%;
+    max-width:90%;
+}
+
+
+
+/*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 728px;
+  }
+    body #tuile h3.twoLines {
+    padding-top: 45px;
+}
+}

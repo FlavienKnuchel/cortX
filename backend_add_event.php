@@ -9,6 +9,8 @@
 * Description : page to create a new event, with slot and speaker
 */
 include 'header.php';
+include 'menu_backend.php';
+include 'menu_backend.php';
 $smarty->display('backend_add_event.tpl');
 include 'userbar.php';
 ?>

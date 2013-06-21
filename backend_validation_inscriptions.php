@@ -8,6 +8,7 @@
 * Description : page to manage the inscriptions
 */
 include 'header.php';
+include 'menu_backend.php';
 $smarty->assign('participant_name','getName Participant');
 $smarty->display('backend_validation_inscriptions.tpl');
 include 'userbar.php';

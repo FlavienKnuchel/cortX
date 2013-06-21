@@ -8,6 +8,7 @@
 * Description : page to create a new event, with slot and speaker
 */
 include 'header.php';
+include 'menu_backend.php';
 $smarty->assign('main_topic_event','getMainTopic Event');
 $smarty->assign('description_event','getDescription Event');
 $smarty->assign('location_name','getName Location');

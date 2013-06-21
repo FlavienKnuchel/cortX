@@ -8,6 +8,7 @@
 * Description : page to manage the team and the roles
 */
 include 'header.php';
+include 'menu_backend.php';
 $smarty->assign('person_name','getName Person');
 $smarty->assign('person_first_name','getFirstName Person');
 $smarty->assign('team_role_name','getName TeamRole');
