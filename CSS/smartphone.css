@@ -1,0 +1,29 @@
+/*------------------@media smartphone-----------------*/
+
+@media screen and (min-width: 770px) {
+    .container {   
+        max-width: 728px;
+    }
+    
+    body #tuile h3.twoLines {
+    padding-top: 45px;
+    padding-top: 45px;
+    }
+}
+@media screen and (max-width: 770px) {
+    #nextevent{
+        padding-left:5%;
+    }
+    #nextevent img{
+        width:95%;
+    }
+    #videos_title{
+        padding-left:5%;
+    }
+    footer form {    
+    text-align:center;   
+    }
+    #socialnet li .span1{
+        width:80%;
+    }
+}
