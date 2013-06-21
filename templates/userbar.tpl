@@ -22,7 +22,7 @@ Description :
                     <a class="span1 message" href="backend_home.php" title="Management Area">Management Area</a>
                 {/if}
             {/if}
-            <a class="offset1 span1" id="logout" href="login.php?action=logout">Logout</a>
+            <a class="offset5 span1" id="logout" href="login.php?action=logout">Logout</a>
         </div>
 
     {else}

@@ -218,10 +218,11 @@ section.space {
 /*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
 
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 728px;
-  }
+.container {   
+        max-width: 728px;
+    }
+    
     body #tuile h3.twoLines {
-    padding-top: 45px;
-}
+        padding-top: 45px;
+    }
 }
