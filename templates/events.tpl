@@ -18,8 +18,7 @@ Description : template of the events page
                 {if !empty($actualEvent) and !empty($actualEventLocation)}
                     <!-- loop through the events array -->
                         <!-- test to display the first event (last of the array) -->
-                                <h1>TEDxLausanne No{$actualEvent->getNo()}</h1>
-                                <h2>{$actualEvent->getMainTopic()}</h2>
+                                <h1>{$actualEvent->getMainTopic()}</h1>
                                 <article class="EventAdress">
                                     <h2>Adress</h2>
                                     <p>{$actualEventLocation->getAddress()}</p>
