@@ -8,9 +8,12 @@ body {
 }
 body h1{
     font-size:2em;
+    color:#ff2b06;
+    font-weight:bold;
 }
 body h2{
     font-size:1.7em;
+    color:#ff2b06;
 }
 body h3{
     font-size:1.5em;
@@ -112,6 +115,7 @@ article{
     text-align:center;
     padding-bottom:5px;
 }*/
+/*---------------------------------Media---------------------------------*/
 #videos{
     background-color:#f0f0f0;
     text-align:center;
@@ -120,7 +124,7 @@ article{
     margin-top:35px;
     margin-bottom:35px;  
 }
-/*---------------------------------Media---------------------------------*/
+
 #videos_media{
     text-align:center;
 }

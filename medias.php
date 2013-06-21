@@ -12,7 +12,6 @@ include 'header.php';
 include 'menu_frontend.php';
 
 ?>
-    
     <div id="videos_media">        
         <h1>TEDxLausanne 2013</h1>
         <div class="row">

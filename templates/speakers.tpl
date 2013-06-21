@@ -10,7 +10,7 @@ Description : template of the speaker section
 <!-- do a loop on section-->
 <section id="speaker_year">
     <article class="title_year row offset2 span8">
-        <h2>Speakers {$speakers_year}</h2>
+        <h1>Speakers {$speakers_year}</h1>
         <p class="description_list_speakers_year">Here is our speakers list of the year {$speakers_year}. Have a look at their profil below</p>
     </article>
        
