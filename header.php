@@ -12,7 +12,7 @@
 
 
 //creating the smarty object
-require('.\Smarty\libs\Smarty.class.php');
+require('./Smarty/libs/Smarty.class.php');
 $smarty = new Smarty();
 //declaring the smarty directories
 $smarty->setTemplateDir('./templates');
