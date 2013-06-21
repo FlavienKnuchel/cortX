@@ -11,7 +11,7 @@ footer>p{
 }
 /*login form alignment*/
 footer form{
-    padding-top:7px;
+    padding-top:0px;
     /*padding-left:10px;*/
     text-align:right;
 }
@@ -77,4 +77,8 @@ a#home_icon:hover{
 }
 #logged .message{
     text-align:center;
+}
+#login{
+    display:inline;
+    
 }
