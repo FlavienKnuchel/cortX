@@ -10,9 +10,14 @@ Description : template of the events page
 -->
 
 <section id="event_detail">
+<<<<<<< HEAD
     <section class="row">
     <section id="current_event" class="offset2 span5">
         <a href="inscription.php">Participate</a>
+=======
+    <section id="current_event">
+        <div class="button"> <a href="inscription.php">Participate</a>
+>>>>>>> 0cb8cce8fdd432c3d0190608bf2130f5bad85cef
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($actualEvent) and isset($actualEventLocation)}

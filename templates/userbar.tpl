@@ -19,7 +19,7 @@ Description :
                 {else}
 
                     <a class="offset2 span1" href="home.php" title="Welcome Page" id="home_icon"></a>
-                    <a class="span1" href="backend_home.php" title="Management Area" id="setting"></a>
+                    <a class="offset1 span1" href="backend_home.php" title="Management Area" id="setting"></a>
                 {/if}
             {/if}
             <a class="offset5 span1" id="logout" href="login.php?action=logout">Logout</a>

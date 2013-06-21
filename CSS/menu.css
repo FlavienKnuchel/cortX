@@ -1,15 +1,14 @@
 /*---------------------------------Top menu---------------------------------*/
 nav{
-    height:50px;
-    padding-top:10px;
+    height:55px;
+    line-height: 40px;
     background-color:#ffffff;    
 }
-nav ul {    
-}
+
 /*Top menu links*/
 nav ul li{
-    display:inline;
-    margin-left:5px;
+    width:100%;
+    text-align: center;
 }
 /* links styling*/
 nav ul li a{
@@ -17,9 +16,14 @@ nav ul li a{
     font-size: 1.4em;
     text-transform :uppercase;
     color:#333333;
-    line-height:40px;
+    line-height:45px;
     height:50px;
-    padding-bottom:21px;
+    display:block;
+    padding-top:5px;
+}
+
+nav a img{
+    padding-top:5px;
 }
 
 /*top menu links interaction*/
@@ -29,11 +33,10 @@ nav ul li a:hover{
     background-image:url(../img/menu.png);
     background-repeat:no-repeat;
     background-position:bottom center;
-    padding-bottom:21px;
 }
+/* Display of the active page */
 #active{
     background-image:url(../img/menu.png);
     background-repeat:no-repeat;
     background-position:bottom center;
 }
-/*menu logo alignment*/

@@ -11,7 +11,7 @@ Description : template of the events page
 
 <section id="event_detail">
     {if isset($userCameFrom)}
-        <div id="button"><a href='{$userCameFrom}'><p>Retour</p></a></div>
+        <div class="button"><a href='{$userCameFrom}'>Retour</a></div>
     {/if}
     <section id="current_event">
         {if isset($inscriptionStatus) && $inscriptionStatus}
