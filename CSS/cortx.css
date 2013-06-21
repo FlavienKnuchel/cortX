@@ -8,12 +8,22 @@ body {
 }
 body h1{
     font-size:2em;
+    color:#ff2b06;
+    font-weight:bold;
 }
 body h2{
     font-size:1.7em;
+    color:#333333;
 }
 body h3{
     font-size:1.5em;
+}
+
+body h4 {
+    font-size:1.2em;
+    color:black;
+    margin-top:0;
+    font-style:italic;
 }
 /*---------------------------------content---------------------------------*/
 #content{
@@ -112,6 +122,7 @@ article{
     text-align:center;
     padding-bottom:5px;
 }*/
+/*---------------------------------Media---------------------------------*/
 #videos{
     background-color:#f0f0f0;
     text-align:center;
@@ -120,7 +131,7 @@ article{
     margin-top:35px;
     margin-bottom:35px;  
 }
-/*---------------------------------Media---------------------------------*/
+
 #videos_media{
     text-align:center;
 }
@@ -238,19 +249,16 @@ section.space {
     font-weight:bold;
     }
 
+
 /*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
 
 @media screen and (min-width: 768px) {
-.container {   
+    .container {   
         max-width: 728px;
     }
     
     body #tuile h3.twoLines {
-<<<<<<< HEAD
     padding-top: 45px;
-}
-=======
-        padding-top: 45px;
+    padding-top: 45px;
     }
 }
->>>>>>> 9cb579ad3f741c3cef4319c617fd86c9988cfbbd
