@@ -10,14 +10,9 @@ Description : template of the events page
 -->
 
 <section id="event_detail">
-<<<<<<< HEAD
     <section class="row">
     <section id="current_event" class="offset2 span5">
-        <a href="inscription.php">Participate</a>
-=======
-    <section id="current_event">
-        <div class="button"> <a href="inscription.php">Participate</a>
->>>>>>> 0cb8cce8fdd432c3d0190608bf2130f5bad85cef
+        <div class="button"> <a href="inscription.php">Participate</a></div>
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($actualEvent) and isset($actualEventLocation)}
@@ -44,7 +39,7 @@ Description : template of the events page
             {/if}
 
         </article>
-        
+
         <article class="programme_event">
             <h2>Slots</h2>
             <!-- smarty variables existence test -->
@@ -81,7 +76,8 @@ Description : template of the events page
             {/if}
         </article>
     </section>
-    <section class="span3">
+        <section class="span3">
+
     <aside id="upcomingEvents">
         <h2>Upcoming events</h2>
         <table>
@@ -125,6 +121,6 @@ Description : template of the events page
             {/if}
         </table>
     </aside>
-        </section>
-</section>       
+   </section>                 
+</section>
 </section>
