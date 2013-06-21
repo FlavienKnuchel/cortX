@@ -7,16 +7,21 @@
    
     </head>
     <body>
-       
-        <div id="ariane" class="row">
-            <ul class="offset2">
-                <a href="backend_home.php"><li>Backend home</li></a>
+    <div id="content">
+        <nav class="row">
+            
+                <ul class="ariane">
+                <li id="header_tedx_logo" class="offset2 span3">
+                	<a href="home.php" ><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
+                </li>
+                    <li>
+                        <a href="backend_home.php">Backend home</a>
+                    </li>
                 <li></li>
                 <li></li>
                 <li></li>
             
             </ul>
+        </nav>
             
-            
-            
-        </div>
+      

@@ -23,6 +23,51 @@ max-height:100%;
     
 }
 
+/*______________________fil d'ariane--------------------------------------*/
+
+#ariane{
+    height:50px;
+    padding-top:10px;
+    background-color:#ffffff;    
+}
+
+
+#ariane li{
+    display:inline;
+    margin-left:5px;
+}
+/* links styling*/
+#ariane li a{
+    text-decoration:none;
+    font-size: 1.4em;
+    text-transform :uppercase;
+    color:#333333;
+    line-height:40px;
+    height:50px;
+    padding-bottom:21px;
+}
+
+/*top menu links interaction*/
+/*ariane ul li a:hover{
+    text-decoration: none;
+    color:#333333;
+    background-image:url(../img/menu.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+    padding-bottom:21px;
+}
+#active{
+    background-image:url(../img/menu.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+    padding-bottom:21px;
+}
+/*menu logo alignment*/
+#header_tedx_logo{
+
+}
+
+
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
