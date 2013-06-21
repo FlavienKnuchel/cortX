@@ -13,7 +13,8 @@ include 'header.php';
 include 'menu_frontend.php';
 if ($tedx_manager->isLogged()) {
     $smarty->assign('loggedin', TRUE);
-    $person = $tedx_manager->getLoggedPerson()->getContent();
+    $person = $tedx_manager->getPerson('23')->getContent();
+//    $person = $tedx_manager->getLoggedPerson()->getContent();
     $edit = FALSE;
     if (isset($_POST['Name'])) {
         $name = $_POST['Name'];
