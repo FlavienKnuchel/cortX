@@ -57,6 +57,7 @@ footer form{
 }
 #logout {
 	text-align:right;
+    line-height:40px;
 }
 #form_log{
     width:40%;
@@ -76,6 +77,37 @@ footer form{
 }
 #logged a:hover{
     color:#333333;
+}
+a#setting {
+    width:30px;
+    height:30px;
+    background-image:url(../img/setting.png);
+    background-repeat:no-repeat;
+     margin-top:5px;
+
+}
+
+a#setting:hover{
+    width:30px;
+    height:30px;
+    margin-top:5px;
+
+    background-image:url(../img/setting_hover.png);
+}
+
+a#home_icon {
+    width:30px;
+    height:30px;
+    background-image:url(../img/home.png);
+    background-repeat:no-repeat;
+     margin-top:5px;
+}
+
+a#home_icon:hover{
+    width:30px;
+    height:30px;
+    margin-top:5px;
+    background-image:url(../img/home_over.png);
 }
 #logged .message{
     text-align:center;
