@@ -36,7 +36,7 @@ if(isset($actualEvent)){
 else{
     $inscriptionStatus=false;
 }
-//$smarty->assign('inscriptionStatus',$inscriptionStatus);
+$smarty->assign('inscriptionStatus',$inscriptionStatus);
 
 /*------------------------------ Where did the user come from? (return button) ------------------------------*/
 $userCameFrom=$_SERVER['HTTP_REFERER'];
