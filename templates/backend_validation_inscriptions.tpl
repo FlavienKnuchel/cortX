@@ -6,6 +6,7 @@ Date : 18.6.2013
 
 Description : backend of the participant page
 -->
+<div class="row offset2">
         <section id="waiting_validation">
             <article>
                 <h2>Waiting for validation</h2>
@@ -36,4 +37,4 @@ Description : backend of the participant page
             <input type="submit" name="Validate" value="Validate" alt="Accept the participant">
             <input type="submit" name="Cancel" value="Cancel" alt="Refuse">
         </asside>
-
+</div>

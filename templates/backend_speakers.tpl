@@ -6,6 +6,7 @@ Date : 18.6.2013
 
 Description : backend of the speakers page
 -->
+<div class="row offset2">
         <section id="bk_speakers">
             <article>
                 <h2>Speakers</h2>
@@ -36,5 +37,5 @@ Description : backend of the speakers page
                  </form>
             </article>
         </section>
-
+</div>
 
