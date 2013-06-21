@@ -81,7 +81,7 @@ Description : template of the events page
         <table>
             {if isset($upcomingEvents)}
                 {if !empty($upcomingEvents)}
-                    {section loop=$upcomingEvents name=upcoming}
+                    {section loop=$upcomingEvents name=upcoming start=1}
                             <tr>
                                 <a href="events.php">
                                     <td><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
