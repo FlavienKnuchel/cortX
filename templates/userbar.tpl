@@ -18,8 +18,8 @@ Description :
                     <a class="span1" href="user_profile.php" title="My profile">My profile</a>
                 {else}
 
-                    <a class="offset2 span2" href="home.php" title="Welcome Page" id="home_icon"></a>
-                    <a class="offset1 span2 message" href="backend_home.php" id="setting" title="Management Area"></a>
+                    <a class="offset2 span1" href="home.php" title="Welcome Page" id="home_icon"></a>
+                    <a class="span1" href="backend_home.php" title="Management Area" id="setting"></a>
                 {/if}
             {/if}
             <a class="offset5 span1" id="logout" href="login.php?action=logout">Logout</a>
