@@ -215,6 +215,7 @@ input[type=submit], div.button a {
     color:#e5e5e5;
     width:130px;
     height:34px;
+    font-weight:bold;
 }
 
 input[type=submit]:hover, .button:hover{
