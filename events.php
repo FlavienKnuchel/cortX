@@ -30,16 +30,12 @@ if($messsageUpcomingEvent->getStatus()){
     $smarty->assign('upcomingEvents', $upcomingEvents);
 }//if
 else{
-    if($messsageUpcomingEvent->getNo()==501){ //if the database connection is OK, but there is no upcoming event
+    if(!is_null($messsageUpcomingEvent)){ //if the database connection is OK, but there is no upcoming event
         //set the upcoming events array empty
         $upcomingEvents=array();
         //stock it in smarty
         $smarty->assign('upcomingEvents', $upcomingEvents);
     }//if
-    else{//if the error is a real problematic error
-        //stock the error in smarty
-        $smarty->assign('errorUpcomingEvents', $messsageUpcomingEvent->getMessage());
-    }//else
 }//else
 
 
@@ -60,16 +56,12 @@ if($messageOldEvents->getStatus()){
     $smarty->assign('oldEvents', $oldEvents);
 }//if
 else{
-    if($messageOldEvents->getNo()==501){ //if the database connection is OK, but there is no upcoming event
+    if(!is_null($messageOldEvents)){ //if the database connection is OK, but there is no upcoming event
         //set the upcoming events array empty
         $oldEvents=array();
         //stock it in smarty
         $smarty->assign('oldEvents', $oldEvents);
     }//if
-    else{//if the error is a real problematic error
-        //stock the error in smarty
-        $smarty->assign('errorOldEvents', $messageOldEvents->getMessage());
-    }//else
 }//else
 
 /*------------------------------actual event------------------------------*/
@@ -138,16 +130,12 @@ if($messageSlots->getStatus()){
     $smarty->assign('slotsAndSpeakers',$slotsAndSpeakers);
 }//if
 else{
-    if($messageSlots->getNo()==501){ //if the database connection is OK, but there is no slot
+    if(!is_null($messageSlots)){ //if the database connection is OK, but there is no slot
         //set the slots array empty
         $slots=array();
         //stock it in smarty
         $smarty->assign('slots', $slots);
     }//if
-    else{//if the error is a real problematic error
-        //stock the error variable in smarty
-        $smarty->assign('errorSlot', $messageSlots->getMessage());
-    }//else
 }//else
 
 /*------------------------------actual event location------------------------------*/

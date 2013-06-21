@@ -14,33 +14,35 @@ include 'header.php';
 include 'menu_frontend.php';
 
 /*------------------------------The event------------------------------*/
+//if the event number is set in the url
 if(isset($_GET['eventNo'])){
-    if($tedx_manager->getEvent($_GET['eventNo'])->getStatus){
+    //if an event with this number exists
+    if($tedx_manager->getEvent($_GET['eventNo'])->getStatus()){
+        //asign this event to a variable
         $actualEvent=$tedx_manager->getEvent($_GET['eventNo'])->getContent();
+        $smarty->assign('actualEvent', $actualEvent);
     }//if
+}//if
+
+/*-------------------- Are inscriptions open? (participation button display)--------------------*/
+if(isset($actualEvent)){
+    if($actualEvent->getStartingDate()>=date('Y-m-d')){
+        $inscriptionStatus=true;
+    }
     else{
-
-    }//else
-}//if
+        $inscriptionStatus=false;
+    }
+}
 else{
+    $inscriptionStatus=false;
+}
+//$smarty->assign('inscriptionStatus',$inscriptionStatus);
 
-}//else
+/*------------------------------ Where did the user come from? (return button) ------------------------------*/
+$userCameFrom=$_SERVER['HTTP_REFERER'];
+$smarty->assign('userCameFrom',$userCameFrom);
 
-
-/*------------------------------actual event------------------------------*/
-if(isset($upcomingEvents)){//if the upcoming events array exists
-    //get the actual Event
-    $actualEvent= $upcomingEvents[0];
-    //stock it in smarty
-    $smarty->assign('actualEvent', $actualEvent);
-}//if
-else{ //if the array doesn't exist
-    //no set of the actual event
-}//else
-
-
-
-/*------------------------------actual event slots and speakers------------------------------*/
+/*------------------------------ event slots and speakers------------------------------*/
 //get the slots of the first event
 $messageSlots=$tedx_manager->getSlotsFromEvent($actualEvent);
 //if the message is not an error message
@@ -55,8 +57,6 @@ if($messageSlots->getStatus()){
     foreach($slots as $slot){
         //get back the places of this slot
         $places=$tedx_manager->getPlacesBySlot($slot)->getContent();
-        //stock this slot in the general list
-       // $slotsAndSpeakers[$counter][0]=$slot;
         //initialize the array of speakers of this slot
         $thisSlotSpeakers=array();
 
@@ -72,15 +72,12 @@ if($messageSlots->getStatus()){
                     //add the speaker to the list
                     array_push($thisSlotSpeakers, $aSpeaker);
                 }//if
-
-
             }//foreach
             //create an array containing the slot and the list of speakers of that slot
             $thisSlotAndSpeakers=array('slot'=>$slot, 'speakers'=>$thisSlotSpeakers);
             //add the array we just created to the general slot and speakers list
             array_push($slotsAndSpeakers, $thisSlotAndSpeakers);
         }//if
-
         //increments the counter
         $counter++;
         $thisSlotSpeakers=array();
@@ -93,19 +90,15 @@ if($messageSlots->getStatus()){
     $smarty->assign('slotsAndSpeakers',$slotsAndSpeakers);
 }//if
 else{
-    if($messageSlots->getNo()==501){ //if the database connection is OK, but there is no slot
+    if(!is_null($messageSlots)){ //if the database connection is OK, but there is no slot
         //set the slots array empty
         $slots=array();
         //stock it in smarty
         $smarty->assign('slots', $slots);
     }//if
-    else{//if the error is a real problematic error
-        //stock the error variable in smarty
-        $smarty->assign('errorSlot', $messageSlots->getMessage());
-    }//else
 }//else
 
-/*------------------------------actual event location------------------------------*/
+/*------------------------------ event location------------------------------*/
 //get the actual event location
 $messageActualEventLocation=$tedx_manager->getLocationFromEvent($actualEvent);
 //if the message is not an error
@@ -123,7 +116,7 @@ else{
 }//else
 
 //display the template
-$smarty->display('events.tpl');
+$smarty->display('event_detail.tpl');
 
 //display the bottom userbar
 include 'userbar.php';

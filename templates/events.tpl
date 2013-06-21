@@ -21,10 +21,11 @@ Description : template of the events page
                                 <h1>TEDxLausanne No{$actualEvent->getNo()}</h1>
                                 <h2>{$actualEvent->getMainTopic()}</h2>
                                 <article class="EventAdress">
-                                    <h3>{$actualEventLocation->getAddress()}</h3>
-                                    <h3>{$actualEventLocation->getName()}</h3>
-                                    <h3>{$actualEventLocation->getCity()}</h3>
-                                    <h3>{$actualEventLocation->getCountry()}</h3>
+                                    <h2>Adress</h2>
+                                    <p>{$actualEventLocation->getAddress()}</p>
+                                    <p>{$actualEventLocation->getName()}</p>
+                                    <p>{$actualEventLocation->getCity()}</p>
+                                    <p>{$actualEventLocation->getCountry()}</p>
                                 </article>
                                 <p class="date">{$actualEvent->getStartingDate()}</p>
                                 <p>{$actualEvent->getDescription()}</p>
@@ -40,6 +41,7 @@ Description : template of the events page
         </article>
 
         <article class="programme_event">
+            <h2>Slots</h2>
             <!-- smarty variables existence test -->
             {if isset($slotsAndSpeakers)}
                 {if !empty($slotsAndSpeakers)}
@@ -47,7 +49,7 @@ Description : template of the events page
                     {section loop=$slotsAndSpeakers name=slot}
                        <ol class="slot_event">
                            {if !is_null($slotsAndSpeakers[slot].slot)}
-                                <li>Slot {$slotsAndSpeakers[slot].slot->getNo()}</li>
+                                <li><h3>Slot {$slotsAndSpeakers[slot].slot->getNo()}</h3></li>
                                 <li>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</li>
                                 <li>Live presentation : </li>
                                <ol>
@@ -70,7 +72,7 @@ Description : template of the events page
                 {/if}
             {else}
                 <!-- display of an error message if the variables aren't set -->
-                <p class="error_msg">{$errorSlot}</p>
+                <p class="error_msg">Error - No slots have been found</p>
             {/if}
         </article>
     </section>
@@ -83,8 +85,7 @@ Description : template of the events page
                     {section loop=$upcomingEvents name=upcoming}
                             <tr>
                                 <a href="events.php">
-                                    <td>{$upcomingEvents[upcoming]->getNo()}</td>
-                                    <td>{$upcomingEvents[upcoming]->getMainTopic()}</td>
+                                    <td><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
                                     <td>{$upcomingEvents[upcoming]->getStartingDate()}</td>
                                 </a>
                             </tr>
@@ -93,7 +94,7 @@ Description : template of the events page
                    <tr><td>No upcoming Events</td></tr>
                 {/if}
             {else}
-                <tr><td class="error_msg">{$errorUpcomingEvents}</td></tr>
+                <tr><td class="error_msg">Error - No upcoming Event have been found</td></tr>
             {/if}
         </table>
     </aside>
@@ -106,8 +107,7 @@ Description : template of the events page
                     {section loop=$oldEvents name=old}
                         <tr>
                             <a href="events.php">
-                                <td>{$oldEvents[old]->getNo()}</td>
-                                <td>{$oldEvents[old]->getMainTopic()}</td>
+                                <td><a href='event_detail.php?eventNo={$oldEvents[old]->getNo()}'>{$oldEvents[old]->getMainTopic()}</a></td>
                                 <td>{$oldEvents[old]->getStartingDate()}</td>
                             </a>
                         </tr>
@@ -116,7 +116,7 @@ Description : template of the events page
                     <tr><td>No old Events</td></tr>
                 {/if}
             {else}
-                <tr><td class="error_msg">{$errorOldEvents}</td></tr>
+                <tr><td class="error_msg">Error - No old Event have been found</td></tr>
             {/if}
         </table>
     </aside>
