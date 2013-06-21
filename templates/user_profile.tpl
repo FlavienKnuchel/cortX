@@ -26,13 +26,16 @@ Description : template of the user profile
                 <textarea type="text" name="Description" class="big">{$desc}</textarea>
                 <input type="submit" name="Edit" value="Edit" alt="Edit my informations" >
             </form>
+            {if isset($error_profile)}
+                <p class="error_msg">{$error_profile}</p>
+            {/if}
         </article>
         <h2>My password</h2>
         <p class="subtitle">Edit your password, leave blank if no changes</p>
         <article id="password">
             <form method="post" action="user_profile.php">
-                <input type="password" name="Password">
-                <input type="password" name="ConfirmPassword">
+                <input type="password" name="Password" placeholder="Password">
+                <input type="password" name="ConfirmPassword" placeholder="Confirm password">
                 <input type="submit" name="changePSW" value="Change" alt="Edit my password" >
             </form>
         </article>
