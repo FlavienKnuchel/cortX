@@ -35,7 +35,7 @@ max-height:100%;
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
 	position: fixed;
-	height: 40px;
+	height: auto;
 	width: 100%;
 	bottom: 0px;
 	background-color:#FF2B06;    
@@ -163,7 +163,7 @@ input[type=password], input[type=text], input[type=date], input[type=email] , in
     border-color:#ffffff;
     height:20px;
  }
-input[type=submit] {
+input[type=submit], #button {
     margin-top:3px;
     color:#e5e5e5;
     background-color:#333333;
@@ -172,7 +172,7 @@ input[type=submit] {
     width:130px;
     height:34px;
 }
-input[type=submit]:hover{
+input[type=submit]:hover, #button:hover{
     color:#e5e5e5;
     background-color:#626262;
     border:1px;
@@ -184,6 +184,9 @@ input .big{
 }
 textarea{
 
+}
+#button{
+    
 }
 /*---------------------------------Tuiles---------------------------------*/
 #tuile about {height:150px; width: 40%;;}
@@ -250,9 +253,9 @@ section.space {
     }
 
 
-/*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
+/*------------------@media smartphone-----------------*/
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 770px) {
     .container {   
         max-width: 728px;
     }
@@ -261,4 +264,16 @@ section.space {
     padding-top: 45px;
     padding-top: 45px;
     }
+}
+@media screen and (max-width: 770px) {
+    #nextevent{
+        padding-left:5%;
+    }
+    #nextevent img{
+        width:95%;
+    }
+    #videos_title{
+        padding-left:5%;
+    }
+    
 }

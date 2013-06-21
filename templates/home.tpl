@@ -6,8 +6,8 @@ Date : 14.6.2013
 
 Description : Basic structure of the homepage
 -->
-<section id="nextevent">
-    <article class="row">
+<section>
+    <article id="nextevent" class="row">
         <div class="offset2 span6">
             <h2>{$NextEventName}</h2>
             <p class="subtitle">getEventStartingDate()</p>
