@@ -18,7 +18,7 @@ Description : template of the registration to an event
         <article class="coordonees">
             <input type="text" name="lastname" placeholder="Your name" autofocus required>
             <input type="text" name="firstname" placeholder="Your firstname" required>
-            <label for="Date">Date of birth:</label>
+            <label for="date">Date of birth:</label>
             <input type="date" name="date" placeholder="YYYY-MM-DD"required>
             <input type="text" name="adress" placeholder="Your adress" required>
             <input type="text" name="city" placeholder="Your town" required>
