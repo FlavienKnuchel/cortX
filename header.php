@@ -70,8 +70,8 @@ $smarty->display('header.tpl');
 //display the header
 require_once('../tedx-config.php');
 
-$smarty->assign('loggedin', $tedx_manager->isLogged()); //assign value for smarty test
 
+$smarty->assign('loggedin', $tedx_manager->isLogged()); //assign value for smarty test
 //test the user level 
 if ($tedx_manager->isLogged()) {
     if ($tedx_manager->isParticipant()) {

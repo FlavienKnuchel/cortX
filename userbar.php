@@ -9,6 +9,5 @@
  *
  * Description : Triggers actions to be displayed on the userbar.tpl
  */
-$smarty->assign('username', $tedx_manager->getUsername()); //assign username to smarty
 $smarty->display('userbar.tpl');
 ?>
