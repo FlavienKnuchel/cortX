@@ -112,22 +112,24 @@ footer form{
     color:#ffffff;
 }
 
-#setting {
+a#setting {
     width:30px;
     height:30px;
     background-image:url(../img/setting.png);
     background-repeat:no-repeat;
      margin-top:5px;
+
 }
 
-#setting:hover{
+a#setting:hover{
     width:30px;
     height:30px;
     margin-top:5px;
+
     background-image:url(../img/setting_hover.png);
 }
 
-#home_icon {
+a#home_icon {
     width:30px;
     height:30px;
     background-image:url(../img/home.png);
@@ -135,7 +137,7 @@ footer form{
      margin-top:5px;
 }
 
-#home_icon:hover{
+a#home_icon:hover{
     width:30px;
     height:30px;
     margin-top:5px;
