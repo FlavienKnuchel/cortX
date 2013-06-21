@@ -13,26 +13,27 @@ require_once '../tedx-config.php';
 if ($tedx_manager->isLogged()) {
     if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'logout') {
         $tedx_manager->logout();
-        include 'home.php';
+        header('Location: home.php');
+//        include 'home.php';
     } else {
         //test des droits
         if ($tedx_manager->isOrganizer() || $tedx_manager->isValidator() || $tedx_manager->isAdministrator() || $tedx_manager->isSuperadmin()) {
-            include 'backend_home.php';
+            header('Location: backend_home.php');
         } else {
-            include 'user_inscriptions.php';
+            header('Location: user_inscriptions.php');
         }
     }
 } else {
     if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'logout') {
-        include 'home.php';
+        header('Location: home.php');
     } else {
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $message = $tedx_manager->login($_POST['username'], $_POST['password']); //login test
             if ($tedx_manager->isLogged()) {
                 if ($tedx_manager->isOrganizer() || $tedx_manager->isValidator() || $tedx_manager->isAdministrator() || $tedx_manager->isSuperadmin()) {//redirect the user according to his rights
-                    include 'backend_home.php';
+                    header('Location: backend_home.php');
                 } else {
-                    include 'user_inscriptions.php';
+                    header('Location: user_inscriptions.php');
                 }
             } else {
                 include 'header.php';
