@@ -10,6 +10,7 @@
  * Description :
  */
 
+
 //creating the smarty object
 require('.\Smarty\libs\Smarty.class.php');
 $smarty = new Smarty();
@@ -20,47 +21,54 @@ $smarty->setCacheDir('./cache');
 $smarty->setConfigDir('./configs');
 
 //checking the active page (for menu visual)
-
-if (strstr($_SERVER["REQUEST_URI"], '/events.php')) {
-    $smarty->assign('activePage', 'events');
-} else {
-    if (strstr($_SERVER["REQUEST_URI"], 'medias')) {
-        $smarty->assign('activePage', 'medias');
-    } else {
-        if (strstr($_SERVER["REQUEST_URI"], 'about')) {
-            $smarty->assign('activePage', 'about');
-        } else {
-            if (strstr($_SERVER["REQUEST_URI"], 'team')) {
-                $smarty->assign('activePage', 'team');
-            } else {
-                if (strstr($_SERVER["REQUEST_URI"], 'speaker')) {
-                    $smarty->assign('activePage', 'speakers');
-                } else {
-                    if (strstr($_SERVER["REQUEST_URI"], 'home')) {
-                        $smarty->assign('activePage', 'home');
-                    } else {
-                        if (strstr($_SERVER["REQUEST_URI"], 'inscription')) {
-                            $smarty->assign('activePage', 'inscription');
-                        } else {
-                            if (strstr($_SERVER["REQUEST_URI"], 'login')) {
-                                $smarty->assign('activePage', 'login');
-                            } else {
-                                if (strstr($_SERVER["REQUEST_URI"], 'backend')) {
-                                    $smarty->assign('activePage', 'backend');
-                                } else {
-                                    $smarty->assign('activePage', 'home');
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+//get the url
+$url=$_SERVER["REQUEST_URI"];
+//cut the first part
+$text=substr($url,24);
+//cut the end
+$text=explode(".",$text);
+//select the first part
+$activeUrl=$text[0];
+//test the first part and react
+echo $activeUrl;
+switch($activeUrl){
+    case "events":
+    case "event_detail":
+        $activePage='events';
+        break;
+    case "medias":
+        $activePage='medias';
+        break;
+    case "about":
+        $activePage='about';
+        break;
+    case "home":
+        $activePage='home';
+        break;
+    case "index":
+        $activePage='home';
+        break;
+    case "inscription":
+        $activePage='events';
+        break;
+    case "login":
+        $activePage='home';
+        break;
+    case "speakers":
+    case "speaker_profil":
+        $activePage='speakers';
+        break;
+    case "team":
+        $activePage='team';
+        break;
+    //defaul value
+    default:
+        $activePage='home';
 }
-
-
+//assign the activePage variable to smarty (for the menu display)
+$smarty->assign('activePage',$activePage);
 $smarty->display('header.tpl');
+//display the header
 require_once('../tedx-config.php');
 
 $smarty->assign('loggedin', $tedx_manager->isLogged()); //assign value for smarty test
