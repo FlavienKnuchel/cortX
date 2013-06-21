@@ -9,7 +9,7 @@
  *
 -->
 <aside id="loginToAccount">
-    <p>{$errorlogin}</p>
+    <p class="error_msg">{$errorlogin}</p>
     <form method="POST" action="login.php">
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">

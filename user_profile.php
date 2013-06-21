@@ -19,69 +19,78 @@ if ($tedx_manager->isLogged()) {
         $name = $_POST['Name'];
         $edit = TRUE;
     } else {
-        $smarty->assign('name', $person->getName());
+        $name = $person->getName();
     }
     if (isset($_POST['Firstname'])) {
         $firstname = $_POST['Firstname'];
         $edit = TRUE;
     } else {
-        $smarty->assign('firstname', $person->getFirstName());
+        $firstname = $person->getFirstName();
     }
     if (isset($_POST['Date'])) {
         $dateofbirth = $_POST['Date'];
         $edit = TRUE;
     } else {
-        $smarty->assign('birthdate', $person->getDateOfBirth());
+        $dateofbirth = $person->getDateOfBirth();
     }
     if (isset($_POST['Address'])) {
         $address = $_POST['Address'];
         $edit = TRUE;
     } else {
-        $smarty->assign('address', $person->getAddress());
+        $address = $person->getAddress();
     }
     if (isset($_POST['City'])) {
         $city = $_POST['City'];
         $edit = TRUE;
     } else {
-        $smarty->assign('city', $person->getCity());
+        $city = $person->getCity();
     }
     if (isset($_POST['Country'])) {
         $country = $_POST['Country'];
         $edit = TRUE;
     } else {
-        $smarty->assign('country', $person->getCountry());
+        $country = $person->getCountry();
     }
     if (isset($_POST['Phone'])) {
         $phone = $_POST['Phone'];
         $edit = TRUE;
     } else {
-        $smarty->assign('phone', $person->getPhoneNumber());
+        $phone = $person->getPhoneNumber();
     }
     if (isset($_POST['Email'])) {
         $email = $_POST['Email'];
         $edit = TRUE;
     } else {
-        $smarty->assign('email', $person->getEmail());
+        $email = $person->getEmail();
     }
     if (isset($_POST['Description'])) {
         $desc = htmlspecialchars($_POST['Description']);
         $edit = TRUE;
     } else {
-        $smarty->assign('desc', $person->getDescription());
+        $desc = $person->getDescription();
     }
+    $smarty->assign('name', $name);
+    $smarty->assign('firstname', $firstname);
+    $smarty->assign('birthdate', $dateofbirth);
+    $smarty->assign('address', $address);
+    $smarty->assign('city', $city);
+    $smarty->assign('country', $country);
+    $smarty->assign('phone', $phone);
+    $smarty->assign('email', $email);
+    $smarty->assign('desc', $desc);
     if ($edit == TRUE) {
         $args = array(
             $tedx_manager->getLoggedPerson()->getContent()->getNo(),
             $name, $firstname, $dateofbirth, $address, $city, $country,
             $phone, $email, $desc);
-            var_dump($args);
-        if ($tedx_manager->changeProfil($args)->getStatus()) {
-            print ('<p class="error_msg">');
-            print ("Profile changed with great success!.</p>");
+        var_dump($args);
+        $messageChangeProfile = $tedx_manager->changeProfil($args);
+        var_dump($messageChangeProfile);
+        if ($messageChangeProfile->getStatus()) {
+            $smarty->assign('error_profile', $messageChangeProfile->getMessage());
         } else {
-            print ('<p class="error_msg">');
-            print ("Profile did not change!.</p>");
-        }   
+            $smarty->assign('error_profile', $messageChangeProfile->getMessage());
+        }
     }
     if (isset($_POST['Password'])) {
         if ($_POST['Password'] == $_POST['ConfirmPassword']) {
