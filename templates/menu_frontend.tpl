@@ -1,4 +1,10 @@
-<body>
+    <LINK rel="stylesheet" media="all" href="css/cortx.css" />
+<title>CORTx</title>
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
         <div id="content">
         <nav class="row">
             <ul>

@@ -7,8 +7,8 @@ Date : 18.6.2013
 Description : template of the backend home page
 
 -->
-
-<section id="tuile" class="space">    
+ 
+<section id="tuile" class="space backend">    
     <article class="offset2 span8">
         <ul>
             <li>

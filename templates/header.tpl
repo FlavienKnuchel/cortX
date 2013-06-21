@@ -14,9 +14,6 @@ Description : general navigation and
     <LINK rel="stylesheet" media="all" href="css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="css/grid.css" />
     <LINK rel="stylesheet" media="all" href="css/menu.css" />
-    <LINK rel="stylesheet" media="all" href="css/cortx.css" />
-    <LINK rel="stylesheet" media="all" href="css/cortx_backend.css" />
-
         <LINK rel="stylesheet" media="all" href="css/colorbox.css" />
 
         <!-- colorbox javascript-->
@@ -36,9 +33,3 @@ Description : general navigation and
             </script>
         {/literal}
         <!-- enf of colorbox javascript-->
-    <title>CORTx</title>
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-    
