@@ -24,7 +24,7 @@ Description : template of the backend home page
                 <a href="backend_account.php" title="Account"><h3 class=" span2">All account</h3></a>
             </li>
             <li>
-                <a href="backend_events" title="Events"><h3 class=" span2">Events</h3></a>
+                <a href="backend_events.php" title="Events"><h3 class=" span2">Events</h3></a>
             </li>
         </ul>
     </article>
