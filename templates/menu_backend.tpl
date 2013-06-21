@@ -15,7 +15,7 @@
                 	<a href="home.php" ><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
                 </li>
                     <li>
-                        <a href="backend_home.php">Backend home</a>
+                        <a href="backend_home.php">Management aera</a>
                     </li>
                 <li></li>
                 <li></li>
