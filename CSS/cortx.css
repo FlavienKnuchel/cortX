@@ -291,12 +291,7 @@ background-color:#f0f0f0;
     text-align:right
 }
 
-td.title{
-width: 190px;
-}
 
-td.date{
-font-weight:bold;}
 
 
 ol li{
@@ -367,10 +362,15 @@ color:#ff2b06;}
     
     }
     td.title{
-        width: 100%;
+        width: 80%;
         padding-top:2px;
         padding-bottom:2px;
     }
+td.date{
+    font-weight:bold;
+    width:20%;
+    text-align:right;
+}
 /*--------------------------------- pages about ---------------------------------*/
 #about{
     margin:3%;

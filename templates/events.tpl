@@ -82,7 +82,7 @@ Description : template of the events page
                     {if !empty($upcomingEvents)}
                         <tr class="table_title">
                             <td>Event name</td>
-                            <td>Date</td>
+                            <td class="date">Date</td>
                         </tr>
                         {section loop=$upcomingEvents name=upcoming start=1}
                                 <tr class="zebra">
@@ -108,7 +108,7 @@ Description : template of the events page
                     {if !empty($oldEvents)}
                         <tr class="table_title">
                             <td>Event name</td>
-                            <td>Date</td>
+                            <td class="date">Date</td>
                         </tr>
                         {section loop=$oldEvents name=old}
                             <tr class="zebra">
