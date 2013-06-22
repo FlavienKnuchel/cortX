@@ -281,6 +281,11 @@ margin-top: 65px
 text-decoration:none;
 color:#ff2b06;}
 
+ol li{
+    list-style:none;
+    
+}
+
 /*--------------------------------- pages about ---------------------------------*/
 #about{
     margin-top:5%;
