@@ -238,6 +238,35 @@ textarea{
 
 }
 
+div.button_back{
+    background-image:url(../img/back.png);
+    background-repeat:no-repeat;
+    color: #E5E5E5;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 13px;
+    margin-top: 13px;
+    text-align: center;
+    width: 130px;
+    font-weight: bold;
+}
+.button_back a{
+    color: #E5E5E5;
+    display: block;
+    font-weight: bold;
+    height: 35px;
+    text-decoration: none;
+    width: 130px;
+    
+}
+.button_back:hover{
+    color:#e5e5e5;    
+    width:130px;
+    height:35px;
+    background-image:url(../img/back_hover.png);
+    background-repeat:no-repeat;
+   
+}
 /*---------------------------------Tuiles---------------------------------*/
 .tuile about {height:150px; width: 40%;;}
 
@@ -297,8 +326,20 @@ background-color:#f0f0f0;
     text-align:right
 }
 
-
-
+#event_detail .button{
+    
+}
+#current_event .button{
+    float:right;
+    margin-right:15px;
+    width:200px;
+    height:50px;
+}
+#current_event .button a{
+    width:200px;
+    line-height:50px;
+    height: 50px;
+}
 
 ol li{
     list-style:none;
