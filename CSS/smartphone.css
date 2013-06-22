@@ -7,6 +7,13 @@
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
+        padding-left:5%;
+    }
+    #nextevent img{
+        width:95%;
+    }
+    #socialnet li .span1{
+        width:80%;
     }
     #videos_title{
         padding-left:5%;
