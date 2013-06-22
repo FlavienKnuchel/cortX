@@ -79,8 +79,12 @@ Description : template of the events page
         <table>
             {if isset($upcomingEvents)}
                 {if !empty($upcomingEvents)}
+                    <tr class="table_title">
+                        <td>Event name</td>
+                        <td>Date</td>
+                    </tr>
                     {section loop=$upcomingEvents name=upcoming start=1}
-                            <tr>
+                            <tr class="zebra">
                                 <a href="events.php">
                                     <td class="title"><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
                                     <td class="date">{$upcomingEvents[upcoming]->getStartingDate()}</td>

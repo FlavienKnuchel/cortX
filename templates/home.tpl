@@ -12,7 +12,8 @@ Description : Basic structure of the homepage
             <h2>{$NextEventName}</h2>
             <p class="subtitle">getEventStartingDate()</p>
             <p>{$NextEventDesc}</p>
-            <a href="events.php" class="button" title="Get more infos and register to this event!">More Infos !</a>
+            <div class="button">
+            <a href="events.php" title="Get more infos and register to this event!">More Infos !</a></div>
         </div>
         <article class="span2">
            <img src="img/event_now.png"/>

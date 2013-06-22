@@ -69,6 +69,22 @@
         max-width:92%;
         margin-top:5%;
     }
+    .zebra{
+    height:80px;
+    
+    background-color:#f0f0f0;
+    border-top:2px solid #c9c9c9;
+    }
+    .table_title{
+    height:50px;
+    
+    
+    }
+    td.title{
+        width: 100%;
+        
+    }
+
     /*---------------------------speakers-------------------------------*/
     #speaker_year{
         max-width:90%;
