@@ -37,7 +37,7 @@ Description : template of the general team page
                 <a href="team_hospitalityAndEventsTeam.php" class="html" title="Hospitality and events team"><h3 class="span2 twoLines">Hospitality and events team</h3></a>
             </li>
             <li>
-                <a href="team_speakersSelectionTeam.php" class="html" title="Speakers selection team"><h3 class="span2 twoLines">Speakers selection <p>team</p></h3></a>
+                <a href="team_speakersSelectionTeam.php" class="html" title="Speakers selection team"><h3 class="span2 twoLines">Speakers selection team</h3></a>
             </li>
             <li>
                 <a href="team_qualityAndSubstainabilityTeam.php" class="html" title="Quality and substainability team"><h3 class="span2 twoLines bottom">Quality and substainability team</h3></a>

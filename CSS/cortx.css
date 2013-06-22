@@ -6,6 +6,12 @@ body {
     margin:0 auto;
     
 }
+a:active{
+    outline:none;
+}
+a:focus{
+    outline:none;
+}
 body h1{
     font-size:2em;
     color:#ff2b06;
@@ -248,7 +254,7 @@ textarea{
 }
 
 .tuile h3.twoLines {
-    padding-top: 60px;
+    padding-top: 45px;
 }
 
 
@@ -316,7 +322,12 @@ ol li{
 }
 .programme_event a {
 text-decoration:none;
-color:#ff2b06;}
+color:#ff2b06;
+}
+.programme_event a:hover {
+text-decoration:none;
+color:#333333;
+}
 
 #upcomingEvents {
     background-color:#f0f0f0;
@@ -331,8 +342,8 @@ color:#ff2b06;}
 }
 
 #upcomingEvents a:hover {
-    text-decoration:underline;
-    color:#ff2b06;
+    text-decoration:none;
+    color:#333333;
 }
 
 #oldEvents {
@@ -345,31 +356,30 @@ color:#ff2b06;}
 #oldEvents a {
     text-decoration:none;
     color:#ff2b06;
-    font-weight:100;
 }
 #oldEvents a:hover {
-    text-decoration:underline;
-    color:#ff2b06;
+    text-decoration:none;
+    color:#333333;
 }
+
             /*------------------------table--------------------------*/
  .zebra{
     background-color:#f0f0f0;
     border-top:1px solid #c9c9c9;
     }
-    .table_title{
+.table_title{
     height:30px;
     font-weight:bold;
     
     }
-    td.title{
-        width: 80%;
-        padding-top:2px;
-        padding-bottom:2px;
-    }
+td.title{
+    width: auto;
+    padding-top:2px;
+    padding-bottom:2px;
+}
 td.date{
     font-weight:bold;
-    width:20%;
-    text-align:right;
+    width:65px;
 }
 /*--------------------------------- pages about ---------------------------------*/
 #about{
