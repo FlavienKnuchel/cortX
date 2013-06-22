@@ -12,22 +12,18 @@ Description : template of the events page
 <section id="event_detail">
     <section class="row">
     <section id="current_event" class="offset2 span5">
-        <div class="button"> <a href="inscription.php">Participate</a></div>
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($actualEvent) and isset($actualEventLocation)}
                 {if !empty($actualEvent) and !empty($actualEventLocation)}
-                    <!-- loop through the events array -->
-                        <!-- test to display the first event (last of the array) -->
+                    <div class="button" id="actualParticipateButton"> <a href="inscription.php">Participate</a></div>
                                 <h1>{$actualEvent->getMainTopic()}</h1>
-                                <article class="EventAdress">
-                                    <h2>Adress</h2>
-                                    <p>{$actualEventLocation->getAddress()}</p>
-                                    <p>{$actualEventLocation->getName()}</p>
-                                    <p>{$actualEventLocation->getCity()}</p>
-                                    <p>{$actualEventLocation->getCountry()}</p>
+                    <h2 class="date">{$actualEvent->getStartingDate()}</h2>
+                                <article class="actualEventAdress">
+                                    <p>{$actualEventLocation->getAddress()}</p><p>{$actualEventLocation->getName()}</p>
+                                    <p>{$actualEventLocation->getCity()}, {$actualEventLocation->getCountry()}</p>
                                 </article>
-                                <p class="date">{$actualEvent->getStartingDate()}</p>
+
                                 <p>{$actualEvent->getDescription()}</p>
                 {else}
                     <!--  error message ifno event is scheduled -->

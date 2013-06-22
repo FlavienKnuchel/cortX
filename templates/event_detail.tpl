@@ -15,7 +15,7 @@ Description : template of the events page
     {/if}
     <section id="current_event">
         {if isset($inscriptionStatus) && $inscriptionStatus}
-            <div id="button"><a href="inscription.php">Participate</a></div>
+            <div class="button"><a href="inscription.php">Participate</a></div>
         {/if}
         <article class="desc_event">
             <!-- smarty variables existence test -->

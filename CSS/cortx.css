@@ -279,7 +279,6 @@ section.space {
 margin-top: 60px;
 background-color:#f0f0f0;
 padding:10px 10px 10px 10px;
-
 }
 
 #upcomingEvents a{
@@ -290,6 +289,28 @@ color:#ff2b06;
 #upcomingEvents a:hover {
 text-decoration:underline;
 color:#ff2b06;
+}
+
+#actualParticipateButton{
+    float:right;
+    margin-right:15px;
+    width:200px;
+    height:50px;
+}
+#actualParticipateButton a{
+    width:200px;
+    line-height:50px;
+}
+
+.actualEventAdress{
+    float:right;
+    margin-right:19px;
+    text-align:right
+}
+
+
+article.desc_event{
+    margin-top:60px;
 }
 
 td.title{
