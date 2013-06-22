@@ -11,13 +11,13 @@ Description : template of the events page
 
 <section id="event_detail">
     <section class="row">
-    <section id="current_event" class="offset2 span5">
+    <section id="current_event" class="offset2 span8">
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($actualEvent) and isset($actualEventLocation)}
                 {if !empty($actualEvent) and !empty($actualEventLocation)}
                     <div class="button" id="actualParticipateButton"> <a href="inscription.php">Participate</a></div>
-                                <h1>{$actualEvent->getMainTopic()}</h1>
+                                <h1 class="current_event_title">{$actualEvent->getMainTopic()}</h1>
                     <h2 class="date">{$actualEvent->getStartingDate()}</h2>
                                 <article class="actualEventAdress">
                                     <p>{$actualEventLocation->getAddress()}</p><p>{$actualEventLocation->getName()}</p>
@@ -72,55 +72,60 @@ Description : template of the events page
             {/if}
         </article>
     </section>
-        <section class="span3">
-
-    <aside id="upcomingEvents">
-        <h2>Upcoming events</h2>
-        <table>
-            {if isset($upcomingEvents)}
-                {if !empty($upcomingEvents)}
-                    <tr class="table_title">
-                        <td>Event name</td>
-                        <td>Date</td>
-                    </tr>
-                    {section loop=$upcomingEvents name=upcoming start=1}
+        
+        
+    <section class="row">
+        <aside id="upcomingEvents" class="offset2 span4">
+            <h2>Upcoming events</h2>
+            <table>
+                {if isset($upcomingEvents)}
+                    {if !empty($upcomingEvents)}
+                        <tr class="table_title">
+                            <td>Event name</td>
+                            <td>Date</td>
+                        </tr>
+                        {section loop=$upcomingEvents name=upcoming start=1}
+                                <tr class="zebra">
+                                    <a href="events.php">
+                                        <td class="title"><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
+                                        <td class="date">{$upcomingEvents[upcoming]->getStartingDate()}</td>
+                                    </a>
+                                </tr>
+                        {/section}
+                    {else}
+                       <tr><td>No upcoming Events</td></tr>
+                    {/if}
+                {else}
+                    <tr><td class="error_msg">Error - No upcoming Event have been found</td></tr>
+                {/if}
+            </table>
+        </aside>
+    
+        <aside id="oldEvents" class="span4">
+            <h2>Old events</h2>
+            <table>
+                {if isset($oldEvents)}
+                    {if !empty($oldEvents)}
+                        <tr class="table_title">
+                            <td>Event name</td>
+                            <td>Date</td>
+                        </tr>
+                        {section loop=$oldEvents name=old}
                             <tr class="zebra">
                                 <a href="events.php">
-                                    <td class="title"><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
-                                    <td class="date">{$upcomingEvents[upcoming]->getStartingDate()}</td>
+                                    <td class="title"><a href='event_detail.php?eventNo={$oldEvents[old]->getNo()}'>{$oldEvents[old]->getMainTopic()}</a></td>
+                                    <td class="date">{$oldEvents[old]->getStartingDate()}</td>
                                 </a>
                             </tr>
-                    {/section}
+                        {/section}
+                    {else}
+                        <tr><td>No old Events</td></tr>
+                    {/if}
                 {else}
-                   <tr><td>No upcoming Events</td></tr>
+                    <tr><td class="error_msg">Error - No old Event have been found</td></tr>
                 {/if}
-            {else}
-                <tr><td class="error_msg">Error - No upcoming Event have been found</td></tr>
-            {/if}
-        </table>
-    </aside>
-
-    <aside id="oldEvents">
-        <h2>Old events</h2>
-        <table>
-            {if isset($oldEvents)}
-                {if !empty($oldEvents)}
-                    {section loop=$oldEvents name=old}
-                        <tr>
-                            <a href="events.php">
-                                <td class="title"><a href='event_detail.php?eventNo={$oldEvents[old]->getNo()}'>{$oldEvents[old]->getMainTopic()}</a></td>
-                                <td class="date">{$oldEvents[old]->getStartingDate()}</td>
-                            </a>
-                        </tr>
-                    {/section}
-                {else}
-                    <tr><td>No old Events</td></tr>
-                {/if}
-            {else}
-                <tr><td class="error_msg">Error - No old Event have been found</td></tr>
-            {/if}
-        </table>
-    </aside>
+            </table>
+        </aside>
    </section>                 
 </section>
 </section>

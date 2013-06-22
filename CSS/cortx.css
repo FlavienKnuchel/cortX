@@ -265,20 +265,9 @@ section.space {
 }
 .tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
-#upcomingEvents {
-margin-top: 60px;
+#current_event{
 background-color:#f0f0f0;
-padding:10px 10px 10px 10px;
-}
-
-#upcomingEvents a{
-text-decoration:none;
-color:#ff2b06;
-}
-
-#upcomingEvents a:hover {
-text-decoration:underline;
-color:#ff2b06;
+    margin-top:60px;
 }
 
 #actualParticipateButton{
@@ -290,17 +279,13 @@ color:#ff2b06;
 #actualParticipateButton a{
     width:200px;
     line-height:50px;
+    height: 50px;
 }
 
 .actualEventAdress{
     float:right;
     margin-right:19px;
     text-align:right
-}
-
-
-article.desc_event{
-    margin-top:60px;
 }
 
 td.title{
@@ -315,8 +300,8 @@ ol li{
     list-style:none;
     
 }
+
 .desc_event  {
-background-color:#f0f0f0;
     padding:10px 10px 10px 10px;
     margin-right:10px;
 }
@@ -325,7 +310,6 @@ background-color:#f0f0f0;
 }
 
 .programme_event {
-    background-color:#f0f0f0;
     padding:10px 10px 10px 10px;
     margin-right:10px;
 }
@@ -336,22 +320,54 @@ background-color:#f0f0f0;
 text-decoration:none;
 color:#ff2b06;}
 
+#upcomingEvents {
+    background-color:#f0f0f0;
+    padding:10px 10px 10px 10px;
+    margin-right:1.5%;
+    width:31.83333333%;
+}
+
+#upcomingEvents a{
+    text-decoration:none;
+    color:#ff2b06;
+}
+
+#upcomingEvents a:hover {
+    text-decoration:underline;
+    color:#ff2b06;
+}
+
 #oldEvents {
     background-color:#f0f0f0;
     padding:10px 10px 10px 10px;
-
+    margin-left:1.5%;
+    width:31.83333333%;
 }
 
 #oldEvents a {
-text-decoration:none;
-color:#ff2b06;
-font-weight:100;}
-
-#oldEvents a:hover {
-text-decoration:underline;
-color:#ff2b06;
+    text-decoration:none;
+    color:#ff2b06;
+    font-weight:100;
 }
-
+#oldEvents a:hover {
+    text-decoration:underline;
+    color:#ff2b06;
+}
+            /*------------------------table--------------------------*/
+ .zebra{
+    background-color:#f0f0f0;
+    border-top:1px solid #c9c9c9;
+    }
+    .table_title{
+    height:30px;
+    font-weight:bold;
+    
+    }
+    td.title{
+        width: 100%;
+        padding-top:2px;
+        padding-bottom:2px;
+    }
 /*--------------------------------- pages about ---------------------------------*/
 #about{
     margin:3%;
