@@ -137,7 +137,8 @@ ul li{
 /*section elements take full page width*/
 section
 {
-    width:100%
+    width:100%;
+    margin-bottom:40px;
 }
 
 /*article margins*/

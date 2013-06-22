@@ -8,6 +8,7 @@
     #nextevent{        
         max-width:95%;
         padding-left:5%;
+        margin-top:5%;
     }
     #nextevent img{
         width:95%;
@@ -31,7 +32,7 @@
     display:inline;
     }
     #videos{
-       
+       margin-top:5%;
     }
     /*-------------------userbar-----------------------------------*/
     footer form {    
@@ -40,7 +41,7 @@
     /*---------------------------tuiles---------------------------------*/
     .tuile h3{
     background-color:#f0f0f0;
-    min-width:200px;
+    width:100%;
     text-align:center;
     height: 100px;
     margin-top:5px;
@@ -60,10 +61,18 @@
     #event_detail{
         max-width:90%;
         margin-left:5%;
+        margin-top:5%;
     }
     
     #team{
         margin:5%;
         max-width:92%;
+        margin-top:5%;
+    }
+    /*---------------------------speakers-------------------------------*/
+    #speaker_year{
+        max-width:90%;
+        margin-left:5%;
+        margin-top:5%;
     }
 }
