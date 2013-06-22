@@ -58,3 +58,7 @@ Description : Basic structure of the homepage
         <li class="span1"><a href="#" title="Linked"><img src="img/sociaux/logo_linkedin.png"/></a></li>
     </ul>
 </article>
+
+<article id="tedxDisclaimer" class="row">
+    <p>This independent TEDx event is operated under license from TED.</p>
+</article>
