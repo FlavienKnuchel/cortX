@@ -12,9 +12,8 @@ Description : backend of the participant page
         {if !empty($sentReg)}
             <table>
                 {section name=sentreg loop=$sentReg max=10}
-                    <!-- do a loop on li-->
                     <tr>
-                    <a href="backend_validation_inscriptions.php?id={$sentRegSerialized[sentreg]}">
+                    <a href="?id={$sentRegSerialized[sentreg]}">
                         <td>{$sentReg[sentreg]->getEventNo()}</td>
                         <td>{$sentReg[sentreg]->getParticipantPersonNo()}</td>
                     </a>
@@ -29,10 +28,9 @@ Description : backend of the participant page
         {if !empty($acceptedReg)}
             <table>
                 {section name=acceptedreg loop=$acceptedReg max=10}
-                    <!-- do a loop on li-->
                     <tr>
                         <td>
-                            <a href="backend_validation_inscriptions.php?id={$acceptedRegSerialized[acceptedreg]}">
+                            <a href="?id={($acceptedRegSerialized[acceptedreg])}">
                                 {$acceptedReg[acceptedreg]->getEventNo()}
                             </a>
                         </td>
@@ -46,8 +44,10 @@ Description : backend of the participant page
     <asside id="motivation">
         <h2>Motivation</h2>
         <p><!-- afficher la motivation du participant cliqué...--></p>
-
-        <input type="submit" name="Validate" value="Validate" alt="Accept the registration">
-        <input type="submit" name="Cancel" value="Cancel" alt="Refuse the registration">
+        <form method="POST" action="backend_validation_inscriptions.php">
+            <input type="hidden" name="registration" value="">
+            <input type="submit" name="Accept" value="Accept" alt="Accept the registration">
+            <input type="submit" name="Refuse" value="Refuse" alt="Refuse the registration">
+        </form>
     </asside>
 </section>
