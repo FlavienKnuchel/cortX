@@ -7,6 +7,7 @@ Date : 17.6.2013
 Description : template of the registration to an event
 
 -->
+
 {if isset($userCameFrom)}
     <div class="button"><a href='{$userCameFrom}'>Retour</a></div>
 {/if}
