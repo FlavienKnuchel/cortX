@@ -276,15 +276,69 @@ section.space {
 .tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
 #upcomingEvents {
-margin-top: 65px
+margin-top: 60px;
+background-color:#f0f0f0;
+padding:10px 10px 10px 10px;
+
 }
+
 #upcomingEvents a{
 text-decoration:none;
-color:#ff2b06;}
+color:#ff2b06;
+}
+
+#upcomingEvents a:hover {
+text-decoration:underline;
+color:#ff2b06;
+}
+
+td.title{
+width: 190px;
+}
+
+td.date{
+font-weight:bold;}
+
 
 ol li{
     list-style:none;
     
+}
+.desc_event  {
+background-color:#f0f0f0;
+    padding:10px 10px 10px 10px;
+    margin-right:10px;
+}
+.desc_event p {
+    margin-bottom:5px;
+}
+
+.programme_event {
+    background-color:#f0f0f0;
+    padding:10px 10px 10px 10px;
+    margin-right:10px;
+}
+.programme_event p {
+    margin-bottom:5px;
+}
+.programme_event a {
+text-decoration:none;
+color:#ff2b06;}
+
+#oldEvents {
+    background-color:#f0f0f0;
+    padding:10px 10px 10px 10px;
+
+}
+
+#oldEvents a {
+text-decoration:none;
+color:#ff2b06;
+font-weight:100;}
+
+#oldEvents a:hover {
+text-decoration:underline;
+color:#ff2b06;
 }
 
 /*--------------------------------- pages about ---------------------------------*/

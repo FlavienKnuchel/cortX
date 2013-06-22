@@ -86,8 +86,8 @@ Description : template of the events page
                     {section loop=$upcomingEvents name=upcoming start=1}
                             <tr>
                                 <a href="events.php">
-                                    <td><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
-                                    <td>{$upcomingEvents[upcoming]->getStartingDate()}</td>
+                                    <td class="title"><a href='event_detail.php?eventNo={$upcomingEvents[upcoming]->getNo()}'> {$upcomingEvents[upcoming]->getMainTopic()}</a></td>
+                                    <td class="date">{$upcomingEvents[upcoming]->getStartingDate()}</td>
                                 </a>
                             </tr>
                     {/section}
@@ -108,8 +108,8 @@ Description : template of the events page
                     {section loop=$oldEvents name=old}
                         <tr>
                             <a href="events.php">
-                                <td><a href='event_detail.php?eventNo={$oldEvents[old]->getNo()}'>{$oldEvents[old]->getMainTopic()}</a></td>
-                                <td>{$oldEvents[old]->getStartingDate()}</td>
+                                <td class="title"><a href='event_detail.php?eventNo={$oldEvents[old]->getNo()}'>{$oldEvents[old]->getMainTopic()}</a></td>
+                                <td class="date">{$oldEvents[old]->getStartingDate()}</td>
                             </a>
                         </tr>
                     {/section}
