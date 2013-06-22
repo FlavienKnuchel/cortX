@@ -25,7 +25,7 @@
 
 <section>
 	<article class="offset2 span8 error">
-        <h1>error 4<span class="x">x</span>4</h1>
+        <h1>error 4<span class="x">0</span>4</h1>
         
             <p> We can't find the page you're looking for. Go back to <a href="#" title="Home">Home</a>.</p>
     
