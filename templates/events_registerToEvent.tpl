@@ -13,10 +13,15 @@ Description : template of the registration to an event
 {/if}
 <section id="registerToEvent">
     <h2>Apply to this event!</h2>
+    {if isset($badDatas)}
+        <article class="error">Error, please try again.</article>
+
+
+    {else}
     <p class="subtitle">Fill in your informations to apply for this event</p>
     <form method="post" action="register.php">
-        {if !$loggedin}
-        <article class="coordonees">
+
+        <article class="coordonees" {if $loggedin}style="display:none;"{/if}>
             <input type="text" name="lastname" placeholder="Your name" autofocus required>
             <input type="text" name="firstname" placeholder="Your firstname" required>
             <label for="date">Date of birth:</label>
@@ -27,18 +32,25 @@ Description : template of the registration to an event
             <input type="email" name="email" placeholder="Your email" required autocomplete>
             <input type="tel" name="phone" placeholder="Your phone number" required>
             <input type="password" name="password" placeholder="Choose a password" required>
-            <input type="password" name="ConfirmPassword" placeholder="Confirm your password" required>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
         </article>
-        {/if}
+
+        <article class="domain">
+            <label for="type">What do you do?</label>
+            <input type="text" name="type" placeholder="Your activity domain">
+            <input type="text" name="typeDescription" placeholder="Your role in this domain">
+        </article>
+
         <article class="motivation">
-            <p class="subtitle">Explain us your motivation</p>
-            <textarea type="text" name="Motivation" class="big" required></textarea>
-            <label for="Keyword" title="Describe your interests in 3 words">Keywords:</label>
-            <input type="text" name="Keyword1" placeholder="Keyword" required>
-            <input type="text" name="Keyword2" placeholder="Keyword" required>
-            <input type="text" name="Keyword3" placeholder="Keyword" required>
-            <input type="submit" name="Save" value="Save" alt="Save and edit later" title="Save and edit later">
-            <input type="submit" name="Send" value="Send" alt="Submit your registration request" title="Save and edit later">
+            <p class="subtitle">Explain us your motivations</p>
+            <textarea type="text" name="motivation" class="big" required></textarea>
+            <label for="Keyword" title="describe your interests in 3 words">Keywords:</label>
+            <input type="text" name="keyword1" placeholder="Keyword" >
+            <input type="text" name="keyword2" placeholder="Keyword" >
+            <input type="text" name="keyword3" placeholder="Keyword" >
+            <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
+            <input type="submit" name="send" value="Send" alt="Submit your registration request" title="Save and edit later">
         </article>
     </form>
+    {/if}
 </section>
