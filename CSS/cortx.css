@@ -314,6 +314,38 @@ ol li{
     color: #ff2b06;
     font-weight:bold;
     }
+/*--------------------------------- 404 ---------------------------------*/
+
+.error h1 {
+    font-size:8em;
+    color:#333333;
+    font-weight:bold;
+    text-transform :uppercase;
+}
+
+.x {
+    color: #ff2b06;
+    margin-left:20px;
+    margin-right:20px;
+    text-transform:lowercase;
+    
+    
+}
+ .error a {
+    text-decoration:none;
+    color:#ff2b06;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+ .error a:hover{
+    text-decoration:none;
+    color:#ff2b06;
+    font-size: 1.2em;
+    font-weight:bold;
+}
+
+
 
 
 /*------------------@media smartphone-----------------*/

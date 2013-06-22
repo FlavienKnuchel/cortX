@@ -24,8 +24,8 @@
 <body>
 
 <section>
-	<article class="offset2 span8">
-        <h1 id="404">error 4<span class="x">x</span>4</h1>
+	<article class="offset2 span8 error">
+        <h1>error 4<span class="x">x</span>4</h1>
         
             <p> We can't find the page you're looking for. Go back to <a href="#" title="Home">Home</a>.</p>
     
