@@ -22,27 +22,33 @@ Description : Basic structure of the homepage
     </article>    
 </section>
 
-<section>
-    <div class="row">
-    <h2 id="videos_title" class="offset2 span3">Videos from previews events</h2>
+<section id="videos" class="row">
+    <div class="offset2 span2" id="video_home_header">
+    <h1>Videos</h1>
+    <h2>from previews events</h2>
     </div>
-    <ul id="videos" class="row">
-        <li class="offset2 span2">
+    <ul>
+        <li class="span1">
             <a class="youtube" href="http://www.youtube.com/embed/lCRp9PussNU?autoplay=1&fs=1&rel=0&enablejsapi=1&playerapiid=ytplayer">
                 <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </li>
-        <li class="span2">
+        <li class="span1">
             <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent">
                 <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </li>
-        <li class="span2">
+        <li class="span1">
             <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent">
                 <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>
         </li>
-        <li class="span2">
+        <li class="span1">
+            <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent">
+                <img src="img/videos/video1.jpg" alt="Miniature video"/>
+            </a>
+        </li>
+        <li class="span1">
             <a class="youtube" href="http://www.youtube.com/v/VOJyrQa_WR4?rel=0&amp;wmode=transparent">
                 <img src="img/videos/video1.jpg" alt="Miniature video"/>
             </a>

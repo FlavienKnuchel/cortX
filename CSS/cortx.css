@@ -28,8 +28,6 @@ body h4 {
 /*---------------------------------content---------------------------------*/
 #content{
     max-height:100%;
-
-    
 }
 
 /*---------------------------------bottom userbar---------------------------------*/
@@ -134,6 +132,11 @@ height:auto;
     text-align:center;
     margin-bottom: 50px;
 }
+#video_home_header{
+    text-align: left;
+
+    margin-top:35px;
+}
 
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
@@ -156,7 +159,6 @@ article{
 /*---------------------------------Media---------------------------------*/
 #videos{
     background-color:#f0f0f0;
-    text-align:center;
 }
 #videos img{
     margin-top:35px;
@@ -166,6 +168,7 @@ article{
 #videos_media{
     text-align:center;
 }
+
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
     /*height:135px;*/
