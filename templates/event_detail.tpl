@@ -14,14 +14,15 @@ Description : template of the events page
         <div class="button"><a href='{$userCameFrom}'>Retour</a></div>
     {/if}
     <section id="current_event">
-        {if isset($inscriptionStatus) && $inscriptionStatus}
-            <div class="button"><a href="inscription.php">Participate</a></div>
-        {/if}
         <article class="desc_event">
             <!-- smarty variables existence test -->
             {if isset($actualEvent) and isset($actualEventLocation)}
                 {if !empty($actualEvent) and !empty($actualEventLocation)}
-                    <!-- loop through the events array -->
+                    <!-- test if we can register to this event -->
+                    {if isset($inscriptionStatus) && $inscriptionStatus}
+                        <div class="button"><a href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a></div>
+                    {/if}
+
                         <!-- test to display the first event (last of the array) -->
                                 <h2>{$actualEvent->getMainTopic()}</h2>
                                 <article class="EventAdress">
