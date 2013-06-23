@@ -14,7 +14,7 @@ Description : backend of the speakers page
                 <ul>
                     <!-- do a loop on li-->
                     <li>
-                        {$speaker_name} <!-- ATTENTION ajouter boutton modifier et supprimer-->
+                        <p>{$speaker_name}</p><a href="#" title="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a><a href="#" title="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a> <!-- ATTENTION ajouter boutton modifier et supprimer-->
                     </li>
                 </ul>
                     

@@ -10,14 +10,15 @@ Description : backend of the team page
         <section id="bk_team">
             <!-- do a loop on div (for all the person in the team) -->
             <div id="members_of_the_team">
-                <h2>{$person_name} {$person_first_name}</h2>
+                <h1>{$person_name} {$person_first_name}</h1>
                 
                 <ul>
                     <!-- do a loop on li-->
                     <li>
-                        {$team_role_name} <!-- ATTENTION ajouter boutton modifier et supprimer-->
+                        <p>{$team_role_name}</p><a href="#" title="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a><a href="#" title="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a><!-- ATTENTION ajouter boutton modifier et supprimer-->
                     </li>
                 </ul>
+              
                  <form method="POST" action="backend_team.php">
                     <input type="text" list="team_role" required>
                     <datalist id="team_role" >

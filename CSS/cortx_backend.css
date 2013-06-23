@@ -23,6 +23,20 @@ max-height:100%;
     
 }
 
+/*______________________button--------------------------------------*/
+img {
+    margin-left:20px;
+}
+
+a{
+text-decoration:none;
+    color: #ff2b06;
+}
+a:hover{
+text-decoration:underline;
+    color: #ff2b06;
+}
+
 /*______________________fil d'ariane--------------------------------------*/
 
 #ariane{
@@ -55,6 +69,7 @@ ariane ul li a:hover{
     background-repeat:no-repeat;
     background-position:bottom center;
     padding-bottom:21px;
+    
 }
 #active{
     background-image:url(../img/menu.png);
