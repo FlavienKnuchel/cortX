@@ -10,11 +10,15 @@
     <body>
         <div id="content">
         <nav class="row">
-            <a href="home.php"class="offset2 span3" title="Home"><img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" /></a>
+            <div class="offset2 span3" >
+                <a href="home.php"title="Home">
+                    <img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />
+                </a>
+            </div>
             <ul>
-                    <li class="span1">
-                        <a href="events.php"  title="Events"{if $activePage=='events'}id="active"{/if}>Events</a>
-                    </li>
+                <li class="span1">
+                    <a href="events.php"  title="Events"{if $activePage=='events'}id="active"{/if}>Events</a>
+                </li>
                 <li class="span1">
                		<a href="medias.php" title="Medias"{if $activePage=='medias'}id="active"{/if}>Videos</a>
                 </li>
