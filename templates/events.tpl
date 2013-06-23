@@ -8,7 +8,7 @@ Date : 14.6.2013
 Description : template of the events page
 
 -->
-<section id="event_detail">
+<section id="event_detail" class="firstElement">
     {if isset($registrationSuccess)}
         <section class="row">
             <article class="offset2 span8 goodMessage">
@@ -17,7 +17,8 @@ Description : template of the events page
             </article>
         </section>
     {/if}
-    <section class="row">
+    <section>
+        <div class="row">
         <section id="current_event" class="offset2 span8">
             <article class="desc_event">
                 <!-- smarty variables existence test -->
@@ -79,6 +80,7 @@ Description : template of the events page
                 {/if}
             </article>
         </section>
+        </div>
             
             
         <section class="row">
