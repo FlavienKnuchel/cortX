@@ -14,11 +14,11 @@ include 'menu_frontend.php';
 
 /*------------------------------ Where did the user come from? (return button) ------------------------------*/
 //disassemble the url
-$cameFromTest=explode("/",$_SERVER['HTTP_REFERER']);
+$cameFrom=explode("/",$_SERVER['HTTP_REFERER']);
 //check the interesting part (file name)
-$cameFromTest=explode('?',$cameFromTest[5]);
+$cameFrom=explode('?',$cameFrom[5]);
 //if it is event_detail.php
-if($cameFromTest[0]=="event_detail.php"){
+if($cameFrom[0]=="event_detail.php"){
     /* make the "back" link go to the good event_detail pag
      *  the explode is to avoid repeating the get infos when going back and forth
      *  from event_detail page to inscription page
@@ -34,114 +34,141 @@ else{
 
 
 /*------------------------------ Check the event which the registration is for ------------------------------*/
-if(isset($_GET['eventNo'])){
-    $eventNo=$_GET['eventNo'];
+//if the event Number is specified somewhere
+if(isset($_GET['eventNo']) OR isset($_SESSION['eventNo'])){
+    //if it is specified in get
+    if(isset($_GET['eventNo'])) {
+        //stock it in session
+        $_SESSION['eventNo']=$_GET['eventNo'];
+    }
+    //else it is in the session already
 }
 else{
+    //if the number is not specified, there's a problem
     header("Location: 404.php");
 }
-
 /*------------------------------ formular processing, and registration  ------------------------------*/
-//tes if all the fiels of the form are filled
-if(formFilled()){
-    //test if the password id correct
-    if(confirmPassword()){
-        //create an array with the variables
-        $visitor=createVisitorArray();
-        //test if the motivation is fulled
-        if($tedx_manager->registerVisitor($visitor)->getStatus()){
-            //if the registration went well
-            //registration OK OK OK OK OK OK OK OK OK OK OK OK
-            //login le user
-            print "<p>Your account has been created</p>";
-        }//if
-        else{
-            echo "<p>Error - couldn't create the account</p>";
-        }//else
-        //check if the status has been entered
-        if(!is_null(checkStatus())){
-            //is is a save or a send?
-            // if it is a send
-            if(checkStatus()=="send"){
-                //if the motivation is filled
-                if(checkMotivation()){
-                    createRegistrationArray();
-                    //send the registration
-                    Register($status);
-                    echo "<p>Your registration has been sent</p>";
-                }
-                else{
-                    //set the error for motivation filling
-                    $error="fillMotivation";
-                }//else
-                $status="Sent";
-            }//if
-            //if it is a save
-            else{
-                $status="Pending";
-            }
-        }
-        else{
-            //set the error for status
-            $error="status";
-        }
+//initializing the error variable
+$error='';
 
+//if the post datas are set (if name is sent, even empty, it means the user is submitting the formular)
+if(isset($_POST['lastname'])){
+    echo"passeSet";
+    //if the user is logged
+    if ($tedx_manager->isLogged()) {
+       echo "passeLogged";
     }//if
     else{
-        //set the error for password
-        $error="confirmPassword";
+        echo "passepasLogged";
+        //test if all the fields of the form are filled
+        //test if the password id correct
+        if(confirmPassword()){
+            echo "passePassword";
+            //create an array with the variables
+            $visitor=createVisitorArray();
+            //try to create the visitor
+            $messageRegisterVisitor=$tedx_manager->registerVisitor($visitor);
+
+            //if the registration went well
+            if($messageRegisterVisitor->getStatus()){
+                //set the registration suce to true
+                $registrationSuccess=true;
+                //login the user
+                $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
+                //if logged in
+
+                if($messageLogin->getStatus()){
+                    //assign true tu the smarty value
+                    $smarty->assign('loggedin', true);
+                }
+
+
+                //check if the status has been entered
+                if(!is_null(checkStatus())){
+                    //is is a save or a send?
+                    // if it is a send
+                    if(checkStatus()=="send"){
+                        //if the motivation is filled
+                        if(checkMotivation()){
+                            //send the registration
+                            Register(checkStatus());
+                            $registrationSuccess=true;
+                        }
+                        else{
+                            //set the error for motivation filling
+                            $error="Please, fill in your motivation if you want to send your inscription";
+                        }//else
+                    }//if
+                    //if it is a save
+                    else{
+                        Register(checkStatus());
+                        $registrationSuccess=true;
+                    }
+                }
+                else{
+                    //set the error for status
+                    $error="status";
+                }
+            }//if
+            else{
+                //if the registration didn't go well
+                $error=$messageRegisterVisitor->getMessage();
+            }//else
+
+        }//if
+        else{
+            //set the error for password
+            $error="Please Check your password again!";
+        }//else
     }//else
-}//if
+}
 else{
-    //set the error for formular filling
-    $error="filllFormular";
-}//else
+    //don't do anything but display the formular
+}
 
+//if everything went well, the go to the homepage and display a message
+if(isset($registrationSuccess)){
+    header("Location: events.php?registrationSuccess=true");
+}
 
+//stock the error message in smarty
+$smarty->assign('error', $error);
 
-/*---------------------------- display event -----------------------------*/
+/*---------------------------- normal inscription display  -----------------------------*/
 $smarty->display('events_registerToEvent.tpl');
 include 'userbar.php';
 
 
 /*---------------------------- functions -----------------------------*/
 
-//test if the formular infos are set
-function formFilled(){
-    if( !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['date']) && !empty($_POST['address'])
-        && !empty($_POST['city']) && !empty($_POST['country']) && !empty($_POST['phone'])
-        && !empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirmPassword'])
-        &&!empty($_POST['type']) && !empty($_POST['typeDescription'])){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 //test if the password and passwordConfirm are the same
 function confirmPassword(){
-    if($_POST['password']==$_POST['confirmPassword']){
-        return true;
+    if(isset($_POST['password'])){
+        if($_POST['password']==$_POST['confirmPassword']){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-    return false;
 }
 
 //create an array with the visitor infos
 function createVisitorArray(){
-    $person= array(
+    $visitor= array(
         'name'        => $_POST['firstname'],
         'firstname'   => $_POST['lastname'],
         'dateOfBirth' => $_POST['date'],
         'address'     => $_POST['address'],
         'city'        => $_POST['city'],
         'country'     => $_POST['country'],
-        'phoneNumber' => $_POST['telephone'],
+        'phoneNumber' => $_POST['phone'],
         'email'       => $_POST['email'],
+        'description' => "",
         'idmember'    => $_POST['username'],
-        'password'    => $_POST['password'],
+        'password'    => $_POST['password']
     );
-    return $person;
+    return $visitor;
 }
 
 //check if the motivation is filled
@@ -154,18 +181,6 @@ function checkMotivation(){
     }
 }
 
-//register the user
-function Register($registrationStatus){
-
-    //check registration status
-
-    //create registration
-
-    //assign motivation
-
-    //assign keywords
-
-}
 
 //check if the status is send or save
 function checkStatus(){
@@ -178,13 +193,10 @@ function checkStatus(){
     }
 }
 
-//stock the motivation in the database
-function assignMotivation($motivation){
-
-}
 
 //create and array with the keywords
 function arrayKeywords(){
+    $keywords=array();
     if(isset($_POST['keyword1']))array_push( $keywords,$_POST['keyword1']);
     if(isset($_POST['keyword2']))array_push( $keywords,$_POST['keyword2']);
     if(isset($_POST['keyword3']))array_push( $keywords,$_POST['keyword3']);
@@ -220,17 +232,42 @@ function sendFilledDatas(){
     }//if
 }
 
-//create and array with the registration infos
-function createregistationArray(){
+//register the user
+function Register($registrationStatus){
+    global $tedx_manager;
+    $person=$tedx_manager->getLoggedPerson()->getContent();
+    $event=$tedx_manager->getEvent($_SESSION['eventNo'])->getContent();
+    $slots=$tedx_manager->getSlotsFromEvent($event)->getcontent();
+    $type=$_POST['type'];
+    $typeDescription=$_POST['typeDescription'];
+
     $registration = array(
-        'person' => $aPerson, // object Person
-        'event' => $anEvent, // object Event
-        'slots' => $aListOfSlots, // List of objects Slot
-        'registrationdate' => '1991-04-26', // Date
-        'type' => 'Presse', // String
-        'typedescription' => 'Redacteur chez Edipresse SA' // String
+        'person' => $person, // object Person
+        'event' => $event, // object Event
+        'slots' => $slots, // List of objects Slot
+        'registrationdate' => date('Y-m-d'), // Date
+        'type' => $type, // String
+        'typedescription' => $typeDescription // String
     );
-    return $registration;
+    $tedx_manager->registerToAnEvent($registration);
+    $tedx_manager->addKeywordsToAnEvent(arrayKeywords(), $person,$event);
+    $tedx_manager->addMotivationToAnEvent($_POST['motivation'], $event, $person);
+
+    if($registrationStatus=="sent"){
+        $participant=$tedx_manager->getParticipant($person->getNo());
+        $waitingRegistration = $tedx_manager->getRegistration(
+            array(
+                'status' =>'Waiting',
+                'event' => $event,
+                'participant' => $participant))->getContent();
+        $tedx_manager->sendRegistration($waitingRegistration);
+    }
+    elseif($registrationStatus=="save"){
+    }
+    else{
+        header('Location:404.php');
+    }
+
 }
 
 
