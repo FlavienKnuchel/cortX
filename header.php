@@ -10,6 +10,8 @@
  * Description :
  */
 
+//starting session
+session_start();
 
 //creating the smarty object
 require('./Smarty/libs/Smarty.class.php');
