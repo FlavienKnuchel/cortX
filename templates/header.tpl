@@ -11,10 +11,10 @@ Description : general navigation and
     <meta charset="utf-8" />
     <LINK rel="icon" type="image/png" href="img/favicon.png" />
 
-    <LINK rel="stylesheet" media="all" href="css/normalize.css" />
-    <LINK rel="stylesheet" media="all" href="css/grid.css" />
-    <LINK rel="stylesheet" media="all" href="css/menu.css" />
-    <LINK rel="stylesheet" media="all" href="css/colorbox.css" />
+    <LINK rel="stylesheet" media="all" href="./css/normalize.css" />
+    <LINK rel="stylesheet" media="all" href="./css/grid.css" />
+    <LINK rel="stylesheet" media="all" href="./css/menu.css" />
+    <LINK rel="stylesheet" media="all" href="./css/colorbox.css" />
     
         
 
