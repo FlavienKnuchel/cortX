@@ -326,9 +326,6 @@ background-color:#f0f0f0;
     text-align:right
 }
 
-#event_detail .button{
-    
-}
 #current_event .button{
     float:right;
     margin-right:15px;
@@ -343,7 +340,6 @@ background-color:#f0f0f0;
 
 ol li{
     list-style:none;
-    
 }
 
 .desc_event  {
@@ -401,6 +397,19 @@ color:#333333;
 #oldEvents a:hover {
     text-decoration:none;
     color:#333333;
+}
+
+.goodMessage{
+    padding:10px 10px 10px 10px;
+    margin-right:10px;
+    background-color:#E7FFE0;
+    border:1px solid #75FF72;
+    margin-top:60px;
+    margin-bottom:-60px;
+
+}
+.goodMessage h1{
+    color:black;
 }
 
             /*------------------------table--------------------------*/
