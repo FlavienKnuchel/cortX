@@ -305,6 +305,9 @@ section.space {
 /*-----------------------------------page event---------------------------------*/
 #current_event{
 background-color:#f0f0f0;
+
+}
+.firstElement{
     margin-top:60px;
 }
 
@@ -404,8 +407,7 @@ color:#333333;
     margin-right:10px;
     background-color:#E7FFE0;
     border:1px solid #75FF72;
-    margin-top:60px;
-    margin-bottom:-60px;
+
 
 }
 .goodMessage h1{
