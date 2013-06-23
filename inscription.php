@@ -167,6 +167,9 @@ if(isset($registrationSuccess)){
 //stock the error message in smarty
 $smarty->assign('error', $error);
 
+//send the filled datas, so we can collect them, and in case of error, no need to retype them
+var_dump($_POST);
+sendFilledDatas();
 /*---------------------------- normal inscription display  -----------------------------*/
 $smarty->display('events_registerToEvent.tpl');
 include 'userbar.php';
@@ -241,28 +244,25 @@ function sendFilledDatas(){
     global $smarty;
     //create an array with the filled infos
     $registration=array();
-    if(isset($_POST['firstName']))array_push($registration['firstname'], $_POST['firstName']);
-    if(isset($_POST['lastname']))array_push($registration['lastname'], $_POST['lastname']);
-    if(isset($_POST['username']))array_push($registration['username'], $_POST['username']);
-    if(isset($_POST['date']))array_push($registration['date'],$_POST['date']);
-    if(isset($_POST['address']))array_push($registration['address'], $_POST['address']);
-    if(isset($_POST['city']))array_push($registration['city'], $_POST['city']);
-    if(isset($_POST['country']))array_push($registration['country'], $_POST['country']);
-    if(isset($_POST['telephone']))array_push($registration['telephone'],$_POST['telephone']);
-    if(isset($_POST['email']))array_push($registration['email'], $_POST['email']);
-    if(isset($_POST['username']))array_push($registration['username'], $_POST['username']);
-    if(isset($_POST['type']))array_push($registration['type'], $_POST['type']);
-    if(isset($_POST['typeDescription']))array_push($registration['typeDescription'], $_POST['typeDescription']);
-    if(isset($_POST['motivation']))array_push($registration['motivation'], $_POST['motivation']);
-    if(isset($_POST['keyword1']))array_push($registration['keyword1'], $_POST['keyword1']);
-    if(isset($_POST['keyword2']))array_push($registration['keyword2'], $_POST['keyword2']);
-    if(isset($_POST['keyword3']))array_push($registration['keyword3'], $_POST['keyword3']);
+    if(isset($_POST['firstName']))$registration['firstname'] = $_POST['firstName'];
+    if(isset($_POST['lastname']))$registration['lastname']= $_POST['lastname'];
+    if(isset($_POST['username']))$registration['username']= $_POST['username'];
+    if(isset($_POST['date']))$registration['date']=$_POST['date'];
+    if(isset($_POST['address']))$registration['address']= $_POST['address'];
+    if(isset($_POST['city']))$registration['city']= $_POST['city'];
+    if(isset($_POST['country']))$registration['country']= $_POST['country'];
+    if(isset($_POST['telephone']))$registration['telephone']=$_POST['telephone'];
+    if(isset($_POST['email']))$registration['email']= $_POST['email'];
+    if(isset($_POST['username']))$registration['username']= $_POST['username'];
+    if(isset($_POST['type']))$registration['type']= $_POST['type'];
+    if(isset($_POST['typeDescription']))$registration['typeDescription']= $_POST['typeDescription'];
+    if(isset($_POST['motivation']))$registration['motivation']= $_POST['motivation'];
+    if(isset($_POST['keyword1']))$registration['keyword1']= $_POST['keyword1'];
+    if(isset($_POST['keyword2']))$registration['keyword2']= $_POST['keyword2'];
+    if(isset($_POST['keyword3']))$registration['keyword3']= $_POST['keyword3'];
 
-    //if the array of datas isn't empty
-    if(!empty($resistration)){
-        //assign it to smarty
+        //assign the array to smarty
         $smarty->assign('filledDatas', $registration);
-    }//if
 }
 
 //register the user for the actual event
