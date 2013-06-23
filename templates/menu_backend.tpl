@@ -8,7 +8,7 @@
     </head>
     <body>
     <div id="content">
-        <nav class="row"> 
+        <nav class="row menu_backend"> 
             <div class="offset2 span3" >
                 <a href="home.php"title="Home">
                     <img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />

@@ -83,7 +83,7 @@ Description : template of the events page
         </div>
             
             
-        <section class="row">
+        <section class="row end">
             <aside id="upcomingEvents" class="offset2 span4">
                 <h2>Upcoming events</h2>
                 <table>

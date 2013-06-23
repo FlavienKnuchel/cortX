@@ -35,6 +35,9 @@ body h4 {
 #content{
     max-height:100%;
 }
+section.end{
+margin-bottom:80px;
+}
 
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
@@ -62,6 +65,7 @@ footer form{
 #logout {
 	text-align:right;
     line-height:40px;
+    font-weight:bold;
 }
 #form_log{
     width:40%;
@@ -428,6 +432,7 @@ td.title{
     width: auto;
     padding-top:2px;
     padding-bottom:2px;
+    padding-right:5px;
 }
 td.date{
     font-weight:bold;

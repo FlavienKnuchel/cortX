@@ -108,7 +108,8 @@ footer form{
 }
 #logout {
 	text-align:right;
-   line-height:40px;
+    line-height:40px;
+    font-weight:bold;
 }
 #form_log{
     width:40%;
@@ -132,7 +133,7 @@ a#setting {
     height:30px;
     background-image:url(../img/setting.png);
     background-repeat:no-repeat;
-     margin-top:5px;
+    margin-top:5px;
 
 }
 
@@ -149,7 +150,7 @@ a#home_icon {
     height:30px;
     background-image:url(../img/home.png);
     background-repeat:no-repeat;
-     margin-top:5px;
+    margin-top:5px;
 }
 
 a#home_icon:hover{
