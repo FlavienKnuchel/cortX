@@ -9,19 +9,10 @@
  *
  *
  */
- 
+
+include 'header.php';
+include 'menu_frontend.php';
 ?>
-<head>
-    <meta charset="utf-8" />
-    <LINK rel="stylesheet" media="all" href="css/cortx.css" />
-    <LINK rel="stylesheet" media="all" href="css/normalize.css" />
-    <LINK rel="stylesheet" media="all" href="css/grid.css" />
-    <title>CORTx</title>
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
-<body>
 
 <section>
 	<article class="offset2 span8 error">
@@ -32,3 +23,8 @@
     </article>
 </section>
     </body>
+
+<?php
+
+include 'userbar.php';
+?>
