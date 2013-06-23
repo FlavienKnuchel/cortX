@@ -13,6 +13,10 @@
 include 'header.php';
 include 'menu_frontend.php';
 
+/*------------------------------display epic win message------------------------------*/
+if(isset($_POST['registrationSuccess'])){
+$smarty->assign('registrationSuccess',true);
+}
 /*------------------------------Upcoming events------------------------------*/
 //prepare the upcoming event SQL request
 $searchArgsUpcomingEvents = array(

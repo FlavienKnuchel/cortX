@@ -9,6 +9,14 @@ Description : template of the events page
 
 -->
 <section id="event_detail">
+    {if isset($registrationSuccess)}
+        <section class="row">
+            <div id="offset2 span8 goodMessage">
+                <h1>Congratulations! Your registration went well!</h1>
+                    <p>Got to "My registrations" in the bottom bar menu to check the status of your registration</p>
+            </div>
+        </section>
+    {/if}
     <section class="row">
         <section id="current_event" class="offset2 span8">
             <article class="desc_event">
