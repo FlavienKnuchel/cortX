@@ -14,7 +14,7 @@ include 'header.php';
 include 'menu_frontend.php';
 
 /*------------------------------display epic win message------------------------------*/
-if(isset($_POST['registrationSuccess'])){
+if(isset($_GET['registrationSuccess'])){
 $smarty->assign('registrationSuccess',true);
 }
 /*------------------------------Upcoming events------------------------------*/
