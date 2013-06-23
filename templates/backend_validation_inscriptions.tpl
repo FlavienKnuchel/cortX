@@ -37,8 +37,16 @@ Description : backend of the participant page
                     </tr>
                     {section name=acceptedreg loop=$acceptedReg max=10}
                         <tr>
-                            <td>{$acceptedReg[acceptedreg][0]->getMainTopic()}</td>
-                            <td>{$acceptedReg[acceptedreg][1]->getName()}</td>
+                            <td>
+                                <a href="?id={$smarty.section.acceptedreg.index}">
+                                    {$acceptedReg[acceptedreg][0]->getMainTopic()}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="?id={$smarty.section.acceptedreg.index}">
+                                    {$acceptedReg[acceptedreg][1]->getName()}
+                                </a>
+                            </td>
                         </tr>
                     {/section}
                 </table>
@@ -48,12 +56,16 @@ Description : backend of the participant page
         </article>
         <asside id="motivation">
             <h2>Motivation</h2>
-            <p><!-- afficher la motivation du participant cliqué...--></p>
-            <form method="POST" action="backend_validation_inscriptions.php">
-                <input type="hidden" name="registration" value="">
-                <input type="submit" name="Accept" value="Accept" alt="Accept the registration">
-                <input type="submit" name="Refuse" value="Refuse" alt="Refuse the registration">
-            </form>
+            {if isset($motivation)}
+                <p>{$motivation->getText()}</p>
+                <form method="POST" action="backend_validation_inscriptions.php">
+                    <input type="hidden" name="registration" value="{serialize($motivation)}">
+                    <input type="submit" name="Accept" value="Accept" alt="Accept the registration">
+                    <input type="submit" name="Refuse" value="Refuse" alt="Refuse the registration">
+                </form>
+            {else}
+                <p class="error_msg">No registration selected.</p>
+            {/if}
         </asside>
     {else}
         <p class="error_msg">You can't access this content, please log in.</p>

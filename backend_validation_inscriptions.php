@@ -48,6 +48,13 @@ $smarty->assign('acceptedReg', $arrayOfAcceptedReg);
 //    $motivation = $tedx_manager->getMotivationsByParticipantForEvent($args)->getContent();
 //    var_dump($motivation);
 //}
+if (isset($_REQUEST['id'])) {
+    $row = $_REQUEST['id'];
+    $args = array($arrayOfSentReg[$row][1], $arrayOfSentReg[$row][0]);
+    $motivation = $tedx_manager->getMotivationsByParticipantForEvent($args)->getContent();
+    var_dump($motivation);
+    $smarty->assign('motivation', $motivation);
+}
 $smarty->display('backend_validation_inscriptions.tpl');
 include 'userbar.php';
 ?>
