@@ -24,7 +24,7 @@ Description : template of the events page
                     {/if}
 
                         <!-- test to display the first event (last of the array) -->
-                                <h2>{$actualEvent->getMainTopic()}</h2>
+                                <h1>{$actualEvent->getMainTopic()}</h1>
                                 <article class="EventAdress">
                                     <h2>Adress</h2>
                                     <p>{$actualEventLocation->getAddress()}</p>

@@ -19,7 +19,7 @@ Description : template of the backend home page
             </li>
             {if $userLevel == 'validator' || $userLevel == 'administrator' || $userLevel == 'superadmin'}
                 <li>
-                    <a href="backend_validation_inscriptions.php" title="Participant"><h3 class="span2 twoLines">Registrations</h3></a>
+                    <a href="backend_validation_inscriptions.php" title="Participant"><h3 class="span2">Registrations</h3></a>
                 </li>
                 {if $userLevel == 'administrator' || $userLevel == 'superadmin'}
                     <li>

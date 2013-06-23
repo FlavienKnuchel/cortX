@@ -16,7 +16,7 @@ Description : template of the events page
                 <!-- smarty variables existence test -->
                 {if isset($actualEvent) and isset($actualEventLocation)}
                     {if !empty($actualEvent) and !empty($actualEventLocation)}
-                        <div class="button" id="actualParticipateButton"><a href="inscription.php">Participate</a></div>
+                        <div class="button" id="actualParticipateButton"><a href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a></div>
                                     <h1 class="current_event_title">{$actualEvent->getMainTopic()}</h1>
                         <h2 class="date">{$actualEvent->getStartingDate()}</h2>
                                     <article class="actualEventAdress">
