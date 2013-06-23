@@ -23,6 +23,10 @@ max-height:100%;
     
 }
 
+/*______________________button--------------------------------------*/
+.modify {
+}
+
 /*______________________fil d'ariane--------------------------------------*/
 
 #ariane{
@@ -55,6 +59,7 @@ ariane ul li a:hover{
     background-repeat:no-repeat;
     background-position:bottom center;
     padding-bottom:21px;
+    
 }
 #active{
     background-image:url(../img/menu.png);

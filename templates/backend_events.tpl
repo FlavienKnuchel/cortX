@@ -14,7 +14,7 @@ Description : backend of the events page
                 <ul>
                     <!-- do a loop on li-->
                     <li>
-                        {$event_name} <!-- ATTENTION il faut ajouter boutton modifier et supprimer -- et le bouton modifier envoit sur <a href="backend_update_event.php"> bouton modif </a> -->
+                        <p>{$event_name}</p><a href="#" title="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a><a href="#" title="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a><!-- ATTENTION il faut ajouter boutton modifier et supprimer -- et le bouton modifier envoit sur <a href="backend_update_event.php"> bouton modif </a> -->
                     </li>
                 </ul>
                  

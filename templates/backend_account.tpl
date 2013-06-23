@@ -14,7 +14,7 @@ Description : backend of the account page
             <ul>
                 <!-- do a loop on li-->
                 <li>
-                    {$person_name}{$person_first_name} <!-- ATTENTION ajouter boutton modifier /!\ modifier renvoit au champ infos du comptes selectionné sur la meme page!(section ci-dessous) et supprimer-->
+                    <p>{$person_name}{$person_first_name}</p><a href="#" title="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a><a href="#" title="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a> <!-- ATTENTION ajouter boutton modifier /!\ modifier renvoit au champ infos du comptes selectionné sur la meme page!(section ci-dessous) et supprimer-->
                 </li>
             </ul>
                     
