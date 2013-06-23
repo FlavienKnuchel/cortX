@@ -15,19 +15,19 @@ $allRegistrations = $tedx_manager->getRegistrations()->getContent(); //gets all 
 //$sentRegSerialized = array();
 //$acceptedRegSerialized = array();
 $arrayOfSentReg = array();
+$sentRegistrations = array();
 $arrayOfAcceptedReg = array();
 foreach ($allRegistrations as $registration) {//for each registrations, tests if 
     switch ($registration->getStatus()) {//the status of the registration
         case 'Sent'://is sent or
-            $sentReg[] = $registration;
 //            $sentRegSerialized[] = serialize($registration);//TODO fix
             $arraySentReg = array(
                 $tedx_manager->getEvent($registration->getEventNo())->getContent(),
                 $tedx_manager->getParticipant($registration->getParticipantPersonNo())->getContent());
             $arrayOfSentReg[] = $arraySentReg;
+            $sentRegistrations[] = $registration;
             break;
         case 'Accepted'://is already accepted
-            $acceptedReg[] = $registration;
 //            $acceptedRegSerialized[] = serialize($registration);
             $arrayAcceptedReg = array(
                 $tedx_manager->getEvent($registration->getEventNo())->getContent(),
@@ -54,6 +54,17 @@ if (isset($_REQUEST['id'])) {
     $motivation = $tedx_manager->getMotivationsByParticipantForEvent($args)->getContent();
     var_dump($motivation);
     $smarty->assign('motivation', $motivation);
+    $smarty->assign('row', $row);
+}
+if (isset($_POST['Accept']) && $_POST['Accept'] == 'Accept') {
+    $reg = $sentRegistrations[$_POST['registration']];
+    $acceptedReg = $tedx_manager->acceptRegistration($reg);
+    print $acceptedReg->getMessage();
+}
+if (isset($_POST['Refuse']) && $_POST['Refuse'] == 'Refuse') {
+    $reg = $sentRegistrations[$_POST['registration']];
+    $rejectedReg = $tedx_manager->rejectRegistration($reg);
+    print $rejectedReg->getMessage();
 }
 $smarty->display('backend_validation_inscriptions.tpl');
 include 'userbar.php';

@@ -18,13 +18,21 @@ Description : backend of the participant page
                     </tr>
                     {section name=sentreg loop=$sentReg max=10}
                         <tr>
-                            <td>{$sentReg[sentreg][0]->getMainTopic()}</td>
-                            <td>{$sentReg[sentreg][1]->getName()}</td>
+                            <td>
+                                <a href="?id={$smarty.section.sentregdreg.index}">
+                                    {$sentReg[sentreg][0]->getMainTopic()}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="?id={$smarty.section.sentregdreg.index}">
+                                    {$sentReg[sentreg][1]->getName()}
+                                </a>
+                            </td>
                         </tr>
                     {/section}
                 </table>
             {else}
-                <p class="error_msg">There are no sent registrations.</p>
+                <p class="error_msg">There is no request for a registration.</p>
             {/if}
         </article>
         <article id="participant_validated">
@@ -38,14 +46,10 @@ Description : backend of the participant page
                     {section name=acceptedreg loop=$acceptedReg max=10}
                         <tr>
                             <td>
-                                <a href="?id={$smarty.section.acceptedreg.index}">
-                                    {$acceptedReg[acceptedreg][0]->getMainTopic()}
-                                </a>
+                                {$acceptedReg[acceptedreg][0]->getMainTopic()}
                             </td>
                             <td>
-                                <a href="?id={$smarty.section.acceptedreg.index}">
-                                    {$acceptedReg[acceptedreg][1]->getName()}
-                                </a>
+                                {$acceptedReg[acceptedreg][1]->getName()}
                             </td>
                         </tr>
                     {/section}
@@ -59,7 +63,7 @@ Description : backend of the participant page
             {if isset($motivation)}
                 <p>{$motivation->getText()}</p>
                 <form method="POST" action="backend_validation_inscriptions.php">
-                    <input type="hidden" name="registration" value="{serialize($motivation)}">
+                    <input type="hidden" name="registration" value="{$row}">
                     <input type="submit" name="Accept" value="Accept" alt="Accept the registration">
                     <input type="submit" name="Refuse" value="Refuse" alt="Refuse the registration">
                 </form>
