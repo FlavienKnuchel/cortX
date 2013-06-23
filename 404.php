@@ -22,7 +22,6 @@ include 'menu_frontend.php';
     
     </article>
 </section>
-    </body>
 
 <?php
 
