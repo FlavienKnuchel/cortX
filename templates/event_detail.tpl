@@ -11,7 +11,10 @@ Description : template of the events page
 
 <section id="event_detail" class="row">
     {if isset($userCameFrom)}
-        <div class="button_back offset2"><a href='{$userCameFrom}'>Back</a></div>
+        <div class="button_back offset2"><a title="go back to lats page" href='{$userCameFrom}'>Back</a></div>
+    {/if}
+    {if isset($userCameFromInsc)&&$userCameFromInsc}
+        <div class="button_back offset2"><a title="go back to event page" href='events.php'>Back</a></div>
     {/if}
     <section id="current_event" class="offset2 span8">
         <article class="desc_event">
@@ -20,7 +23,7 @@ Description : template of the events page
                 {if !empty($actualEvent) and !empty($actualEventLocation)}
                     <!-- test if we can register to this event -->
                     {if isset($inscriptionStatus) && $inscriptionStatus}
-                        <div class="button"><a href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a></div>
+                        <div class="button"><a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a></div>
                     {/if}
 
                         <!-- test to display the first event (last of the array) -->

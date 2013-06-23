@@ -13,6 +13,21 @@
 include 'header.php';
 include 'menu_frontend.php';
 
+/*------------------------------------------------------*/
+
+/*--------------------- Check where the user comes from(back button) ---------------------*/
+
+    //Check if the user came from the inscription page
+    if(isset($_GET{'fromInsc'})){
+        //make the button back go to events
+        $smarty->assign('userCameFromInsc',true);
+    }
+    else{//if the user didn't come from inscription page
+        //make the link go to the last page
+        $userCameFrom=$_SERVER['HTTP_REFERER'];
+        $smarty->assign('userCameFrom',$userCameFrom);
+
+}
 /*------------------------------The event------------------------------*/
 //if the event number is set in the url
 if(isset($_GET['eventNo'])){
@@ -23,6 +38,9 @@ if(isset($_GET['eventNo'])){
         $smarty->assign('actualEvent', $actualEvent);
     }//if
 }//if
+else{
+    header('Location: 404.php');
+}
 
 /*-------------------- Are inscriptions open? (participation button display)--------------------*/
 if(isset($actualEvent)){
@@ -36,11 +54,8 @@ if(isset($actualEvent)){
 else{
     $inscriptionStatus=false;
 }
+//assign the inscription status value to smarty
 $smarty->assign('inscriptionStatus',$inscriptionStatus);
-
-/*------------------------------ Where did the user come from? (return button) ------------------------------*/
-$userCameFrom=$_SERVER['HTTP_REFERER'];
-$smarty->assign('userCameFrom',$userCameFrom);
 
 /*------------------------------ event slots and speakers------------------------------*/
 //get the slots of the first event

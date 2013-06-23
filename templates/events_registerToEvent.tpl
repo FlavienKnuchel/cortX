@@ -7,9 +7,14 @@ Date : 17.6.2013
 Description : template of the registration to an event
 
 -->
-
 {if isset($userCameFrom)}
-    <div class="button_back offset2"><a href='{$userCameFrom}'>Back</a></div>
+    <div class="row">
+        <div class="button_back offset2"><a title="go back to last page" href='{$userCameFrom}&fromInsc=true'>Back</a></div>
+    </div>
+    {else}
+    <div class="row">
+        <div class="button_back offset2"><a title="go back to events page" href='events.php'>Back</a></div>
+    </div>
 {/if}
 <section id="registerToEvent">
     
@@ -20,7 +25,7 @@ Description : template of the registration to an event
 
 
     {else}
-    <p class="subtitle offset2">Fill in your informations to apply for this event</p>
+    <p class="subtitle offset2">Fill in your informations to create your registration</p>
     <form method="post" action="register.php">
 
         <article class="coordonees row offset2 span8" {if $loggedin}style="display:none;"{/if}>
@@ -60,7 +65,8 @@ Description : template of the registration to an event
                     <input type="text" name="keyword3" placeholder="Keyword" >
                 </p>
                 <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
-                <input type="submit" name="send" value="Send" alt="Submit your registration request" title="Save and edit later">
+                <input type="submit" name="send" value="Send" alt="Submit your registration request"
+                           title="Submit your registration request">
             </article>
         </div>
     </form>

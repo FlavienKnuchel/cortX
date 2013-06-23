@@ -11,13 +11,29 @@
 */
 include 'header.php';
 include 'menu_frontend.php';
-/*------------------------------ Where did the user come from? (return button) ------------------------------*/
-if(isset($_SERVER['HTTP_REFERER'])){
-    $userCameFrom=$_SERVER['HTTP_REFERER'];
-    $smarty->assign('userCameFrom',$userCameFrom);
-}
 
-/*------------------------------ Checke the event which the registration is for ------------------------------*/
+/*------------------------------ Where did the user come from? (return button) ------------------------------*/
+//disassemble the url
+$cameFromTest=explode("/",$_SERVER['HTTP_REFERER']);
+//check the interesting part (file name)
+$cameFromTest=explode('?',$cameFromTest[5]);
+//if it is event_detail.php
+if($cameFromTest[0]=="event_detail.php"){
+    /* make the "back" link go to the good event_detail pag
+     *  the explode is to avoid repeating the get infos when going back and forth
+     *  from event_detail page to inscription page
+    */
+    $userCameFrom=explode("&",$_SERVER['HTTP_REFERER']);
+    //selection the good part of the explode
+    $userCameFrom=$userCameFrom[0];
+    $smarty->assign('userCameFrom',$userCameFrom);
+}//if
+else{
+    //do nothing
+}//else
+
+
+/*------------------------------ Check the event which the registration is for ------------------------------*/
 if(isset($_GET['eventNo'])){
     $eventNo=$_GET['eventNo'];
 }
@@ -103,6 +119,7 @@ function formFilled(){
     }
 }
 
+//test if the password and passwordConfirm are the same
 function confirmPassword(){
     if($_POST['password']==$_POST['confirmPassword']){
         return true;
@@ -110,6 +127,7 @@ function confirmPassword(){
     return false;
 }
 
+//create an array with the visitor infos
 function createVisitorArray(){
     $person= array(
         'name'        => $_POST['firstname'],
@@ -126,6 +144,7 @@ function createVisitorArray(){
     return $person;
 }
 
+//check if the motivation is filled
 function checkMotivation(){
     if(isset($_POST['motivation'])&&!empty($_POST['motivation'])){
         return true;
@@ -135,6 +154,7 @@ function checkMotivation(){
     }
 }
 
+//register the user
 function Register($registrationStatus){
 
     //check registration status
@@ -147,6 +167,7 @@ function Register($registrationStatus){
 
 }
 
+//check if the status is send or save
 function checkStatus(){
 
     if(isset($_POST['save'])){
@@ -157,13 +178,12 @@ function checkStatus(){
     }
 }
 
-function createRegistration($status, $type, $typedescription){
-
-}
+//stock the motivation in the database
 function assignMotivation($motivation){
 
 }
 
+//create and array with the keywords
 function arrayKeywords(){
     if(isset($_POST['keyword1']))array_push( $keywords,$_POST['keyword1']);
     if(isset($_POST['keyword2']))array_push( $keywords,$_POST['keyword2']);
@@ -171,6 +191,7 @@ function arrayKeywords(){
     return $keywords;
 }
 
+//send the filled datatas via post to display them in the fields if there's an error
 function sendFilledDatas(){
     global $smarty;
     //create an array with the filled infos
@@ -199,6 +220,7 @@ function sendFilledDatas(){
     }//if
 }
 
+//create and array with the registration infos
 function createregistationArray(){
     $registration = array(
         'person' => $aPerson, // object Person
