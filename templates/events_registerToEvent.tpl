@@ -26,11 +26,11 @@ Description : template of the registration to an event
 
     {else}
     <p class="subtitle offset2">Fill in your informations to create your registration</p>
-    <form method="post" action="register.php">
+    <form method="post" action="inscription.php">
 
         <article class="coordonees row offset2 span8" {if $loggedin}style="display:none;"{/if}>
             <p>
-                <input type="text" name="lastname" placeholder="Your name" autofocus required>
+                <input type="text" name="lastname" placeholder="Your last name" autofocus required>
                 <input type="text" name="firstname" placeholder="Your firstname" required>
                 <label for="date">Date of birth:</label>
                 <input type="date" name="date" placeholder="YYYY-MM-DD"required>
@@ -43,6 +43,7 @@ Description : template of the registration to an event
             <p>
                 <input type="email" name="email" placeholder="Your email" required autocomplete>
                 <input type="tel" name="phone" placeholder="Your phone number" required>
+                <input type="text" name="username" placeholder="Your username(login)" required>
                 <input type="password" name="password" placeholder="Choose a password" required>
                 <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
             </p>
