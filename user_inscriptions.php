@@ -25,10 +25,8 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
         $arrayRegistrations = $tedx_manager->getRegistrationsByParticipant(
                         $messageParticipant->getContent()
                 )->getContent();
-        var_dump($arrayRegistrations);
-        if (!empty($arrayRegistrations)) {
+        if (!empty($arrayRegistrations)) { //test if there is registrations
             $lengthArrayReg = count($arrayRegistrations);
-            var_dump($lengthArrayReg);
             // If the array is not empty, start processing them
             $smarty->assign('registration', $arrayRegistrations[0]);
             $person = $tedx_manager->getLoggedPerson()->getContent();
@@ -39,75 +37,108 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
             //retrieve the status of current registration
             $regStatus = $arrayRegistrations[0]->getStatus();
             $smarty->assign('regStatus', $regStatus);
+            //assigns arguments for later queries
             $argsPE = array(
                 'person' => $person,
                 'event' => $event
             );
-            
-            // --- registration is locked if status doesn't match --------------
+            $argsPAE = array(
+                'participant' => $participant,
+                'event' => $event
+            );
+            $arrayKeywords = $tedx_manager->getKeywordsByPersonForEvent($argsPE)->getContent();
             if ($regStatus == 'Sent' || $regStatus == 'Accepted' || $regStatus == 'Rejected') {
+// --------------- registration is locked if status doesn't match --------------
                 //gets the DB content and displays it
                 //assigns to smarty the text of the motivation defined by the event and participant
-                $smarty->assign(
-                        'getMotivation', $tedx_manager->getMotivationsByParticipantForEvent(
-                                array($participant, $event))->getContent()->getText());
+                $frozenMot = $tedx_manager->getMotivationsByParticipantForEvent(
+                                $argsPAE
+                        )->getContent()->getText();
+                $smarty->assign('getMotivation', $frozenMot);
                 //assigns to smarty the text of each keyword of the person
-                $arrayKeywords = $tedx_manager->getKeywordsByPersonForEvent($argsPE)->getContent();
                 for ($n = 0; $n < 3; $n++) {//cylce through keywords to assign them to smarty
                     $smarty->assign('getKW' . ($n + 1), $arrayKeywords[$n]->getValue());
                 }
-            } else { // ------------ registration open
+            } else {
+// ------------------ registration is open for modifications -------------------
                 //the content is saved but not submitted yet and can be modified
+                $kw = array();
+                $saveKW = FALSE; //defines is the keywords were modified and must be saved
                 for ($n = 0; $n < 3; $n++) {//cycle through the 3 keywords and modifies them if necessary
-                    //if the keyword is not posted it is retrieved from the DB and displayed on the page
                     if (empty($_POST['Keyword' . ($n + 1)])) {
+                        //if the keyword is not posted it is retrieved from the DB
+                        //and displayed on the page
                         //retrieve the array of keywords
-                        $arrayKeywords = $tedx_manager->getKeywordsByPersonForEvent($argsPE)->getContent();
                         if (!empty($arrayKeywords[$n])) {//gets the nth KW
-                            $smarty->assign('kw' . ($n + 1), $arrayKeywords[$n]->getValue());
+                            $kw[$n] = $arrayKeywords[$n]->getValue();
+                            $smarty->assign('kw' . ($n + 1), $kw[$n]);
                         } else {
-                            $smarty->assign('kw' . ($n + 1), '');
+                            $kw[$n] = null;
+                            $smarty->assign('kw' . ($n + 1), 'No keyword to display');
                         }
-                    } else {//if the keyword is posted, it is added in the DB
-                        $args = array($arrayKeywords[$n], $person, $event); //create array from the retrieved KW 
-                        echo $tedx_manager->archiveKeyword($args)->getStatus(); //archive the previous KW
-                        //                 î should be named archiveKeywordFromPersonForEvent
-                        $kw = $_POST['Keyword' . ($n + 1)]; // gets the posted KW
-                        $args = array($kw, $person, $event); //creat the argument array
-                        //add the new KW in place of the previous one
-                        $msgAddKW = $tedx_manager->addKeywordsToAnEvent($args);
-                        if ($msgAddKW->getStatus()) {
-                            //changeregistrationStatus() to submitted
-                        } else {
-                            print ('<p class="error_msg">');
-                            print ("Error during the keyword process:");
-                            print $msgAddKW->getMessage();
-                            print ("</p>");
+                        $saveKW = FALSE;
+                    } else {//if the keyword is posted, the old one is archived
+                        if (!empty($arrayKeywords[$n])) {
+                            $argsKW = array(//create array from the retrieved KW 
+                                'value' => $arrayKeywords[$n]->getValue(),
+                                'person' => $person,
+                                'event' => $event
+                            );
+                            //archive the previous KW
+                            $msgArchiveKW = $tedx_manager->archiveKeyword($argsKW);
                         }
+                        $kw[$n] = $_POST['Keyword' . ($n + 1)]; // gets the posted KW and store it
+                        $smarty->assign('kw' . ($n + 1), $kw[$n]);
+                        $saveKW = TRUE;
                     }
                 }//end FOR 3 keywords
-//--------------Gets or send the motivation of the participant-----------------
-                if (empty($_POST['motivation'])) {
-                    $argsPAE = array(
-                        'participant' => $participant,
+                if ($saveKW) { //stores the new keywords
+                    $args = array(//create the argument array
+                        'listOfValues' => $kw,
+                        'person' => $person,
                         'event' => $event
                     );
+                    //add the new KW in place of the previous one
+                    $msgAddKW = $tedx_manager->addKeywordsToAnEvent($args);
+//                    if ($msgAddKW->getStatus()) {
+//                        //changeregistrationStatus() to submitted
+//                    } else {
+//                        print ('<p class="error_msg">');
+//                        print ("Error during the keyword process:");
+//                        print $msgAddKW->getMessage();
+//                        print ("</p>");
+//                    }
+                }
+                //--------------Gets or send the motivation of the participant----------
+                $arrayOldMotivation = $tedx_manager->getMotivationsByParticipantForEvent($argsPAE)->getContent();
+                if (isset($arrayOldMotivation)) {
+                    $oldMotivation = $arrayOldMotivation[0]->getText();
+                }
+                if (empty($_POST['motivation'])) {
                     // retrieve the motivation
-                    $arrayOldMotivation = $tedx_manager->getMotivationsByParticipantForEvent($argsPAE)->getContent();
                     if (!empty($arrayOldMotivation)) {//if the motivation is filled, it is set
-                        $oldMotivation = $arrayOldMotivation[0]->getText();
                         $smarty->assign('motivation', $oldMotivation);
                     } else {//if not, 
                         $smarty->assign('motivation', 'Please fill in you motivation');
                     }
                 } else {
-                    $argsOMPE = array($oldMotivation, $participant, $event);
-                    echo $tedx_manager->archiveMotivationToAnEvent($argsOMPE)->getMessage();
+                    if (!empty($arrayOldMotivation)) {
+                        $argsOMPE = array($oldMotivation, $participant, $event);
+                        echo $tedx_manager->archiveMotivationToAnEvent($argsOMPE)->getMessage();
+                    }
                     $motiv = $_POST['motivation'];
-                    $argsMEP = array($motiv, $event, $participant);
-                    $msgAddMotiv = $tedx_manager->addMotivationToAnEvent($argsMEP)->getMessage();
+                    $argsMEP = array(
+                        'text' => $motiv,
+                        'event' => $event,
+                        'participant' => $participant);
+                    var_dump($argsMEP);
+                    $msgAddMotiv = $tedx_manager->addMotivationToAnEvent($argsMEP);
+                    print ('<p class="error_msg">');
+                    print $msgAddMotiv->getMessage();
+                    print ("</p>");
                 }
-            }// end IF status
+            }// end IF status (open, locked)
+            //
 // ---------Gets events and last events for the historic -----------------------
             // declare the request arguments for events
             $searchArgs = array();
@@ -121,12 +152,8 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                 $smarty->assign('eventsObjects', $events);
             }//if
             $smarty->display('user_inscriptions.tpl');
-        }
+        }//end IF registrations are here
     }
-} else {
-    //---- print error message --------------------------------------------
-    print ('<p class="error_msg">');
-    print ("You are not logged in, you cannot access this content.</p>");
 }
 include 'userbar.php';
 ?>
