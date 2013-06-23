@@ -23,9 +23,13 @@ $smarty->setConfigDir('./configs');
 //checking the active page (for menu visual)
 //get the url
 $url=$_SERVER["REQUEST_URI"];
-//cut the first part
-$text=substr($url,24);
-//cut the end
+//get the size of the base url
+$sizeUrl=strlen($_SERVER['SERVER_NAME']);
+//cut it by slashes
+$text=explode("/",$url);
+// select the last part
+$text=$text[3];
+//cut the end(.php extension)
 $text=explode(".",$text);
 //select the first part
 $activeUrl=$text[0];
