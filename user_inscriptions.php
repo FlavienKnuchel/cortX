@@ -123,7 +123,11 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                     }
                 } else {
                     if (!empty($arrayOldMotivation)) {
-                        $argsOMPE = array($oldMotivation, $participant, $event);
+                        $argsOMPE = array(
+                            'text' => $oldMotivation,
+                            'participant' => $participant,
+                            'event' => $event
+                        );
                         echo $tedx_manager->archiveMotivationToAnEvent($argsOMPE)->getMessage();
                     }
                     $motiv = $_POST['motivation'];
