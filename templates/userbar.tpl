@@ -25,7 +25,9 @@ Description :
     {else}
 
         <form method="post" action="login.php" class="offset7 span3">
+            <label for="username">Login</label>
             <input type="text" name="username" placeholder="Username" id="form_log">
+            <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" id="form_log">
             <input type="submit" name="Login" value="OK" id="login">
         </form>
