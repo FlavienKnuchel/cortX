@@ -11,7 +11,6 @@
 
 include 'header.php';
 include 'menu_frontend.php';
-
-
+$smarty->display('media.tpl');
 include 'userbar.php';
 ?>
