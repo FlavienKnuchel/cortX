@@ -310,9 +310,6 @@ div.button_back{
     text-decoration:none;
 }
 
-section.space {
-    margin-top: 400px;
-}
 .tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
 
@@ -466,7 +463,6 @@ td.date{
   background-color:transparent;  
 }
 #about .span8,
-#about .span6,
 #about .span2 {
     background-color:transparent;
     margin-top: 0;
@@ -481,6 +477,13 @@ td.date{
     font-weight:bold;
     }
 /*--------------------------------- pages team ---------------------------------*/
+div.tuile ul.span8,
+div.tuile ul.span2,
+div.tuile ul.twoLines{
+    background-color:transparent;
+    margin-top: 0;
+    padding: 0;
+}
 
 #team a {
     color: #ff2b06;}
