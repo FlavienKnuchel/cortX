@@ -133,7 +133,7 @@ height:auto;
     margin-left:0px;
 }
 #nextevent img{
-    padding-top:50px;
+    
     padding-left:0px;
 }
 #tedxDisclaimer p{
@@ -147,7 +147,9 @@ height:auto;
 
     margin-top:35px;
 }
-
+#nextevent .span2,#nextevent .span6{
+ background-color:transparent;
+}
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
 ul li{

@@ -6,7 +6,7 @@ Date : 14.6.2013
 
 Description : Basic structure of the homepage
 -->
-<section id="nextevent" class="row">    
+<section id="nextevent" class="row firstElement">    
     <article class="offset2 span6">
         {if isset($upcomingEvents)}
             <h2>{$upcomingEvents[0]->getMainTopic()}</h2>
