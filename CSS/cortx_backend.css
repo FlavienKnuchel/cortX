@@ -101,6 +101,11 @@ section .span3{
     float:right;
     margin-left:20px;
 }
+.add {
+    float:right;
+    margin-left:20px;
+}
+
 
 /*______________________fil d'ariane--------------------------------------*/
 
@@ -283,11 +288,10 @@ input{
 label {
     height: 20px;
     margin:5px;
-    min-width:150px;
+    min-width:160px;
 }
 
 textarea {
-
     border-radius:3px;
     background-color:#e5e5e5;
     border:1px;
@@ -297,6 +301,10 @@ textarea {
     margin: 5px;
     padding-left: 2px;
     
+}
+
+textarea.desc {
+    width:100%;
 }
 
 
@@ -310,6 +318,8 @@ input[type=submit], .button {
     height:34px;
     line-height:34px;
     text-align:center;
+    width:130px;
+    display:inline-block;
 }
 
 input[type=submit], div.button a {
@@ -352,3 +362,6 @@ td.date{
     font-weight:bold;
     width:65px;
 }
+/*th {
+    width:50%;
+}*/

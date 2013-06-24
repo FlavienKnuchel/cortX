@@ -310,16 +310,15 @@ div.button_back{
     text-decoration:none;
 }
 
-section.space {
-    margin-top: 400px;
-}
 .tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
 
 .firstElement{
     margin-top:60px;
 }
-
+.end{
+    margin-bottom:60px;
+}
 #actualParticipateButton{
     float:right;
     width:200px;
@@ -434,6 +433,17 @@ color:#333333;
 .goodMessage h1{
     color:black;
 }
+.badMessage{
+    padding:10px 10px 10px 10px;
+    margin-right:10px;
+    background-color:#FFD3D3;
+    border:1px solid #FF786B;
+
+
+}
+.badMessage h1{
+    color:black;
+}
 .keywords{
     height:100%;
 }
@@ -460,10 +470,15 @@ td.date{
 }
 /*--------------------------------- pages about ---------------------------------*/
 #about{
-    margin:3%;
-    max-width:94%;
+  padding:0px;  
+  background-color:transparent;  
 }
-
+#about .span8,
+#about .span2 {
+    background-color:transparent;
+    margin-top: 0;
+    padding: 0;
+}
 #about a {
     color: #ff2b06;}
 
@@ -473,9 +488,12 @@ td.date{
     font-weight:bold;
     }
 /*--------------------------------- pages team ---------------------------------*/
-#team{
-    margin-top:5%;
-
+div.tuile ul.span8,
+div.tuile ul.span2,
+div.tuile ul.twoLines{
+    background-color:transparent;
+    margin-top: 0;
+    padding: 0;
 }
 
 #team a {

@@ -1,7 +1,7 @@
 
-<section id="about" class="tuile">    
+<section id="about" class="tuile firstElement end">    
     <ul>
-        <div class="offset2 span8 space">
+        <div class="offset2 span8">
             <li>
                 <a class="html" href="about_TED.php" title="TED">
                     <h3 class="offset2 span4">TED</h3>
