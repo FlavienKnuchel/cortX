@@ -37,23 +37,18 @@ foreach ($allRegistrations as $registration) {//for each registrations, tests if
     }//for each creates an array of registrations which are processed in Smarty
 }
 $smarty->assign('sentReg', $arrayOfSentReg);
-//$smarty->assign('sentRegSerialized', $sentRegSerialized);
 $smarty->assign('acceptedReg', $arrayOfAcceptedReg);
-//$smarty->assign('acceptedRegSerialized', $acceptedRegSerialized);
-//if(isset($_REQUEST['id'])){//method which might work... gets the serialized registration and works it
-//    $aRegistration = unserialize($_REQUEST['id']);
-//    $event = $tedx_manager->getEvent($aRegistration->getEventNo());
-//    $participant = $tedx_manager->getParticipant($aRegistration->getParticipantPersonNo());
-//    $args = array($participant, $event);
-//    $motivation = $tedx_manager->getMotivationsByParticipantForEvent($args)->getContent();
-//    var_dump($motivation);
-//}
+//----------- Gets the argument from the url ------------------------------
 if (isset($_REQUEST['id'])) {
     $row = $_REQUEST['id'];
-    $args = array($arrayOfSentReg[$row][1], $arrayOfSentReg[$row][0]);
-    $motivation = $tedx_manager->getMotivationsByParticipantForEvent($args)->getContent();
-    var_dump($motivation);
-    $smarty->assign('motivation', $motivation);
+    $args = array(
+        'event' => $arrayOfSentReg[$row][0],
+        'participant' => $arrayOfSentReg[$row][1]
+    );
+    $motivation = $tedx_manager->getMotivationsByParticipantForEvent($args);
+    $smarty->assign('msgMotivation', $motivation);
+    $arrayMotivation = $motivation->getContent();
+    $smarty->assign('motivation', $arrayMotivation[0]);
     $smarty->assign('row', $row);
 }
 if (isset($_POST['Accept']) && $_POST['Accept'] == 'Accept') {
