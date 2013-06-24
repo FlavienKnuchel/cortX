@@ -433,6 +433,17 @@ color:#333333;
 .goodMessage h1{
     color:black;
 }
+.badMessage{
+    padding:10px 10px 10px 10px;
+    margin-right:10px;
+    background-color:#E7FFE0;
+    border:1px solid #75FF72;
+
+
+}
+.badMessage h1{
+    color:black;
+}
 .keywords{
     height:100%;
 }
