@@ -6,9 +6,6 @@ Description :
 -->
 
 
-
-
-
 <footer class="row">
     {if $loggedin==TRUE}
         <div id="logged">
@@ -33,10 +30,9 @@ Description :
             <input type="submit" name="Login" value="OK" id="login">
         </form>
 
-
     {/if}    
 </footer>
 
-</div>
-</body>
+        </div>
+    </body>
 </html>
