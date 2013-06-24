@@ -8,7 +8,7 @@ Description : template of the general team page
 
 -->
 
-<section id="team">
+<section id="team" class="firstElement end">
     <div class="row">
         <div class="offset2 span8">
             <h1>The TEDxLausanne team</h1>
