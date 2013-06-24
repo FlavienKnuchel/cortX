@@ -58,7 +58,7 @@ section
 }
 
 section .span8{
-    background-color:#f0f0f0;
+    background-color:#626262;
     padding:10px;
     margin-right:10px;
 }
@@ -71,13 +71,13 @@ section.menu article.span8{
 }
 
 section .span5{
-    background-color:#f0f0f0;
+    background-color:#626262;
     padding:10px;
     margin-right:10px;
 }
 
 section .span3{
-    background-color:#f0f0f0;
+    background-color:#626262;
     padding:10px;
 }
 /*______________________fil d'ariane--------------------------------------*/
@@ -109,7 +109,6 @@ section .span3{
 #header_tedx_logo{
 
 }
-/*-------------------------------------home-----------------------------------------*/
 
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
