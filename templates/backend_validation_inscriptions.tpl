@@ -10,22 +10,22 @@ Description : backend of the participant page
     <section class="row">
         <article class="offset2 span5">
             {if $loggedin}
-                <article id="waiting_validation">
+                <div>
                     <h1>Pending registrations</h1>
                     {if !empty($sentReg)}
                         <table>
                             <tr>
-                                <th>Event</th>
-                                <th>Participant's Name</th>
+                                <th class="span3">Event</th>
+                                <th class="span2">Participant's Name</th>
                             </tr>
                             {section name=sentreg loop=$sentReg max=10}
                                 <tr>
-                                    <td>
+                                    <td class="span3">
                                         <a href="?id={$smarty.section.sentreg.index}">
                                             {$sentReg[sentreg][0]->getMainTopic()}
                                         </a>
                                     </td>
-                                    <td>
+                                    <td class="span2">
                                         <a href="?id={$smarty.section.sentreg.index}">
                                             {$sentReg[sentreg][1]->getName()}
                                         </a>
@@ -35,9 +35,9 @@ Description : backend of the participant page
                         </table>
                     {else}
                         <p class="error_msg">There is no request for a registration.</p>
-                    </article>
+                    </div>
                 {/if}
-                <article id="participant_validated">
+                    <div>
                     <h1>Accepted registrations</h1>
                     {if !empty($acceptedReg)}
                         <table>
@@ -59,7 +59,7 @@ Description : backend of the participant page
                     {else}
                         <p class="error_msg">There are no accepted registrations.</p>
                     {/if}
-                </article>
+                </div>
             </article>
             <article class="span3">
                 <h2>Motivation</h2>
