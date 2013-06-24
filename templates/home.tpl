@@ -7,24 +7,28 @@ Date : 14.6.2013
 Description : Basic structure of the homepage
 -->
 <section id="nextevent" class="row">    
-    <div class="offset2 span6">
-        <h2>{$NextEventName}</h2>
-        <p class="subtitle">getEventStartingDate()</p>
-        <p>{$NextEventDesc}</p>
-        <div class="button">
-            <a href="events.php" title="Get more infos and register to this event!">More Infos !</a>
-        </div>
-    </div>
-    <div class="span2">
-       <img src="img/event_now.png"/>        
-    </div>       
+    <article class="offset2 span6">
+        {if isset($upcomingEvents)}
+            <h2>{$upcomingEvents[0]->getMainTopic()}</h2>
+            <p class="subtitle">{$upcomingEvents[0]->getStartingDate()}</p>
+            <p>{$upcomingEvents[0]->getDescription()}</p>
+            <div class="button">
+                <a href="events.php" title="Get more infos and register to this event!">More Infos !</a>
+            </div>
+        {else}
+            <p class="error_msg">There are no upcoming events at the moment, sorry!</p>
+        {/if}
+    </article>
+    <aside class="span2">
+        <img src="img/event_now.png"/>        
+    </aside>       
 </section>
 
 <section id="videos" class="row">
-    <div class="offset2 span2" id="video_home_header">
+    <aside class="offset2 span2" id="video_home_header">
         <h1>Videos</h1>
         <h2>from previews events</h2>
-    </div>
+    </aside>
     <ul>
         <li class="span1">
             <a class="youtube" href="http://www.youtube.com/embed/lCRp9PussNU?autoplay=1&fs=1&rel=0&enablejsapi=1&playerapiid=ytplayer">
