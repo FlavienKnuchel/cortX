@@ -8,7 +8,7 @@ Description : template of the backend home page
 
 -->
 
-<section class="firstElement">    
+<section class="menu">    
     <article class="offset2 span8">
         <ul>
             <li>
@@ -33,3 +33,4 @@ Description : template of the backend home page
         </ul>
     </article>
 </section>
+
