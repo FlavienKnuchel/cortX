@@ -9,10 +9,9 @@ Description : template of the speaker profil
 -->
 
 <section id="speaker_year">
-    <article class="speaker_photo">
+    <div class="speaker_photo">
         <img src="img/speakers/big/speaker.jpg"/>
-    </article>
-
+    </div>
     <article class="speaker_nameANDdescription">
         {if isset($speaker)}
             <h2>{$speaker->getName()} {$speaker->getFirstName()}</h2>

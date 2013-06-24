@@ -6,20 +6,18 @@ Date : 18.6.2013
 
 Description : backend of the team page
 -->
-<div class="row offset2">
-        <section id="bk_team">
+<div class="row">
+        <section id="bk_team" class=" offset2 span8">
             <!-- do a loop on div (for all the person in the team) -->
             <div id="members_of_the_team">
                 <h1>{$person_name} {$person_first_name}</h1>
-                
                 <ul>
                     <!-- do a loop on li-->
                     <li>
                         <p>{$team_role_name}</p><a href="#" title="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a><a href="#" title="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a><!-- ATTENTION ajouter boutton modifier et supprimer-->
                     </li>
                 </ul>
-              
-                 <form method="POST" action="backend_team.php">
+                <form method="POST" action="backend_team.php">
                     <input type="text" list="team_role" required>
                     <datalist id="team_role" >
                        <option> {$team_role_name} <!--do a loop for all the role of the team-->
@@ -27,7 +25,9 @@ Description : backend of the team page
                  </form>
             </div>
         </section>
-        <section id="add_organizer">
+    </div>
+    <div class="row">
+        <section id="add_organizer" class="offset2 span8">
             <article>
                 <h2>Add an organizaer</h2>
                 <ul>
@@ -38,7 +38,9 @@ Description : backend of the team page
                 </ul>
             </article>
         </section>
-        <section id="add_new_person">
+    </div>
+    <div class="row">
+        <aside id="add_new_person" class="offset2 span8">
         <h2>Add a new person</h2>
         <h3>His/her co-ordinates</h3>
         <form method="post" action="register.php">
@@ -60,7 +62,7 @@ Description : backend of the team page
                     
                 <input type="submit" name="Add" value="Add" alt="Add the person">
             </article>
-            
         </form>
-        </section>
-</div>
+        </aside>
+    </div>
+

@@ -6,8 +6,9 @@ Date : 18.6.2013
 
 Description : backend of the participant page
 -->
-<section class="row offset2">
-    {if $loggedin}
+<section class="row">
+    <div class=" offset2 span8">
+        {if $loggedin}
         <article id="waiting_validation">
             <h2>Pending registrations</h2>
             {if !empty($sentReg)}
@@ -74,4 +75,5 @@ Description : backend of the participant page
     {else}
         <p class="error_msg">You can't access this content, please log in.</p>
     {/if}
+    </div>
 </section>
