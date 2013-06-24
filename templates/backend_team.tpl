@@ -6,15 +6,22 @@ Date : 18.6.2013
 
 Description : backend of the team page
 -->
-<div class="row">
-        <section id="bk_team" class=" offset2 span8">
+<section class="firstElement">
+    <section class="row">
+        <article class="offset2 span5">
             <!-- do a loop on div (for all the person in the team) -->
             <div id="members_of_the_team">
                 <h1>{$person_name} {$person_first_name}</h1>
                 <ul>
                     <!-- do a loop on li-->
                     <li>
-                        <p>{$team_role_name}</p><a href="#" title="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a><a href="#" title="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a><!-- ATTENTION ajouter boutton modifier et supprimer-->
+                        <p>{$team_role_name}</p>
+                        <a href="#" title="modify">
+                            <img  src="./img/modify.png" alt="modify" title="modify" />
+                        </a>
+                        <a href="#" title="delete">
+                            <img  src="./img/delete.png" alt="delete" title="delete" />
+                        </a><!-- ATTENTION ajouter boutton modifier et supprimer-->
                     </li>
                 </ul>
                 <form method="POST" action="backend_team.php">
@@ -24,11 +31,7 @@ Description : backend of the team page
                     </datalist>
                  </form>
             </div>
-        </section>
-    </div>
-    <div class="row">
-        <section id="add_organizer" class="offset2 span8">
-            <article>
+            <div id="organizer">
                 <h2>Add an organizaer</h2>
                 <ul>
                     <!-- do a loop on li-->
@@ -36,33 +39,31 @@ Description : backend of the team page
                         {$person_name} {$person_first_name} <!-- ATTENTION ajouter boutton "ajouter"-->
                     </li>
                 </ul>
-            </article>
-        </section>
-    </div>
-    <div class="row">
-        <aside id="add_new_person" class="offset2 span8">
-        <h2>Add a new person</h2>
-        <h3>His/her co-ordinates</h3>
-        <form method="post" action="register.php">
-            <article class="coordonees">
-                <input type="text" name="Lastname" placeholder="Name" autofocus required>
-                <input type="text" name="Firstname" placeholder="Firstname" required>
-                <label for="Date">Date of birth:</label>
-                <input type="date" name="Date" required>
-                <input type="text" name="Adress" placeholder="Address" required>
-                <input type="text" name="Town" placeholder="Town" required>
-                <input type="text" name="Country" placeholder="Country" required>
-                <input type="email" name="Email" placeholder="Email" required autocomplete>
-                <input type="tel" name="Phone" placeholder="Phone number" required>
-                <input type="password" name="Password" placeholder="Password" required>
-                <input type="role" name="Role" required>
-                    <datalist id="team_role" >
-                       <option> {$team_role_name} <!--do a loop for all the role of the team-->
-                    </datalist>
-                    
-                <input type="submit" name="Add" value="Add" alt="Add the person">
-            </article>
-        </form>
-        </aside>
-    </div>
+            </div>
+        </article>
+        <article class="span3">
+            <h1>Add a new person</h1>
+            <h2>His/her co-ordinates</h2>
+            <form method="post" action="register.php">
+                <article class="coordonees">
+                    <input type="text" name="Lastname" placeholder="Name" autofocus required>
+                    <input type="text" name="Firstname" placeholder="Firstname" required>
+                    <label for="Date">Date of birth:</label>
+                    <input type="date" name="Date" required>
+                    <input type="text" name="Adress" placeholder="Address" required>
+                    <input type="text" name="Town" placeholder="Town" required>
+                    <input type="text" name="Country" placeholder="Country" required>
+                    <input type="email" name="Email" placeholder="Email" required autocomplete>
+                    <input type="tel" name="Phone" placeholder="Phone number" required>
+                    <input type="password" name="Password" placeholder="Password" required>
+                    <input type="role" name="Role" required>
+                        <datalist id="team_role" >
+                            <option> {$team_role_name} <!--do a loop for all the role of the team-->
+                        </datalist> 
+                    <input type="submit" name="Add" value="Add" alt="Add the person">
+                </article>
+            </form>
+        </article>
+    </section>
+</section>
 

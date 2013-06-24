@@ -2,39 +2,94 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:12px;
-    color:#ffffff;
     background-color:#333333;
+    color: #e5e5e5;
     margin:0 auto;
     
 }
+
+a:active{
+    outline:none;
+}
+a:focus{
+    outline:none;
+}
+
 body h1{
     font-size:2em;
+    color: #ffffff;
 }
+
 body h2{
     font-size:1.7em;
+    color: #e5e5e5; 
 }
+
 body h3{
     font-size:1.5em;
 }
-/*---------------------------------content---------------------------------*/
+
+a {
+text-decoration:none;
+color:#ff2b06;
+}
+
+a:hover {
+text-decoration:none;
+color:#e5e5e5;
+}
+
+/*---------------------------------General content---------------------------------*/
 #content{
 max-height:100%;
 }
 
-/*______________________button--------------------------------------*/
-/*img {
-    margin-left:20px;
+section.lastElement{
+margin-bottom:80px;
 }
 
-a{
-text-decoration:none;
-    color: #ff2b06;
+.firstElement{
+    margin-top:60px;
 }
-a:hover{
-text-decoration:underline;
-    color: #ff2b06;
+
+/*no decoration on the lists*/
+ul li{
+    list-style: none;
 }
-*/
+ol li{
+    list-style:none;
+}
+
+/*section elements take full page width*/
+section
+{
+    width:100%;
+    margin-bottom:40px;
+}
+/*span*/
+section .span8{
+    background-color:#626262;
+    padding:10px;
+    margin-right:10px;
+}
+
+section.menu article.span8{
+    background-color: #333333;
+    padding:10px;
+    margin-right:10px;
+    margin-top:60px;
+}
+
+section .span5{
+    background-color:#626262;
+    padding:10px;
+    margin-right:10px;
+}
+
+section .span3{
+    background-color:#626262;
+    padding:10px;
+}
 /*______________________fil d'ariane--------------------------------------*/
 
 #ariane{
@@ -64,7 +119,6 @@ text-decoration:underline;
 #header_tedx_logo{
 
 }
-
 
 /*---------------------------------bottom userbar---------------------------------*/
 footer {
@@ -150,7 +204,7 @@ a#home_icon:hover{
     text-align:center;
 }
 /*---------------------------------homepage---------------------------------*/
-h3.tuile_menu {
+h3.menu_administrator {
     width:18.25%;
     background-color:#626262;
     text-align:center;
@@ -163,80 +217,42 @@ h3.tuile_menu {
     min-width:60px;
 }
 
-h3.tuile_menu:hover{
+h3.menu_organizer {
+    width:48%;
+    background-color:#626262;
+    text-align:center;
+    height: 150px;
+    color:#e5e5e5;
+    display:block;
+    float: left;
+    line-height:150px;
+    margin-right:10px;
+    min-width:60px;
+}
+
+h3.menu_validator {
+    width:32%;
+    background-color:#626262;
+    text-align:center;
+    height: 150px;
+    color:#e5e5e5;
+    display:block;
+    float: left;
+    line-height:150px;
+    margin-right:10px;
+    min-width:60px;
+}
+
+.menu h3:hover{
     background-color:#e5e5e5;
     color:#626262;
     text-decoration:none;
 }
 
-h3.tuile_menu a:hover{
+.menu h3 a:hover{
     text-decoration:none;
 }
 
-/*---------------------------------General Content---------------------------------*/
-.firstElement{
-    margin-top:60px;
-}
-
-
-
-/*no decoration on the lists*/
-ul li{
-    list-style: none;
-}
-
-/*section elements take full page width*/
-section
-{
-    width:100%
-}
-
-/*article margins*/
-article{
-   
-}
-
-/*video list*/
-/*#videos_title{
-    background-color:#f0f0f0;
-    margin-bottom:0px;
-    padding-top:5px;
-    
-    text-align:center;
-    padding-bottom:5px;
-}*/
-#videos{
-    background-color:#f0f0f0;
-    text-align:center;
-}
-#videos img{
-    margin-top:35px;
-    margin-bottom:35px;  
-}
-/*---------------------------------Media---------------------------------*/
-#videos_media{
-    text-align:center;
-}
-/*---------------------------------Social Content---------------------------------*/
-#socialnet{
-    /*height:135px;*/
-    margin-top:20px;
-    margin-bottom:50px;
-    text-align:center;
-    
-}
-#socialnet ul{
-
-}
-#socialnet li{
-    /*height:135px;
-    line-height:135px;*/
-    
-}
-#socialnet li a img{
-    width:50px;
-    height:50px;
-}
 /*---------------------------------Formular and buttons---------------------------------*/
 input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
     border-radius:3px;
@@ -245,20 +261,35 @@ input[type=password], input[type=text], input[type=date], input[type=email] , in
     border-color:#ffffff;
     height:20px;
  }
-input[type=submit] {
-    margin-top:3px;
+input[type=submit], .button {
+    margin-top:13px;
+    margin-bottom:13px;
     color:#e5e5e5;
     background-color:#333333;
     border:1px;
     border-color:#ffffff;
     width:130px;
     height:34px;
+    line-height:34px;
+    text-align:center;
 }
-input[type=submit]:hover{
+
+input[type=submit], div.button a {
+    display:block;
+    text-decoration:none;
+    color:#e5e5e5;
+    width:130px;
+    height:34px;
+    font-weight:bold;
+}
+
+input[type=submit]:hover, .button:hover{
     color:#e5e5e5;
     background-color:#626262;
     border:1px;
     border-color:#ffffff;
+    width:130px;
+    height:34px;
 }
 input .form_closed{
 }
@@ -268,19 +299,53 @@ textarea{
 
 }
 
-.list {
-    background-color:#626262;
+div.button_back{
+    background-image:url(../img/back.png);
+    background-repeat:no-repeat;
+    color: #E5E5E5;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 13px;
+    margin-top: 13px;
+    text-align: center;
+    width: 130px;
+    font-weight: bold;
+}
+.button_back a{
+    color: #E5E5E5;
+    display: block;
+    font-weight: bold;
+    height: 35px;
+    text-decoration: none;
+    width: 130px;
+    
+}
+.button_back:hover{
+    color:#e5e5e5;    
+    width:130px;
+    height:35px;
+    background-image:url(../img/back_hover.png);
+    background-repeat:no-repeat;
+   
 }
 
-.form {
-
+/*------------------------table--------------------------*/
+ .zebra{
+    background-color:#f0f0f0;
+    border-top:1px solid #c9c9c9;
+    }
+.table_title{
+    height:30px;
+    font-weight:bold;
+    
+    }
+td.title{
+    width: auto;
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-right:5px;
 }
-/*--------------------------------- pages about ---------------------------------*/
-#about{
-    margin:5%;
-    max-width:90%;
+td.date{
+    font-weight:bold;
+    width:65px;
 }
-
-
-
-/*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
