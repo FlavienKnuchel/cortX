@@ -238,8 +238,13 @@ input .form_closed{
 }
 input .big{
 }
+.motivation{
+height:100%;
+}
 textarea{
-
+    width:100%;
+    height:100%;
+    resize:none;
 }
 
 div.button_back{
@@ -271,6 +276,7 @@ div.button_back{
     background-repeat:no-repeat;
    
 }
+
 /*---------------------------------Tuiles---------------------------------*/
 .tuile about {height:150px; width: 40%;;}
 
@@ -347,10 +353,10 @@ ol li{
     list-style:none;
 }
 
-section .span8{
+section .span8, section .span6, section .span2{
     background-color:#f0f0f0;
-    padding:10px;
-    margin-right:10px;
+    padding:10px;  
+    margin-top: 0;
 }
 
 .slot_event{
@@ -425,6 +431,9 @@ color:#333333;
 }
 .goodMessage h1{
     color:black;
+}
+.keywords{
+    height:100%;
 }
 
             /*------------------------table--------------------------*/

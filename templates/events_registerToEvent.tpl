@@ -10,11 +10,11 @@ Description : template of the registration to an event
 
 {if isset($userCameFrom)}
     <div class="row">
-        <div class="button_back offset2 span1"><a title="go back to last page" href='{$userCameFrom}&fromInsc=true'>Back</a></div>
+        <div class="button_back offset2"><a title="go back to last page" href='{$userCameFrom}&fromInsc=true'>Back</a></div>
     </div>
 {else}
     <div class="row">
-        <div class="button_back offset2 span1"><a title="go back to events page" href='events.php'>Back</a></div>
+        <div class="button_back offset2"><a title="go back to events page" href='events.php'>Back</a></div>
     </div>
 {/if}
 {if !empty($error)}
@@ -24,7 +24,7 @@ Description : template of the registration to an event
 
 {else}
 {/if}
-<section>
+<section class="row">
     <div class="row">
         <h2 class="offset2 span8">Apply to this event!</h2>
     </div>
@@ -107,11 +107,13 @@ Description : template of the registration to an event
                 </article>
             </div>
             <div class="row">
-                <article class="motivation offset2 span8">
+                <article class="motivation offset2 span6">
                     <p class="subtitle">Explain us your motivations</p>
                     <textarea type="text" name="motivation" class="big" required>
                         {if isset($filledDatas.lastname)}{$filledDatas.lastname}{/if}
                     </textarea>
+                </article>
+                <article class="span2">
                     <p>
                         <label for="Keyword" title="describe your interests in 3 words">Keywords:</label>
                         <input type="text" name="keyword1" placeholder="Keyword"
@@ -121,6 +123,7 @@ Description : template of the registration to an event
                         <input type="text" name="keyword3" placeholder="Keyword"
                                value='{if isset($filledDatas.keyword3)}{$filledDatas.keyword3}{/if}'>
                     </p>
+                </article>
             </div>
             <div class="row">
                 <div class="offset2 span8">
@@ -129,7 +132,7 @@ Description : template of the registration to an event
                            title="Submit your registration request">
                 </div>
             </div>
-            </article>
+            
         {else}
             <div class="row">
                 <article class="domain offset2 span8">
@@ -139,15 +142,20 @@ Description : template of the registration to an event
                 </article>
             </div>
             <div class="row">
-                <article class="motivation offset2 span8">
+                
+                <article class="offset2 span6 motivation">
                     <p class="subtitle">Explain us your motivations</p>
                     <textarea type="text" name="motivation" class="big" required></textarea>
+                </article>
+                <article class="span2 keywords">
                     <p>
-                        <label for="Keyword" title="describe your interests in 3 words">Keywords:</label>
+                        <label for="Keyword" title="describe your interests in 3 words"><p>Keywords:</p></label>
                         <input type="text" name="keyword1" placeholder="Keyword" >
                         <input type="text" name="keyword2" placeholder="Keyword" >
                         <input type="text" name="keyword3" placeholder="Keyword" >
                     </p>
+                </article>
+             
             </div>
             <div class="row">
                 <div class="offset2 span8">
@@ -156,7 +164,7 @@ Description : template of the registration to an event
                                title="Submit your registration request">
                     </div>
                 </div>
-                </article>
+               
         {/if}
     </form>
 </section>
