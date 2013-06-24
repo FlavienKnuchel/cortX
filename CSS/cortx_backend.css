@@ -101,6 +101,11 @@ section .span3{
     float:right;
     margin-left:20px;
 }
+.add {
+    float:right;
+    margin-left:20px;
+}
+
 
 /*______________________fil d'ariane--------------------------------------*/
 
@@ -287,7 +292,6 @@ label {
 }
 
 textarea {
-
     border-radius:3px;
     background-color:#e5e5e5;
     border:1px;
