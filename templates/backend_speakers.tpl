@@ -24,12 +24,12 @@ Description : backend of the speakers page
                     <th>Edit</th>
                 </tr>
                 {section name=speaker loop=$speakers step=-1}
-                    <form method="POST" action="?id={$smarty.section.speaker.index}"
+                    <form method="POST" action="?id={$smarty.section.speaker.index}">
                           <tr>
                             <td>{$speakers[speaker]->getName()}</td>
                             <td>{$speakers[speaker]->getFirstName()}</td>
                             <td>
-                                <input type="submit" src="./img/modify.png" title="Modify" name="modify">
+                                <input type="submit" src="./img/modify.png" title="Modify" name="modify" class="modify">
                             </td>
                         </tr>
                     </form>

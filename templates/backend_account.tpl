@@ -14,8 +14,8 @@ Description : backend of the account page
             <!-- do a loop on li-->
                 <li>
                     <p>{$person_name}{$person_first_name}
-                        <a href="#" title="modify" class="modify"><img  src="./img/modify.png" alt="modify" title="modify" /></a>
-                        <a href="#" title="delete" class="delete"><img  src="./img/delete.png" alt="delete" title="delete" /></a>
+                        <a href="#" title="modify" class="modify"></a>
+                        <a href="#" title="delete" class="delete"></a>
                     </p>
                     
                     <!-- ATTENTION ajouter boutton modifier /!\ modifier renvoit au champ infos du comptes selectionné sur la meme page!(section ci-dessous) et supprimer-->

@@ -16,12 +16,9 @@ Description : backend of the team page
                     <!-- do a loop on li-->
                     <li>
                         <p>{$team_role_name}
-                            <a href="#" title="modify" class="modify">
-                                <img  src="./img/modify.png" alt="modify" title="modify" />
-                            </a>
-                            <a href="#" title="delete" class="delete">
-                            <img  src="./img/delete.png" alt="delete" title="delete" />
-                        </a><!-- ATTENTION ajouter boutton modifier et supprimer-->
+                           <a href="#" title="modify" class="modify"></a>
+                            <a href="#" title="delete" class="delete"></a>
+                            <!-- ATTENTION ajouter boutton modifier et supprimer-->
                         </p>
                     </li>
                 </ul>
@@ -33,7 +30,7 @@ Description : backend of the team page
                  </form>
             </div>
             <div id="organizer">
-                <h2>Add an organizer<a href="#" title="add this personn" class="add"><img  src="./img/add.png" alt="add this person" title="add" /></a></h2>
+                <h2>Add an organizer<a href="#" title="add this personn" class="add"></a></h2>
                 <ul>
                     <!-- do a loop on li-->
                     <li>
