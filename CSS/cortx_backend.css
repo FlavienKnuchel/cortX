@@ -94,9 +94,11 @@ section .span3{
 /*button*/
 
 .modify {
+    float:right;
     margin-left:20px;
 }
 .delete {
+    float:right;
     margin-left:20px;
 }
 
