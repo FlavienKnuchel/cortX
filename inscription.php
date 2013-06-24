@@ -168,7 +168,6 @@ if(isset($registrationSuccess)){
 $smarty->assign('error', $error);
 
 //send the filled datas, so we can collect them, and in case of error, no need to retype them
-var_dump($_POST);
 sendFilledDatas();
 /*---------------------------- normal inscription display  -----------------------------*/
 $smarty->display('events_registerToEvent.tpl');
@@ -274,6 +273,7 @@ function Register($registrationStatus){
     $type=$_POST['type'];
     $typeDescription=$_POST['typeDescription'];
 
+
     $registration = array(
         'person' => $person, // object Person
         'event' => $event, // object Event
@@ -282,11 +282,23 @@ function Register($registrationStatus){
         'type' => $type, // String
         'typedescription' => $typeDescription // String
     );
-    echo $tedx_manager->registerToAnEvent($registration)->getMessage();
+    $tedx_manager->registerToAnEvent($registration);
 
-    //ERREURS ----------------------------------------------- VOIR AVEC LES IT
-  //  echo $tedx_manager->addKeywordsToAnEvent(arrayKeywords(), $person,$event)->getStatut();
-   // echo $tedx_manager->addMotivationToAnEvent($_POST['motivation'], $event, $person)->getStatut();
+    $keywordsArray = array(
+    'listOfValues' => arrayKeywords(),
+    'person' => $person,
+    'event' => $event );
+
+    $tedx_manager->addKeywordsToAnEvent($keywordsArray);
+    $personNo=$person->getNo();
+    $aMotivation = array(
+        'Text' => $_POST['motivation'],
+        'Event' => $event,
+        'Participant' => $tedx_manager->getParticipant($personNo)->getContent()
+);
+    var_dump($aMotivation);
+    $tedx_manager->addMotivationToAnEvent($aMotivation);
+
 
     if($registrationStatus=="sent"){
         $participant=$tedx_manager->getParticipant($person->getNo());

@@ -8,16 +8,16 @@ Date : 14.6.2013
 Description : template of the events page
 
 -->
-
-<section id="event_detail">
-    <div class="row">
+<div class="row">
         {if isset($userCameFrom)}
             <div class="button_back offset2"><a title="go back to lats page" href='{$userCameFrom}'>Back</a></div>
         {/if}
         {if isset($userCameFromInsc)&&$userCameFromInsc}
             <div class="button_back offset2"><a title="go back to event page" href='events.php'>Back</a></div>
         {/if}
-    </div>
+</div>
+<section id="event_detail">
+    
     <div class="row">
         <section id="current_event" class="offset2 span8">
             <article class="desc_event">
@@ -25,22 +25,25 @@ Description : template of the events page
                 {if isset($actualEvent) and isset($actualEventLocation)}
                     {if !empty($actualEvent) and !empty($actualEventLocation)}
                         <!-- test if we can register to this event -->
+                <div class="row">
                         {if isset($inscriptionStatus) && $inscriptionStatus}
-                            <div class="button">
+                            <div class="button" id="actualParticipateButton">
                                 <a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a>
                             </div>
+                            <h1 class="current_event_title">{$actualEvent->getMainTopic()}</h1>
+                            <h2 class="date">{$actualEvent->getStartingDate()}</h2>
                         {/if}
-    
+                </div>
+                
                             <!-- test to display the first event (last of the array) -->
-                                    <h1>{$actualEvent->getMainTopic()}</h1>
-                                    <article class="EventAdress">
-                                        <h2>Adress</h2>
+                                    
+                                    <article class="actualEventAdress box">
+                                        
                                         <p>{$actualEventLocation->getAddress()}</p>
                                         <p>{$actualEventLocation->getName()}</p>
-                                        <p>{$actualEventLocation->getCity()}</p>
-                                        <p>{$actualEventLocation->getCountry()}</p>
+                                        <p>{$actualEventLocation->getCity()}, {$actualEventLocation->getCountry()}</p>
                                     </article>
-                                    <p class="date">{$actualEvent->getStartingDate()}</p>
+                                    
                                     <p>{$actualEvent->getDescription()}</p>
                     {else}
                         <!--  error message ifno event is scheduled -->
@@ -53,20 +56,22 @@ Description : template of the events page
     
             </article>
     
-            <article class="programme_event">
-                <!-- smarty variables existence test -->
+            <article>
                 <h2>Slots</h2>
+                <!-- smarty variables existence test -->
+                <ul>
                 {if isset($slotsAndSpeakers)}
                     {if !empty($slotsAndSpeakers)}
                         <!-- loop through the slots array and display them-->
                         {section loop=$slotsAndSpeakers name=slot}
-                           <ol class="slot_event">
-                               {if !is_null($slotsAndSpeakers[slot].slot)}
-                                    <li><h3>Slot {$slotsAndSpeakers[slot].slot->getNo()}</h3></li>
-                                    <li>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</li>
-                                    <li>Live presentation : </li>
+                {if !is_null($slotsAndSpeakers[slot].slot)}
+                
+                
+                           <li class="slot_event">
+                               <h3>Slot {$slotsAndSpeakers[slot].slot->getNo()}</h3>
+                                    <p>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</p>
+                                    <p>Live presentation : </p>
                                    <ol>
-    
                                             {if !empty($slotsAndSpeakers[slot].speakers)}
                                                 {section name=speaker loop=$slotsAndSpeakers[slot].speakers}
                                                 <li><a href='speaker_profil.php?No={$slotsAndSpeakers[slot].speakers[speaker]->getNo()}'>
@@ -77,8 +82,9 @@ Description : template of the events page
     
                                    </ol>
                                 {/if}
-                            </ol>
+                            </li>
                         {/section}
+                    </ul>
                     {else}
                         <!-- displayed when there is no slot -->
                         <p>No slot scheduled</p>

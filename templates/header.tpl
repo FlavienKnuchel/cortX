@@ -10,7 +10,6 @@ Description : general navigation and
     <head>
     <meta charset="utf-8" />
     <LINK rel="icon" type="image/png" href="img/favicon.png" />
-
     <LINK rel="stylesheet" media="all" href="./css/normalize.css" />
     <LINK rel="stylesheet" media="all" href="./css/grid.css" />
     <LINK rel="stylesheet" media="all" href="./css/menu.css" />
@@ -19,8 +18,11 @@ Description : general navigation and
         
 
         <!-- colorbox javascript-->
-            <script src="jquery/jquery-1.10.1.min.js"></script>
-            <script src="jquery/jquery.colorbox-min.js"></script>
+            <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+            <script type="text/javascript" src="js/modernizr.custom.44029.js"></script>
+            <link rel="stylesheet" href="js/placeholder_polyfill.min.css">
+            <script src="js/placeholder_polyfill.jquery.min.combo.js" charset="utf-8"></script>
         {literal} <!-- Avoiding smarty to crash on the javascript code -->
             <script type="text/javascript">
                 $(document).ready(function(){
@@ -33,5 +35,23 @@ Description : general navigation and
                 });
 
             </script>
+            <script type="text/javascript">
+                Modernizr.load({
+                    test: Modernizr.input.placeholder,
+                    nope: [
+                        'js/placeholder_polyfill.min.css',
+                        'js/placeholder_polyfill.jquery.min.combo.js'
+                    ]
+                });
+            </script>
+        <script type="text/javascript">
+            yepnope({
+                test: ('placeholder' in $('<input>')[0]),
+                nope: [
+                    'placeholder_polyfill.min.css',
+                    'placeholder_polyfill.jquery.min.combo.js'
+                ]
+            });
+        </script>
         {/literal}
         <!-- enf of colorbox javascript-->
