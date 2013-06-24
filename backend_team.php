@@ -9,6 +9,8 @@
 */
 include 'header.php';
 include 'menu_backend.php';
+$teamroles = $tedx_manager->getTeamRoles()->getContent();
+$smarty->assign('teamroles', $teamroles);
 $smarty->assign('person_name','getName Person');
 $smarty->assign('person_first_name','getFirstName Person');
 $smarty->assign('team_role_name','getName TeamRole');

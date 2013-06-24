@@ -48,22 +48,43 @@ Description : backend of the team page
             <h1>Add a new person</h1>
             <h2>His/her co-ordinates</h2>
             <form method="post" action="register.php">
-                    <input class="span1" type="text" name="Lastname" placeholder="Name" autofocus required>
+                <label class="span1" for="LastName">Last Name:</label>
+                <input class="span1" type="text" name="Lastname" placeholder="Name" autofocus required>
+                
+                <label class="span1" for="FirstName">First Name:</label>
                     <input class="span1" type="text" name="Firstname" placeholder="Firstname" required>
+                
                     <label class="span1" for="Date">Date of birth:</label>
                     <input class="span1" type="date" name="Date" required>
+                
+                <label class="span1" for="Address">Address:</label>
                     <input class="span1" type="text" name="Adress" placeholder="Address" required>
+                
+                <label class="span1" for="Town">Town:</label>
                     <input class="span1" type="text" name="Town" placeholder="Town" required>
+                
+                <label class="span1" for="Country">Country:</label>
                     <input class="span1" type="text" name="Country" placeholder="Country" required>
+                
+                <label class="span1" for="Email">Email:</label>
                     <input class="span1" type="email" name="Email" placeholder="Email" required autocomplete>
+                
+                <label class="span1" for="Phone">Phone:</label>
                     <input class="span1" type="tel" name="Phone" placeholder="Phone number" required>
+                
+                <label class="span1" for="Password">Password:</label>
                     <input class="span1" type="password" name="Password" placeholder="Password" required>
-                    <input class="span1" type="role" name="Role" required>
-                        <datalist>
-                            <option> {$team_role_name} <!--do a loop for all the role of the team-->
-                        </datalist> 
+                
+                <label class="span1" for="Role">Role:</label>
+                <select name="teamRoles">
+                    {section name=teamrole loop=$teamroles}
+                    <option value="{$teamroles[teamrole]->getName()}">{$teamroles[teamrole]->getName()}</option>
+                    {/section}
+                </select>
                     <input type="submit" name="Add" value="Add" alt="Add the person">
             </form>
         </article>
     </section>
 </section>
+
+
