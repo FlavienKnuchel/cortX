@@ -16,22 +16,24 @@ Description : template of the events page
                     <p>Got to "My registrations" in the bottom bar menu to check the status of your registration</p>
             </article>
         </section>
-    {/if}
+   {/if}
     <section>
         <div class="row">
-        <section id="current_event" class="offset2 span8">
-            <article class="desc_event">
+        <section class="offset2 span8">
+            <article class="box">
                 <!-- smarty variables existence test -->
                 {if isset($actualEvent) and isset($actualEventLocation)}
                     {if !empty($actualEvent) and !empty($actualEventLocation)}
-                        
+                <div class="row">
+                        <div class="button" id="actualParticipateButton"><a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a></div>
                                     <h1 class="current_event_title">{$actualEvent->getMainTopic()}</h1>
-                <div class="button" id="actualParticipateButton"><a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a></div>
-                        <h2 class="date">{$actualEvent->getStartingDate()}</h2>
-                                    <article class="actualEventAdress">
+                    <h2 class="date">{$actualEvent->getStartingDate()}</h2>
+                </div>
+                    <article class="actualEventAdress">
                                         <p>{$actualEventLocation->getAddress()}</p><p>{$actualEventLocation->getName()}</p>
                                         <p>{$actualEventLocation->getCity()}, {$actualEventLocation->getCountry()}</p>
                                     </article>
+                        
     
                                     <p>{$actualEvent->getDescription()}</p>
                     {else}
@@ -40,25 +42,27 @@ Description : template of the events page
                     {/if}
                 {else}
                     <!-- error message if no variable set -->
-                    <p class="error_msg">Error - Event couldn't be found</p>
+                    <p>Error - Event couldn't be found</p>
                 {/if}
     
             </article>
     
-            <article class="programme_event">
+            <article>
                 <h2>Slots</h2>
                 <!-- smarty variables existence test -->
+                <ul>
                 {if isset($slotsAndSpeakers)}
                     {if !empty($slotsAndSpeakers)}
                         <!-- loop through the slots array and display them-->
                         {section loop=$slotsAndSpeakers name=slot}
-                           <ol class="slot_event">
-                               {if !is_null($slotsAndSpeakers[slot].slot)}
-                                    <li><h3>Slot {$slotsAndSpeakers[slot].slot->getNo()}</h3></li>
-                                    <li>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</li>
-                                    <li>Live presentation : </li>
+                {if !is_null($slotsAndSpeakers[slot].slot)}
+                
+                
+                           <li class="slot_event">
+                               <h3>Slot {$slotsAndSpeakers[slot].slot->getNo()}</h3>
+                                    <p>{$slotsAndSpeakers[slot].slot->getStartingTime()} - {$slotsAndSpeakers[slot].slot->getEndingTime()}</p>
+                                    <p>Live presentation : </p>
                                    <ol>
-    
                                             {if !empty($slotsAndSpeakers[slot].speakers)}
                                                 {section name=speaker loop=$slotsAndSpeakers[slot].speakers}
                                                 <li><a href='speaker_profil.php?No={$slotsAndSpeakers[slot].speakers[speaker]->getNo()}'>
@@ -69,8 +73,9 @@ Description : template of the events page
     
                                    </ol>
                                 {/if}
-                            </ol>
+                            </li>
                         {/section}
+                    </ul>
                     {else}
                         <!-- displayed when there is no slot -->
                         <p>No slot scheduled</p>
@@ -84,7 +89,7 @@ Description : template of the events page
         </div>
             
             
-        <section class="row end">
+        <section class="row lastElement">
             <aside id="upcomingEvents" class="offset2 span4">
                 <h2>Upcoming events</h2>
                 <table>

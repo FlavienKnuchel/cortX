@@ -35,7 +35,7 @@ body h4 {
 #content{
     max-height:100%;
 }
-section.end{
+section.lastElement{
 margin-bottom:80px;
 }
 
@@ -307,19 +307,16 @@ section.space {
 }
 .tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
-#current_event{
-background-color:#f0f0f0;
 
-}
 .firstElement{
     margin-top:60px;
 }
 
 #actualParticipateButton{
     float:right;
-    margin-right:15px;
     width:200px;
     height:50px;
+    margin:0;
 }
 #actualParticipateButton a{
     width:200px;
@@ -330,7 +327,8 @@ background-color:#f0f0f0;
 .actualEventAdress{
     float:right;
     margin-right:19px;
-    text-align:right
+    text-align:right;
+    margin:0;
 }
 
 #current_event .button{
@@ -349,26 +347,37 @@ ol li{
     list-style:none;
 }
 
-.desc_event  {
-    padding:10px 10px 10px 10px;
+section .span8{
+    background-color:#f0f0f0;
+    padding:10px;
     margin-right:10px;
 }
-.desc_event p {
+
+.slot_event{
+    max-width:150px;
+    float:left;
+}
+.slot_event h3{
+    line-height:15px;
+    margin:0;
+}
+.slot_event ol{
+    margin-left:10px;
+}
+.slot_event p{
+    margin-left:10px;
+}
+
+.box p {
     margin-bottom:5px;
 }
 
-.programme_event {
-    padding:10px 10px 10px 10px;
-    margin-right:10px;
-}
-.programme_event p {
-    margin-bottom:5px;
-}
-.programme_event a {
+article a {
 text-decoration:none;
 color:#ff2b06;
 }
-.programme_event a:hover {
+
+article a:hover {
 text-decoration:none;
 color:#333333;
 }

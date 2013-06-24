@@ -12,10 +12,10 @@ Description : template of the events page
 <section id="event_detail">
     <div class="row">
         {if isset($userCameFrom)}
-            <div class="button_back offset2 span8"><a title="go back to lats page" href='{$userCameFrom}'>Back</a></div>
+            <div class="button_back offset2"><a title="go back to lats page" href='{$userCameFrom}'>Back</a></div>
         {/if}
         {if isset($userCameFromInsc)&&$userCameFromInsc}
-            <div class="button_back offset2 span8"><a title="go back to event page" href='events.php'>Back</a></div>
+            <div class="button_back offset2"><a title="go back to event page" href='events.php'>Back</a></div>
         {/if}
     </div>
     <div class="row">
