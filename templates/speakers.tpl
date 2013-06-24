@@ -11,21 +11,23 @@ Description : template of the speaker section
 
 <section id="speaker_year">
     <article class="title_year row">
-        <div class="offset2 span8">
-            <h1>Speakers {$speakers_year}</h1>
-            <p class="description_list_speakers_year">
-                Here is our speakers list of the year {$speakers_year}. Have a look at their profil below
-            </p>
-        </div>
+        <h1 class="offset2 span8">Speakers</h1>
     </article>       
-    <div class="speakers_photo row">
-        <ul class="offset2 span8">
-            <!-- do a loop on <li> -->
-            <li>
-                <a href="speaker_profil.php">
-                    <p>{$speaker_name}</p>
-                </a>
-            </li>
-        </ul>
-    </div>
+    <article class="speakers_photo row">
+        {if isset($speakers)}
+            <ul class="offset2 span8">
+                <!-- do a loop on <li> -->
+                {section name=listspeakers loop=$speakers step=-1}
+                    <li>
+                        <a href="speaker_profil.php?id={$speakers[listspeakers]->getNo()}">
+                            <p>{$speakers[listspeakers]->getName()}</p>
+                            <p>{$speakers[listspeakers]->getFirstName()}</p>
+                        </a>
+                    </li>
+                {/section}
+            </ul>
+        {else}
+            <p class="error_msg">There are currently no speakers to be displayed, sorry.</p>
+        {/if}
+    </article>
 </section>
