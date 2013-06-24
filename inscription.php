@@ -54,7 +54,7 @@ else{
     //if the number is not specified, there's a problem
     header("Location: 404.php");
 }
-/*------------------------------ formular processing, and registration  ------------------------------*/
+/*------------------------------ MAIN: formular processing, and registration  ------------------------------*/
 //initializing the error variable
 $error='';
 
@@ -97,55 +97,60 @@ if(isset($_POST['motivation'])){
         //test if all the fields of the form are filled
         //test if the password id correct
         if(confirmPassword()){
-            //create an array with the variables
-            $visitor=createVisitorArray();
-            //try to create the visitor
-            $messageRegisterVisitor=$tedx_manager->registerVisitor($visitor);
+            if(validateDateOfBirth()){
+                //create an array with the variables
+                $visitor=createVisitorArray();
+                //try to create the visitor
+                $messageRegisterVisitor=$tedx_manager->registerVisitor($visitor);
 
-            //if the registration went well
-            if($messageRegisterVisitor->getStatus()){
-                //set the registration suce to true
-                $registrationSuccess=true;
-                //login the user
-                $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
-                //if logged in
-
-                if($messageLogin->getStatus()){
-                    //assign true tu the smarty value (for the userbar display
-                    $smarty->assign('loggedin', true);
-                }
-
-
-                //check if the status has been entered
-                if(!is_null(checkStatus())){
-                    //is is a save or a send?
-                    // if it is a send
-                    if(checkStatus()=="send"){
-                        //if the motivation is filled
-                        if(checkMotivation()){
-                            //send the registration
+                //if the registration went well
+                if($messageRegisterVisitor->getStatus()){
+                    //set the registration suce to true
+                    $registrationSuccess=true;
+                    //login the user
+                    $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
+                    //if logged in
+                    if($messageLogin->getStatus()){
+                        //assign true tu the smarty value (for the userbar display
+                        $smarty->assign('loggedin', true);
+                        //test the user level
+                        setUserLevel();
+                    }
+                    //check if the status has been entered
+                    if(!is_null(checkStatus())){
+                        //is is a save or a send?
+                        // if it is a send
+                        if(checkStatus()=="send"){
+                            //if the motivation is filled
+                            if(checkMotivation()){
+                                //send the registration
+                                Register(checkStatus());
+                                $registrationSuccess=true;
+                            }
+                            else{
+                                //set the error for motivation filling
+                                $error="Please, fill in your motivation if you want to send your inscription";
+                            }//else
+                        }//if
+                        //if it is a save
+                        else{
                             Register(checkStatus());
                             $registrationSuccess=true;
                         }
-                        else{
-                            //set the error for motivation filling
-                            $error="Please, fill in your motivation if you want to send your inscription";
-                        }//else
-                    }//if
-                    //if it is a save
-                    else{
-                        Register(checkStatus());
-                        $registrationSuccess=true;
                     }
-                }
+                    else{
+                        //set the error for status
+                        $error="status";
+                    }
+                }//if
                 else{
-                    //set the error for status
-                    $error="status";
-                }
+                    //if the registration didn't go well
+                    $error=$messageRegisterVisitor->getMessage();
+                }//else
+
             }//if
             else{
-                //if the registration didn't go well
-                $error=$messageRegisterVisitor->getMessage();
+                $error="Please enter a correct Birthdate";
             }//else
 
         }//if
@@ -243,14 +248,14 @@ function sendFilledDatas(){
     global $smarty;
     //create an array with the filled infos
     $registration=array();
-    if(isset($_POST['firstName']))$registration['firstname'] = $_POST['firstName'];
+    if(isset($_POST['firstname']))$registration['firstname'] = $_POST['firstname'];
     if(isset($_POST['lastname']))$registration['lastname']= $_POST['lastname'];
     if(isset($_POST['username']))$registration['username']= $_POST['username'];
     if(isset($_POST['date']))$registration['date']=$_POST['date'];
     if(isset($_POST['address']))$registration['address']= $_POST['address'];
     if(isset($_POST['city']))$registration['city']= $_POST['city'];
     if(isset($_POST['country']))$registration['country']= $_POST['country'];
-    if(isset($_POST['telephone']))$registration['telephone']=$_POST['telephone'];
+    if(isset($_POST['phone']))$registration['phone']=$_POST['phone'];
     if(isset($_POST['email']))$registration['email']= $_POST['email'];
     if(isset($_POST['username']))$registration['username']= $_POST['username'];
     if(isset($_POST['type']))$registration['type']= $_POST['type'];
@@ -292,9 +297,9 @@ function Register($registrationStatus){
     $tedx_manager->addKeywordsToAnEvent($keywordsArray);
     $personNo=$person->getNo();
     $aMotivation = array(
-        'Text' => $_POST['motivation'],
-        'Event' => $event,
-        'Participant' => $tedx_manager->getParticipant($personNo)->getContent()
+        'text' => $_POST['motivation'],
+        'event' => $event,
+        'participant' => $tedx_manager->getParticipant($personNo)->getContent()
 );
     var_dump($aMotivation);
     $tedx_manager->addMotivationToAnEvent($aMotivation);
@@ -314,6 +319,60 @@ function Register($registrationStatus){
     else{
         header('Location:404.php');
     }
+
+}
+
+function setUserLevel(){
+    global $tedx_manager;
+    global $smarty;
+    if ($tedx_manager->isLogged()) {
+        if ($tedx_manager->isParticipant()) {
+            $smarty->assign('userLevel', 'participant');
+            $smarty->assign('classUserLevel', 'menu_participant');
+        }
+        if ($tedx_manager->isOrganizer()) {
+            $smarty->assign('userLevel', 'organizer');
+            $smarty->assign('classUserLevel', 'menu_organizer');
+        }
+        if ($tedx_manager->isValidator()) {
+            $smarty->assign('userLevel', 'validator');
+            $smarty->assign('classUserLevel', 'menu_validator');
+        }
+        if ($tedx_manager->isAdministrator()) {
+            $smarty->assign('userLevel', 'administrator');
+            $smarty->assign('classUserLevel', 'menu_administrator');
+        }
+        if ($tedx_manager->isSuperadmin()) {
+            $smarty->assign('userLevel', 'superadmin');
+            $smarty->assign('classUserLevel', 'menu_superadmin');
+        }
+    }
+}
+
+function validateDateOfBirth(){
+    if(isset($_POST['date'])){
+        $date= $_POST['date'];
+        $date=explode("-",$date);
+            if(sizeof($date)==3){
+                $year=$date[0];
+                $month=$date[1];
+                $day=$date[2];
+
+                if($year>=1800 && $year <=date(Y) && $month<13 && $month>0 && $day>=0 && $day<=31){
+                    return true;
+                }//if
+                else{
+                    return false;
+                }//else
+            }//if
+        else{
+            return false;
+        }//else
+    }//if
+    else{
+        return false;
+    }//else
+
 
 }
 
