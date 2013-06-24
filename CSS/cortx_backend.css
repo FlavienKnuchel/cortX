@@ -19,12 +19,10 @@ body h3{
 /*---------------------------------content---------------------------------*/
 #content{
 max-height:100%;
-
-    
 }
 
 /*______________________button--------------------------------------*/
-img {
+/*img {
     margin-left:20px;
 }
 
@@ -36,7 +34,7 @@ a:hover{
 text-decoration:underline;
     color: #ff2b06;
 }
-
+*/
 /*______________________fil d'ariane--------------------------------------*/
 
 #ariane{
@@ -152,22 +150,36 @@ a#home_icon:hover{
     text-align:center;
 }
 /*---------------------------------homepage---------------------------------*/
+h3.tuile_menu {
+    width:18.25%;
+    background-color:#626262;
+    text-align:center;
+    height: 150px;
+    color:#e5e5e5;
+    display:block;
+    float: left;
+    line-height:150px;
+    margin-right:10px;
+    min-width:60px;
+}
 
-/*main event*/
-#nextevent{
-height:auto;    
+h3.tuile_menu:hover{
+    background-color:#e5e5e5;
+    color:#626262;
+    text-decoration:none;
 }
-#nextevent p{
-    padding-right:10px;
+
+h3.tuile_menu a:hover{
+    text-decoration:none;
 }
-#nextevent ul{
-    margin-left:0px;
-}
-#nextevent img{
-    padding-top:50px;
-    padding-left:0px;
-}
+
 /*---------------------------------General Content---------------------------------*/
+.firstElement{
+    margin-top:60px;
+}
+
+
+
 /*no decoration on the lists*/
 ul li{
     list-style: none;
@@ -263,39 +275,6 @@ textarea{
 .form {
 
 }
-/*---------------------------------Tuiles---------------------------------*/
-
-#tuile h3{
-    background-color:#f0f0f0;
-    min-width:200px;
-    text-align:center;
-    height: 150px;
-    margin-top:5px;
-    margin-bottom: 5px;
-    color:#333333;
-    padding:60px 5px 0 5px;
-    margin-right:10px;
-}
-
-#tuile h3.twoLines {
-    padding-top: 60px;
-}
-
-
-#tuile h3.bottom {
-    margin-bottom: 60px;
-}
-
-
-#tuile h3:hover{
-    background-color:#626262;
-    color:#e5e5e5;
-    text-decoration:none;
-}
-
-section.space {
-    margin-top: 20px;
-}
 /*--------------------------------- pages about ---------------------------------*/
 #about{
     margin:5%;
@@ -305,12 +284,3 @@ section.space {
 
 
 /*------------------@media ATTENTION Anthony mets ça tout à la fin de la css de cortx-----------------*/
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 728px;
-  }
-    body #tuile h3.twoLines {
-    padding-top: 45px;
-}
-}
