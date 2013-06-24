@@ -7,8 +7,8 @@ Date : 18.6.2013
 Description : backend of the speakers page
 -->
 <div class="row">
-    <section id="bk_speakers" class="offset2 span8">
-        <article>
+    <section id="bk_speakers" class="offset2 span4">
+        <article class="list">
             <h2>Speakers</h2>    
                 <ul>
                     <!-- do a loop on li-->
@@ -18,7 +18,7 @@ Description : backend of the speakers page
                 </ul>     
         </article>
     </section>
-    <section id="add_speaker" class="offset2 span8">
+    <section id="add_speaker" class="span4 form">
         <article>
             <h2>Add a speaker</h2>
                 <form method="POST" action="backend_speakers.php">
