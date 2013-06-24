@@ -7,6 +7,11 @@
     nav ul li a{
         display:none;
     }
+    section .span8, section .span6, section .span2 {
+    background-color: #F0F0F0;
+    margin-top: 0;
+    padding: 0px;
+    }   
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
@@ -31,11 +36,15 @@
         margin-left:1.45%;
         margin-right:1.45%;
     }
-    #videos .span2{
-    display:inline;
+    #videos img{
+        display:inline;
+        margin-left:5%;
+        width:90%;
+        
     }
-    #videos{
-       margin-top:5%;
+    #videos .span2{
+       margin-left:5%;
+        width:95%;
     }
     /*-------------------userbar-----------------------------------*/
     footer form {    
