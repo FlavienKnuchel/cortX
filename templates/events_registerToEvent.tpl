@@ -18,9 +18,11 @@ Description : template of the registration to an event
     </div>
 {/if}
 {if !empty($error)}
-    <div id="row">
-        <p class="offset2 span8 badMessage">{$error}</p>
-    </div>
+    <section id="row">
+        <article class="offset2 span8 badMessage">
+            <p>{$error}</p>
+        </article>
+    </section>
 
 {else}
 {/if}
