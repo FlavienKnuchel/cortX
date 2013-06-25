@@ -9,7 +9,7 @@ Description : template of the registration to an event
 -->
 
 {if isset($userCameFrom)}
-    <div class="row firstevent">
+    <div class="row">
         <div class="button_back offset2"><a title="go back to last page" href='{$userCameFrom}&fromInsc=true'>Back</a></div>
     </div>
 {else}
@@ -17,7 +17,7 @@ Description : template of the registration to an event
         <div class="button_back offset2"><a title="go back to events page" href='events.php'>Back</a></div>
     </div>
 {/if}
-{if isset($error)}
+{if !empty($error)}
     <section id="row">
         <article class="offset2 span8 badMessage">
             <p>{$error}</p>
@@ -25,10 +25,15 @@ Description : template of the registration to an event
     </section>
 {/if}
 <section class="row">
-    <div class="span12">
+    <div class="row">
         <h2 class="offset2 span8">Apply to this event!</h2>
     </div>
 
+    {if empty($error)}
+    <div class="row">
+        <p class="subtitle offset2 span8">Fill in your informations to create your registration</p>
+    </div>
+    {/if}
     <form method="post" action="inscription.php">
 
         {if !$loggedin}
