@@ -8,7 +8,27 @@ Description : template of the user inscription
 
 -->
 
+<<<<<<< HEAD
+<section class="firstElement row">
+    {if isset($errorSendMotiv)}
+        <section class="row">
+            <article class="offset2 span8 badMessage">
+                <h1>Error!</h1>
+                <p>You did not fill you motivation before sending it. Please do so, and try again.</p>
+            </article>
+        </section>
+    {/if}
+    {if isset($errorSendKW)}
+        <section class="row">
+            <article class="offset2 span8 badMessage">
+                <h1>Error!</h1>
+                <p>You did not fill all the keywords fields. Please do so, and try again.</p>
+            </article>
+        </section>
+    {/if}
+=======
 <section class="firstElement">
+>>>>>>> 1347083fbaca261000110bf4ef0358993f703591
     <article class="offset2 span8">
         {if $loggedin}
             {if $participant->getStatus()}
@@ -20,17 +40,19 @@ Description : template of the user inscription
                                 <h1>You are applying to </h1>
                                 <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
 
-                                <form method="POST" action="?">
+                                <form method="POST" action="">
                                     <label for="type">Your activity domain</label>
                                     <p>{$arrayReg[loopReg]['registration']->getType()}</p>
                                     <label for="typeDescription">Your role in this domain</label>
                                     <p>{$arrayReg[loopReg]['registration']->getTypeDescription()}</p>
                                     <label for="motivation" class="subtitle">Explain us your motivations</label>
-                                    <textarea name="motivation" title="motivation" class="big" spellcheck>
-                                        {if isset($arrayReg[loopReg]['motivation'])}
-                                            {$arrayReg[loopReg]['motivation']->getText()}
-                                        {/if}</textarea>
+                                    <textarea name="motivation" title="motivation" class="big" spellcheck>{if isset($arrayReg[loopReg]['motivation'])}{$arrayReg[loopReg]['motivation']}{/if}</textarea>
                                     <label for="Keyword" title="Describe youself in 3 words">Keywords that describes you the best</label>
+<<<<<<< HEAD
+                                    <input type="text" name="Keyword1" value="{if isset($arrayReg[loopReg]['arrayKW'][0])}{$arrayReg[loopReg]['arrayKW'][0]->getValue()}{/if}" >
+                                    <input type="text" name="Keyword2" value="{if isset($arrayReg[loopReg]['arrayKW'][1])}{$arrayReg[loopReg]['arrayKW'][1]->getValue()}{/if}" >
+                                    <input type="text" name="Keyword3" value="{if isset($arrayReg[loopReg]['arrayKW'][2])}{$arrayReg[loopReg]['arrayKW'][2]->getValue()}{/if}" >
+=======
                                     <p class="span12">
                                     <input type="text" name="Keyword1" value="
                                            {if isset($arrayReg[loopReg]['arrayKW'][0])}
@@ -44,6 +66,7 @@ Description : template of the user inscription
                                            {if isset($arrayReg[loopReg]['arrayKW'][2])}
                                                {$arrayReg[loopReg]['arrayKW'][2]->getValue()}
                                            {/if}" ></p>
+>>>>>>> 1347083fbaca261000110bf4ef0358993f703591
 
                                     <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
                                     <p class="inscription_button"><input type="hidden" name="value" value="{$smarty.section.loopReg.index}">
@@ -63,7 +86,7 @@ Description : template of the user inscription
                                 <p class="label">Motivation:</p>
                                 <p class="motivation">
                                     {if isset($arrayReg[loopReg]['motivation'])}
-                                        {$arrayReg[loopReg]['motivation']->getText()}
+                                        {$arrayReg[loopReg]['motivation']}
                                     {/if}</p>
                                 <p class="label">Keywords:</p>
                                 <p class="keyword">
