@@ -312,15 +312,18 @@ function Register($registrationStatus){
     if(!$messageRegistration->getStatus()){
         $error=$messageRegistration->getMessage();
     }
-    //login the user
-    $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
-    //if logged in
-    if($messageLogin->getStatus()){
-        //assign true tu the smarty value (for the userbar display
-        $smarty->assign('loggedin', true);
-        //test the user level
-        setUserLevel();
+    if(!$tedx_manager->isLogged()){
+        //login the user
+        $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
+        //if logged in
+        if($messageLogin->getStatus()){
+            //assign true tu the smarty value (for the userbar display
+            $smarty->assign('loggedin', true);
+            //test the user level
+            setUserLevel();
+        }
     }
+
 
     $arrayKeywords=arrayKeywords();
     $keywordsArray = array(
@@ -328,9 +331,7 @@ function Register($registrationStatus){
     'person' => $person,
     'event' => $event );
 
-    var_dump($keywordsArray);
     $messageKeywords=$tedx_manager->addKeywordsToAnEvent($keywordsArray);
-    var_dump($messageKeywords);
     foreach($messageKeywords as $msg){
         if(!$msg->getStatus()){
             $error=$msg->getMessage();
@@ -343,12 +344,10 @@ function Register($registrationStatus){
         'event' => $event,
         'participant' => $tedx_manager->getParticipant($personNo)->getContent());
 
-    var_dump($aMotivation);
     $messageMotivation =$tedx_manager->addMotivationToAnEvent($aMotivation);
-    var_dump($messageMotivation);
 
-    if(!$messageRegistration->getStatus()){
-        $error=$messageRegistration->getMessage();
+    if(!$messageMotivation->getStatus()){
+        $error=$messageMotivation->getMessage();
     }
 
     if($registrationStatus!="send" && $registrationStatus!="save"){
@@ -358,9 +357,12 @@ function Register($registrationStatus){
        if($registrationStatus=="send"){
            echo"passedSentDansLaFonction<br>";
            $participant=$tedx_manager->getParticipant($person->getNo());
-           $arrayWaiting=array('status' =>'Pending','event' => $event,'participant' => $participant);
-           $waitingRegistration = $tedx_manager->getRegistration($arrayWaiting)->getContent();
-           $tedx_manager->sendRegistration($waitingRegistration);
+           if($participant->getStatus()){
+               $arrayWaiting=array('status' =>'Pending','event' => $event,'participant' => $participant->getContent());
+               $waitingRegistration = $tedx_manager->getRegistration($arrayWaiting)->getContent();
+               $tedx_manager->sendRegistration($waitingRegistration);
+           }
+
        }
     }
 
