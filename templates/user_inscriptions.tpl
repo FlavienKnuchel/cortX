@@ -49,23 +49,34 @@ Description : template of the user inscription
                                 <input type="submit" name="Send" value="Send" alt="Submit your registration request">
                             </form>
                         </article>
-                    {elseif ($arrayReg[loopReg]['registration']->getStatus() == 'Sent')}
+                    {elseif ($arrayReg[loopReg]['registration']->getStatus() == 'Sent' || $arrayReg[loopReg]['registration']->getStatus() == 'Accepted' || $arrayReg[loopReg]['registration']->getStatus() == 'Rejected')}
                         <article class="form_closed">
                             <p class="subtitle">You applied to</p> 
                             <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
-                            <p class="subtitle">You can view your appliance but cannot update it anymore.</p>
+                            <p class="subtitle">Satus of your registration : <strong>{$arrayReg[loopReg]['registration']->getStatus()}</strong></p>
                             <p class="label" >Your activity domain:</p>
                             <p class="activitydomain">{$arrayReg[loopReg]['registration']->getType()}</p>
                             <p class="label">Your role in this domain</p>
                             <p class="roledomain">{$arrayReg[loopReg]['registration']->getTypeDescription()}</p>
                             <p class="label">Motivation:</p>
-                            <p class="motivation">{$arrayReg[loopReg]['motivation']->getText()}</p>
+                            <p class="motivation">
+                                {if isset($arrayReg[loopReg]['motivation'])}
+                                    {$arrayReg[loopReg]['motivation']->getText()}
+                                {/if}</p>
                             <p class="label">Keywords:</p>
-                            <p class="keyword">{$arrayReg[loopReg]['arrayKW'][0]->getValue()}</p>
-                            <p class="keyword">{$arrayReg[loopReg]['arrayKW'][1]->getValue()}</p>
-                            <p class="keyword">{$arrayReg[loopReg]['arrayKW'][2]->getValue()}</p>
+                            <p class="keyword">
+                                {if isset($arrayReg[loopReg]['arrayKW'][0])}
+                                    {$arrayReg[loopReg]['arrayKW'][0]->getValue()}
+                                {/if}</p>
+                            <p class="keyword">
+                                {if isset($arrayReg[loopReg]['arrayKW'][1])}
+                                    {$arrayReg[loopReg]['arrayKW'][1]->getValue()}
+                                {/if}</p>
+                            <p class="keyword">
+                                {if isset($arrayReg[loopReg]['arrayKW'][2])}
+                                    {$arrayReg[loopReg]['arrayKW'][2]->getValue()}
+                                {/if}</p>
                         </article>
-
                     {/if}
                 {/section}
             {else}

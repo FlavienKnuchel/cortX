@@ -18,7 +18,7 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
             $tedx_manager->getLoggedPerson()->getContent()->getNo()
     );
     $smarty->assign('participant', $messageParticipant);
-    //---------------- Test the status of the registration ----------------------
+    //---------------- Test the status of the registration ------------------------------
     if ($messageParticipant->getStatus()) {
 
 
@@ -68,12 +68,12 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
 
         //prepare the past event SQL request
         $searchArgsPastEvents = array(
-            'where' => "EndingDate >= '" . date('Y-m-d') . "'",
+            'where' => "EndingDate <= '" . date('Y-m-d') . "'",
             'orderBy' => 'EndingDate',
             'orderByType' => 'DESC'
         );
         //get the upcoming Event
-        $messsagePastEvent = $tedx_manager->searchEvents($searchArgsUpcomingEvents);
+        $messsagePastEvent = $tedx_manager->searchEvents($searchArgsPastEvents);
         //get back the list of all the events
         $pastEvents = $messsagePastEvent->getContent();
         $arrayPastReg = array();
@@ -98,7 +98,7 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                 //-array( --------------------------------------------------------------
                 // array ( aRegistration, aMotivation, keywords) -----------------------
                 // array ( aRegistration, aMotivation, keywords) -----------------------
-                // etc...)
+                // etc...);--------------------------------------------------------------
                 $msgPastReg = $msgPastReg->getContent();
                 $arrayPastReg[] = array(
                     'oldReg' => $msgPastReg[0],
@@ -108,6 +108,11 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
             }
         }
         $smarty->assign('arrayOldReg', $arrayPastReg);
+        
+        
+        //gets the 
+        
+        
     }
 }
 $smarty->display('user_inscriptions.tpl');
