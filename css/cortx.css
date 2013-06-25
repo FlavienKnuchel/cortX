@@ -195,6 +195,9 @@ textarea{
     width: 95%;
 }
 
+.password {
+    margin-top:20px;
+}
 .password label {
     margin-right: 10px;
     width:30%;

@@ -51,10 +51,10 @@ Description : Basic structure of the homepage
 
 <article id="socialnet" class="row">
     <ul>
-        <li class="offset4 span1"><a href="#" title="Facebook"><img src="img/sociaux/logo_facebook.png"/></a></li>
-        <li class="span1"><a href="#" title="Twitter"><img src="img/sociaux/logo_twitter.png"/></a></li>
-        <li class="span1"><a href="#" title="Youtube"><img src="img/sociaux/logo_youtube.png"/></a></li>
-        <li class="span1"><a href="#" title="Linked"><img src="img/sociaux/logo_linkedin.png"/></a></li>
+        <li class="offset4 span1"><a href="http://www.facebook.com/TEDxLausanne" title="Facebook"><img src="img/sociaux/logo_facebook.png"/></a></li>
+        <li class="span1"><a href="http://twitter.com/TEDxLausanne" title="Twitter"><img src="img/sociaux/logo_twitter.png"/></a></li>
+        <li class="span1"><a href="http://www.youtube.com/results?search_query=TEDxLausanne&oq=tedx&gs_l=youtube.1.0.35i39j0l9.11208.12163.0.13877.4.4.0.0.0.0.128.476.0j4.4.0...0.0...1ac.1.2Ndlgvm2YT4" title="Youtube"><img src="img/sociaux/logo_youtube.png"/></a></li>
+        <li class="span1"><a href="http://www.linkedin.com/groups/TEDxLausanne-3521864" title="Linked"><img src="img/sociaux/logo_linkedin.png"/></a></li>
     </ul>
 </article>
 
