@@ -15,7 +15,7 @@
        {/if}
         <p>
             <h3>{$talksArray[talk].title}</h3>
-            <a href="{$talksArray[talk].video}">
+            <a class="youtube" href="{$talksArray[talk].video}">
                 <img src="{$talksArray[talk].img}" alt="{$talksArray[talk].title}"/>
             </a>
             <p></p><a href="video.php?eventNo={$talksArray[talk].eventNo}&speakerNo={$talksArray[talk].speakerNo}">more...</a></
