@@ -53,22 +53,32 @@ else{
 }
 
 /*------------------------------ MAIN: formular processing, and registration  ------------------------------*/
+//set the registration success to false
+$registrationSuccess=false;
 //initializing the error variable
 $error='';
 //if the post datas are set (if motivation is sent, even empty, it means the user is submitting the formular)
 if(isset($_POST['motivation'])){
     //if the user is logged
     if ($tedx_manager->isLogged()) {
+        echo"passedLogin<br/>";
         //check if the status has been entered
         if(!is_null(checkStatus())){
+            echo"passedStatus<br/>";
             //is is a save or a send?
             // if it is a send
             if(checkStatus()=="send"){
+                echo"passedStatusSend<br/>";
                 //if the motivation is filled
                 if(checkMotivation()){
                     //send the registration
-                    Register(checkStatus());
-                    $registrationSuccess=true;
+                    $messageRegister=Register(checkStatus());
+                    if($messageRegister==true){
+                        $registrationSuccess=true;
+                    }//if
+                    else{
+                        $error=$messageRegister;
+                    }//else
                 }//if
                 else{
                     //set the error for motivation filling
@@ -77,8 +87,14 @@ if(isset($_POST['motivation'])){
             }//if
             //if it is a save
             else{
-                Register(checkStatus());
-                $registrationSuccess=true;
+                echo"StatusSave<br/>";
+                $messageRegister=Register(checkStatus());
+                if($messageRegister==true){
+                    $registrationSuccess=true;
+                }//if
+                else{
+                    $error=$messageRegister;
+                }//else
             }//else
         }//if
         else{
@@ -97,11 +113,8 @@ if(isset($_POST['motivation'])){
                 $visitor=createVisitorArray();
                 //try to create the visitor
                 $messageRegisterVisitor=$tedx_manager->registerVisitor($visitor);
-
-                //if the registration went well
+                //if the registration of the visitor went well
                 if($messageRegisterVisitor->getStatus()){
-                    //set the registration suce to true
-                    $registrationSuccess=true;
                     //login the user
                     $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
                     //if logged in
@@ -119,8 +132,13 @@ if(isset($_POST['motivation'])){
                             //if the motivation is filled
                             if(checkMotivation()){
                                 //send the registration
-                                Register(checkStatus());
-                                $registrationSuccess=true;
+                                $messageRegister=Register(checkStatus());
+                                if($messageRegister==true){
+                                    $registrationSuccess=true;
+                                }//if
+                                else{
+                                    $error=$messageRegister;
+                                }//else
                             }
                             else{
                                 //set the error for motivation filling
@@ -129,14 +147,19 @@ if(isset($_POST['motivation'])){
                         }//if
                         //if it is a save
                         else{
-                            Register(checkStatus());
-                            $registrationSuccess=true;
-                        }
-                    }
+                            $messageRegister=Register(checkStatus());
+                            if($messageRegister==true){
+                                $registrationSuccess=true;
+                            }//if
+                            else{
+                                $error=$messageRegister;
+                            }//else
+                        }//else
+                    }//if
                     else{
                         //set the error for status
                         $error="status";
-                    }
+                    }//else
                 }//if
                 else{
                     //if the registration didn't go well
@@ -160,8 +183,9 @@ else{
 }
 
 //if everything went well, the go to the homepage and display a message
-if(isset($registrationSuccess)){
-    header("Location: events.php?registrationSuccess=true");
+if(isset($registrationSuccess)&&$registrationSuccess){
+   // header("Location: events.php?registrationSuccess=true");
+    echo "JE RENTRE A LA MAISON";
 }
 
 //stock the error message in smarty
@@ -169,7 +193,7 @@ $smarty->assign('error', $error);
 
 //send the filled datas, so we can collect them, and in case of error, no need to retype them
 sendFilledDatas();
-
+var_dump($_SESSION);
 /*---------------------------- normal inscription display  -----------------------------*/
 $smarty->display('events_registerToEvent.tpl');
 include 'userbar.php';
@@ -266,13 +290,15 @@ function sendFilledDatas(){
 
 //register the logged user to the selected event
 function Register($registrationStatus){
+    //create an empty error variable
+    $error='';
     global $tedx_manager;
+    global $smarty;
     $person=$tedx_manager->getLoggedPerson()->getContent();
     $event=$tedx_manager->getEvent($_SESSION['eventNo'])->getContent();
     $slots=$tedx_manager->getSlotsFromEvent($event)->getcontent();
     $type=$_POST['type'];
     $typeDescription=$_POST['typeDescription'];
-
 
     $registration = array(
         'person' => $person, // object Person
@@ -282,64 +308,70 @@ function Register($registrationStatus){
         'type' => $type, // String
         'typedescription' => $typeDescription // String
     );
-    $tedx_manager->registerToAnEvent($registration);
 
+    $messageRegistration=$tedx_manager->registerToAnEvent($registration);
+    if(!$messageRegistration->getStatus()){
+        $error=$messageRegistration->getMessage();
+    }
+    //login the user
+    $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
+    //if logged in
+    if($messageLogin->getStatus()){
+        //assign true tu the smarty value (for the userbar display
+        $smarty->assign('loggedin', true);
+        //test the user level
+        setUserLevel();
+    }
+
+    $arrayKeywords=arrayKeywords();
     $keywordsArray = array(
-    'listOfValues' => arrayKeywords(),
+    'listOfValues' => $arrayKeywords,
     'person' => $person,
     'event' => $event );
 
-    $tedx_manager->addKeywordsToAnEvent($keywordsArray);
+    var_dump($keywordsArray);
+    $messageKeywords=$tedx_manager->addKeywordsToAnEvent($keywordsArray);
+    var_dump($messageKeywords);
+    foreach($messageKeywords as $msg){
+        if(!$msg->getStatus()){
+            $error=$msg->getMessage();
+        }
+    }
+
     $personNo=$person->getNo();
     $aMotivation = array(
         'text' => $_POST['motivation'],
         'event' => $event,
         'participant' => $tedx_manager->getParticipant($personNo)->getContent());
-    $tedx_manager->addMotivationToAnEvent($aMotivation);
 
-    if($registrationStatus=="sent"){
-        $participant=$tedx_manager->getParticipant($person->getNo());
-        $waitingRegistration = $tedx_manager->getRegistration(
-            array(
-                'status' =>'Waiting',
-                'event' => $event,
-                'participant' => $participant))->getContent();
-        $tedx_manager->sendRegistration($waitingRegistration);
+    var_dump($aMotivation);
+    $messageMotivation =$tedx_manager->addMotivationToAnEvent($aMotivation);
+    var_dump($messageMotivation);
+
+    if(!$messageRegistration->getStatus()){
+        $error=$messageRegistration->getMessage();
     }
-    elseif($registrationStatus=="save"){
-    }
-    else{
+
+    if($registrationStatus!="send" && $registrationStatus!="save"){
         header('Location:404.php');
     }
+    else{
+       if($registrationStatus=="send"){
+           echo"passedSentDansLaFonction<br>";
+           $participant=$tedx_manager->getParticipant($person->getNo());
+           $arrayWaiting=array('status' =>'Pending','event' => $event,'participant' => $participant);
+           $waitingRegistration = $tedx_manager->getRegistration($arrayWaiting)->getContent();
+           $tedx_manager->sendRegistration($waitingRegistration);
+       }
+    }
 
+    return $error;
 }//function
 
 //defines the level of the user (for footer display)
 function setUserLevel(){
-    global $tedx_manager;
     global $smarty;
-    if ($tedx_manager->isLogged()) {
-        if ($tedx_manager->isParticipant()) {
-            $smarty->assign('userLevel', 'participant');
-            $smarty->assign('classUserLevel', 'menu_participant');
-        }//if
-        if ($tedx_manager->isOrganizer()) {
-            $smarty->assign('userLevel', 'organizer');
-            $smarty->assign('classUserLevel', 'menu_organizer');
-        }//if
-        if ($tedx_manager->isValidator()) {
-            $smarty->assign('userLevel', 'validator');
-            $smarty->assign('classUserLevel', 'menu_validator');
-        }//if
-        if ($tedx_manager->isAdministrator()) {
-            $smarty->assign('userLevel', 'administrator');
-            $smarty->assign('classUserLevel', 'menu_administrator');
-        }//if
-        if ($tedx_manager->isSuperadmin()) {
-            $smarty->assign('userLevel', 'superadmin');
-            $smarty->assign('classUserLevel', 'menu_superadmin');
-        }//if
-    }//if
+    $smarty->assign('userLevel', 'participant');
 }//function
 
 //validate the birthdate format (year between 1800 and current year)
@@ -352,7 +384,7 @@ function validateDateOfBirth(){
                 $month=$date[1];
                 $day=$date[2];
 
-                if($year>=1800 && $year <=date(Y) && $month<13 && $month>0 && $day>=0 && $day<=31){
+                if($year>=1800 && $year <=date('Y') && $month<13 && $month>0 && $day>=0 && $day<=31){
                     return true;
                 }//if
                 else{
