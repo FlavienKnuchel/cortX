@@ -20,12 +20,12 @@ Description : template of the general team page
         <ul class="offset2 span8">
             <li>
                 <a href="team_curatorAndHost.php" class="html" title="Curator and host">
-                    <h3 class="span2">Curator and host</h3>
+                    <h3 class="span2 oneLine">Curator and host</h3>
                 </a>
             </li>
             <li>
                 <a href="team_designTeam.php" class="html" title="Design Team">
-                    <h3 class="span2">Design Team</h3>
+                    <h3 class="span2 oneLine">Design Team</h3>
                 </a>
             </li>
             <li>
