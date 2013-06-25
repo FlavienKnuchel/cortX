@@ -23,8 +23,6 @@ Description : template of the registration to an event
             <p>{$error}</p>
         </article>
     </section>
-
-{else}
 {/if}
 <section class="row">
     <div class="row">

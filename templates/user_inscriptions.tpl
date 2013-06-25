@@ -21,11 +21,19 @@ Description : template of the user inscription
                         {/section}
                         <h3>Your motivation</h3>
                         <form method="POST" action="user_inscriptions.php">
-                            <textarea name="motivation" title="motivation" placeholder="{$motivation}" class="big" autofocus spellcheck></textarea>
-                            <label for="Keyword" title="Describe your interests in 3 words">Keywords:</label>
-                            <input type="text" name="Keyword1" placeholder="{$kw1}" value="">
-                            <input type="text" name="Keyword2" placeholder="{$kw2}" value="">
-                            <input type="text" name="Keyword3" placeholder="{$kw3}" value="">
+                            <label for="type">Your activity domain</label>
+                            <input type="text" name="type" placeholder="Your activity domain" required
+                                   value='{$registration->getType()}'>
+                            <label for="typeDescription">Your role in this domain</label>
+                            <input type="text" name="typeDescription" placeholder="Your role in this domain" required
+                                   value='{$registration->getTypeDescription()}'>
+                        </article>
+                            <label for="motivation" class="subtitle">Explain us your motivations</label>
+                            <textarea name="motivation" title="motivation" class="big" autofocus spellcheck>{$motivation}</textarea>
+                            <label for="Keyword" title="Describe youself in 3 words">Keywords describing you</label>
+                            <input type="text" name="Keyword1" value="{$kw1}" value="">
+                            <input type="text" name="Keyword2" value="{$kw2}" value="">
+                            <input type="text" name="Keyword3" value="{$kw3}" value="">
 
                             <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
                             <input type="submit" name="Save" value="Save" alt="Save and edit later">
@@ -47,7 +55,11 @@ Description : template of the user inscription
                     {/if}
                 </article>
             {else}
-                <p class="error_msg">You don't have any registrations yet!</p>
+                    <section id="row">
+                        <article class="offset2 span8 badMessage">
+                            <p>You Don't have any registrations yet</p>
+                        </article>
+                    </section>
             {/if}
             <aside id="oldevents">
                 <h2>Previous events</h2>
@@ -67,8 +79,6 @@ Description : template of the user inscription
                                     <td>{$eventsObjects[oldEvents]->getStartingDate()}</td>
                                 </tr>
                             {/if}
-
-
                         {/section}
                     {else}
                         <tr>
