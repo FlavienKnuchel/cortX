@@ -22,7 +22,7 @@
 </head>
     
 
-<section id="team">
+<section id="lightbox">
 	<article>
         <h1>Curator and hosts</h1>
         	<h2>Simon Schneebeli</h2>

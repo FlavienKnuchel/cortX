@@ -22,7 +22,7 @@
 </head>
     
 
-<section id="team">
+<section id="lightbox">
 	<article>
         <h1>Quality and substainability team</h1>
         <article>

@@ -27,7 +27,7 @@
 
 
 
-<section id="about">
+<section id="lightbox">
 	<article>
         <h1>About TEDx</h1>
 		<p>
