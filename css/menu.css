@@ -1,0 +1,60 @@
+/*---------------------------------Top menu---------------------------------*/
+nav{
+    height:55px;
+    line-height: 40px;
+    background-color:#ffffff;    
+}
+
+/*Top menu links*/
+nav ul li{
+    width:100%;
+    text-align: center;
+}
+/* links styling*/
+nav ul li a{
+    text-decoration:none;
+    font-size: 1.4em;
+    text-transform :uppercase;
+    color:#333333;
+    line-height:45px;
+    height:50px;
+    display:block;
+    padding-top:5px;
+    outline:none;
+}
+nav a img{
+    padding-top:5px;
+    margin-left:0px;
+}
+
+/*top menu links interaction*/
+nav ul li a:hover{
+    text-decoration: none;
+    color:#333333;
+    background-image:url(../img/menu.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+}
+.menu_backend a:hover{
+    text-decoration: none;
+    color:#333333;
+    background-image:url(../img/menu_backend.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+}
+nav a:active{
+    text-decoration:none;
+    color:#333333;
+    outline:none;
+}
+nav a:focus{
+    text-decoration:none;
+    color:#333333;
+    outline:none;
+}
+/* Display of the active page */
+#active{
+    background-image:url(../img/menu.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+}

@@ -1,0 +1,156 @@
+/*------------------@media smartphone and tablet-----------------*/
+
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+    nav ul li a{
+        display:none;
+    }
+    .box{
+        background-color:#f0f0f0;
+    }
+    /*-----------------------homepage-----------------------------------*/
+    #nextevent{        
+        max-width:95%;
+        padding-left:5%;
+        margin-top:5%;
+    }
+    #nextevent img{
+        width:95%;
+    }
+    #socialnet li .span1{
+        width:80%;
+    }
+    #videos_title{
+        padding-left:5%;
+    }
+    #socialnet .span1{
+        display:inline;
+    }
+    #socialnet ul li img{
+        width:20%;
+        height:20%;
+        margin-left:1.45%;
+        margin-right:1.45%;
+    }
+    #videos img{
+        display:inline;
+        margin-left:0;
+        width:95%;
+        max-height:95%;
+        margin-top:0;
+        margin-bottom: 5%;    
+    }
+    
+    #videos .span2{
+        margin-left:5%;
+        width:95%;
+    }
+    #videos li.span2 {
+    text-align:left;
+    }
+    /*-------------------userbar-----------------------------------*/
+    footer form {    
+    text-align:center;   
+    }
+    input#login[type="submit"] {
+    background-color: #333333;
+    display: inline;
+    float:none;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+    width: 30px;
+    }
+    /*---------------------------tuiles---------------------------------*/
+    .tuile h3{
+    background-color:#f0f0f0;
+    width:100%;
+    text-align:center;
+    height: 100px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    color:#333333;
+    padding:35px 5px 0 5px;
+    
+    }
+    .tuile h3.twoLines {
+    padding-top: 35px;
+    }
+    a:focus, a:active, a:hover{
+        outline:none;
+        text-decoration:none;
+    }
+    /*---------------------------events-------------------------------*/
+    .current_event_title{
+        line-height:50px;
+        padding-top:50px;
+    }
+    #upcomingEvents {
+        margin-right:0;
+        width:100%;
+    }
+    #oldEvents {
+        width:100%;
+        margin-left:0;
+    }
+    #event_detail{
+        max-width:90%;
+        margin-left:5%;
+        margin-top:5%;
+    }
+    .slot_event h3 {
+    line-height: 40px;
+    margin: 0;
+    }
+    .slot_event {
+    float: left;
+        width:200px;
+    max-width:200px;
+    }
+                    /*-------table-------*/
+    
+    .programme_event, .desc_event{    
+        margin-right: 0px;     
+    }
+    
+    .zebra{
+    background-color:#f0f0f0;
+    border-top:2px solid #c9c9c9;
+    }
+    .table_title{
+    height:50px;
+    font-weight:bold;
+    
+    }
+    td.title{
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    td.date{
+        font-weight:bold;
+        width:110px;
+    }
+    /*---------------------------team-------------------------------*/
+    #team{
+        margin:5%;
+        max-width:90%;
+        margin-top:5%;
+    }
+    
+
+    /*---------------------------speakers-------------------------------*/
+    #speaker_year{
+        max-width:90%;
+        margin-left:5%;
+        margin-top:5%;
+    }
+    .speakers_photo{
+         padding-left:5%;
+        text-align:center;
+    }
+}

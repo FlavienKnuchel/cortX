@@ -1,0 +1,92 @@
+/*---------------------------------bottom userbar---------------------------------*/
+footer {
+	position: fixed;
+	height: 40px;
+	width: 100%;
+	bottom: 0px;
+	background-color:#FF2B06;
+    line-height:40px;
+}
+
+footer form.log {
+    height:40px;
+}
+
+footer form label {
+    width: 15%;
+}
+
+ooter .log input[type=text], input[type=password] {
+    padding-left:5px;
+    margin-right:2%;
+    width: 25%;
+}
+
+footer input[type=submit]#login {
+    width:30px;
+    height:30px;
+    background-color:#333333;
+    text-align:center;
+    padding:0;
+    line-height:30px;
+    margin:5px 0;
+    display: inline;
+    float:right;
+}
+
+footer #logout {
+	text-align:right;
+    line-height:40px;
+}
+
+footer #logged{
+    text-decoration:none;
+    /*font-size: 1.2em;*/
+    text-transform :uppercase;
+    color:#ffffff;    
+    height:50px;
+}
+footer #logged a{
+    text-decoration:none; 
+    text-transform :uppercase;
+    color:#ffffff;
+}
+fotter #logged a:hover{
+    color:#333333;
+}
+
+
+a#setting {
+    width:30px;
+    height:30px;
+    background-image:url(../img/setting.png);
+    background-repeat:no-repeat;
+     margin-top:5px;
+
+}
+
+a#setting:hover{
+    width:30px;
+    height:30px;
+    margin-top:5px;
+
+    background-image:url(../img/setting_hover.png);
+}
+
+a#home_icon {
+    width:30px;
+    height:30px;
+    background-image:url(../img/home.png);
+    background-repeat:no-repeat;
+     margin-top:5px;
+}
+
+a#home_icon:hover{
+    width:30px;
+    height:30px;
+    margin-top:5px;
+    background-image:url(../img/home_over.png);
+}
+#logged .message{
+    text-align:center;
+}
