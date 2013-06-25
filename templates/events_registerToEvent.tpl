@@ -25,13 +25,10 @@ Description : template of the registration to an event
     </section>
 {/if}
 <section class="row">
-    <div class="row">
-        <h2 class="offset2 span8">Apply to this event!</h2>
-    </div>
-
+    <div class="offset2 span8">
+        <h1>Apply to this event!</h1>
     {if empty($error)}
-    <div class="row">
-        <p class="subtitle offset2 span8">Fill in your informations to create your registration</p>
+        <p>Fill in your informations to create your registration</p>
     </div>
     {/if}
     <form method="post" action="inscription.php">
@@ -40,6 +37,7 @@ Description : template of the registration to an event
             {if isset($filledDatas)}
                 <div class="row">
                     <article class="coordonees offset2 span8">
+                        <h3>Your co-ordinates</h3>
                         <p>
                             <label for="name">Last name</label>
                             <input type="text" name="lastname" placeholder="Your last name" autofocus
@@ -47,7 +45,7 @@ Description : template of the registration to an event
                             <label for="firstname">First name</label>
                             <input type="text" name="firstname" placeholder="Your firstname" required
                                    value='{if isset($filledDatas.firstname)}{$filledDatas.firstname}{/if}'>
-                            <label for="date">Date of birth (Year-month-day)</label>
+                            <label for="date">Date of birth</label>
                             <input type="date" name="date" placeholder="YYYY-MM-DD"
                                    value='{if isset($filledDatas.date)}{$filledDatas.date}{/if}'>
                         </p>
@@ -81,6 +79,7 @@ Description : template of the registration to an event
             {else}
                 <div class="row">
                     <article class="coordonees offset2 span8">
+                        <h3>Your co-ordinates</h3>
                         <p>
                             <label for="lastname">Last name</label>
                             <input type="text" name="lastname" placeholder="Your last name" autofocus required>
@@ -88,7 +87,7 @@ Description : template of the registration to an event
                             <input type="text" name="firstname" placeholder="Your firstname" required>
 
 
-                            <label for="date">Date of birth (Year-month-day)</label>
+                            <label for="date">Date of birth</label>
                             <input type="date" name="date" placeholder="YYYY-MM-DD">
                         </p>
                         <p>
@@ -118,7 +117,7 @@ Description : template of the registration to an event
 
         {if isset($filledDatas) && !empty($filledDatas)}
             <div class="row">
-                <article class="domain offset2 span8">
+                <article class="offset2 span8">
                     <label for="type">Your activity domain</label>
                     <input type="text" name="type" placeholder="Your activity domain" required
                            value='{if isset($filledDatas.type)}{$filledDatas.type}{/if}'>
@@ -128,13 +127,12 @@ Description : template of the registration to an event
                 </article>
             </div>
             <div class="row">
-                <article class="motivation offset2 span6">
-                    <label for="motivation" class="subtitle">Explain us your motivations</label>
+                <article class="offset2 span8">
+                    <h2>Your motivations</h2>
+                    <p>Explain us your motivations</p>
                     <textarea type="text" name="motivation" class="big" required>{if isset($filledDatas.motivation)}{$filledDatas.motivation}{/if}</textarea>
-                </article>
-                <article class="span2">
-                    <p>
                         <label for="keywords" title="describe your interests in 3 words">Keywords describing you</label>
+                    <p>
                         <input type="text" name="keyword1" placeholder="Keyword"
                                value='{if isset($filledDatas.keyword1)}{$filledDatas.keyword1}{/if}'>
                         <input type="text" name="keyword2" placeholder="Keyword"
@@ -161,21 +159,21 @@ Description : template of the registration to an event
                     <input type="text" name="typeDescription" placeholder="Your role in this domain" required>
                 </article>
             </div>
+        
+        
             <div class="row">
-                
-                <article class="offset2 span6 motivation">
-                    <p class="subtitle">Explain us your motivations</p>
+                <article class="offset2 span8">  
+                    <h2>Your motivations</h2>
+                    <p>Explain us your motivations</p>
                     <textarea type="text" name="motivation" class="big" required></textarea>
-                </article>
-                <article class="span2 keywords">
+                    <h3>Keywords Describing me</h3>
+                        <label for="keyword" title="describe your interests in 3 words">Keywords</label>
                     <p>
-                        <label for="keyword" title="describe your interests in 3 words">Keywords describing you</label>
                         <input type="text" name="keyword1" placeholder="Keyword" >
                         <input type="text" name="keyword2" placeholder="Keyword" >
                         <input type="text" name="keyword3" placeholder="Keyword" >
                     </p>
-                </article>
-             
+                    </article>
             </div>
             <div class="row">
                 <div class="offset2 span8">
@@ -184,7 +182,6 @@ Description : template of the registration to an event
                                title="Submit your registration request">
                     </div>
                 </div>
-               
         {/if}
     </form>
 </section>
