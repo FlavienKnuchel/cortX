@@ -20,7 +20,7 @@ Description : template of the events page
     <section>
         <div class="row">
         <section class="offset2 span8">
-            <article class="box offset2 span8">">
+            <article>
                 <!-- smarty variables existence test -->
                 {if isset($actualEvent) and isset($actualEventLocation)}
                     {if !empty($actualEvent) and !empty($actualEventLocation)}
@@ -50,7 +50,7 @@ Description : template of the events page
     
             </article>
     
-            <article class="offset2 span8">
+            <article>
                 <h2>Slots</h2>
                 <!-- smarty variables existence test -->
                 <ul>
