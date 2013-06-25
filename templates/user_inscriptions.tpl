@@ -11,90 +11,122 @@ Description : template of the user inscription
 <section id="inscription">
     {if $loggedin}
         {if $participant->getStatus()}
-            {if isset($registration) }
-                <article class="form_inscr">
-                    {if $regStatus}
-                        {section name=eventTopic loop=$eventsObjects}
-                            {if $smarty.section.eventTopic.last}
-                                <h2>You are applying to {$eventsObjects[eventTopic]->getMainTopic()}</h2>
-                            {/if}
-                        {/section}
-                        <h3>Your motivation</h3>
-                        <form method="POST" action="user_inscriptions.php">
-                            <label for="type">Your activity domain</label>
-                            <input type="text" name="type" placeholder="Your activity domain" required
-                                   value='{$registration->getType()}'>
-                            <label for="typeDescription">Your role in this domain</label>
-                            <input type="text" name="typeDescription" placeholder="Your role in this domain" required
-                                   value='{$registration->getTypeDescription()}'>
-                        </article>
-                            <label for="motivation" class="subtitle">Explain us your motivations</label>
-                            <textarea name="motivation" title="motivation" class="big" autofocus spellcheck>{$motivation}</textarea>
-                            <label for="Keyword" title="Describe youself in 3 words">Keywords describing you</label>
-                            <input type="text" name="Keyword1" value="{$kw1}" value="">
-                            <input type="text" name="Keyword2" value="{$kw2}" value="">
-                            <input type="text" name="Keyword3" value="{$kw3}" value="">
+            {if !empty($arrayReg) }
+                {section name=loopReg loop=$arrayReg}
+                    {if $arrayReg[loopReg]['registration']->getStatus() == 'Pending'}
+                        <article class="form_inscr">
 
-                            <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
-                            <input type="submit" name="Save" value="Save" alt="Save and edit later">
-                            <input type="submit" name="Send" value="Send" alt="Submit your registration request">
-                        </form>
-                    {else}
-                        {section name=eventTopic loop=$eventsObjects}
-                            {if $smarty.section.eventTopic.last}
-                                <h2>You applied to {$eventsObjects[eventTopic]->getMainTopic()}</h2>
-                            {/if}
-                        {/section}
-                        <p class="subtitle">You can view your appliance but cannot update it anymore.</p>
-                        <h3>Your motivation</h3>
-                        <p class="form_closed motivation">{$getMotivation}</p>
-                        <p class="form_closed keyword">{$getKW1}</p>
-                        <p class="form_closed keyword">{$getKW2}</p>
-                        <p class="form_closed keyword">{$getKW3}</p>
+                            <h2>You are applying to {$arrayReg[loopReg]['event']->getMainTopic()}</h2>
+
+                            <form method="POST" action="?id={$smarty.section.loopReg.index}">
+                                <label for="type">Your activity domain</label>
+                                <input type="text" name="type" placeholder="Your activity domain" required
+                                       value='{$arrayReg[loopReg]['registration']->getType()}'>
+                                <label for="typeDescription">Your role in this domain</label>
+                                <input type="text" name="typeDescription"  required
+                                       value="{$arrayReg[loopReg]['registration']->getTypeDescription()}">
+                                <label for="motivation" class="subtitle">Explain us your motivations</label>
+                                <textarea name="motivation" title="motivation" class="big" spellcheck>
+                                    {if isset($arrayReg[loopReg]['motivation'])}
+                                        {$arrayReg[loopReg]['motivation']->getText()}
+                                    {/if}</textarea>
+                                <label for="Keyword" title="Describe youself in 3 words">Keywords that describes you the best</label>
+                                <input type="text" name="Keyword1" value="
+                                       {if isset($arrayReg[loopReg]['arrayKW'][0])}
+                                           {$arrayReg[loopReg]['arrayKW'][0]->getValue()}
+                                       {/if}" >
+                                <input type="text" name="Keyword2" value="
+                                       {if isset($arrayReg[loopReg]['arrayKW'][1])}
+                                           {$arrayReg[loopReg]['arrayKW'][1]->getValue()}
+                                       {/if}" >
+                                <input type="text" name="Keyword3" value="
+                                       {if isset($arrayReg[loopReg]['arrayKW'][2])}
+                                           {$arrayReg[loopReg]['arrayKW'][2]->getValue()}
+                                       {/if}" >
+
+                                <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
+                                <input type="submit" name="Save" value="Save" alt="Save and edit later">
+                                <input type="submit" name="Send" value="Send" alt="Submit your registration request">
+                            </form>
+                        </article>
+                    {elseif ($arrayReg[loopReg]['registration']->getStatus() == 'Sent')}
+                        <article class="form_closed">
+                            <p class="subtitle">You applied to</p> 
+                            <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
+                            <p class="subtitle">You can view your appliance but cannot update it anymore.</p>
+                            <p class="label" >Your activity domain:</p>
+                            <p class="activitydomain">{$arrayReg[loopReg]['registration']->getType()}</p>
+                            <p class="label">Your role in this domain</p>
+                            <p class="roledomain">{$arrayReg[loopReg]['registration']->getTypeDescription()}</p>
+                            <p class="label">Motivation:</p>
+                            <p class="motivation">{$arrayReg[loopReg]['motivation']->getText()}</p>
+                            <p class="label">Keywords:</p>
+                            <p class="keyword">{$arrayReg[loopReg]['arrayKW'][0]->getValue()}</p>
+                            <p class="keyword">{$arrayReg[loopReg]['arrayKW'][1]->getValue()}</p>
+                            <p class="keyword">{$arrayReg[loopReg]['arrayKW'][2]->getValue()}</p>
+                        </article>
 
                     {/if}
-                </article>
+                {/section}
             {else}
-                    <section id="row">
-                        <article class="offset2 span8 badMessage">
-                            <p>You Don't have any registrations yet</p>
-                        </article>
-                    </section>
+                <section id="row">
+                    <article class="offset2 span8 badMessage">
+                        <p>You Don't have any pending or sent registrations.</p>
+                    </article>
+                </section>
             {/if}
-            <aside id="oldevents">
-                <h2>Previous events</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Topic</td>
-                            <td>Date</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {if isset($eventsObjects)}
-                            {section loop=$eventsObjects name=oldEvents step=-1}
-                            {if $smarty.section.oldEvents.first} {else}
-                                <tr>
-                                    <td>{$eventsObjects[oldEvents]->getMainTopic()}</td>
-                                    <td>{$eventsObjects[oldEvents]->getStartingDate()}</td>
-                                </tr>
-                            {/if}
-                        {/section}
-                    {else}
-                        <tr>
-                            <td>No previous events</td>
-                            <td></td>
-                        </tr>
-                    {/if}
-                </tbody>
-            </table>
-        </aside>
+            {if !empty($arrayOldReg) }
+                <aside id="oldevents">
+                    <h2>Previous registrations</h2>
+                    {section name=loopOldReg loop=$arrayOldReg}
+                        <article class="form_closed">
+                            <h3>{$arrayOldReg[loopOldReg]['event']->getMainTopic()}</h3>
+                            <p class="subtitle">You can view your appliance but cannot update it anymore.</p>
+                            <p class="label" >Your activity domain:</p>
+                            <p class="activitydomain">
+                                {if isset($arrayOldReg[loopOldReg]['oldReg'])}
+                                    {$arrayOldReg[loopOldReg]['oldReg']->getType()}
+                                {/if}
+                            </p>
+                            <p class="label">Your role in this domain</p>
+                            <p class="roledomain">
+                                {if isset($arrayOldReg[loopOldReg]['oldReg'])}
+                                    {$arrayOldReg[loopOldReg]['oldReg']->getTypeDescription()}
+                                {/if}
+                            </p>
+                            <p class="label">Motivation:</p>
+                            <p class="motivation">
+                                {if !empty($arrayOldReg[loopOldReg]['motivation'])}
+                                    {$arrayOldReg[loopOldReg]['motivation']->getText()}
+                                {/if}
+                            </p>
+                            <p class="label">Keywords:</p>
+                            <p class="keyword">
+                                {if isset($arrayOldReg[loopOldReg]['arrayKW'])}
+                                    {$arrayOldReg[loopOldReg]['arrayKW'][0]->getValue()}
+                                {/if}
+                            </p>
+                            <p class="keyword">
+                                {if isset($arrayOldReg[loopOldReg]['arrayKW'])}
+                                    {$arrayOldReg[loopOldReg]['arrayKW'][1]->getValue()}
+                                {/if}
+                            </p>
+                            <p class="keyword">
+                                {if isset($arrayOldReg[loopOldReg]['arrayKW'])}
+                                    {$arrayOldReg[loopOldReg]['arrayKW'][2]->getValue()}
+                                {/if}
+                            </p>
+                        </article>
+
+                    {/section}
+                </aside>
+            {/if}
+        {else}
+            <p class="error_msg" {$participant->getMessage()}</p>
+        {/if}
     {else}
-        <p class="error_msg" {$participant->getMessage()}</p>
+        <p class="error_msg">
+            You are not logged in, you cannot access this content.
+        </p>
     {/if}
-{else}
-    <p class="error_msg">
-        You are not logged in, you cannot access this content.
-    </p>
-{/if}
 </section>
