@@ -20,9 +20,6 @@ Description : general navigation and
         <!-- colorbox javascript-->
             <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
             <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
-            <script type="text/javascript" src="js/modernizr.custom.44029.js"></script>
-            <link rel="stylesheet" href="js/placeholder_polyfill.min.css">
-            <script src="js/placeholder_polyfill.jquery.min.combo.js" charset="utf-8"></script>
         {literal} <!-- Avoiding smarty to crash on the javascript code -->
             <script type="text/javascript">
                 $(document).ready(function(){
@@ -33,25 +30,7 @@ Description : general navigation and
                     $(".inline").colorbox({inline:true, width:"50%"});
                     $('.html').colorbox({ iframe:true, width:"60%", height:500});
                 });
+            </script>
 
-            </script>
-            <script type="text/javascript">
-                Modernizr.load({
-                    test: Modernizr.input.placeholder,
-                    nope: [
-                        'js/placeholder_polyfill.min.css',
-                        'js/placeholder_polyfill.jquery.min.combo.js'
-                    ]
-                });
-            </script>
-        <script type="text/javascript">
-            yepnope({
-                test: ('placeholder' in $('<input>')[0]),
-                nope: [
-                    'placeholder_polyfill.min.css',
-                    'placeholder_polyfill.jquery.min.combo.js'
-                ]
-            });
-        </script>
         {/literal}
         <!-- enf of colorbox javascript-->
