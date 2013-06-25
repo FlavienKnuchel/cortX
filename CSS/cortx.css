@@ -81,6 +81,7 @@ ul li{
 }
 
 /*section elements take full page width*/
+
 section
 {
     width:100%;
@@ -107,18 +108,20 @@ article{
 #videos_media{
     text-align:center;
 }
-
+section#videos{
+    margin-bottom: 20px;
+}
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
     /*height:135px;*/
-    margin-bottom:40px;
+    margin-bottom:20px;
     text-align:center;
     
 }
 
 #socialnet li a img{
-    width:90px;
-    height:90px;
+    width:40px;
+    height:40px;
     
 }
 #socialnet li a:hover img{
