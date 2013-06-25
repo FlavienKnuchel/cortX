@@ -8,21 +8,21 @@ footer {
     line-height:40px;
 }
 
-form.log {
+footer form.log {
     height:40px;
 }
 
-form label {
+footer form label {
     width: 15%;
 }
 
-.log input[type=text], input[type=password] {
+ooter .log input[type=text], input[type=password] {
     padding-left:5px;
     margin-right:2%;
     width: 25%;
 }
 
-input[type=submit]#login {
+footer input[type=submit]#login {
     width:30px;
     height:30px;
     background-color:#333333;
@@ -34,24 +34,24 @@ input[type=submit]#login {
     float:right;
 }
 
-#logout {
+footer #logout {
 	text-align:right;
     line-height:40px;
 }
 
-#logged{
+footer #logged{
     text-decoration:none;
     /*font-size: 1.2em;*/
     text-transform :uppercase;
     color:#ffffff;    
     height:50px;
 }
-#logged a{
+footer #logged a{
     text-decoration:none; 
     text-transform :uppercase;
     color:#ffffff;
 }
-#logged a:hover{
+fotter #logged a:hover{
     color:#333333;
 }
 
