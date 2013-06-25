@@ -18,7 +18,7 @@ Description : template of the events page
 </div>
 <section id="event_detail">
     
-    <div class="row">
+    <div class="row box">
         <section id="current_event" class="offset2 span8">
             <article class="desc_event">
                 <!-- smarty variables existence test -->

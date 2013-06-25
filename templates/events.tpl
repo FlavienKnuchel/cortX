@@ -8,7 +8,7 @@ Date : 14.6.2013
 Description : template of the events page
 
 -->
-<section id="event_detail" class="firstElement">
+<section id="event_detail" class="firstElement lastElement">
     {if isset($registrationSuccess)}
         <section class="row">
             <article class="offset2 span8 goodMessage">
@@ -92,7 +92,7 @@ Description : template of the events page
         </div>
             
             
-        <section class="row lastElement">
+        <section class="row">
             <aside id="upcomingEvents" class="offset2 span4">
                 <h2>Upcoming events</h2>
                 <table>

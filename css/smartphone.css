@@ -10,6 +10,7 @@
     }
     .box{
         background-color:#f0f0f0;
+        padding-bottom: 20px;
     }
     nav{
     height:auto;
@@ -25,9 +26,10 @@
     h1, h2, h3, h4, h5, h6 {
     line-height: 1em;
     }
-.lastElement{
+.lastElement, section.lastElement {
 margin-bottom:160px;
 }
+
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
@@ -120,7 +122,7 @@ margin-bottom:160px;
     /*---------------------------events-------------------------------*/
     .current_event_title{
         line-height:50px;
-        padding-top:50px;
+        
     }
     #upcomingEvents {
         margin-right:0;
@@ -133,7 +135,7 @@ margin-bottom:160px;
     #event_detail{
         max-width:90%;
         margin-left:5%;
-        margin-top:5%;
+        
     }
     .slot_event h3 {
     line-height: 40px;
@@ -144,6 +146,19 @@ margin-bottom:160px;
         width:200px;
     max-width:200px;
     }
+    #actualParticipateButton, #current_event .button {
+    float: none;
+    height: 100px;
+    margin: 0;
+    width: 100%;
+    
+    }
+    #actualParticipateButton a, #current_event .button a {
+    text-align:center;
+    width:auto;
+    }
+    
+   
                     /*-------table-------*/
     
     .programme_event, .desc_event{    
