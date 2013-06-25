@@ -58,6 +58,6 @@ Description : Basic structure of the homepage
     </ul>
 </article>
 
-<article id="tedxDisclaimer" class="row">
+<article id="tedxDisclaimer" class="row lastElement">
     <p>This independent TEDx event is operated under license from TED.</p>
 </article>

@@ -2,7 +2,7 @@
 
 @media screen and (max-width: 850px) {
     body {
-        font-size: 30px;
+        font-size: 26px;
         line-height: 1.5em;
     }
     nav ul li a{
@@ -12,16 +12,22 @@
         background-color:#f0f0f0;
     }
     nav{
-    height:100px;
+    height:auto;
+    max-height:100px;
     line-height: 40px;
     background-color:#ffffff;    
     }
     nav a img{
     padding-top:0px;
     margin-left:0px;
-        height:100px;
+    height:auto;
     }
-
+    h1, h2, h3, h4, h5, h6 {
+    line-height: 1em;
+    }
+.lastElement{
+margin-bottom:160px;
+}
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
@@ -62,6 +68,16 @@
     #videos li.span2 {
     text-align:left;
     }
+    .button, .button:hover{
+    width: 95%;
+    height:100px;
+    }
+    div.button a, div.button a:hover{
+    width: 100%;
+    height:100px;
+        padding-top:30px;
+    }
+    
     /*-------------------userbar-----------------------------------*/
     footer form {    
     text-align:center;   
@@ -76,6 +92,11 @@
     padding: 0;
     text-align: center;
     width: 30px;
+    }
+    footer {
+	
+	height:100px;
+    line-height:40px;
     }
     /*---------------------------tuiles---------------------------------*/
     .tuile h3{
