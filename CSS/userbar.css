@@ -34,6 +34,27 @@ input[type=submit]#login {
     float:right;
 }
 
+#logout {
+	text-align:right;
+    line-height:40px;
+}
+
+#logged{
+    text-decoration:none;
+    /*font-size: 1.2em;*/
+    text-transform :uppercase;
+    color:#ffffff;    
+    height:50px;
+}
+#logged a{
+    text-decoration:none; 
+    text-transform :uppercase;
+    color:#ffffff;
+}
+#logged a:hover{
+    color:#333333;
+}
+
 
 a#setting {
     width:30px;
