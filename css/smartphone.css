@@ -2,7 +2,7 @@
 
 @media screen and (max-width: 850px) {
     body {
-        font-size: 20px;
+        font-size: 30px;
         line-height: 1.5em;
     }
     nav ul li a{
@@ -11,6 +11,17 @@
     .box{
         background-color:#f0f0f0;
     }
+    nav{
+    height:100px;
+    line-height: 40px;
+    background-color:#ffffff;    
+    }
+    nav a img{
+    padding-top:0px;
+    margin-left:0px;
+        height:100px;
+    }
+
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
