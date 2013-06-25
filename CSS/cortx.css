@@ -179,6 +179,34 @@ textarea{
     resize:none;
 }
 
+/*my profile*/
+.profil label {
+    margin-right: 10px;
+    width:15%;
+}
+
+.profil form input {
+    margin-right: 10px;
+    width: 30%;
+}
+
+.profil form textarea {
+    margin-right: 10px;
+    width: 95%;
+}
+
+.password label {
+    margin-right: 10px;
+    width:30%;
+}
+
+.password form input {
+    margin-right: 10px;
+    width: 60%;
+}
+
+
+/*----*/
 div.button_back{
     background-image:url(../img/back.png);
     background-repeat:no-repeat;
