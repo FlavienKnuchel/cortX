@@ -8,7 +8,8 @@ Description : template of the user inscription
 
 -->
 
-<section id="inscription">
+<section class="firstElement row">
+    <article class="offset2 span8">
     {if $loggedin}
         {if $participant->getStatus()}
             {if !empty($arrayReg) }
@@ -20,10 +21,10 @@ Description : template of the user inscription
 
                             <form method="POST" action="?id={$smarty.section.loopReg.index}">
                                 <label for="type">Your activity domain</label>
-                                <input type="text" name="type" placeholder="Your activity domain" required
+                                <input type="text" name="type" placeholder="Your activity domain"
                                        value='{$arrayReg[loopReg]['registration']->getType()}'>
                                 <label for="typeDescription">Your role in this domain</label>
-                                <input type="text" name="typeDescription"  required
+                                <input type="text" name="typeDescription"
                                        value="{$arrayReg[loopReg]['registration']->getTypeDescription()}">
                                 <label for="motivation" class="subtitle">Explain us your motivations</label>
                                 <textarea name="motivation" title="motivation" class="big" spellcheck>
@@ -69,15 +70,15 @@ Description : template of the user inscription
                     {/if}
                 {/section}
             {else}
-                <section id="row">
+                <section class="row">
                     <article class="offset2 span8 badMessage">
                         <p>You Don't have any pending or sent registrations.</p>
                     </article>
                 </section>
             {/if}
             {if !empty($arrayOldReg) }
-                <aside id="oldevents">
-                    <h2>Previous registrations</h2>
+                <article class="offset7 span3">
+                    <h1>Previous registrations</h1>
                     {section name=loopOldReg loop=$arrayOldReg}
                         <article class="form_closed">
                             <h3>{$arrayOldReg[loopOldReg]['event']->getMainTopic()}</h3>
@@ -119,7 +120,7 @@ Description : template of the user inscription
                         </article>
 
                     {/section}
-                </aside>
+                </article>
             {/if}
         {else}
             <p class="error_msg" {$participant->getMessage()}</p>
@@ -129,4 +130,6 @@ Description : template of the user inscription
             You are not logged in, you cannot access this content.
         </p>
     {/if}
-</section>
+        </article>
+    </section>
+
