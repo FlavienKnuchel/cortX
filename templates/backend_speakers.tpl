@@ -24,15 +24,15 @@ Description : backend of the speakers page
                     <th>Edit</th>
                 </tr>
                 {section name=speaker loop=$speakers step=-1}
-                    <form method="POST" action="?id={$smarty.section.speaker.index}">
                           <tr>
                             <td>{$speakers[speaker]->getName()}</td>
                             <td>{$speakers[speaker]->getFirstName()}</td>
                             <td>
-                                <input type="submit" src="./img/modify.png" title="Modify" name="modify" class="modify">
+                    <form method="POST" action="?id={$smarty.section.speaker.index}">
+                        <input type="submit" value="Modify" title="Modify" name="modify" class="modify">
+                    </form>
                             </td>
                         </tr>
-                    </form>
                 {/section}
             </table>
         </article>
@@ -50,7 +50,7 @@ Description : backend of the speakers page
                     <input  class="span1" type="tel" name="Phone" value="{$modify->getPhoneNumber()}" >
                     <input  class="span1" type="email" name="Email" value="{$modify->getEmail()}"  autocomplete>
                     <textarea type="text" name="Description" >{$modify->getDescription()}</textarea>
-                    <input type="submit" name="edit" title="Edit">
+                    <input type="submit" name="edit" title="Edit" value="Edit">
                 </form>
             {else}
                 <h2>Add a speaker</h2>
@@ -65,7 +65,7 @@ Description : backend of the speakers page
                     <input  class="span1" type="tel" name="Phone" value="" >
                     <input  class="span1" type="email" name="Email" value=""  autocomplete>
                     <textarea type="text" name="Description" ></textarea>
-                    <input type="submit" name="add" title="Add">
+                    <input type="submit" name="add" title="Add" value="Add">
                 </form>
             {/if}
         </article>
