@@ -18,7 +18,7 @@ Description : template of the events page
         </section>
    {/if}
     <section>
-        <div class="row">
+        <div class="row box">
         <section class="offset2 span8">
             <article>
                 <!-- smarty variables existence test -->

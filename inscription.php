@@ -295,7 +295,6 @@ function Register($registrationStatus){
         'text' => $_POST['motivation'],
         'event' => $event,
         'participant' => $tedx_manager->getParticipant($personNo)->getContent());
-    var_dump($aMotivation);
     $tedx_manager->addMotivationToAnEvent($aMotivation);
 
     if($registrationStatus=="sent"){

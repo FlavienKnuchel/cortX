@@ -9,7 +9,7 @@ Description : Basic structure of the homepage
 <section id="nextevent" class="row firstElement">    
     <article class="offset2 span6">
         {if isset($upcomingEvents)}
-            <h2>{$upcomingEvents[0]->getMainTopic()}</h2>
+            <h1>{$upcomingEvents[0]->getMainTopic()}</h1>
             <p class="subtitle">{$upcomingEvents[0]->getStartingDate()}</p>
             <p>{$upcomingEvents[0]->getDescription()}</p>
             <div class="button">

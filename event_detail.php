@@ -23,10 +23,9 @@ include 'menu_frontend.php';
         $smarty->assign('userCameFromInsc',true);
     }
     else{//if the user didn't come from inscription page
-        //make the link go to the last page
+        //make the "back" link go to the last page
         $userCameFrom=$_SERVER['HTTP_REFERER'];
         $smarty->assign('userCameFrom',$userCameFrom);
-
 }
 /*------------------------------The event------------------------------*/
 //if the event number is set in the url

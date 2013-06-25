@@ -3,11 +3,14 @@
 @media screen and (max-width: 850px) {
     body {
         font-size: 20px;
+        line-height: 1.5em;
     }
     nav ul li a{
         display:none;
     }
-    
+    .box{
+        background-color:#f0f0f0;
+    }
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
@@ -52,6 +55,17 @@
     footer form {    
     text-align:center;   
     }
+    input#login[type="submit"] {
+    background-color: #333333;
+    display: inline;
+    float:none;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+    width: 30px;
+    }
     /*---------------------------tuiles---------------------------------*/
     .tuile h3{
     background-color:#f0f0f0;
@@ -89,6 +103,15 @@
         margin-left:5%;
         margin-top:5%;
     }
+    .slot_event h3 {
+    line-height: 40px;
+    margin: 0;
+    }
+    .slot_event {
+    float: left;
+        width:200px;
+    max-width:200px;
+    }
                     /*-------table-------*/
     
     .programme_event, .desc_event{    
@@ -125,5 +148,9 @@
         max-width:90%;
         margin-left:5%;
         margin-top:5%;
+    }
+    .speakers_photo{
+         padding-left:5%;
+        text-align:center;
     }
 }
