@@ -109,7 +109,8 @@
     }
     .slot_event {
     float: left;
-    max-width: 50%;;
+        width:200px;
+    max-width:200px;
     }
                     /*-------table-------*/
     

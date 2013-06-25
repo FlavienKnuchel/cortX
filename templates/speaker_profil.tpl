@@ -16,7 +16,7 @@ Description : template of the speaker profil
         {/if}
 </div>
 
-<section id="speaker_year" class="row firstElement end">
+<section id="speaker_year" class="row end">
     <article class="offset2 span8">
         <div class="speaker_photo">
             <img src="img/speakers/big/speaker.jpg"/>
