@@ -7,6 +7,14 @@ Date : 17.6.2013
 Description : template of the speaker profil
 
 -->
+<div class="row">
+        {if isset($userCameFrom)}
+            <div class="button_back offset2"><a title="go back to lats page" href='{$userCameFrom}'>Back</a></div>
+        {/if}
+        {if isset($userCameFromInsc)&&$userCameFromInsc}
+            <div class="button_back offset2"><a title="go back to speakers page" href='speakers.php'>Back</a></div>
+        {/if}
+</div>
 
 <section id="speaker_year" class="row firstElement end">
     <article class="offset2 span8">
