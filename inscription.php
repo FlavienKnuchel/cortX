@@ -193,7 +193,6 @@ $smarty->assign('error', $error);
 
 //send the filled datas, so we can collect them, and in case of error, no need to retype them
 sendFilledDatas();
-var_dump($_SESSION);
 /*---------------------------- normal inscription display  -----------------------------*/
 $smarty->display('events_registerToEvent.tpl');
 include 'userbar.php';
