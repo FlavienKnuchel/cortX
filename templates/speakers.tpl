@@ -14,16 +14,21 @@ Description : template of the speaker section
         <h1 class="title_year">Speakers</h1>    
         <article class="speakers_photo row">
             {if isset($speakers)}
-                <ul>
+                <table>
                     <!-- do a loop on <li> -->
                     {section name=listspeakers loop=$speakers step=-1}
-                        <li>
-                            <a href="speaker_profil.php?id={$speakers[listspeakers]->getNo()}">
-                                <p>{$speakers[listspeakers]->getName()} {$speakers[listspeakers]->getFirstName()}</p>
-                            </a>
-                        </li>
+                        {if $smarty.section.listspeakers.iteration % 3==0}
+                            test
+                            {/if}
+                        <tr>
+                            <td>
+                                <a href="speaker_profil.php?id={$speakers[listspeakers]->getNo()}">
+                                    {$speakers[listspeakers]->getName()} {$speakers[listspeakers]->getFirstName()}
+                                </a>
+                            </td>
+                        </tr>
                     {/section}
-                </ul>
+                </table>
             {else}
                 <p class="error_msg">There are currently no speakers to be displayed, sorry.</p>
             {/if}

@@ -11,6 +11,12 @@
 include 'header.php';
 include 'menu_frontend.php';
 
+if(isset($_SERVER['HTTP_REFERER'])){
+    //make the "back" link go to the last page
+    $userCameFrom=$_SERVER['HTTP_REFERER'];
+    $smarty->assign('userCameFrom',$userCameFrom);
+}
+
 if(isset($_GET['No'])){//is the speaker number in the url?
     //get the speaker
     $speaker=$tedx_manager->getPerson($_GET['No'])->getContent();
