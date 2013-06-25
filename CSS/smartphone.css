@@ -7,11 +7,7 @@
     nav ul li a{
         display:none;
     }
-    section .span8, section .span6, section .span2 {
-    background-color: #F0F0F0;
-    margin-top: 0;
-    padding: 0px;
-    }   
+    
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
         max-width:95%;
