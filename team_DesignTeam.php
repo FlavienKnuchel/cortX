@@ -23,7 +23,7 @@
     
 
 
-<section id="team">
+<section id="lightbox">
 	<article>
         <h1>Design Team</h1>
         <article>

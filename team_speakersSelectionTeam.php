@@ -22,7 +22,7 @@
 </head>
     
 
-<section id="team">
+<section id="lightbox">
 	<article>
         <h1>Speakers selection team</h1>
         <article>

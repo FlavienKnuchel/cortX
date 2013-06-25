@@ -22,7 +22,7 @@
 </head>
     
 
-<section id="team">
+<section id="lightbox">
 	<article>
         <h1>Hospitality and events team</h1>
         <article>
