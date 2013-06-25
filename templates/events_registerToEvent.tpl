@@ -111,7 +111,7 @@ Description : template of the registration to an event
                     </article>
                 </div>
             {/if}
-        {else}
+        {/if}
             {if isset($filledDatas) && !empty($filledDatas)}
                 <div class="row">
                     <article class="domain offset2 span8">
@@ -182,6 +182,5 @@ Description : template of the registration to an event
                 </div>
 
             {/if}
-        {/if}
     </form>
 </section>

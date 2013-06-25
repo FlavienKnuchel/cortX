@@ -31,16 +31,20 @@ if($messageTalks->getStatus()){
         $url=$talk->getVideoUrl();
         //get the reference
         $talkRef=getYoutubeRef($url);
-        //create an array with all the infos of the talk
-        $combination=array(
-            'video'=>createVideoUrl($talkRef),
-            'img'=>createImgUrl($talkRef),
-            'title'=>$talk->getVideoTitle(),
-            'eventNo'=>$talk->getEventNo(),
-            'speakerNo'=>$talk->getSpeakerPersonNo()
-        );
-        //put it in the
-        array_push($talksArray,$combination);
+
+        if($talkRef){
+            //create an array with all the infos of the talk
+            $combination=array(
+                'video'=>createVideoUrl($talkRef),
+                'img'=>createImgUrl($talkRef),
+                'title'=>$talk->getVideoTitle(),
+                'eventNo'=>$talk->getEventNo(),
+                'speakerNo'=>$talk->getSpeakerPersonNo()
+            );
+            //put it in the
+            array_push($talksArray,$combination);
+        }
+
     }//foreach
 
     //assign the new combined array to smarty
@@ -75,6 +79,7 @@ function getYoutubeRef($url){
     //break it at the = sign
     $url=explode("=",$url);
     //select the last part with the ref
+    if(sizeof($url)>=2){
     $ref=$url[1];
     //break it at the & sign (to take away the &lists)
     $ref=explode("&",$ref);
@@ -82,5 +87,11 @@ function getYoutubeRef($url){
     $finalRef=$ref[0];
     //push it into the array
     return $finalRef;
+    }
+    else{
+        return false;
+    }
+
+
 }
 ?>
