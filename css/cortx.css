@@ -230,7 +230,9 @@ textarea{
     margin-right: 10px;
     width: 95%;
 }
-
+.inscription_button input[type=submit] {
+    display: inline;
+}
 /*----*/
 div.button_back{
     background-image:url(../img/back.png);

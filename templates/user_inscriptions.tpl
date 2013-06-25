@@ -8,16 +8,17 @@ Description : template of the user inscription
 
 -->
 
-<section class="firstElement row">
+<section class="firstElement">
     <article class="offset2 span8">
         {if $loggedin}
             {if $participant->getStatus()}
                 {if !empty($arrayReg) }
                     {section name=loopReg loop=$arrayReg}
                         {if $arrayReg[loopReg]['registration']->getStatus() == 'Pending'}
-                            <article class="form_inscr">
+                            <article class="span12">
 
-                                <h2>You are applying to {$arrayReg[loopReg]['event']->getMainTopic()}</h2>
+                                <h1>You are applying to </h1>
+                                <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
 
                                 <form method="POST" action="?">
                                     <label for="type">Your activity domain</label>
@@ -30,6 +31,7 @@ Description : template of the user inscription
                                             {$arrayReg[loopReg]['motivation']->getText()}
                                         {/if}</textarea>
                                     <label for="Keyword" title="Describe youself in 3 words">Keywords that describes you the best</label>
+                                    <p class="span12">
                                     <input type="text" name="Keyword1" value="
                                            {if isset($arrayReg[loopReg]['arrayKW'][0])}
                                                {$arrayReg[loopReg]['arrayKW'][0]->getValue()}
@@ -41,17 +43,17 @@ Description : template of the user inscription
                                     <input type="text" name="Keyword3" value="
                                            {if isset($arrayReg[loopReg]['arrayKW'][2])}
                                                {$arrayReg[loopReg]['arrayKW'][2]->getValue()}
-                                           {/if}" >
+                                           {/if}" ></p>
 
                                     <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
-                                    <input type="hidden" name="value" value="{$smarty.section.loopReg.index}">
+                                    <p class="inscription_button"><input type="hidden" name="value" value="{$smarty.section.loopReg.index}">
                                     <input type="submit" name="Save" value="Save" alt="Save and edit later">
-                                    <input type="submit" name="Send" value="Send" alt="Submit your registration request">
+                                    <input type="submit" name="Send" value="Send" alt="Submit your registration request"></p>
                                 </form>
                             </article>
                         {elseif ($arrayReg[loopReg]['registration']->getStatus() == 'Sent' || $arrayReg[loopReg]['registration']->getStatus() == 'Accepted' || $arrayReg[loopReg]['registration']->getStatus() == 'Rejected')}
-                            <article class="form_closed">
-                                <p class="subtitle">You applied to</p> 
+                            <article class="span12">
+                                <h1 class="subtitle">You applied to</h1> 
                                 <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
                                 <p class="subtitle">Satus of your registration : <strong>{$arrayReg[loopReg]['registration']->getStatus()}</strong></p>
                                 <p class="label" >Your activity domain:</p>
@@ -87,7 +89,7 @@ Description : template of the user inscription
                     </section>
                 {/if}
                 {if !empty($arrayOldReg) }
-                    <article class="offset7 span3">
+                    <article class="offset2 span8">
                         <h1>Previous registrations</h1>
                         {section name=loopOldReg loop=$arrayOldReg}
                             <article class="form_closed">
