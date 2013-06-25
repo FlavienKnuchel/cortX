@@ -29,7 +29,7 @@ Description : backend of the speakers page
                             <td>{$speakers[speaker]->getFirstName()}</td>
                             <td>
                     <form method="POST" action="?id={$smarty.section.speaker.index}">
-                        <input type="submit" value="Modify" title="Modify" name="modify" class="modify">
+                        <input type="submit" value="" title="Modify" name="modify" class="modify">
                     </form>
                             </td>
                         </tr>
@@ -50,7 +50,7 @@ Description : backend of the speakers page
                     <input  class="span1" type="tel" name="Phone" value="{$modify->getPhoneNumber()}" >
                     <input  class="span1" type="email" name="Email" value="{$modify->getEmail()}"  autocomplete>
                     <textarea type="text" name="Description" >{$modify->getDescription()}</textarea>
-                    <input type="submit" name="edit" title="Edit" value="Edit">
+                    <input type="submit" name="edit" title="Edit" value="OK">
                 </form>
             {else}
                 <h2>Add a speaker</h2>
@@ -65,7 +65,7 @@ Description : backend of the speakers page
                     <input  class="span1" type="tel" name="Phone" value="" >
                     <input  class="span1" type="email" name="Email" value=""  autocomplete>
                     <textarea type="text" name="Description" ></textarea>
-                    <input type="submit" name="add" title="Add" value="Add">
+                    <input type="submit" name="add" title="Add" value="Add" class="add2">
                 </form>
             {/if}
         </article>

@@ -146,7 +146,92 @@ a.add:hover {
     background-image:url(../img/add_hover.png);
     background-repeat:no-repeat;
 }
+/* input */
+input[type=submit].modify {
+    background-image:url(../img/modify.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
+    padding:0;
+    background-color: transparent;
+    min-width:20px;
+}
 
+
+input[type=submit].modify:hover {
+    height: 20px;
+    width: 20px;
+    padding:0;
+    background-color: transparent;
+    min-width:20px;
+    background-image:url(../img/modify_hover.png);
+    background-repeat:no-repeat;
+}
+
+input[type=submit].delete {
+    height: 20px;
+    width: 20px;
+    padding:0;
+    background-color: transparent;
+    min-width:20px;
+    background-image:url(../img/delete.png);
+    background-repeat:no-repeat;
+
+}
+
+input[type=submit].delete:hover {
+    height: 20px;
+    width: 20px;
+    padding:0;
+    background-color: transparent;
+    min-width:20px;
+    background-image:url(../img/delete_hover.png);
+    background-repeat:no-repeat;
+}
+    
+input[type=submit].add {
+    height: 20px;
+    width: 20px;
+    padding:0;
+    background-color: transparent;
+    min-width:20px;
+    background-image:url(../img/add.png);
+    background-repeat:no-repeat;
+}
+
+input[type=submit].add2 {
+    height: 20px;
+    width: 100px;
+    padding:0;
+    color: #ffffff;
+    line-height:20px;
+    background-color: transparent;
+    min-width:100px;
+    background-image:url(../img/add.png);
+    background-repeat:no-repeat;
+    float:right;
+}
+
+input[type=submit].add:hover {
+    height: 20px;
+    width: 20px;
+    padding:0;
+    background-color: transparent;
+    min-width:20px;
+    background-image:url(../img/add_hover.png);
+    background-repeat:no-repeat;
+}
+
+input[type=submit].add2:hover {
+    height: 20px;
+    width: 100px;
+    padding:0;
+    color: #000000;
+    background-color: transparent;
+    min-width:100px;
+    background-image:url(../img/add_hover.png);
+    background-repeat:no-repeat;
+}
 
 /*______________________fil d'ariane--------------------------------------*/
 
