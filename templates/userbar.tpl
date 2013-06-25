@@ -24,11 +24,11 @@ Description :
 
     {else}
 
-        <form method="post" action="login.php" class="offset7 span3">
+        <form method="post" action="login.php" class="offset6 span4 log">
             <label for="username">Login</label>
-            <input type="text" name="username" placeholder="Username" id="form_log">
+            <input type="text" name="username" placeholder="Username">
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" id="form_log">
+            <input type="password" name="password" placeholder="Password">
             <input type="submit" name="Login" value="OK" id="login">
         </form>
 
