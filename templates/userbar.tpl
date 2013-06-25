@@ -24,13 +24,16 @@ Description :
 
     {else}
 
-        <form method="post" action="login.php" class="offset6 span4 log">
+        <form id="login_desktop" method="post" action="login.php" class="offset6 span4 log">
             <label for="username">Login</label>
             <input type="text" name="username" placeholder="Username">
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="Login" value="OK" id="login">
         </form>
+        <div id="login_smartphone">
+            <a href="login.php">Log me</a>
+        </div>
 
     {/if}    
 </footer>

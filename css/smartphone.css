@@ -13,7 +13,7 @@
         padding-bottom: 20px;
     }
     nav{
-    height:auto;
+    height:100px;
     max-height:100px;
     line-height: 40px;
     background-color:#ffffff;    
@@ -21,14 +21,15 @@
     nav a img{
     padding-top:0px;
     margin-left:0px;
-    height:auto;
+    height:90px;
+    max-height:inherit;
     }
     h1, h2, h3, h4, h5, h6 {
     line-height: 1em;
     }
-.lastElement, section.lastElement {
-margin-bottom:160px;
-}
+    .lastElement, section.lastElement {
+        margin-bottom:160px;
+    }
 
     /*-----------------------homepage-----------------------------------*/
     #nextevent{        
@@ -84,21 +85,32 @@ margin-bottom:160px;
     footer form {    
     text-align:center;   
     }
-    input#login[type="submit"] {
-    background-color: #333333;
-    display: inline;
-    float:none;
-    height: 30px;
-    line-height: 30px;
-    margin: 5px 0;
-    padding: 0;
-    text-align: center;
-    width: 30px;
-    }
+    
     footer {
 	
 	height:100px;
     line-height:40px;
+    }
+    footer form label {
+        display:none;
+    }
+   footer form.log {
+    display:none;
+}
+    #login_smartphone{
+    display:inherit;
+    background-color:#b12912;
+    height: 70px;
+    margin-left: 10%;
+    margin-top:15px;
+    text-align: center;
+    width: 80%;
+    line-height:70px;
+    color:#ffffff;
+    }
+    #login_smartphone a{
+    text-decoration:none;
+    color:#ffffff;
     }
     /*---------------------------tuiles---------------------------------*/
     .tuile h3{

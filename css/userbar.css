@@ -16,7 +16,7 @@ footer form label {
     width: 15%;
 }
 
-ooter .log input[type=text], input[type=password] {
+footer .log input[type=text], input[type=password] {
     padding-left:5px;
     margin-right:2%;
     width: 25%;
@@ -90,3 +90,6 @@ a#home_icon:hover{
 #logged .message{
     text-align:center;
 }
+#login_smartphone {
+    display:none;
+    }
