@@ -25,11 +25,14 @@ Description : template of the registration to an event
     </section>
 {/if}
 <section class="row">
-    <div class="offset2 span8">
-        <h1>Apply to this event!</h1>
-    {if empty($error)}
-        <p>Fill in your informations to create your registration</p>
+    <div class="row">
+        <h2 class="offset2 span8">Apply to this event!</h2>
     </div>
+
+    {if empty($error)}
+        <div class="row">
+            <p class="subtitle offset2 span8">Fill in your informations to create your registration</p>
+        </div>
     {/if}
     <form method="post" action="inscription.php">
 
@@ -37,7 +40,6 @@ Description : template of the registration to an event
             {if isset($filledDatas)}
                 <div class="row">
                     <article class="coordonees offset2 span8">
-                        <h3>Your co-ordinates</h3>
                         <p>
                             <label for="name">Last name</label>
                             <input type="text" name="lastname" placeholder="Your last name" autofocus
@@ -45,7 +47,7 @@ Description : template of the registration to an event
                             <label for="firstname">First name</label>
                             <input type="text" name="firstname" placeholder="Your firstname" required
                                    value='{if isset($filledDatas.firstname)}{$filledDatas.firstname}{/if}'>
-                            <label for="date">Date of birth</label>
+                            <label for="date">Date of birth (Year-month-day)</label>
                             <input type="date" name="date" placeholder="YYYY-MM-DD"
                                    value='{if isset($filledDatas.date)}{$filledDatas.date}{/if}'>
                         </p>
@@ -79,15 +81,12 @@ Description : template of the registration to an event
             {else}
                 <div class="row">
                     <article class="coordonees offset2 span8">
-                        <h3>Your co-ordinates</h3>
                         <p>
                             <label for="lastname">Last name</label>
                             <input type="text" name="lastname" placeholder="Your last name" autofocus required>
                             <label for="firstname">First name</label>
                             <input type="text" name="firstname" placeholder="Your firstname" required>
-
-
-                            <label for="date">Date of birth</label>
+                            <label for="date">Date of birth (Year-month-day)</label>
                             <input type="date" name="date" placeholder="YYYY-MM-DD">
                         </p>
                         <p>
@@ -112,76 +111,77 @@ Description : template of the registration to an event
                     </article>
                 </div>
             {/if}
-
-        {/if}
-
-        {if isset($filledDatas) && !empty($filledDatas)}
-            <div class="row">
-                <article class="offset2 span8">
-                    <label for="type">Your activity domain</label>
-                    <input type="text" name="type" placeholder="Your activity domain" required
-                           value='{if isset($filledDatas.type)}{$filledDatas.type}{/if}'>
-                    <label for="typeDescription">Your role in this domain</label>
-                    <input type="text" name="typeDescription" placeholder="Your role in this domain" required
-                           value='{if isset($filledDatas.typeDescription)}{$filledDatas.typeDescription}{/if}'>
-                </article>
-            </div>
-            <div class="row">
-                <article class="offset2 span8">
-                    <h2>Your motivations</h2>
-                    <p>Explain us your motivations</p>
-                    <textarea type="text" name="motivation" class="big" required>{if isset($filledDatas.motivation)}{$filledDatas.motivation}{/if}</textarea>
-                        <label for="keywords" title="describe your interests in 3 words">Keywords describing you</label>
-                    <p>
-                        <input type="text" name="keyword1" placeholder="Keyword"
-                               value='{if isset($filledDatas.keyword1)}{$filledDatas.keyword1}{/if}'>
-                        <input type="text" name="keyword2" placeholder="Keyword"
-                               value='{if isset($filledDatas.keyword2)}{$filledDatas.keyword2}{/if}'>
-                        <input type="text" name="keyword3" placeholder="Keyword"
-                               value='{if isset($filledDatas.keyword3)}{$filledDatas.keyword3}{/if}'>
-                    </p>
-                </article>
-            </div>
-            <div class="row">
-                <div class="offset2 span8">
-                    <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
-                    <input type="submit" name="send" value="Send" alt="Submit your registration request"
-                           title="Submit your registration request">
-                </div>
-            </div>
-            
         {else}
-            <div class="row">
-                <article class="domain offset2 span8">
-                    <label for="type">Your activity domain</label>
-                    <input type="text" name="type" placeholder="Your activity domain" required>
-                    <label for="typeDescription">Your role in this domain</label>
-                    <input type="text" name="typeDescription" placeholder="Your role in this domain" required>
-                </article>
-            </div>
-        
-        
-            <div class="row">
-                <article class="offset2 span8">  
-                    <h2>Your motivations</h2>
-                    <p>Explain us your motivations</p>
-                    <textarea type="text" name="motivation" class="big" required></textarea>
-                    <h3>Keywords Describing me</h3>
-                        <label for="keyword" title="describe your interests in 3 words">Keywords</label>
-                    <p>
-                        <input type="text" name="keyword1" placeholder="Keyword" >
-                        <input type="text" name="keyword2" placeholder="Keyword" >
-                        <input type="text" name="keyword3" placeholder="Keyword" >
-                    </p>
+            {if isset($filledDatas) && !empty($filledDatas)}
+                <div class="row">
+                    <article class="domain offset2 span8">
+                        <label for="type">Your activity domain</label>
+                        <input type="text" name="type" placeholder="Your activity domain" required
+                               value='{if isset($filledDatas.type)}{$filledDatas.type}{/if}'>
+                        <label for="typeDescription">Your role in this domain</label>
+                        <input type="text" name="typeDescription" placeholder="Your role in this domain" required
+                               value='{if isset($filledDatas.typeDescription)}{$filledDatas.typeDescription}{/if}'>
                     </article>
-            </div>
-            <div class="row">
-                <div class="offset2 span8">
-                    <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
-                    <input type="submit" name="send" value="Send" alt="Submit your registration request"
+                </div>
+                <div class="row">
+                    <article class="motivation offset2 span6">
+                        <label for="motivation" class="subtitle">Explain us your motivations</label>
+                        <textarea type="text" name="motivation" class="big" required>{if isset($filledDatas.motivation)}{$filledDatas.motivation}{/if}</textarea>
+                    </article>
+                    <article class="span2 keywords">
+                        <p>
+                            <label for="keywords" title="describe your interests in 3 words">Keywords describing you</label>
+                            <input type="text" name="keyword1" placeholder="Keyword"
+                                   value='{if isset($filledDatas.keyword1)}{$filledDatas.keyword1}{/if}'>
+                            <input type="text" name="keyword2" placeholder="Keyword"
+                                   value='{if isset($filledDatas.keyword2)}{$filledDatas.keyword2}{/if}'>
+                            <input type="text" name="keyword3" placeholder="Keyword"
+                                   value='{if isset($filledDatas.keyword3)}{$filledDatas.keyword3}{/if}'>
+                        </p>
+                    </article>
+                </div>
+                <div class="row">
+                    <div class="offset2 span8">
+                        <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
+                        <input type="submit" name="send" value="Send" alt="Submit your registration request"
                                title="Submit your registration request">
                     </div>
                 </div>
+
+            {else}
+                <div class="row">
+                    <article class="domain offset2 span8">
+                        <label for="type">Your activity domain</label>
+                        <input type="text" name="type" placeholder="Your activity domain" required>
+                        <label for="typeDescription">Your role in this domain</label>
+                        <input type="text" name="typeDescription" placeholder="Your role in this domain" required>
+                    </article>
+                </div>
+                <div class="row">
+
+                    <article class="offset2 span6 motivation">
+                        <p class="subtitle">Explain us your motivations</p>
+                        <textarea type="text" name="motivation" class="big" required></textarea>
+                    </article>
+                    <article class="span2 keywords">
+                        <p>
+                            <label for="keyword" title="describe your interests in 3 words">Keywords describing you</label>
+                            <input type="text" name="keyword1" placeholder="Keyword" >
+                            <input type="text" name="keyword2" placeholder="Keyword" >
+                            <input type="text" name="keyword3" placeholder="Keyword" >
+                        </p>
+                    </article>
+
+                </div>
+                <div class="row">
+                    <div class="offset2 span8">
+                        <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
+                        <input type="submit" name="send" value="Send" alt="Submit your registration request"
+                               title="Submit your registration request">
+                    </div>
+                </div>
+
+            {/if}
         {/if}
     </form>
 </section>
