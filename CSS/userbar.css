@@ -5,30 +5,40 @@ footer {
 	width: 100%;
 	bottom: 0px;
 	background-color:#FF2B06;
+    line-height:40px;
 }
-footer>p{
-    display:inline;
+
+form.log {
+    height:40px;
 }
-/*login form alignment*/
-footer form{
-    padding-top:0px;
-    /*padding-left:10px;*/
-    text-align:right;
+
+form label {
+    width: 15%;
 }
-#login {
-    /*margin-left:5px;*/
-	text-align:center;
-    width:10%;
-    height:22px;
+
+.log input[type=text], input[type=password] {
+    padding-left:5px;
+    margin-right:2%;
+    width: 25%;
 }
+
+input[type=submit]#login {
+    width:30px;
+    height:30px;
+    background-color:#333333;
+    text-align:center;
+    padding:0;
+    line-height:30px;
+    margin:5px 0;
+    display: inline;
+    float:right;
+}
+
 #logout {
 	text-align:right;
     line-height:40px;
 }
-#form_log{
-    width:40%;
-    padding-left:5px;
-}
+
 #logged{
     text-decoration:none;
     /*font-size: 1.2em;*/
@@ -44,6 +54,8 @@ footer form{
 #logged a:hover{
     color:#333333;
 }
+
+
 a#setting {
     width:30px;
     height:30px;
@@ -77,8 +89,4 @@ a#home_icon:hover{
 }
 #logged .message{
     text-align:center;
-}
-#login{
-    display:inline;
-    margin-top:10px;
 }
