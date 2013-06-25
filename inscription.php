@@ -61,19 +61,16 @@ $error='';
 if(isset($_POST['motivation'])){
     //if the user is logged
     if ($tedx_manager->isLogged()) {
-        echo"passedLogin<br/>";
         //check if the status has been entered
         if(!is_null(checkStatus())){
-            echo"passedStatus<br/>";
             //is is a save or a send?
             // if it is a send
             if(checkStatus()=="send"){
-                echo"passedStatusSend<br/>";
                 //if the motivation is filled
                 if(checkMotivation()){
                     //send the registration
                     $messageRegister=Register(checkStatus());
-                    if($messageRegister==true){
+                    if(empty($messageRegister)){
                         $registrationSuccess=true;
                     }//if
                     else{
@@ -87,9 +84,8 @@ if(isset($_POST['motivation'])){
             }//if
             //if it is a save
             else{
-                echo"StatusSave<br/>";
                 $messageRegister=Register(checkStatus());
-                if($messageRegister==true){
+                if(empty($messageRegister)){
                     $registrationSuccess=true;
                 }//if
                 else{
@@ -133,7 +129,7 @@ if(isset($_POST['motivation'])){
                             if(checkMotivation()){
                                 //send the registration
                                 $messageRegister=Register(checkStatus());
-                                if($messageRegister==true){
+                                if(empty($messageRegister)){
                                     $registrationSuccess=true;
                                 }//if
                                 else{
@@ -148,7 +144,7 @@ if(isset($_POST['motivation'])){
                         //if it is a save
                         else{
                             $messageRegister=Register(checkStatus());
-                            if($messageRegister==true){
+                            if(empty($messageRegister)){
                                 $registrationSuccess=true;
                             }//if
                             else{
@@ -181,11 +177,12 @@ if(isset($_POST['motivation'])){
 else{
     //don't do anything but display the formular
 }
-
 //if everything went well, the go to the homepage and display a message
-if(isset($registrationSuccess)&&$registrationSuccess){
-   // header("Location: events.php?registrationSuccess=true");
-    echo "JE RENTRE A LA MAISON";
+if(isset($registrationSuccess)&&$registrationSuccess&&empty($error)){
+    header("Location: events.php?registrationSuccess=true");
+}
+else{
+    $smarty->assign('error', $error);
 }
 
 //stock the error message in smarty
@@ -303,16 +300,15 @@ function Register($registrationStatus){
         'person' => $person, // object Person
         'event' => $event, // object Event
         'slots' => $slots, // List of objects Slot
-        'registrationdate' => date('Y-m-d'), // Date
         'type' => $type, // String
-        'typedescription' => $typeDescription // String
+        'typeDescription' => $typeDescription // String
     );
 
     $messageRegistration=$tedx_manager->registerToAnEvent($registration);
     if(!$messageRegistration->getStatus()){
         $error=$messageRegistration->getMessage();
     }
-    if(!$tedx_manager->isLogged()){
+    if(!$tedx_manager->isParticipant()){
         //login the user
         $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
         //if logged in
@@ -323,6 +319,7 @@ function Register($registrationStatus){
             setUserLevel();
         }
     }
+
 
 
     $arrayKeywords=arrayKeywords();
@@ -343,9 +340,7 @@ function Register($registrationStatus){
         'text' => $_POST['motivation'],
         'event' => $event,
         'participant' => $tedx_manager->getParticipant($personNo)->getContent());
-
     $messageMotivation =$tedx_manager->addMotivationToAnEvent($aMotivation);
-
     if(!$messageMotivation->getStatus()){
         $error=$messageMotivation->getMessage();
     }
@@ -355,7 +350,6 @@ function Register($registrationStatus){
     }
     else{
        if($registrationStatus=="send"){
-           echo"passedSentDansLaFonction<br>";
            $participant=$tedx_manager->getParticipant($person->getNo());
            if($participant->getStatus()){
                $arrayWaiting=array('status' =>'Pending','event' => $event,'participant' => $participant->getContent());
