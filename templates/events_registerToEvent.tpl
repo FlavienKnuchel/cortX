@@ -142,9 +142,10 @@ Description : template of the registration to an event
                 </div>
                 <div class="row">
                     <div class="offset2 span8">
+                        <p class="inscription_button">
                         <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
                         <input type="submit" name="send" value="Send" alt="Submit your registration request"
-                               title="Submit your registration request">
+                               title="Submit your registration request"></p>
                     </div>
                 </div>
 
@@ -159,11 +160,11 @@ Description : template of the registration to an event
                 </div>
                 <div class="row">
 
-                    <article class="offset2 span6 motivation">
+                    <article class="offset2 span8 motivation">
                         <p class="subtitle">Explain us your motivations</p>
                         <textarea type="text" name="motivation" class="big" required></textarea>
                     </article>
-                    <article class="span2 keywords">
+                    <article class="offset2 span8 keywords">
                         <p>
                             <label for="keyword" title="describe your interests in 3 words">Keywords describing you</label>
                             <input type="text" name="keyword1" placeholder="Keyword" >
@@ -175,9 +176,10 @@ Description : template of the registration to an event
                 </div>
                 <div class="row">
                     <div class="offset2 span8">
-                        <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
+                        <p class="inscription_button">
+                            <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
                         <input type="submit" name="send" value="Send" alt="Submit your registration request"
-                               title="Submit your registration request">
+                               title="Submit your registration request"></p>
                     </div>
                 </div>
 
