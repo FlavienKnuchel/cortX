@@ -38,14 +38,18 @@
     }
     #videos img{
         display:inline;
-        margin-left:5%;
-        width:90%;
-        
+        margin-left:0;
+        width:95%;
+        max-height:95%;
+        margin-top:0;
+        margin-bottom: 5%;    
     }
+    
     #videos .span2{
-       margin-left:5%;
+        margin-left:5%;
         width:95%;
     }
+
     /*-------------------userbar-----------------------------------*/
     footer form {    
     text-align:center;   

@@ -69,7 +69,7 @@ height:auto;
 #video_home_header{
     text-align: left;
 
-    margin-top:35px;
+    margin-top:20px;
 }
 #nextevent .span2,#nextevent .span6{
  background-color:transparent;
@@ -96,11 +96,14 @@ article{
 #videos{
     background-color:#f0f0f0;
 }
-#videos img{
-    margin-top:35px;
-    margin-bottom:35px;  
+#videos img {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-height: 100px;
 }
-
+#videos li.span2 {
+    text-align: center;
+}
 #videos_media{
     text-align:center;
 }
