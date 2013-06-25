@@ -38,19 +38,20 @@ else{
 }
 
 /*------------------------------ Check the event which the registration is for ------------------------------*/
-//if the event Number is specified somewhere
-if(isset($_GET['eventNo']) OR isset($_SESSION['eventNo'])){
-    //if it is specified in get
-    if(isset($_GET['eventNo'])) {
-        //stock it in session
-        $_SESSION['eventNo']=$_GET['eventNo'];
-    }
-    //else it is in the session already
-}
-else{
-    //if the number is not specified, there's a problem
-    header("Location: 404.php");
-}
+//if the event number is not set in the session
+if(!isset($_SESSION['eventNo'])){
+    //if the event Number is specified in get
+    if(isset($_GET['eventNo'])){
+            //stock it in session
+            $_SESSION['eventNo']=$_GET['eventNo'];
+    }//if
+    else{
+        //if the number is not specified, there's a problem
+        header("Location: 404.php");
+    }//else
+}//if
+//else it is in the session already
+
 
 /*------------------------------ MAIN: formular processing, and registration  ------------------------------*/
 //set the registration success to false
@@ -291,7 +292,15 @@ function Register($registrationStatus){
     global $tedx_manager;
     global $smarty;
     $person=$tedx_manager->getLoggedPerson()->getContent();
-    $event=$tedx_manager->getEvent($_SESSION['eventNo'])->getContent();
+    $eventNo=$_SESSION['eventNo'];
+    $eventMessage=$tedx_manager->getEvent($eventNo);
+    var_dump($_SESSION);
+    if($eventMessage->getStatus()){
+        $event=$eventMessage->getContent();
+    }
+    else{
+        $error=$eventMessage->getMessage();
+    }
     $slots=$tedx_manager->getSlotsFromEvent($event)->getcontent();
     $type=$_POST['type'];
     $typeDescription=$_POST['typeDescription'];
@@ -308,7 +317,8 @@ function Register($registrationStatus){
     if(!$messageRegistration->getStatus()){
         $error=$messageRegistration->getMessage();
     }
-    if(!$tedx_manager->isParticipant()){
+
+    if(isset($_POST['creatingAccount'])){
         //login the user
         $messageLogin = $tedx_manager->login($_POST['username'], $_POST['password']);
         //if logged in
@@ -319,8 +329,6 @@ function Register($registrationStatus){
             setUserLevel();
         }
     }
-
-
 
     $arrayKeywords=arrayKeywords();
     $keywordsArray = array(
@@ -334,16 +342,25 @@ function Register($registrationStatus){
             $error=$msg->getMessage();
         }
     }
-
+    var_dump($event);
     $personNo=$person->getNo();
-    $aMotivation = array(
-        'text' => $_POST['motivation'],
-        'event' => $event,
-        'participant' => $tedx_manager->getParticipant($personNo)->getContent());
-    $messageMotivation =$tedx_manager->addMotivationToAnEvent($aMotivation);
-    if(!$messageMotivation->getStatus()){
-        $error=$messageMotivation->getMessage();
+    $messageParticipant=$tedx_manager->getParticipant($personNo);
+    if($messageParticipant->getStatus()){
+        $participant=$messageParticipant->getContent();
+
+        $aMotivation = array(
+            'text' => $_POST['motivation'],
+            'event' => $event,
+            'participant' => $participant);
+        $messageMotivation =$tedx_manager->addMotivationToAnEvent($aMotivation);
+        if(!$messageMotivation->getStatus()){
+            $error="addMotivationToAnEvent --- ".$messageMotivation->getMessage();
+        }
     }
+    else{
+        $error="getParticipant --- ".$messageParticipant->getMessage();
+    }
+
 
     if($registrationStatus!="send" && $registrationStatus!="save"){
         header('Location:404.php');
