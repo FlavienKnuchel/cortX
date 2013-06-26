@@ -8,7 +8,6 @@ Description : backend of the events page
 -->
 <section class="firstElement">
     {if !empty($error)}
-        {$error|@var_dump}
         <section id="row">
             <article class="offset2 span8 badMessage">
                 <p>{$error}</p>
