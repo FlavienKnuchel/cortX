@@ -1,7 +1,7 @@
 <!--/*
  * media.php
  *
- * Author : Knuchel Flavien
+ * Author : Knuchel Flavien Noemie Sandoz
  * Date : 25.06.2013
  *
  * Description : video wall
@@ -19,7 +19,8 @@
         <h1>Videos from TEDxLausanne</h1>
         {section  loop=$talksArray name=talk}
              <div class="span4 mediaWall">
-                 <h2>{$talksArray[talk].title}</h2><a href="media_details.php?eventNo={$talksArray[talk].eventNo}&speakerNo={$talksArray[talk].speakerNo}">more infos...</a>
+                 <div><h2>{$talksArray[talk].title}</h2>
+                 <a href="media_details.php?eventNo={$talksArray[talk].eventNo}&speakerNo={$talksArray[talk].speakerNo}">more infos...</a></div>
                  <a class="youtube" href="{$talksArray[talk].video}">
                      <img src="{$talksArray[talk].img}" alt="{$talksArray[talk].title}"/>
                  </a>

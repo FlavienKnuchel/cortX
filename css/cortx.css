@@ -74,6 +74,8 @@ height:auto;
 #nextevent .span2,#nextevent .span6{
  background-color:transparent;
 }
+
+
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
 ul li{
@@ -110,6 +112,30 @@ article{
 section#videos{
     margin-bottom: 20px;
 }
+
+
+.mediaWall{
+    padding-left:5px;
+    padding-right:5px;
+    height:100%;
+    margin-bottom: 20px;
+}
+
+.mediaWall div{
+ height: 40px;
+}
+
+.mediaWall a{
+    color: #ff2b06;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top:0;
+}
+
+.mediaWall h2 {
+    margin: 0;
+}
+
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
     /*height:135px;*/
@@ -462,6 +488,10 @@ input[type=submit].add2:hover {
     color:#e5e5e5;
 }
 
+#actualParticipateButton_smartphone, #current_event .button {
+    display:none;
+}
+
 .actualEventAdress{
     float:right;
     margin-right:19px;
@@ -663,9 +693,6 @@ div.tuile ul.twoLines{
     font-size: 1.2em;
     font-weight:bold;
 }
-
-/*--------------------------------- 404 ---------------------------------*/
-
 
 
 
