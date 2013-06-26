@@ -488,6 +488,11 @@ section .badMessage{
     color:black;
 }
 
+#buttonPlus{
+    width:26px;
+    padding-left:5px;
+}
+
 
 /*------------------------table--------------------------*/
  .zebra{
