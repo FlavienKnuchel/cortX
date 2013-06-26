@@ -15,18 +15,15 @@ Description : template of the speaker section
         <article class="speakers_photo row">
             {if isset($speakers)}
                 <table>
-                    <!-- do a loop on <li> -->
                     {section name=listspeakers loop=$speakers step=-1}
-                        {if $smarty.section.listspeakers.iteration % 3==0}
-                            test
-                            {/if}
-                        <tr>
                             <td>
                                 <a href="speaker_profil.php?id={$speakers[listspeakers]->getNo()}">
                                     {$speakers[listspeakers]->getName()} {$speakers[listspeakers]->getFirstName()}
                                 </a>
                             </td>
-                        </tr>
+                        {if $smarty.section.listspeakers.iteration is div by 4}
+                            </tr><tr>
+                        {/if}
                     {/section}
                 </table>
             {else}
