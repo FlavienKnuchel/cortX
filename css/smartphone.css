@@ -6,14 +6,16 @@ body {
 font-size: 26px;
 line-height: 1.5em;
 }
-nav ul li a{
+    
+/* A EFFACER A LA FIN */
+/*nav ul li a{
 display:none;
-}
+}*/
 .box{
 background-color:#f0f0f0;
 padding-bottom: 20px;
 }
-nav{
+/*nav{
 height:100px;
 max-height:100px;
 line-height: 40px;
@@ -24,7 +26,7 @@ padding-top:0px;
 margin-left:0px;
 height:90px;
 max-height:inherit;
-}
+}*/
 h1, h2, h3, h4, h5, h6 {
 line-height: 1em;
 }
