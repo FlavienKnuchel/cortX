@@ -31,8 +31,9 @@ Description :
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="Login" value="OK" id="login">
         </form>
-        <div id="login_smartphone">
-            <a href="login.php">Log me</a>
+        
+        <div id="login_smartphone" class="button">
+            <a href="login.php" title="Get more infos and register to this event!">Log me in !</a>
         </div>
 
     {/if}    
