@@ -20,7 +20,7 @@ Description : backend of the events page
             <div class="button"><a href="backend_add_event.php">New event</a></div>
             <ul>
                 {section loop=$events name=event step=-1}
-                <li>
+                <li class="line">
                     <p>{$events[event]->getMainTopic()}
                         <a href="backend_update_event.php=eventNo={$events[event]->getNo()}" title="modify" class="modify"></a>
                         <a href="backend_events.php?deleteEventNo={$events[event]->getNo()}" title="delete" class="delete"></a>

@@ -52,12 +52,22 @@ margin-bottom:80px;
     margin-top:60px;
 }
 
+
 /*no decoration on the lists*/
 ul li{
     list-style: none;
 }
 ol li{
     list-style:none;
+}
+
+.line {
+    padding: 5px 10px;
+}
+
+.greyline {
+    background-color: #7c7c7c;
+    padding: 5px 10px;
 }
 
 /*section elements take full page width*/
