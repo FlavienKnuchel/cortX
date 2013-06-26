@@ -15,7 +15,7 @@ $msgSpeakers = $tedx_manager->getSpeakers();
 $arraySpeakers = $msgSpeakers->getContent();
 $arrayValidSpeakers = array();
 $arrayArchivedSpeakers = array();
-if ($msgSpeakers->getStatus()) {
+if ($msgSpeakers->getStatus()) {//sort the speakers by their status
     foreach ($arraySpeakers as $speaker) {
         if (!$speaker->getIsArchived()) {
             $arrayValidSpeakers[] = $speaker;
@@ -24,13 +24,14 @@ if ($msgSpeakers->getStatus()) {
         }
     }
 }
+//if something is selected it appears on the right after the relaod
 if (isset($_POST['modify'])) {
     $row = $_REQUEST['id'];
     $speaker = $arraySpeakers[$row];
     $smarty->assign('modify', $speaker);
-} elseif (isset($_POST['edit'])) {
+} elseif (isset($_POST['edit'])) { //process the edition
     $no = $_REQUEST['id'];
-    $argsCP = array(
+    $argsCP = array( //gets all the array
         'no' => $no, // int
         'name' => $_POST['Lastname'], // String
         'firstName' => $_POST['Firstname'], // String
