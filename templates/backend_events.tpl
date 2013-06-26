@@ -20,7 +20,11 @@ Description : backend of the events page
             <div class="button"><a href="backend_add_event.php">New event</a></div>
             <ul>
                 {section loop=$events name=event step=-1}
-                <li class="line">
+                    {if $smarty.section.event.iteration is div by 2}
+                        <li class="line">
+                    {else}
+                        <li class="greyline">
+                    {/if}
                     <p>{$events[event]->getMainTopic()}
                         <a href="backend_update_event.php=eventNo={$events[event]->getNo()}" title="modify" class="modify"></a>
                         <a href="backend_events.php?deleteEventNo={$events[event]->getNo()}" title="delete" class="delete"></a>

@@ -24,7 +24,11 @@ Description : backend of the speakers page
                     <th>Edit</th>
                 </tr>
                 {section name=speaker loop=$speakers step=-1}
-                          <tr>
+                {if $smarty.section.speaker.iteration is div by 2}
+                <tr class="line">
+                    {else}
+                <tr class="greyline">
+                    {/if}
                             <td>{$speakers[speaker]->getName()}</td>
                             <td>{$speakers[speaker]->getFirstName()}</td>
                             <td>
