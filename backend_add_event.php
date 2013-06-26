@@ -10,7 +10,6 @@
 */
 include 'header.php';
 include 'menu_backend.php';
-$error='';
 //if the create button has been pushed
 echo "GET";
 var_dump($_GET);
@@ -59,23 +58,66 @@ if(isset($_GET['create'])){
     }//else
     //if the location process went well
     if(isset($location)){
+        $slots=array();
+        //loop sur les slots
         if(isset($_POST['slot1'])&&!empty($_POST['slotStartingTime']) && !empty($_POST['slotEndingTime']) && !empty($_POST['slotEndingTime'])){
             $slot1 = array (
                 'happeningDate'  => $_POST['happeningDate'],
                 'startingTime'   => $_POST['slotStartingTime'],
                 'endingTime'     => $_POST['slotEndingTime'],
             );
+            array_push($slots,$slot1);
         }//if
         else{
             $error="Please fill in all the slots fields";
         }//else
-        echo"slot1";
-        var_dump($slot1);
+        echo"slots";
+        var_dump($slots);
         echo "location:";
         var_dump($location);
     }//if
+    //check if there's not already an error
     if(strlen($error)==0){
-        
+        //error management for filling the fields
+        if(!empty($_POST['mainTopic'])){
+            if(!empty($_POST['startDate'])){
+                if(!empty($_POST['endDate'])){
+                    if(!empty($_POST['startTime'])){
+                        if(!empty($_POST['endTime'])){
+                            if(!empty($_POST['description'])){
+                                if(isset($location)){}
+                                else{$error="Error with the location field";}}
+                            else{$error="Please fill the description field";}}
+                        else{$error="Please fill the ending Time field";}}
+                    else{$error="Please fill the starting Time field";}}
+                else{$error="Please fill the endDate field";}}
+            else{$error="Please fill the starting date field";}}
+        else{$error="Please fill the main topic field";}
+    }
+    if(strlen($error)==0){
+
+        $argsCreateEvent = array(
+            'mainTopic'     => $_POST['mainTopic'],
+            'startingDate'  => $_POST['startDate'],
+            'endingDate'    => $_POST['endDate'],
+            'startingTime'  => $_POST['startTime'],
+            'endingTime'    => $_POST['endTime'],
+            'description'   => $_POST['description'],
+            'locationName'  => $location->getName()
+        );
+        echo "argsCreateEvent";
+        var_dump($argsCreateEvent);
+        echo"slots";
+        var_dump($slots);
+        $arrayAddEvent=array('event'=>$argsCreateEvent,'slots'=>$slots);
+        $messageAddEvent=$tedx_manager->addEvent($arrayAddEvent);
+        if($messageAddEvent->getStatus()){
+            $goodMessage="the Event has been created!";
+            $smarty->assign('goodMessage',$goodMessage);
+        }
+        else{
+            $error=$messageAddEvent->getMesssage();
+        }
     }//if
 
 }
@@ -84,20 +126,29 @@ echo "error";
 var_dump($error);
 $smarty->assign('error',$error);
 
+sendFilledDatas();
 $smarty->display('backend_add_event.tpl');
 include 'userbar.php';
 
 /*------------------------------------------ functions -------------------------------------------*/
-function addEvent($event){
-    // Array pour création d'un Event
-    $argsCreateEvent = array(
-        'mainTopic'     => 'Les chaussettes à Baudet',
-        'startingDate'  => '2013-01-01',
-        'endingDate'    => '2013-01-02',
-        'startingTime'  => '09:00:00',
-        'endingTime'    => '18:00:00',
-        'description'   => 'Parce qu il le vaut bien',
-    );
-}
+
+function sendFilledDatas(){
+
+    global $smarty;
+    //create an array with the filled infos
+    $eventAddForm=array();
+    if(isset($_POST['mainTopic']))$eventAddForm['mainTopic'] = $_POST['mainTopic'];
+    if(isset($_POST['startDate']))$eventAddForm['startDate']= $_POST['startDate'];
+    if(isset($_POST['endDate']))$eventAddForm['endDate']= $_POST['endDate'];
+    if(isset($_POST['startTime']))$eventAddForm['startTime']=$_POST['startTime'];
+    if(isset($_POST['endTime']))$eventAddForm['endTime']= $_POST['endTime'];
+    if(isset($_POST['description']))$eventAddForm['description']= $_POST['description'];
+    if(isset($_POST['location']))$eventAddForm['location']= $_POST['location'];
+    if(isset($_POST['city']))$eventAddForm['city']=$_POST['city'];
+    if(isset($_POST['address']))$eventAddForm['address']= $_POST['address'];
+    if(isset($_POST['country']))$eventAddForm['country']= $_POST['country'];
+    //assign the array to smarty
+    $smarty->assign('filledDatas', $eventAddForm);
+}//function
 
 ?>

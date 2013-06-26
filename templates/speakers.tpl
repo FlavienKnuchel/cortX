@@ -17,7 +17,7 @@ Description : template of the speaker section
                 <table>
                     {section name=listspeakers loop=$speakers step=-1}
                             <td>
-                                <a href="speaker_profil.php?id={$speakers[listspeakers]->getNo()}">
+                                <a href="speaker_profil.php?No={$speakers[listspeakers]->getNo()}">
                                     {$speakers[listspeakers]->getName()} {$speakers[listspeakers]->getFirstName()}
                                 </a>
                             </td>

@@ -471,13 +471,11 @@ section .goodMessage{
     margin-right:10px;
     background-color:#E7FFE0;
     border:1px solid #75FF72;
-
-
 }
 .goodMessage h1{
     color:black;
 }
-section article.badMessage{
+section .badMessage{
     text-align:center;
     padding:10px;
     padding-bottom:0px;
