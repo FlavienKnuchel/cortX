@@ -13,7 +13,7 @@ Description : template of the user inscription
         <section class="row">
             <article class="offset2 span8 badMessage">
                 <h1>Error!</h1>
-                <p>You did not fill you motivation before sending it. Please do so, and try again.</p>
+                <p>You did not fill your motivation before sending it. Please do so, and try again.</p>
             </article>
         </section>
     {/if}
@@ -46,11 +46,12 @@ Description : template of the user inscription
                                         <textarea name="motivation" title="motivation" class="big" spellcheck>{if isset($arrayReg[loopReg]['motivation'])}{$arrayReg[loopReg]['motivation']}{/if}</textarea>
                                         <label for="Keyword" title="Describe youself in 3 words">Keywords that describes you the best</label>
                                         <p class="span12">
-                                            <input type="text" name="Keyword1" value="{if isset($arrayReg[loopReg]['arrayKW'][0])}{$arrayReg[loopReg]['arrayKW'][0]->getValue()}{/if}" >
-                                            <input type="text" name="Keyword2" value="{if isset($arrayReg[loopReg]['arrayKW'][1])}{$arrayReg[loopReg]['arrayKW'][1]->getValue()}{/if}" >
-                                            <input type="text" name="Keyword3" value="{if isset($arrayReg[loopReg]['arrayKW'][2])}{$arrayReg[loopReg]['arrayKW'][2]->getValue()}{/if}" ></p>
+                                            
+                                            <input type="text" name="Keyword1" value="{if isset($arrayReg[loopReg]['arrayKW'][0])}{$arrayReg[loopReg]['arrayKW'][0]}{/if}" >
+                                            <input type="text" name="Keyword2" value="{if isset($arrayReg[loopReg]['arrayKW'][1])}{$arrayReg[loopReg]['arrayKW'][1]}{/if}" >
+                                            <input type="text" name="Keyword3" value="{if isset($arrayReg[loopReg]['arrayKW'][2])}{$arrayReg[loopReg]['arrayKW'][2]}{/if}" >
+                                        </p>
 
-                                        <!--<input type="submit" name="preview" value="preview of the badge" alt="preview of the badge">-->
                                         <p class="inscription_button"><input type="hidden" name="value" value="{$smarty.section.loopReg.index}">
                                             <input type="submit" name="Save" value="Save" alt="Save and edit later">
                                             <input type="submit" name="Send" value="Send" alt="Submit your registration request"></p>

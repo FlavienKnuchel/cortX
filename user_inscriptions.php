@@ -33,9 +33,9 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
         );
 //get the upcoming Event
         $messsageUpcomingEvent = $tedx_manager->searchEvents($searchArgsUpcomingEvents);
+        $arrayLastReg = array(); //used later to store the pending events
         //get back the list of all the events
         $upcomingEvents = $messsageUpcomingEvent->getContent();
-        static $arrayLastReg = array();
         foreach ($upcomingEvents as $event) {
             //gets the array of all the registrations of the current loggedin person
             $argsLR = array(
@@ -56,11 +56,18 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                 } else {
                     $textMotivation = '';
                 }
-                $keywords = $tedx_manager->getKeywordsByPersonForEvent(
-                                array(
-                                    'person' => $tedx_manager->getLoggedPerson()->getContent(),
-                                    'event' => $event
-                        ))->getContent();
+                $argsKW = array(
+                    'person' => $tedx_manager->getLoggedPerson()->getContent(),
+                    'event' => $event
+                );
+                $msgKeywords = $tedx_manager->getKeywordsByPersonForEvent($argsKW);
+                $keywords = array();
+                if ( $msgKeywords->getStatus()){
+                    $arrayKW = $msgKeywords->getContent();
+                    foreach ($arrayKW as $kw) {
+                        $keywords[] = $kw->getValue();
+                    }
+                }
                 //Creates a table for the event and participant
                 //-array( --------------------------------------------------------------
                 // array ( aRegistration, aMotivation, keywords) -----------------------
@@ -109,11 +116,12 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                                     'person' => $tedx_manager->getLoggedPerson()->getContent(),
                                     'event' => $event
                         ))->getContent();
-                //Creates a table for the event and participant
-                //-array( --------------------------------------------------------------
-                // array ( aRegistration, aMotivation, keywords) -----------------------
-                // array ( aRegistration, aMotivation, keywords) -----------------------
-                // etc...);--------------------------------------------------------------
+//Creates a table for the event and participant
+//-array( --------------------------------------------------------------
+// array ( aRegistration, aMotivation, keywords) -----------------------
+// array ( aRegistration, aMotivation, keywords) -----------------------
+// array ( etc...)------------------------------------------------------
+// );-------------------------------------------------------------------
                 $msgPastReg = $msgPastReg->getContent();
                 $arrayPastReg[] = array(
                     'oldReg' => $msgPastReg[0],
@@ -123,12 +131,11 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
             }
         }
 
-//-------------------------- gets the fields posted ------------------------------------------
+//-------------------------- gets the POSTed save ------------------------------------------
         //test which button is pushed
         if (isset($_POST['Save'])) {
 //only modifies the motivation and/or keyword
             $row = $_POST['value'];
-            $arrayLastReg[$row]['event'] = $upcomingEvents[$row]; //sets the concerned event
 
             if (isset($arrayLastReg[$row]['motivation'])) { //tests is a former motivation exists
                 if ($arrayLastReg[$row]['motivation'] != $_POST['motivation']) {
@@ -140,14 +147,15 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                             ));
                     unset($arrayLastReg[$row]['motivation']); //deletes it from the array
                 }
-            } else {
-                if (isset($_POST['motivation'])) {//if the motivation is filled in the POST
-                    $msgAddMotiv = $tedx_manager->addMotivationToAnEvent(//adds the motivation to 
-                            array(
-                                'text' => $_POST['motivation'],
-                                'event' => $arrayLastReg[$row]['event'],
-                                'participant' => $messageParticipant->getContent()
-                            ));
+            }
+            if (isset($_POST['motivation'])) {//if the motivation is filled in the POST
+                $msgAddMotiv = $tedx_manager->addMotivationToAnEvent(//adds the motivation to 
+                        array(
+                            'text' => $_POST['motivation'],
+                            'event' => $arrayLastReg[$row]['event'],
+                            'participant' => $messageParticipant->getContent()
+                        ));
+                if ($msgAddMotiv->getStatus()) {
                     $arrayLastReg[$row]['motivation'] = $msgAddMotiv->getContent()->getText(); //adds the motivation to the array
                 }
             }
@@ -157,9 +165,9 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
             for ($index = 0; $index < 3; $index++) {//cycle through the 3 keywords
                 if (isset($arrayLastReg[$row]['arrayKW'][$index])) {//if a KW is set 
                     // it compares the old to the POSTed
-                    if ($arrayLastReg[$row]['arrayKW'][$index]->getValue() != $_POST['Keyword' . ($index + 1)]) {
+                    if ($arrayLastReg[$row]['arrayKW'][$index] != $_POST['Keyword' . ($index + 1)]) {
                         $argsAK = array(
-                            'value' => $arrayLastReg[$row]['arrayKW'][$index]->getValue(),
+                            'value' => $arrayLastReg[$row]['arrayKW'][$index],
                             'event' => $arrayLastReg[$row]['event'],
                             'person' => $messageParticipant->getContent()
                         );
@@ -167,34 +175,36 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                         $msgArchiveKW = $tedx_manager->archiveKeyword($argsAK);
                         if ($msgArchiveKW->getStatus()) {
                             unset($arrayLastReg[$row]['arrayKW'][$index]);
-                            $kwToAdd[] = $_POST['Keyword' . ($index + 1)]; //adds the new KW to an array
+                            $kwToAdd[$index] = $_POST['Keyword' . ($index + 1)]; //adds the new KW to an array
                         }
+                    } else {
+                        $kwToAdd[$index] = $arrayLastReg[$row]['arrayKW'][$index]; //adds the old one to the array
                     }
-                } else {
-                    $kwToAdd[] = $_POST['Keyword' . ($index + 1)]; //adds the new KW to an array
+                } else {//no pre-existant keyword was set
+                    if (isset($_POST['Keyword' . ($index + 1)])) {
+                        //adds the new one to replace the null
+                        $kwToAdd[$index] = $_POST['Keyword' . ($index + 1)];
+                    } else {
+                        $kwToAdd[$index] = ''; //if no kw was set before and no kw was POSTed, nothing is set.
+                    }
                 }
             }
-            if (!empty($kwToAdd[0])) {//if at least one KW is added to the array
-                $msgAddKW = $tedx_manager->addKeywordsToAnEvent(//adds the KW(s) to the DB
-                        array(
-                            'listOfValues' => $kwToAdd,
-                            'person' => $messageParticipant->getContent(),
-                            'event' => $arrayLastReg[$row]['event']
-                        ));
-                if ($messageKW->getStatus()) {
-                    $keywords = $tedx_manager->getKeywordsByPersonForEvent(
-                                    array(
-                                        'person' => $tedx_manager->getLoggedPerson()->getContent(),
-                                        'event' => $event
-                            ))->getContent();
-                    $arrayLastReg[$row]['arrayKW'][$keywords];
+            $msgAddKW = array(
+                'listOfValues' => $kwToAdd,
+                'person' => $messageParticipant->getContent(),
+                'event' => $arrayLastReg[$row]['event']
+            );
+//adds the KW(s) to the DB
+            $messageKW = $tedx_manager->addKeywordsToAnEvent($msgAddKW);
+            foreach ($messageKW as $key => $message) {
+                if ($message->getStatus()) {
+                    $arrayLastReg[$row]['arrayKW'][$key] = $message->getContent()->getValue();
                 }
             }
-            /* ------ */
+            /* ------------------------------Gets the POST send------------------------------ */
         } elseif (isset($_POST['Send'])) {//-------------------------------------------------------
 //modifies the motivation and/or keyword and changes the registration status
             $row = $_POST['value']; //gets variables 
-            $arrayLastReg[$row]['event'] = $upcomingEvents[$row]; //sets the used event
 
             if (isset($arrayLastReg[$row]['motivation'])) { //tests is a former motivation exists
                 if ($arrayLastReg[$row]['motivation'] != $_POST['motivation']) {
@@ -246,8 +256,6 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                 $smarty->assign('errorSendKW', TRUE);
             }
         }
-
-        var_dump($arrayLastReg[0]);
         $smarty->assign('arrayReg', $arrayLastReg);
         $smarty->assign('arrayOldReg', $arrayPastReg);
     }
