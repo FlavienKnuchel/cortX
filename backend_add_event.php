@@ -96,6 +96,7 @@ if(isset($_GET['create'])){
         if($messageAddEvent->getStatus()){
             $goodMessage=$messageAddEvent->getMessage();
             $smarty->assign('goodMessage',$goodMessage);
+            header("Location: backend_home.php?eventAddSuccess=true");
         }
         else{
             $error=$messageAddEvent->getMesssage();
