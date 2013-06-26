@@ -28,9 +28,9 @@ if (isset($_POST['edit'])) {
     );
     $msgCP = $tedx_manager->changeProfil($argsCP);
     if ($msgCP->getStatus()) {
-        $smarty->assign('$success_profile', $msgCP->getMessage());
+        $smarty->assign('success_profile', 'Profile successfully changed!');
     } else {
-        $smarty->assign('$error_profile', $msgCP->getMessage());
+        $smarty->assign('error_profile', $msgCP->getMessage());
     }
 }
 
@@ -45,7 +45,7 @@ if (isset($_POST['changePSW'])) {
         );
         $msgCPSW = $tedx_manager->changePassword($argsPSW);
         if ($msgCPSW->getStatus()) {
-            $smarty->assign('Success_password', 'The password was successully changed.');
+            $smarty->assign('success_password', 'The password was successully changed.');
         } else {
             $smarty->assign('error_password', $msgCPSW->getMessage());
         }
