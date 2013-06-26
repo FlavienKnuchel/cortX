@@ -28,7 +28,7 @@ if(isset($_GET['create'])){
         if($messageLocation->getStatus()){
             //get it
             $location=$messageLocation->getContent();
-        }
+        }//if
         else{
             //else create a new location with the infos
             $args = array(
@@ -46,31 +46,37 @@ if(isset($_GET['create'])){
             if($messageAddLocation->getStatus()){
                 //if location creation exists
                 $location=$messageLocation->getContent();
-            }
+            }//if
             else{
                 //if not
                 $error=$messageAddLocation->getMessage();
-            }
+            }//else
 
-        }
-    }
+        }//else
+    }//if
     else{
         $error="Fill the location field please";
-    }
+    }//else
     //if the location process went well
     if(isset($location)){
-        if(isset($_POST['slot1'])){
+        if(isset($_POST['slot1'])&&!empty($_POST['slotStartingTime']) && !empty($_POST['slotEndingTime']) && !empty($_POST['slotEndingTime'])){
             $slot1 = array (
                 'happeningDate'  => $_POST['happeningDate'],
                 'startingTime'   => $_POST['slotStartingTime'],
                 'endingTime'     => $_POST['slotEndingTime'],
             );
-        }
+        }//if
+        else{
+            $error="Please fill in all the slots fields";
+        }//else
         echo"slot1";
         var_dump($slot1);
         echo "location:";
         var_dump($location);
-    }
+    }//if
+    if(strlen($error)==0){
+        
+    }//if
 
 }
 
