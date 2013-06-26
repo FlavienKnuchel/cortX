@@ -111,7 +111,12 @@ padding-top:25px;
 font-size:2em;
 color:#ffffff;
 }
-
+.actualEventAdress {
+    float: inherit;
+    margin: 0;
+    padding-bottom: 30px;
+    text-align: left;
+}
 /*-------------------userbar-----------------------------------*/
 footer form {    
 text-align:center;   
@@ -165,9 +170,8 @@ text-decoration:none;
 .current_event_title{
 line-height:50px;
 margin-top: 0;
-
 }
-#upcomingEvents {
+#upcomingEvents{
 margin-right:0;
 width:100%;
 }
@@ -266,7 +270,7 @@ label {
     display:block;
     margin-left: 5%;
     width: 90%;
-}    
+}
 .coordonees label {
     margin-left: 5%;
     width: 100%;
@@ -279,7 +283,7 @@ label {
     margin-top:10px;
     font-size:1em;
     padding-left:0;
-}    
+}
 .coordonees input[type="password"] {
     margin-left: 5%;
     text-align: left;
