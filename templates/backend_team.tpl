@@ -8,7 +8,7 @@ Description : backend of the team page
 -->
 <section class="firstElement">
     <section class="row">
-        <article class="offset2 span5">
+        <article class="offset2 span5 lastElement">
             <!-- do a loop on div (for all the person in the team) -->
             <div id="members_of_the_team">
                 <h1>{$person_name} {$person_first_name}</h1>
