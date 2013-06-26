@@ -37,7 +37,7 @@ if($messageTalks->getStatus()){
             $combination=array(
                 'video'=>createVideoUrl($talkRef),
                 'img'=>createImgUrl($talkRef),
-                'title'=>$talk->getVideoTitle(),
+                'title'=>shortenVideoTitle($talk->getVideoTitle()),
                 'eventNo'=>$talk->getEventNo(),
                 'speakerNo'=>$talk->getSpeakerPersonNo()
             );
@@ -64,7 +64,7 @@ function createImgUrl($ref){
     $fullImgRef="http://img.youtube.com/vi/".$ref."/mqdefault.jpg";
     //return the image url
     return $fullImgRef;
-}
+}//function
 
 //create a youtube embed  url from the ref
 function createVideoUrl($ref){
@@ -72,7 +72,7 @@ function createVideoUrl($ref){
     $fullVideoRef="http://www.youtube.com/embed/".$ref."?autoplay=1&fs=1&rel=0&enablejsapi=1&playerapiid=ytplayer";
     //return the array
     return $fullVideoRef;
-}
+}//function
 
 //recovers the youtube video reference from a random yoyutube url
 function getYoutubeRef($url){
@@ -91,7 +91,17 @@ function getYoutubeRef($url){
     else{
         return false;
     }
+}//function
 
 
-}
+function shortenVideoTitle($title){
+    if(sizeof($title)>47){
+    $short=substr($title,0,47);
+    $short=$short."...";
+    return $short;
+    }
+    else{
+        return $title;
+    }
+}//function
 ?>

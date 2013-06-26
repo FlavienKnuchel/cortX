@@ -136,10 +136,11 @@ Description : template of the registration to an event
 
                 {else}
                         <article class="domain span12">
-                            <label for="type">Your activity domain</label>
-                            <input type="text" name="type" placeholder="Your activity domain" required>
-                            <label for="typeDescription">Your role in this domain</label>
-                            <input type="text" name="typeDescription" placeholder="Your role in this domain" required>
+                                <label for="type">Your activity domain</label>
+                                <input type="text" name="type" placeholder="Your activity domain" required>
+                                <label for="typeDescription" >Your role in this domain</label>
+                                <input type="text" name="typeDescription" placeholder="Your role in this domain" required>
+
                         </article>
 
                         <article class="span12 motivation">

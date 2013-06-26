@@ -25,9 +25,11 @@ if(isset($_GET['eventNo'])&&isset($_GET['speakerNo'])){
             'speaker'    => $speaker
         );
         //get the concerned talk
+
         $messageTalk=$tedx_manager->getTalk($args);
         if($messageTalk->getStatus()){
             $talk=$messageTalk->getContent();
+
             $smarty->assign('talk',$talk);
             $url=$talk->getVideoUrl();
             $ref = getYoutubeRef($url);
