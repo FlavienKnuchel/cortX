@@ -12,7 +12,9 @@ include 'header.php';
 include 'menu_backend.php';
 $error='';
 //if the create button has been pushed
+echo "GET";
 var_dump($_GET);
+echo "POST";
 var_dump($_POST);
 if(isset($_GET['create'])){
     //if the location filed is set
@@ -64,12 +66,15 @@ if(isset($_GET['create'])){
                 'endingTime'     => $_POST['slotEndingTime'],
             );
         }
+        echo"slot1";
         var_dump($slot1);
+        echo "location:";
+        var_dump($location);
     }
 
 }
-echo "location:";
-var_dump($location);
+
+echo "error";
 var_dump($error);
 $smarty->assign('error',$error);
 
