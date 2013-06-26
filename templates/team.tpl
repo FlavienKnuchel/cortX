@@ -16,7 +16,7 @@ Description : template of the general team page
             </p>
         </div>
     </div>
-    <div class="tuile row">   
+    <div class="tuile row lastElement">   
         <ul class="offset2 span8">
             <li>
                 <a href="team_curatorAndHost.php" class="html" title="Curator and host">

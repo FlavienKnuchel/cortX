@@ -94,7 +94,7 @@ Description : template of the events page
         </div>
         <div class="button" id="actualParticipateButton_smartphone">
             <a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a>
-        </div>    
+        </div>
             
         <section class="row">
             <aside id="upcomingEvents" class="offset2 span4">

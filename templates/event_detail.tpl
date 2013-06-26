@@ -16,7 +16,7 @@ Description : template of the events page
             <div class="button_back offset2"><a title="go back to event page" href='events.php'>Back</a></div>
         {/if}
 </div>
-<section id="event_detail">
+<section id="event_detail" class="lastElement">
     
     <div class="row box">
         <section id="current_event" class="offset2 span8">
@@ -95,6 +95,9 @@ Description : template of the events page
                 {/if}
             </article>
         </section>
+    </div>
+    <div class="button" id="actualParticipateButton_smartphone">
+        <a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a>
     </div>
 
                     
