@@ -64,7 +64,6 @@ $smarty->display('media_details.tpl');
 include 'userbar.php';
 
 /*------------------------------ functions ------------------------------*/
-//M7lc1UVf-VE
 //create a youtube embed  url from the ref
 function createIframe($ref){
     //create the good video url

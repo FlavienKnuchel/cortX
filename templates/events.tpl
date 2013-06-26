@@ -88,9 +88,13 @@ Description : template of the events page
                     <p class="error_msg">Error - No slots have been found</p>
                 {/if}
             </article>
-        </section>
-        </div>
             
+        </section>
+            
+        </div>
+        <div class="button" id="actualParticipateButton_smartphone">
+            <a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a>
+        </div>
             
         <section class="row">
             <aside id="upcomingEvents" class="offset2 span4">

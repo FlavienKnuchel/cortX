@@ -12,13 +12,13 @@
     <div id="content">
         <nav class="row menu_backend"> 
             <div class="offset2 span3" >
-                <a href="backend_home.php" title="Home">
+                <a href="home.php" title="Home">
                     <img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />
                 </a>
             </div>
             <ul class="ariane">
                 <li class="offset3 span2">
-                    <a href="backend_home.php">Management aera</a>
+                    <a href="backend_home.php">Management area</a>
                 </li>
                 <li></li>
                 <li></li>

@@ -9,7 +9,32 @@
 */
 include 'header.php';
 include 'menu_backend.php';
-$smarty->assign('event_name','getName Event');
+$error='';
+$messageEvents=$tedx_manager->getEvents();
+
+if($messageEvents->getStatus()){
+    $events=$messageEvents->getContent();
+    $smarty->assign('events',$events);
+}
+else{
+    $error=$messageEvents->getMessage();
+}
+
+if(isset($_GET['deleteEventNo'])){
+
+    $messageEventToDelete=$tedx_manager->getEvent($_GET['deleteEventNo']);
+    if($messageEventToDelete->getStatus()){
+        $eventToDelete=$messageEventToDelete->getContent();
+        //delete event
+    }
+    else{
+        $error=$messageEventToDelete->getMessage();
+    }
+}
+
+
+$smarty->assign('error',$error);
+
 $smarty->display('backend_events.tpl');
 include 'userbar.php';
 ?>

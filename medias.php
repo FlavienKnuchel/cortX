@@ -95,8 +95,8 @@ function getYoutubeRef($url){
 
 
 function shortenVideoTitle($title){
-    if(sizeof($title)>47){
-    $short=substr($title,0,47);
+    if(strlen($title)>20){
+    $short=substr($title,0,20);
     $short=$short."...";
     return $short;
     }

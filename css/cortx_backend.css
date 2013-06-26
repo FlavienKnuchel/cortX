@@ -466,6 +466,28 @@ input[type=submit]:hover, .button:hover{
     height:34px;
 }
 
+section .goodMessage{
+    padding:10px 10px 10px 10px;
+    margin-right:10px;
+    background-color:#E7FFE0;
+    border:1px solid #75FF72;
+
+
+}
+.goodMessage h1{
+    color:black;
+}
+section article.badMessage{
+    text-align:center;
+    padding:10px;
+    padding-bottom:0px;
+    background-color:#FFD3D3;
+    border:1px solid #FF786B;
+    margin-bottom:20px;
+}
+.badMessage h1{
+    color:black;
+}
 
 
 /*------------------------table--------------------------*/
