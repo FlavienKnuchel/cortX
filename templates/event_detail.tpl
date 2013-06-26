@@ -44,7 +44,7 @@ Description : template of the events page
                                         <p>{$actualEventLocation->getCity()}, {$actualEventLocation->getCountry()}</p>
                                     </article>
                                     
-                                    <p>{$actualEvent->getDescription()}</p>
+                                    <p id="event_description">{$actualEvent->getDescription()}</p>
                     {else}
                         <!--  error message ifno event is scheduled -->
                         <p>No event scheduled</p>
@@ -96,9 +96,13 @@ Description : template of the events page
             </article>
         </section>
     </div>
-    <div class="button" id="actualParticipateButton_smartphone">
+   
+        {if isset($inscriptionStatus) && $inscriptionStatus}
+        <div class="button" id="actualParticipateButton_smartphone">
         <a title="apply for this event" href='inscription.php?eventNo={$actualEvent->getNo()}'>Participate</a>
-    </div>
+        </div>
+        {/if}
+    
 
                     
 

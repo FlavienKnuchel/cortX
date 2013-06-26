@@ -24,8 +24,8 @@ Description : template of the registration to an event
         </article>
     </section>
 {/if}
-<div class="row">
-    <section class="offset2 span8">
+<div class="row lastElement">
+    <section id="event_registration" class="offset2 span8">
             <h2 class="span12">Apply to this event!</h2>
         {if empty($error)}
                 <p class="span12">Fill in your informations to create your registration</p>
@@ -158,9 +158,9 @@ Description : template of the registration to an event
 
                         <div class="span12">
                             <p class="inscription_button">
-                                <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
-                            <input type="submit" name="send" value="Send" alt="Submit your registration request"
-                                   title="Submit your registration request"></p>
+                            <input type="submit" name="save" value="Save" alt="Save and edit later" title="Save and edit later">
+                            <input type="submit" name="send" value="Send" alt="Submit your registration request" title="Submit your registration request">
+                            </p>
                         </div>
 
                 {/if}

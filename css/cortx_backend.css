@@ -467,17 +467,16 @@ input[type=submit]:hover, .button:hover{
 }
 
 section .goodMessage{
-    padding:10px 10px 10px 10px;
-    margin-right:10px;
+    text-align:center;
+    padding:10px;
+    padding-bottom:0px;
     background-color:#E7FFE0;
     border:1px solid #75FF72;
-
-
 }
-.goodMessage h1{
+.goodMessage p{
     color:black;
 }
-section article.badMessage{
+section .badMessage{
     text-align:center;
     padding:10px;
     padding-bottom:0px;
@@ -485,7 +484,7 @@ section article.badMessage{
     border:1px solid #FF786B;
     margin-bottom:20px;
 }
-.badMessage h1{
+.badMessage p{
     color:black;
 }
 

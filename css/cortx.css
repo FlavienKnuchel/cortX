@@ -488,15 +488,14 @@ input[type=submit].add2:hover {
     color:#e5e5e5;
 }
 
-#actualParticipateButton_smartphone, #current_event .button {
+#actualParticipateButton_smartphone {
     display:none;
 }
 
 .actualEventAdress{
     float:right;
-    margin-right:19px;
-    text-align:right;
     margin:0;
+    width: 200px;
 }
 
 #current_event .button{
@@ -520,7 +519,14 @@ section .span8, section .span6, section .span2,section.span8{
     padding:10px;  
     margin-top: 0;
 }
-
+#event_description{
+    width:auto;
+    padding-right:250px;
+}
+#slot.span2{
+float:none;
+    margin-top:10px;
+}
 
 .slot_event{
     max-width:150px;

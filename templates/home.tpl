@@ -6,8 +6,11 @@ Date : 14.6.2013
 
 Description : Basic structure of the homepage
 -->
-<section id="nextevent" class="row firstElement">    
-    <article class="offset2 span6">
+<section id="nextevent" class="row firstElement">
+    <aside class="offset2 span3">
+        <img src="http://www.tedxlausanne.org/wp-content/uploads/2012/10/Homepage_TEDxLausanne2.jpg"/>
+    </aside>
+    <article class="span6">
         {if isset($upcomingEvents)}
             <h1>{$upcomingEvents[0]->getMainTopic()}</h1>
             <p class="subtitle">{$upcomingEvents[0]->getStartingDate()}</p>
@@ -19,9 +22,7 @@ Description : Basic structure of the homepage
             <p class="error_msg">There are no upcoming events at the moment, sorry!</p>
         {/if}
     </article>
-    <aside class="span2">
-        <img src="img/event_now.png"/>        
-    </aside>       
+
 </section>
 
 <section id="videos" class="row">
