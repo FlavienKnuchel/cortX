@@ -56,15 +56,15 @@ Description : backend of the speakers page
                 <h2>Add a speaker</h2>
                 <form method="POST" action="backend_speakers.php">
                     <input class="span1" type="text" name="Lastname" value="" autofocus >
-                    <input class="span1" type="text" name="Firstname" value="" >
+                    <input class="span1" type="text" name="Firstname" value="" required>
                     <label class="span1" for="Date">Date of birth:</label>
-                    <input class="span1" type="date" name="Date" value="" >
-                    <input class="span1" type="text" name="Address" value="" >
-                    <input  class="span1" type="text" name="City" value="" >
-                    <input  class="span1" type="text" name="Country" value="" >
-                    <input  class="span1" type="tel" name="Phone" value="" >
-                    <input  class="span1" type="email" name="Email" value=""  autocomplete>
-                    <textarea type="text" name="Description" ></textarea>
+                    <input class="span1" type="date" name="Date" value="" required>
+                    <input class="span1" type="text" name="Address" value="" required>
+                    <input  class="span1" type="text" name="City" value="" required>
+                    <input  class="span1" type="text" name="Country" value="" required>
+                    <input  class="span1" type="tel" name="Phone" value="" required >
+                    <input  class="span1" type="email" name="Email" value="" required autocomplete>
+                    <textarea type="text" name="Description" required ></textarea>
                     <input type="submit" name="add" title="Add" value="Add" class="add2">
                 </form>
             {/if}
