@@ -8,7 +8,7 @@ Description : backend of the participant page
 -->
 <section class="firstElement">
     <section class="row">
-        <article class="offset2 span5">
+        <article class="offset2 span5 lastElement">
             {if $loggedin}
                 <div>
                     <h1>Pending registrations</h1>

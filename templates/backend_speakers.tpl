@@ -15,7 +15,7 @@ Description : backend of the speakers page
         </section>
    {/if}
     <section class="row">
-        <article class="offset2 span5">
+        <article class="offset2 span5 lastElement">
             <h1>Speakers</h1>
             <table>
                 <tr>

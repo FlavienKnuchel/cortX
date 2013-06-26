@@ -8,7 +8,7 @@ Description : backend of the account page
 -->
 <section class="firstElement">
     <section class="row">
-        <article class="offset2 span5">     
+        <article class="offset2 span5 lastElement">     
             <h1>Account</h1>
             <ul>
             <!-- do a loop on li-->
