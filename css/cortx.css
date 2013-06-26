@@ -584,9 +584,10 @@ color:#333333;
     color:#333333;
 }
 
-.goodMessage{
-    padding:10px 10px 10px 10px;
-    margin-right:10px;
+section article.goodMessage{
+    text-align:center;
+    padding:10px;
+    padding-bottom:0px;
     background-color:#E7FFE0;
     border:1px solid #75FF72;
 
