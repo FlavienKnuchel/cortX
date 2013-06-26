@@ -116,7 +116,6 @@ text-align:center;
 }
 
 footer {
-
 height:100px;
 line-height:40px;
 }
@@ -242,7 +241,6 @@ max-width:90%;
 margin-top:5%;
 }
 
-
 /*---------------------------speakers-------------------------------*/
 #speaker_year{
 max-width:90%;
@@ -256,5 +254,44 @@ text-align:center;
 /*-------------------------------Medias------------------------------*/
 .mediaWall div{
 height: 40px;
-}        
+} 
+    
+    
+    
+/*-----------------------------formular----------------------------*/
+    
+label {
+    display:block;
+    margin-left: 5%;
+    width: 90%;
+}    
+.coordonees label {
+    margin-left: 5%;
+    width: 100%;
+}
+.coordonees form input[type="password"], input[type="text"], input[type="date"], input[type="email"], input[type="tel"] {
+    margin-left: 5%;
+    text-align: left;
+    width: 90%;
+    height:5em;
+    margin-top:10px;
+}    
+.coordonees input[type="password"] {
+    margin-left: 5%;
+    text-align: left;
+    width: 40%;
+    height:5em;
+}
+textarea {
+    height: 100%;
+    margin-bottom: 10px;
+    resize: none;
+    margin-left:5%;
+    width: 90%;
+}
+.subtitle{
+    margin-left:5%;
+    margin-bottom: 10px;
+}
+/*------------end of @media------------------------------------------*/
 }
