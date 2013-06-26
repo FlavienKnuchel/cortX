@@ -2,7 +2,6 @@
 <LINK rel="stylesheet" media="all" href="css/cortx.css" />
 <LINK rel="stylesheet" media="all" href="css/userbar.css" />
 <LINK rel="stylesheet" media="all" href="css/smartphone.css" />
-
 <title>CORTx</title>
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -10,8 +9,8 @@
 </head>
 <body>
     <div id="content">
-        <nav class="row">
-            <div class="offset2 span3" >
+        <nav class="row" id="menu_desktop">
+            <div class="offset2 span3">
                 <a href="home.php" title="Home">
                     <img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />
                 </a>
@@ -34,3 +33,41 @@
                 </li>    
             </ul>
         </nav>
+        
+<!----menu smartphone---->
+        
+
+    <div class="row" id="menu_smartphone">
+       <div class="offset2 span3">
+           <div id="menu_bar">
+                <a href="home.php" title="Home">
+                    <img class="logo" src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />
+                </a>
+                <a href="#" id="menu-scroll"><img src="./img/menu_smartphone.png" alt="menu"/></a>
+               </div>
+            <div>        
+            <nav>
+                <ul>
+                    <li class="smartphones-links">
+                        <a href="events.php" title="events">Events</a>
+                    </li>
+                   <li class="smartphones-links">
+                       <a href="medias.php" title="medias">Videos</a>
+                    </li>
+                   <li class="smartphones-links">
+                       <a href="about.php" title="about">About</a>
+                    </li>
+                   <li class="smartphones-links">
+                       <a href="team.php" title="team">Team</a>
+                    </li>
+                    <li class="smartphones-links">
+                        <a href="speakers.php" title="speakers">Speakers</a>
+                    </li>
+               </ul>
+            </nav>
+        </div>
+  </div>
+        </div>
+
+    {literal}<script>$("#menu-scroll").click(function (){$("nav").slideToggle("slow")});</script>{/literal}
+        
