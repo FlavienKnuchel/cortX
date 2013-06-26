@@ -150,6 +150,47 @@ height: 70px;
 padding-top: 0px;
 width: 100%;
 }
+footer #logged a {
+float: left;
+        margin-top:30px;
+        margin-left:3%;
+}
+a#home_icon {
+    background-image: url("../img/setting_big.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    margin-top: 5px;
+    width:100px;
+    margin-left:5%;
+    
+}
+a#home_icon:hover{
+    width:100px;
+    height:100px;
+    margin-top:5px;
+    background-image:url(../img/setting_hover_big.png);
+}
+a#setting {
+    background-image: url("../img/setting_big.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    margin-top: 5px;
+    margin-left:40px;
+    width: 100px;
+}
+a#setting:hover{
+    width:100px;
+    height:100px;
+    margin-top:5px;
+    background-image:url(../img/setting_hover_big.png);
+}
+footer #logged #logout {
+    float: right;
+    line-height: 40px;
+    margin-right: 3%;
+    text-align: right;
+    margin-top:30px;
+}
 /*---------------------------tuiles---------------------------------*/
 .tuile h3{
 background-color:#f0f0f0;
