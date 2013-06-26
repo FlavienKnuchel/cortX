@@ -10,7 +10,7 @@ Description : backend of the speakers page
         {if isset($changeSuccess)}
         <section class="row">
             <article class="offset2 span8 goodMessage">
-                    <p>{$changeSuccess}</p>
+                    <h1>{$changeSuccess}</h1>
             </article>
         </section>
    {/if}
