@@ -24,7 +24,7 @@ if (isset($_POST['edit'])) {
         'country' => $_POST['Country'], // String
         'phoneNumber' => $_POST['Phone'], // String
         'email' => $_POST['Email'], // String
-        'description' => $_POST['Description'], // String
+        'description' => htmlspecialchars($_POST['Description']) // String
     );
     $msgCP = $tedx_manager->changeProfil($argsCP);
     if ($msgCP->getStatus()) {
