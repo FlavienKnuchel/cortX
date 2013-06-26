@@ -500,10 +500,34 @@ section .badMessage{
 
 #buttonPlus{
     width:26px;
-    padding-left:5px;
+    padding: 0 5px;
+    margin:0;
+    margin-left:10px;
+}
+#buttonPlus a{
+    width:20px;
 }
 
-
+#addEvent label, #addEvent input, #addEvent textarea{
+    margin:0;
+    padding:0;
+    margin-top:5px;
+}
+#addEvent input[type="submit"]{
+    width:100%;
+    margin-top:30px;
+}
+div article.slot{
+    background-color:#7c7c7c;
+    margin:10px 0;
+    padding:10px;
+    height:160px;
+}
+article.slot article  h1, #addEvent div  h2{
+    line-height: 20px;
+    margin:5px;
+    margin-left:0px;
+}
 /*------------------------table--------------------------*/
  .zebra{
     background-color:#f0f0f0;

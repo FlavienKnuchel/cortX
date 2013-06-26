@@ -25,76 +25,74 @@ Description : backend of the page where we can add an event
     <section class="row">
         <article class="offset2 span8">
             <h1>Add an event</h1>
-            <form method="post" action="backend_add_event.php?create=true">
-                <article class="span5">
-                    
-                    <label for="main_topic_event" class="span1">Main topic of the event</label>
-                    <input type="text" class="span1" name="mainTopic" placeholder="Main topic of the event" autofocus {if isset($filledDatas.mainTopic)}value="{$filledDatas.mainTopic}"{/if}>
-                    
-                    <label for="description_event" class="span1">Description of the event</label>
+            <form method="post" action="backend_add_event.php?create=true" id="addEvent">
+                <article class="span6">
+
+                    <label for="main_topic_event" class="span6">Main topic of the event</label>
+                    <input type="text" class="span6" name="mainTopic" placeholder="Main topic of the event" autofocus {if isset($filledDatas.mainTopic)}value="{$filledDatas.mainTopic}"{/if}>
+
+                    <label for="description_event" class="span6">Description of the event</label>
                     <textarea class="desc" type="text" name="description" placeholder="Description of the event">{if isset($filledDatas.description)}{$filledDatas.description}{/if}</textarea>
 
-                    <label for="Date" class="span1">date Format:</label><p>YYYY-mm-dd</p>
+                    <label for="Date" class="span6">date Format:</label><p class="span6">YYYY-mm-dd</p>
 
+                    <label for="Date" class="span6" placeholder="Starting date">Starting date:</label>
+                    <input type="date" class="span6" name="startDate" {if isset($filledDatas.startDate)}value="{$filledDatas.startDate}"{/if}>
 
-                    <label for="Date" class="span1">Starting date:</label>
-                    <input type="date" class="span1" name="startDate" {if isset($filledDatas.startDate)}value="{$filledDatas.startDate}"{/if}>
+                    <label for="Date" class="span6">Ending date:</label>
+                    <input type="date" class="span6" name="endDate" {if isset($filledDatas.endDate)}value="{$filledDatas.endDate}"{/if}>
 
-                    <label for="Date" class="span1">Ending date:</label>
-                    <input type="date" class="span1" name="endDate" {if isset($filledDatas.endDate)}value="{$filledDatas.endDate}"{/if}>
+                    <label for="Time" class="span6">Starting time:</label>
+                    <input type="time" class="span6" name="startTime" {if isset($filledDatas.startTime)}value="{$filledDatas.startTime}"{/if}>
 
-                    <label for="Time" class="span1">Starting time:</label>
-                    <input type="time" class="span1" name="startTime" {if isset($filledDatas.startTime)}value="{$filledDatas.startTime}"{/if}>
+                    <label for="Time" class="span6">Ending time:</label>
+                    <input type="time" class="span6" name="endTime" {if isset($filledDatas.endTime)}value="{$filledDatas.endTime}"{/if}>
 
-                    <label for="Time" class="span1">Ending time:</label>
-                    <input type="time" class="span1" name="endTime" {if isset($filledDatas.endTime)}value="{$filledDatas.endTime}"{/if}>
+                    <label for="Location" class="span6">Location:</label>
+                    <input type="text" class="span6" name="location" placeholder="Location name" {if isset($filledDatas.location)}value="{$filledDatas.location}"{/if}>
 
-                    <label for="Location" class="span1">Location:</label>
-                    <input type="text" class="span1" name="location" placeholder="Location name" {if isset($filledDatas.location)}value="{$filledDatas.location}"{/if}>
+                    <label for="Address" class="span6">Address:</label>
+                    <input type="text" class="span6" name="address" placeholder="Address" {if isset($filledDatas.address)}value="{$filledDatas.address}"{/if}>
 
-                    <label for="Address" class="span1">Address:</label>
-                    <input type="text" class="span1" name="address" placeholder="Address"{if isset($filledDatas.address)}value="{$filledDatas.address}"{/if}>
+                    <label for="Town" class="span6">Town:</label>
+                    <input type="text" class="span6" name="city" placeholder="Town" {if isset($filledDatas.city)}value="{$filledDatas.city}"{/if} >
 
-                    <label for="Town" class="span1">Town:</label>
-                    <input type="text" class="span1" name="city" placeholder="Town" {if isset($filledDatas.city)}value="{$filledDatas.city}"{/if}>
-
-                    <label for="Country" class="span1">Country:</label>
-                    <input type="text" class="span1" name="country" placeholder="Country"{if isset($filledDatas.country)}value="{$filledDatas.country}"{/if}>
+                    <label for="Country" class="span6">Country:</label>
+                    <input type="text" class="span6" name="country" placeholder="Country" {if isset($filledDatas.country)}value="{$filledDatas.country}"{/if}>
+                    <input  type="submit" title="Create a new event" value="Create" name="create" class="span5">
                 </article>
-            <h2>Add slot
-                <div class="button" id="buttonPlus">
-                    <a  title="Create a new event" href="backend_add_event.php?addSlot=true">+</a>
-                </div></h2>
 
+                <div class="offset1 span4">
+                    <input type="submit" title="Create a new slot" href="addSlot=true" name="addSlot" value="addSlot"></a>
 
+                        {if isset($iterationNumber)}
+                            {section loop=$iterationNumber name=slots}
+                                {capture name=happeningDate}happeningDate{$iterationNumber[slots]}{/capture}
+                                {capture name=slotStartingTime}slotStartingTime{$iterationNumber[slots]}{/capture}
+                                {capture name=slotEndingTime}slotEndingTime{$iterationNumber[slots]}{/capture}
+                                <article class="span12 slot">
+                                    <h1>Slot {$iterationNumber[slots]}</h1>
+                                    <label for="Date" class="span1">Happening date:</label>
+                                    <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}"
+                                            {if isset($filledDatas.{$smarty.capture.happeningDate})}
+                                        value="{$filledDatas.{$smarty.capture.happeningDate}}"
+                                            {/if}>
+                                    <label for="Date" class="span1">Starting time:</label>
+                                    <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}"
+                                            {if isset($filledDatas.{$smarty.capture.slotStartingTime})}
+                                        value="{$filledDatas.{$smarty.capture.slotStartingTime}}"
+                                            {/if}>
+                                    <label for="Date" class="span1">Ending time:</label>
+                                    <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}"
+                                            {if isset($filledDatas.{$smarty.capture.slotEndingTime})}
+                                        value="{$filledDatas.{$smarty.capture.slotEndingTime}}"
+                                            {/if}>
+                                </article>
+                            {/section}
+                        {/if}
 
-                    {if isset($iterationNumber)}
-                        {section loop=$iterationNumber name=slots}
-                <article class="span3">
-                            <label for="Date" class="span1">Happening date:</label>
-                    {capture name=happeningDate}happeningDate{$iterationNumber[slots]}{/capture}
-                    {capture name=slotStartingTime}slotStartingTime{$iterationNumber[slots]}{/capture}
-                    {capture name=slotEndingTime}slotEndingTime{$iterationNumber[slots]}{/capture}
-                            <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}"
-                                   {if isset($filledDatas.{$smarty.capture.happeningDate})}
-                                    value="{$filledDatas.{$smarty.capture.happeningDate}}"
-                                    {/if}>
-                            <label for="Date" class="span1">Starting time:</label>
-                            <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}"
-                                    {if isset($filledDatas.{$smarty.capture.slotStartingTime})}
-                                    value="{$filledDatas.{$smarty.capture.slotStartingTime}}"
-                                    {/if}>
-                            <label for="Date" class="span1">Ending time:</label>
-                            <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}"
-                                    {if isset($filledDatas.{$smarty.capture.slotEndingTime})}
-                                    value="{$filledDatas.{$smarty.capture.slotEndingTime}}"
-                                    {/if}>
-                            <!-- mettre un bouton delete (image "delete.png")-->
-                </article>
-                        {/section}
-                    {/if}
-                        <input type="submit" title="Create a new event" value="Create">
-
+                    <input type="submit" value="Delete last slot" name="deleteSlot">
+                </div>
             </form>
         </article>
     </section>
@@ -102,60 +100,69 @@ Description : backend of the page where we can add an event
     <section class="row">
         <article class="offset2 span8">
             <h1>Add an event</h1>
-            <form method="post" action="backend_add_event.php?create=true">
-                <article class="span5">
+            <form method="post" action="backend_add_event.php?create=true" id="addEvent">
+                <article class="span6">
 
-                    <label for="main_topic_event" class="span1">Main topic of the event</label>
-                    <input type="text" class="span1" name="mainTopic" placeholder="Main topic of the event" autofocus >
+                    <label for="main_topic_event" class="span6">Main topic of the event</label>
+                    <input type="text" class="span6" name="mainTopic" placeholder="Main topic of the event" autofocus >
 
-                    <label for="description_event" class="span1">Description of the event</label>
+                    <label for="description_event" class="span6">Description of the event</label>
                     <textarea class="desc" type="text" name="description" placeholder="Description of the event"></textarea>
 
-                    <label for="Date" class="span1">date Format:</label><p>YYYY-mm-dd</p>
+                    <label for="Date" class="span6">date Format:</label><p class="span6">YYYY-mm-dd</p>
 
-                    <label for="Date" class="span1" placeholder="Starting date">Starting date:</label>
-                    <input type="date" class="span1" name="startDate" >
+                    <label for="Date" class="span6" placeholder="Starting date">Starting date:</label>
+                    <input type="date" class="span6" name="startDate">
 
-                    <label for="Date" class="span1">Ending date:</label>
-                    <input type="date" class="span1" name="endDate" >
+                    <label for="Date" class="span6">Ending date:</label>
+                    <input type="date" class="span6" name="endDate">
 
-                    <label for="Time" class="span1">Starting time:</label>
-                    <input type="time" class="span1" name="startTime" >
+                    <label for="Time" class="span6">Starting time:</label>
+                    <input type="time" class="span6" name="startTime">
 
-                    <label for="Time" class="span1">Ending time:</label>
-                    <input type="time" class="span1" name="endTime" >
+                    <label for="Time" class="span6">Ending time:</label>
+                    <input type="time" class="span6" name="endTime">
 
-                    <label for="Location" class="span1">Location:</label>
-                    <input type="text" class="span1" name="location" placeholder="Location name" >
+                    <label for="Location" class="span6">Location:</label>
+                    <input type="text" class="span6" name="location" placeholder="Location name">
 
-                    <label for="Address" class="span1">Address:</label>
-                    <input type="text" class="span1" name="address" placeholder="Address">
+                    <label for="Address" class="span6">Address:</label>
+                    <input type="text" class="span6" name="address" placeholder="Address" >
 
-                    <label for="Town" class="span1">Town:</label>
-                    <input type="text" class="span1" name="city" placeholder="Town">
+                    <label for="Town" class="span6">Town:</label>
+                    <input type="text" class="span6" name="city" placeholder="Town" >
 
-                    <label for="Country" class="span1">Country:</label>
-                    <input type="text" class="span1" name="country" placeholder="Country">
+                    <label for="Country" class="span6">Country:</label>
+                    <input type="text" class="span6" name="country" placeholder="Country" >
+                    <input  type="submit" title="Create a new event" value="Create" name="create" class="span5">
                 </article>
-                <h2>Add slot
-                    <div class="button" id="buttonPlus">
-                        <a style="width:20px;" title="Create a new event" href="backend_add_event.php?addSlot=true">+</a>
-                    </div></h2>
 
-                {if isset($iterationNumber)}
-                    {section loop=$iterationNumber name=slots}
-                        <article class="span3">
-                        <label for="Date" class="span1">Happening date:</label>
-                        <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}">
-                        <label for="Date" class="span1">Starting time:</label>
-                        <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}">
-                        <label for="Date" class="span1">Ending time:</label>
-                        <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}">
-                        <!-- mettre un bouton delete (image "delete.png")-->
-                        </article>
-                    {/section}
-                {/if}
-                <input type="submit" title="Create a new event" value="Create">
+                <div class="offset1 span4">
+                    <input type="submit" title="Create a new slot" name="addSlot" value="addSlot"></a>
+                        {if isset($iterationNumber)}
+                            {section loop=$iterationNumber name=slots}
+                                <article class="span12 slot">
+                                        <h1>Slot {$iterationNumber[slots]}</h1>
+                                    <label for="date" class="span1">Happening date:</label>
+                                    <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}" >
+                                    <label for="time" class="span1">Starting time:</label>
+                                    <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}" >
+                                    <label for="time" class="span1">Ending time:</label>
+                                    <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}" >
+                                    <label for="speaker" class="span1">Speaker:</label>
+                                    <select name="speaker{$iterationNumber[slots]}" class="span4">
+                                        {$speakers|@var_dump}
+                                        {section loop=$speakers name=speaker}
+                                            {capture name=speakerId}{$speakers[speaker]}->getNo(){/capture}
+                                            {capture name=speakerName}{$speakers[speaker]->getName()}{/capture}
+                                            <option value='{$smarty.section.speakers.speakerId}'>{$smarty.section.speakers.speakerName}</option>
+                                        {/section}
+                                    </select>
+                                </article>
+                            {/section}
+                        {/if}
+                    <input type="submit" value="Delete last slot" name="deleteSlot">
+                </div>
             </form>
         </article>
     </section>

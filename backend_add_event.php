@@ -10,12 +10,22 @@
 */
 include 'header.php';
 include 'menu_backend.php';
+//initialize the error variable
+$error='';
+//get the speakers
+$messageSpeakers=$tedx_manager->getSpeakers();
+$speakers=$messageSpeakers->getContent();
+$speakersCustom=array();
+foreach($speakers as $speaker){
+    $speakersInfos=array('name'=>$speaker->getName(),'id'=>$speaker->getNo());
+    array_push($speakersCustom,$speakersInfos);
+}
+//stock them in smarty
+$smarty->assign('speakers',$speakersCustom);
 //if the + slot button has been pushed
-if(isset($_GET['addSlot'])){
+if(isset($_POST['addSlot'])){
     $iterationNumber=$_SESSION['iterationNumber'];
-    echo "iterationNumbre:".$iterationNumber;
     $iterationNumber++;
-    echo " iterationNumbre:".$iterationNumber;
     $_SESSION['iterationNumber']=$iterationNumber;
     $tempArray=array();
     for($i=0; $i<=$iterationNumber; $i++){
@@ -25,7 +35,14 @@ if(isset($_GET['addSlot'])){
 }
 else{
     //if the create button has been pushed
-    if(isset($_GET['create'])){
+    if(isset($_POST['create'])){
+        //set the array for the display of the slots
+        $iterationNumber=$_SESSION['iterationNumber'];
+        $tempArray=array();
+        for($i=0; $i<=$iterationNumber; $i++){
+            array_push($tempArray, $i);
+        }
+        $smarty->assign('iterationNumber',$tempArray);
         //if the location filed is set
         if(!empty($_POST['location'])){
             $name=$_POST['location'];
@@ -78,7 +95,6 @@ else{
                 }//if
                 else{
                     $error="Please fill in all the slots fields";
-                    break;
                 }//else
             }
 
@@ -93,7 +109,7 @@ else{
                             if(!empty($_POST['endTime'])){
                                 if(!empty($_POST['description'])){
                                     if(isset($location)){}
-                                    else{$error="Error with the location field";}}
+                                    else{}}
                                 else{$error="Please fill the description field";}}
                             else{$error="Please fill the ending Time field";}}
                         else{$error="Please fill the starting Time field";}}
@@ -124,12 +140,35 @@ else{
             }//else
         }//if
 
-    }
-    //so it is the first visit
+    }//if
     else{
-        $_SESSION['iterationNumber']=0;
-        $tempArray=array(0);
-        $smarty->assign('iterationNumber',$tempArray);
+        //if we want to delete the last slot
+        if(isset($_POST['deleteSlot'])){
+            //if this is the last slot
+            if($_SESSION['iterationNumber']==0){
+                //don't delete it
+                $tempArray=array(0);
+                $smarty->assign('iterationNumber',$tempArray);
+            }
+            else{
+                //delete the last slot
+                $iterationNumber=$_SESSION['iterationNumber'];
+                $iterationNumber--;
+                $_SESSION['iterationNumber']=$iterationNumber;
+                $tempArray=array();
+                for($i=0; $i<=$iterationNumber; $i++){
+                    array_push($tempArray, $i);
+                }
+                $smarty->assign('iterationNumber',$tempArray);
+            }
+        }
+        else{
+            //if we visit the page for the first time
+            $_SESSION['iterationNumber']=0;
+            $tempArray=array(0);
+            $smarty->assign('iterationNumber',$tempArray);
+        }
+
     }//else
 
 }
@@ -137,7 +176,7 @@ else{
 
 
 //if the error is set
-if(isset($error)){
+if(strlen($error)>0){
     //stock the error in smarty
     $smarty->assign('error',$error);
 }
@@ -165,7 +204,7 @@ function sendFilledDatas(){
     if(isset($_POST['address']))$eventAddForm['address']= $_POST['address'];
     if(isset($_POST['country']))$eventAddForm['country']= $_POST['country'];
     //assign the array to smarty
-    for($i=0;$i<$_SESSION['iterationNumber'];$i++){
+    for($i=0;$i<=$_SESSION['iterationNumber'];$i++){
         $slotStartingTimeAlt="slotStartingTime".$i;
         $slotEndingTimeAlt="slotEndingTime".$i;
         $happeningDateAlt="happeningDate".$i;
