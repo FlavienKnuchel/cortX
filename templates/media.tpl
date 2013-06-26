@@ -6,7 +6,7 @@
  *
  * Description : video wall
  */  -->
-<div class="firstElement">
+<div id="videosWall" class="firstElement lastElement">
 {if !empty($error)}
     <section id="row">
         <article class="offset2 span8 badMessage">

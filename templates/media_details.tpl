@@ -6,7 +6,10 @@
  *
  * Description : talk detail
  */  -->
-<div class="firstElement">
+<div class="row">
+    <div class="button_back offset2"><a title="go back to the videos wall" href='medias.php'>Back</a></div>
+</div>
+<div id="videosWall" class="LastElement">
 {if !empty($error)}
     <section id="row">
         <article class="offset2 span8 badMessage">

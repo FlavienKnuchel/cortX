@@ -68,6 +68,7 @@ margin-top:5%;
 }
 #nextevent img{
 width:95%;
+margin-bottom:5%;
 }
 #socialnet li .span1{
 width:80%;
@@ -276,11 +277,29 @@ text-align:center;
 }
 /*-------------------------------Medias------------------------------*/
 .mediaWall div{
-height: 40px;
-} 
-    
-    
-    
+height: auto;
+padding-left:0;
+padding-right:0;
+}
+.mediaWall {
+ 
+ padding-left: 0;
+ padding-right: 0;
+}
+#videosWall{
+max-width:90%;
+margin-left:5%;
+margin-top:5%;   
+}    
+#videosWall .mediaWall img{
+    width:100%;
+        margin-top:5%;
+    }
+.span4.mediaWall a{
+font-size:1.5em;
+
+
+}    
 /*-----------------------------formular----------------------------*/
     
 label {
@@ -328,7 +347,7 @@ textarea {
     line-height:1em;
 }
 .subtitle{
-    
+font-size:1.5em;    
 margin-bottom: 10px;
 }
 #event_registration input[type="submit"],#event_registration div.button a {        
