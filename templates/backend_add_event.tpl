@@ -61,7 +61,7 @@ Description : backend of the page where we can add an event
                     <!-- ATTENTION il faut encore ajouter les speakers de l'evenement !! -->
                             
                     <div class="button">
-                        <a title="Create a new event" href="#">Validate</a>
+                        <a title="Create a new event" href="#">Create</a>
                     </div>
                 </article>
             </form>

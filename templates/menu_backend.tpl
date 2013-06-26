@@ -18,7 +18,7 @@
             </div>
             <ul class="ariane">
                 <li class="offset3 span2">
-                    <a href="backend_home.php">Management aera</a>
+                    <a href="backend_home.php">Management area</a>
                 </li>
                 <li></li>
                 <li></li>
