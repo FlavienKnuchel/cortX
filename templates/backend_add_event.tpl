@@ -22,7 +22,6 @@ Description : backend of the page where we can add an event
         </section>
     {/if}
 {if !empty($filledDatas)}
-    {$filledDatas|@var_dump}
     <section class="row">
         <article class="offset2 span8">
             <h1>Add an event</h1>
@@ -63,24 +62,39 @@ Description : backend of the page where we can add an event
                     <input type="text" class="span1" name="country" placeholder="Country"{if isset($filledDatas.country)}value="{$filledDatas.country}"{/if}>
                 </article>
             <h2>Add slot
-                <div class="button" style="width:26px;padding-left:5px;">
-                    <a style="width:20px;" title="Create a new event" href="backend_add_event.php?addSlot=true">+</a>
+                <div class="button" id="buttonPlus">
+                    <a  title="Create a new event" href="backend_add_event.php?addSlot=true">+</a>
                 </div></h2>
 
+
+
+                    {if isset($iterationNumber)}
+                        {section loop=$iterationNumber name=slots}
                 <article class="span3">
-                    <input type="hidden" name ="slot1" value="slot1">
-                    <label for="Date" class="span1">Happening date:</label>
-                    <input type="date" class="span1" name="happeningDate">
-                    <label for="Date" class="span1">Starting time:</label>
-                    <input type="time" class="span1" name="slotStartingTime">
-                    <label for="Date" class="span1">Ending time:</label>
-                    <input type="time" class="span1" name="slotEndingTime">
-                   <!-- mettre un bouton delete (image "delete.png")-->
-
-                    <!-- ATTENTION il faut encore ajouter les speakers de l'evenement !! -->
-
-                        <input type="submit" title="Create a new event" value="Create"></a>
+                            <label for="Date" class="span1">Happening date:</label>
+                    {capture name=happeningDate}happeningDate{$iterationNumber[slots]}{/capture}
+                    {capture name=slotStartingTime}slotStartingTime{$iterationNumber[slots]}{/capture}
+                    {capture name=slotEndingTime}slotEndingTime{$iterationNumber[slots]}{/capture}
+                            <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}"
+                                   {if isset($filledDatas.{$smarty.capture.happeningDate})}
+                                    value="{$filledDatas.{$smarty.capture.happeningDate}}"
+                                    {/if}>
+                            <label for="Date" class="span1">Starting time:</label>
+                            <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}"
+                                    {if isset($filledDatas.{$smarty.capture.slotStartingTime})}
+                                    value="{$filledDatas.{$smarty.capture.slotStartingTime}}"
+                                    {/if}>
+                            <label for="Date" class="span1">Ending time:</label>
+                            <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}"
+                                    {if isset($filledDatas.{$smarty.capture.slotEndingTime})}
+                                    value="{$filledDatas.{$smarty.capture.slotEndingTime}}"
+                                    {/if}>
+                            <!-- mettre un bouton delete (image "delete.png")-->
                 </article>
+                        {/section}
+                    {/if}
+                        <input type="submit" title="Create a new event" value="Create">
+
             </form>
         </article>
     </section>
@@ -123,25 +137,25 @@ Description : backend of the page where we can add an event
                     <label for="Country" class="span1">Country:</label>
                     <input type="text" class="span1" name="country" placeholder="Country">
                 </article>
-                <h2>Add slot</h2>
-                    <div class="button" style="width:26px;padding-left:5px;">
+                <h2>Add slot
+                    <div class="button" id="buttonPlus">
                         <a style="width:20px;" title="Create a new event" href="backend_add_event.php?addSlot=true">+</a>
                     </div></h2>
 
-                <article class="span3">
-                    <input type="hidden" name ="slot1" value="slot1">
-                    <label for="Date" class="span1">Happening date:</label>
-                    <input type="date" class="span1" name="happeningDate">
-                    <label for="Date" class="span1">Starting time:</label>
-                    <input type="time" class="span1" name="slotStartingTime">
-                    <label for="Date" class="span1">Ending time:</label>
-                    <input type="time" class="span1" name="slotEndingTime">
-                    <!-- mettre un bouton delete (image "delete.png")-->
-
-                    <!-- ATTENTION il faut encore ajouter les speakers de l'evenement !! -->
-
-                    <input type="submit" title="Create a new event" value="Create"></a>
-                </article>
+                {if isset($iterationNumber)}
+                    {section loop=$iterationNumber name=slots}
+                        <article class="span3">
+                        <label for="Date" class="span1">Happening date:</label>
+                        <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}">
+                        <label for="Date" class="span1">Starting time:</label>
+                        <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}">
+                        <label for="Date" class="span1">Ending time:</label>
+                        <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}">
+                        <!-- mettre un bouton delete (image "delete.png")-->
+                        </article>
+                    {/section}
+                {/if}
+                <input type="submit" title="Create a new event" value="Create">
             </form>
         </article>
     </section>
