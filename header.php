@@ -10,7 +10,7 @@
  * Description :
  */
 
-
+date_default_timezone_set('Europe/Paris');
 //creating the smarty object
 require('./Smarty/libs/Smarty.class.php');
 $smarty = new Smarty();
