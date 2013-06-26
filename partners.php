@@ -11,6 +11,7 @@
 
 include 'header.php';
 include 'menu_frontend.php';
+$smarty->display('partners.tpl');
 include 'userbar.php';
 
 ?>
