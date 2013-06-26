@@ -10,14 +10,14 @@ Description : backend of the page where we can add an event
     {if isset($error)}
         <section id="row">
             <article class="offset2 span8 badMessage">
-                <h1>{$error}</h1>
+                <p>{$error}</p>
             </article>
         </section>
     {/if}
-    {if isset($error)}
+    {if isset($goodMessage)}
         <section id="row">
-            <article class="offset2 span8 badMessage">
-                <h1>{$error}</h1>
+            <article class="offset2 span8 goodMessage">
+                <p>{$goodMessage}</p>
             </article>
         </section>
     {/if}
@@ -123,7 +123,7 @@ Description : backend of the page where we can add an event
                     <label for="Country" class="span1">Country:</label>
                     <input type="text" class="span1" name="country" placeholder="Country">
                 </article>
-                <h2>Add slot
+                <h2>Add slot</h2>
                     <div class="button" style="width:26px;padding-left:5px;">
                         <a style="width:20px;" title="Create a new event" href="backend_add_event.php?addSlot=true">+</a>
                     </div></h2>

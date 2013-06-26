@@ -11,10 +11,6 @@
 include 'header.php';
 include 'menu_backend.php';
 //if the create button has been pushed
-echo "GET";
-var_dump($_GET);
-echo "POST";
-var_dump($_POST);
 if(isset($_GET['create'])){
     //if the location filed is set
     if(!empty($_POST['location'])){
@@ -22,8 +18,6 @@ if(isset($_GET['create'])){
         //check if the location already exists
         $messageLocation=$tedx_manager->getLocation($name);
         //if it exists
-        echo"messagelocation";
-        var_dump($messageLocation);
         if($messageLocation->getStatus()){
             //get it
             $location=$messageLocation->getContent();
@@ -37,11 +31,7 @@ if(isset($_GET['create'])){
                 'Country'   => $_POST['country'],
                 'Direction' => ''
             );
-            echo "args";
-            var_dump($args);
             $messageAddLocation=$tedx_manager->addLocation($args);
-            echo "messageAddLocation:";
-            var_dump($messageAddLocation);
             if($messageAddLocation->getStatus()){
                 //if location creation exists
                 $location=$messageLocation->getContent();
@@ -71,10 +61,6 @@ if(isset($_GET['create'])){
         else{
             $error="Please fill in all the slots fields";
         }//else
-        echo"slots";
-        var_dump($slots);
-        echo "location:";
-        var_dump($location);
     }//if
     //check if there's not already an error
     if(strlen($error)==0){
@@ -105,14 +91,10 @@ if(isset($_GET['create'])){
             'description'   => $_POST['description'],
             'locationName'  => $location->getName()
         );
-        echo "argsCreateEvent";
-        var_dump($argsCreateEvent);
-        echo"slots";
-        var_dump($slots);
         $arrayAddEvent=array('event'=>$argsCreateEvent,'slots'=>$slots);
         $messageAddEvent=$tedx_manager->addEvent($arrayAddEvent);
         if($messageAddEvent->getStatus()){
-            $goodMessage="the Event has been created!";
+            $goodMessage=$messageAddEvent->getMessage();
             $smarty->assign('goodMessage',$goodMessage);
         }
         else{
@@ -122,9 +104,10 @@ if(isset($_GET['create'])){
 
 }
 
-echo "error";
-var_dump($error);
-$smarty->assign('error',$error);
+if(isset($error)){
+    $smarty->assign('error',$error);
+}
+
 
 sendFilledDatas();
 $smarty->display('backend_add_event.tpl');
