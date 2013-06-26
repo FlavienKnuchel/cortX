@@ -246,13 +246,24 @@ td.date{
 font-weight:bold;
 width:110px;
 }
+/*--------------------------about--------------------------------*/
+#about_more {
+margin-left:5%;
+max-width:90%;
+margin-top:5%;   
+}
+        
 /*---------------------------team-------------------------------*/
 #team{
 margin:5%;
 max-width:90%;
 margin-top:5%;
 }
-
+#team_more{
+margin-left:5%;
+max-width:90%;
+margin-top:5%;
+}
 /*---------------------------speakers-------------------------------*/
 #speaker_year{
 max-width:90%;

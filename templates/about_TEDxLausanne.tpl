@@ -1,5 +1,9 @@
-<section id="lightbox">
-	<article>
+<div class="row">
+    <div class="button_back offset2"><a title="go back to the about page" href='about.php'>Back</a></div>
+</div>
+
+<section id="about_more" class="row lastElement">
+	<article class="offset2 span8">                   
         <h1>About TEDxLausanne</h1>
         
         	

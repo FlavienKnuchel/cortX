@@ -1,29 +1,9 @@
-<?php
-/*
- * team_externalCommunicationTeam.php
- *
- * Author : Anthony Da Silva
- * Date : 17.06.2013
- *
- * Description : 
- *
- *
- */
- 
-?><head>
-    <meta charset="utf-8" />
-    <LINK rel="stylesheet" media="all" href="css/cortx.css" />
-    <LINK rel="stylesheet" media="all" href="css/normalize.css" />
-    <LINK rel="stylesheet" media="all" href="css/grid.css" />
-    <title>CORTx</title>
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
-    
+<div class="row">
+    <div class="button_back offset2"><a title="go back to the about page" href='team.php'>Back</a></div>
+</div>
 
-<section id="lightbox">
-	<article>
+<section id="team_more" class="row lastElement">
+	<article class="offset2 span8">                   
         <h1>External communication team</h1>
         <article>
         	<h2>Ashley Puckett</h2>

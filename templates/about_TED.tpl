@@ -1,5 +1,9 @@
-<section id="lightbox">
-	<article>                   
+<div class="row">
+    <div class="button_back offset2"><a title="go back to the about page" href='about.php'>Back</a></div>
+</div>
+
+<section id="about_more" class="row lastElement">
+	<article class="offset2 span8">                   
         <h1>About TED</h1>			
 		<p>
         <a href="http://www.ted.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.ted.com']);">TED</a> is a nonprofit organization devoted to &#8220;ideas worth spreading&#8221;. Started in 1984 in California as a four-day conference about Technology, Entertainment, Design, TED has broadened its scope and grown to support those world-changing ideas with multiple initiatives. At TED, the world’s leading thinkers and doers are asked to give the talk of their lives in 18 minutes. Talks are then made available for free at <a href="http://www.ted.com" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.ted.com']);">TED.com</a>. TED speakers have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Benoit Mandelbrot, Philippe Starck, Ngozi Okonjo-Iweala, Isabel Allende and Gordon Brown. Two major TED events are held each year: The TED Conference takes place every spring in Long Beach, California (along with a parallel conference, TEDActive, in Palm Springs), and TEDGlobal is held each summer in Edinburgh, Scotland.
