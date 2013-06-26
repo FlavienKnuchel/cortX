@@ -38,7 +38,7 @@ Description : template of the events page
                                     </article>
                         
     
-                                    <p class="span10">{$actualEvent->getDescription()}</p>
+                                    <p id="event_description">{$actualEvent->getDescription()}</p>
                     {else}
                         <!--  error message ifno event is scheduled -->
                         <p>No event scheduled</p>
