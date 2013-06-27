@@ -43,7 +43,7 @@ Description : backend of the participant page
                     <div>
                         <form method="POST" action="backend_validation_inscriptions.php">
                             <label for="event">Filter by Event</label>
-                            <select name="noEvent" >
+                            <select id"select" name="noEvent" >
                                 {foreach $upcomingEvents as $event}
                                     <option value="{$event->getNo()}" {if isset($anEvent)}{if $anEvent->getNo() == $event->getNo()}selected{/if}{/if}>{$event->getMainTopic()}</option>
                                 {/foreach}

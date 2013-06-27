@@ -325,6 +325,8 @@ input[type=submit].add2:hover {
     padding-bottom:21px;
 }
 
+button, select {
+width:100% !important;}
 /*top menu links interaction*/
 /*menu logo alignment*/
 #header_tedx_logo{
