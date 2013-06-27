@@ -72,18 +72,18 @@ Description : backend of the page where we can add an event
                                 {capture name=slotEndingTime}slotEndingTime{$iterationNumber[slots]}{/capture}
                                 <article class="span12 slot">
                                     <h1>Slot {$iterationNumber[slots]}</h1>
-                                    <label for="Date" class="span1">Happening date:</label>
-                                    <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}"
+                                    <label for="Date" class="span12">Happening date:</label>
+                                    <input type="date" class="span12" name="happeningDate{$iterationNumber[slots]}"
                                             {if isset($filledDatas.{$smarty.capture.happeningDate})}
                                         value="{$filledDatas.{$smarty.capture.happeningDate}}"
                                             {/if}>
-                                    <label for="Date" class="span1">Starting time:</label>
-                                    <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}"
+                                    <label for="Date" class="span12">Starting time:</label>
+                                    <input type="time" class="span12" name="slotStartingTime{$iterationNumber[slots]}"
                                             {if isset($filledDatas.{$smarty.capture.slotStartingTime})}
                                         value="{$filledDatas.{$smarty.capture.slotStartingTime}}"
                                             {/if}>
-                                    <label for="Date" class="span1">Ending time:</label>
-                                    <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}"
+                                    <label for="Date" class="span12">Ending time:</label>
+                                    <input type="time" class="span12" name="slotEndingTime{$iterationNumber[slots]}"
                                             {if isset($filledDatas.{$smarty.capture.slotEndingTime})}
                                         value="{$filledDatas.{$smarty.capture.slotEndingTime}}"
                                             {/if}>
@@ -109,6 +109,7 @@ Description : backend of the page where we can add an event
                     <label for="description_event" class="span6">Description of the event</label>
                     <textarea class="desc" type="text" name="description" placeholder="Description of the event"></textarea>
 
+                    <div class="span12">
                     <label for="Date" class="span6">date Format:</label><p class="span6">YYYY-mm-dd</p>
 
                     <label for="Date" class="span6" placeholder="Starting date">Starting date:</label>
@@ -135,6 +136,7 @@ Description : backend of the page where we can add an event
                     <label for="Country" class="span6">Country:</label>
                     <input type="text" class="span6" name="country" placeholder="Country" >
                     <input  type="submit" title="Create a new event" value="Create" name="create" class="span5">
+                    </div>
                 </article>
 
                 <div class="offset1 span4">
@@ -143,12 +145,12 @@ Description : backend of the page where we can add an event
                             {section loop=$iterationNumber name=slots}
                                 <article class="span12 slot">
                                         <h1>Slot {$iterationNumber[slots]}</h1>
-                                    <label for="date" class="span1">Happening date:</label>
-                                    <input type="date" class="span1" name="happeningDate{$iterationNumber[slots]}" >
-                                    <label for="time" class="span1">Starting time:</label>
-                                    <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}" >
-                                    <label for="time" class="span1">Ending time:</label>
-                                    <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}" >
+                                    <label for="date" class="span12">Happening date:</label>
+                                    <input type="date" class="span12" name="happeningDate{$iterationNumber[slots]}" >
+                                    <label for="time" class="span12">Starting time:</label>
+                                    <input type="time" class="span12" name="slotStartingTime{$iterationNumber[slots]}" >
+                                    <label for="time" class="span12">Ending time:</label>
+                                    <input type="time" class="span12" name="slotEndingTime{$iterationNumber[slots]}" >
                                 </article>
                             {/section}
                         {/if}
