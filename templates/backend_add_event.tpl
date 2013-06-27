@@ -6,7 +6,7 @@ Date : 18.6.2013
 
 Description : backend of the page where we can add an event
 -->
-<section class="firstElement">
+<section class="firstElement lastElement">
     {if isset($error)}
         <section id="row">
             <article class="offset2 span8 badMessage">

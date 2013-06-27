@@ -33,7 +33,7 @@ Description : backend of the events page
                         <li class="greyline">
                     {/if}
                     <p>{$events[event]->getMainTopic()}
-                        <a href="backend_update_event.php=eventNo={$events[event]->getNo()}" title="modify" class="modify"></a>
+                        <a href="backend_update_event.php?eventNo={$events[event]->getNo()}" title="modify" class="modify"></a>
                         <a href="backend_events.php?deleteNo={$events[event]->getNo()}" title="delete" class="delete"></a>
                     </p>
                 </li>
