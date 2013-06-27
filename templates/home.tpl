@@ -8,7 +8,7 @@ Description : Basic structure of the homepage
 -->
 <section id="nextevent" class="row firstElement">
     <aside class="offset2 span3">
-        <img src="http://www.tedxlausanne.org/wp-content/uploads/2012/10/Homepage_TEDxLausanne2.jpg"/>
+        <a href="events.php"><img src="http://www.tedxlausanne.org/wp-content/uploads/2012/10/Homepage_TEDxLausanne2.jpg"/></a>
     </aside>
     <article class="span5">
         {if isset($upcomingEvents)}
