@@ -157,8 +157,23 @@ section#videos{
 .partners img {
 margin: 0 auto;
 }
+
+.white {
+background:#ffffff;
+padding-top:10px;
+    padding-bottom:10px;
+    text-align:center
+}
+.black {
+background:#000000;
+padding-top:10px;
+    padding-bottom:10px;
+    text-align:center
+}
+
 .partners p {
-padding-left:5px; }
+padding-left:5px;
+}
 /*---------------------------------Formular and buttons---------------------------------*/
 input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
     border-radius:3px;
