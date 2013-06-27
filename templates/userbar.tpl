@@ -11,15 +11,15 @@ Description :
         <div id="logged" class="offset2 span8">
             {if isset($userLevel)}
                 {if $userLevel=='participant'}    
-                    <a class="span1" href="user_inscriptions.php" title="My registrations">My registrations</a>
-                    <a class="span1" href="user_profile.php" title="My profile">My profile</a>
+                    <a class="span3" href="user_inscriptions.php" title="My registrations">My registrations</a>
+                    <a class="span2" href="user_profile.php" title="My profile">My profile</a>
                 {else}
 
                     <a class="span1" href="home.php" title="Welcome Page" id="home_icon"></a>
                     <a class="span1" href="backend_home.php" title="Management Area" id="setting"></a>
                 {/if}
             {/if}
-                    <a class="span1" id="logout" href="login.php?action=logout"></a>
+                    <a class="offset6 span1" id="logout" href="login.php?action=logout"></a>
         </div>
 
     {else}
