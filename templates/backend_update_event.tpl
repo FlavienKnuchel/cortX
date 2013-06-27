@@ -23,7 +23,6 @@ Description : backend of the page where we can add an event
         </section>
     {/if}
     {if isset($event)}
-    {$event|@var_dump}
     <section class="row">
         <article class="offset2 span8">
             <h1>Update event</h1>
@@ -81,7 +80,6 @@ Description : backend of the page where we can add an event
                     <input  type="submit" title="Update event" value="Update" name="update" class="span5">
                 {/if}
                 </article>
-                {if isset($updatedEvent)}{$updatedEvent|@var_dump}{/if}
     {if !empty($filledDatas)}
     	
                     <div class="offset1 span4">
