@@ -9,6 +9,8 @@
  * Description : page to manage the inscriptions
  */
 include 'header.php';
+$_SESSION['ariane2']="Registrations";
+$_SESSION['ariane2url']=$_SERVER['SCRIPT_NAME'];
 include 'menu_backend.php';
 
 /* ------------------------------Upcoming events------------------------------ */

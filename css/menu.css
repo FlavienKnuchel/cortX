@@ -33,7 +33,21 @@ nav a img{
     margin-left:0px;
     max-height:50px;
 }
+/* Backend Menu */
 
+.ariane{
+    background:url(../img/menu_backend_2.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.active_backend{
+    background-image:url(../img/menu_backend.png);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+}
+nav.menu_backend ul li{
+    text-align:center;
+}
 /*top menu links interaction*/
 nav ul li a:hover{
     text-decoration: none;

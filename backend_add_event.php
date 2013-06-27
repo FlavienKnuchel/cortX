@@ -9,6 +9,8 @@
 * Description : page to create a new event, with slots
 */
 include 'header.php';
+$_SESSION['ariane3']="New event";
+$_SESSION['ariane3url']=$_SERVER['SCRIPT_NAME'];
 include 'menu_backend.php';
 //initialize the error variable
 $error='';

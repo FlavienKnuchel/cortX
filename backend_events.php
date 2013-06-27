@@ -8,6 +8,10 @@
 * Description : page to manage all the events
 */
 include 'header.php';
+$_SESSION['ariane2']="Events";
+$_SESSION['ariane2url']=$_SERVER['SCRIPT_NAME'];
+if(isset($_SESSION['ariane3']))unset( $_SESSION['ariane3'] );
+if(isset($_SESSION['ariane3url']))unset( $_SESSION['ariane3url'] );
 include 'menu_backend.php';
 $error='';
 $messageEvents=$tedx_manager->getEvents();
