@@ -30,7 +30,7 @@ Description : backend of the speakers page
                 {/section}
             </ul>
         </article>
-        <article class="span3">
+        <article class="span3  lastElement">
             {if isset($modify)}
                 <h2>Modify a speaker</h2>
                 <form method="POST" action="?id={$modify->getNo()}">
