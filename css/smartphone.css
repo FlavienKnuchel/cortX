@@ -141,10 +141,10 @@ width: 100%;
 }
 footer #logged a {
 float: left;
-        margin-top:5px;
-        margin-left:5%;
+margin-top:5%;
+margin-left:5%;
 }
-a#home_icon {
+footer a#home_icon {
     background-image: url("../img/home_big.png");
     background-repeat: no-repeat;
     height: 100px;
@@ -159,7 +159,7 @@ a#home_icon:hover{
     margin-top:5px;
     background-image:url(../img/home_hover_big.png);
 }
-a#setting{
+footer a#setting{
     background-image: url("../img/setting_big.png");
     background-repeat: no-repeat;
     height: 100px;
@@ -181,19 +181,18 @@ footer #logged #logout{
     text-align: right;
     margin-top:5px;
     height:90px;
-    width:85px;
-        
-         background-image:url(../img/logout.png);
-    background-repeat:no-repeat;
-    float: left;
+    width:85px;        
+}
+footer #logged #logout:hover{
+    background-image:url(../img/logout_hover_big.png);
+    float: right;
     line-height:0px;
-    margin-right:0;
-    margin-left:55%;
+    margin-right:5%;
     text-align: right;
     margin-top:5px;
-    height:30px;
-    width:28px;
-}
+    height:90px;
+    width:85px;        
+}   
 /*---------------------------tuiles---------------------------------*/
 .tuile h3{
 background-color:#f0f0f0;

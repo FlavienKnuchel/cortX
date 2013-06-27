@@ -1,4 +1,5 @@
 
+<LINK rel="stylesheet" media="all" href="css/userbar.css" />
 <LINK rel="stylesheet" media="all" href="./css/cortx_backend.css" />
 
 <title>CORTx</title>

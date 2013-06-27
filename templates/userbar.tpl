@@ -11,8 +11,8 @@ Description :
         <div id="logged" class="offset2 span8">
             {if isset($userLevel)}
                 {if $userLevel=='participant'}    
-                    <a class="span3" href="user_inscriptions.php" title="My registrations">My registrations</a>
-                    <a class="span2" href="user_profile.php" title="My profile">My profile</a>
+                    <a class="span3" href="user_inscriptions.php" title="My registrations">Registrations</a>
+                    <a class="span2" href="user_profile.php" title="My profile">Profile</a>
                 {else}
 
                     <a class="span1" href="home.php" title="Welcome Page" id="home_icon"></a>
