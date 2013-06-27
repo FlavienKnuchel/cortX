@@ -359,6 +359,11 @@ label {
     width: 100%;
         line-height:1.5em;
 }
+.profil label {
+    width: 100%;
+    
+}
+    
 .coordonees form input[type=password], input[type=text], input[type=date], input[type=email], input[type=tel] {
     text-align: left;
     width: 98%;
@@ -369,13 +374,36 @@ label {
     padding-top:10px;
         margin-bottom:20px;
 }
-.coordonees  input[type=password] {
-    margin-left:5px;
+.password form input[type=password] {
+    margin: 20px 0;
     width: 100%;
     float:left;
     padding: 0;
-        height: 100px;
+    padding-left:5px;
+    height: 80px;
+    font-size:1.5em;
+    line-height:1.5em;
     }
+    
+.password label {
+    width: 100%;
+    
+    }
+    
+input[type=submit].modify:hover {
+        background-image: url(../img/modify_big.png);
+    height: 90px;
+        width:90px;
+        margin: 0 auto;
+    }
+    
+input[type=submit].modify {
+    background-image: url(../img/modify_big_hover.png);
+    height: 90px;
+    width:90px;
+    margin: 0 auto;
+    }
+    
 #event_registration{
     margin-left:5%;
     width:90%;
@@ -386,7 +414,6 @@ label {
     margin-top:0;
 }   
 .coordonees input[type=password] {
-    /*margin-left: 5%;*/
     text-align: left;
     width: 46%;
     height:2.5em;
