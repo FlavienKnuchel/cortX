@@ -16,7 +16,7 @@ Description : template of the speaker section
             {if isset($speakers)}
                 <article class="span12">
                     {section name=listspeakers loop=$speakers step=-1}
-                        <div class="span2">
+                        <div class="span3">
                                 <a href="speaker_profil.php?No={$speakers[listspeakers]->getNo()}">
                                     {$speakers[listspeakers]->getName()} {$speakers[listspeakers]->getFirstName()}
                                 </a>
