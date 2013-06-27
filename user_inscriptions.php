@@ -10,7 +10,7 @@
  * Description : user inscriptions, with old events
  */
 
-//TODO affichage des 
+//
 
 
 include 'header.php';
