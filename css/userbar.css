@@ -46,30 +46,35 @@ footer #logged{
     color:#ffffff;    
     height:50px;
 }
-footer #logged a{
-    text-decoration:none; 
-    text-transform :uppercase;
-    color:#ffffff;
-}
-fotter #logged a:hover{
-    color:#333333;
+footer #logged #logout{
+    background-image:url(../img/logout.png);
+    background-repeat:no-repeat;
+    float: left;
+    line-height:0px;
+    margin-top:5px;
+    height:30px;
+    width:28px;
 }
 
+footer #logged #logout:hover{
+    background-image:url(../img/logout_hover.png);
+    background-repeat:no-repeat;
+    height:30px;
+    width:28px;
+}
 
 a#setting {
     width:30px;
     height:30px;
     background-image:url(../img/setting.png);
     background-repeat:no-repeat;
-     margin-top:5px;
-
+    margin-top:5px;
 }
 
 a#setting:hover{
     width:30px;
     height:30px;
     margin-top:5px;
-
     background-image:url(../img/setting_hover.png);
 }
 
