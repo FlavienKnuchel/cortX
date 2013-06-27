@@ -9,7 +9,7 @@ Description : general navigation and
 <html lang="en">
     <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=850px, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=320px, initial-scale=0.5, maximum-scale=0.5">
 
     <LINK rel="icon" type="image/png" href="img/favicon.png" />
     <LINK rel="stylesheet" media="all" href="./css/normalize.css" />
