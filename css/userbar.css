@@ -105,14 +105,14 @@ a#home_icon:hover{
     text-align:center;
 }
 #logged a{
-color:#ffffff;
-font-size:1.2em;
+    color:#ffffff;
+    font-size:1.2em;
 }
 #logged a:hover{
-color:#333333;
-text-decoration:none;
+    color:#333333;
+    text-decoration:none;
 }
 
 #login_smartphone {
-display:none;
+    display:none;
 }

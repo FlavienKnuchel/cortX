@@ -80,26 +80,26 @@ nav a:focus{
 @media screen and (orientation:portrait)  and (max-width: 850px) { 
     /* hide desktop menu */
     #menu_desktop {
-    display:none;
+        display:none;
     }
     
     nav#menu_desktop {
-    display:none;
+        display:none;
     }
     
     #menu_desktop ul li{
-    display:none;
+        display:none;
     }
     
     #menu_desktop ul li a{
-    display:none;
+        display:none;
     }
     #menu_desktop div{
-    display:none;
+        display:none;
     }
     /* show smartphone menu */
     #menu_smartphone {
-    display:inherit;
+        display:inherit;
     }
     
     /* logo and icon */
@@ -168,7 +168,7 @@ nav a:focus{
        display: none;
     }
     nav{
-    height:0px;   
+        height:0px;   
     }
 
 }

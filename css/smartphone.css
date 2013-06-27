@@ -2,500 +2,466 @@
 
 @media screen and (orientation:portrait) and (max-width: 850px){
     
-body {
-font-size: 26px;
-line-height: 1.5em;
-}
-
-.box{
-background-color:#f0f0f0;
-padding-bottom: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-line-height: 1em;
-}
-h1 {
-margin-top:0;
-margin-bottom:15px;
-
-}
-   
-.lastElement, section.lastElement {
-margin-bottom:160px;
-}
-
-div.button_back {
-background-image: url("../img/back_big.png");
-height: 100px;
-line-height: 100px;
-margin-bottom: 13px;
-margin-top: 13px; 
-width: 371px;
-font-size:2em;
-margin-left:5%;
-}
-.button_back a{
-height: 100px;
-width: 371px;  
-}
-.button_back:hover{
-width:371px;
-height:100px;
-background-image:url(../img/back_hover_big.png);
-background-repeat:no-repeat;
-}
-/*--------------------------menu-------------------------*/
-nav ul li a {
-font-size: 2em;   
-}
-/*-----------------------homepage-----------------------------------*/
-#nextevent{        
-max-width:95%;
-padding-left:5%;
-margin-top:5%;
-}
-#nextevent img{
-width:95%;
-margin-bottom:5%;
-}
-#socialnet li .span1{
-width:80%;
-}
-#videos_title{
-padding-left:5%;
-}
-#socialnet .span1{
-display:inline;
-}
-#socialnet ul li img{
-width:20%;
-height:20%;
-margin-left:1.45%;
-margin-right:1.45%;
-}
-#videos img{
-display:inline;
-margin-left:0;
-width:95%;
-max-height:95%;
-margin-top:0;
-margin-bottom: 5%;    
-}
-
-#videos .span2{
-margin-left:5%;
-width:95%;
-}
-#videos li.span2 {
-text-align:left;
-}
-.button, .button:hover{
-width: 95%;
-height:100px;
-}
-div.button a, div.button a:hover{
-width: 100%;
-height:100px;
-padding-top:25px;
-font-size:2em;
-color:#ffffff;
-line-height: 2em;
-}
-.actualEventAdress {
-    float: inherit;
-    margin: 0;
-        width:inherit;
-    padding-bottom: 30px;
-    text-align: left;
-}
-/*-------------------userbar-----------------------------------*/
-footer form {    
-text-align:center;   
-}
-
-footer {
-height:100px;
-line-height:40px;
-}
-footer form label {
-display:none;
-}
-footer form.log {
-display:none;
-}
-#login_smartphone{
-display:inherit;
-background-color: #ff2b06;
-width:90%;
-height:70px;
-margin-left: 5%;
-margin-top:15px;
-text-align: center;
-line-height:70px;
-color:#ffffff;
-}
-#login_smartphone.button a, #login_smartphone.button a:hover {
-height: 70px;
-padding-top: 0px;
-width: 100%;
-line-height: 1em;
-}
-footer #logged a {
-float: left;
-margin-top:5%;
-margin-left:5%;
-}
-footer a#home_icon {
-    background-image: url("../img/home_big.png");
-    background-repeat: no-repeat;
-    height: 100px;
-    margin-top: 5px;
-    width:100px;
-    margin-left:5%;
-    
-}
-a#home_icon:hover{
-    width:100px;
-    height:100px;
-    margin-top:5px;
-    background-image:url(../img/home_hover_big.png);
-}
-footer a#setting{
-    background-image: url("../img/setting_big.png");
-    background-repeat: no-repeat;
-    height: 100px;
-    margin-top:5px;
-    margin-left:40px;
-    width: 100px;
-}
-a#setting:hover{
-    width:100px;
-    height:100px;
-    margin-top:5px;
-    background-image:url(../img/setting_hover_big.png);
-}
-footer #logged #logout{
-    background-image:url(../img/logout_big.png);
-    float: right;
-    line-height:0px;
-    margin-right:5%;
-    text-align: right;
-    margin-top:5px;
-    height:90px;
-    width:85px;        
-}
-footer #logged #logout:hover{
-    background-image:url(../img/logout_hover_big.png);
-    float: right;
-    line-height:0px;
-    margin-right:5%;
-    text-align: right;
-    margin-top:5px;
-    height:90px;
-    width:85px;        
-}   
-/*---------------------------tuiles---------------------------------*/
-.tuile h3{
-background-color:#f0f0f0;
-width:100%;
-text-align:center;
-margin-top:5px;
-margin-bottom: 5px;
-color:#333333;
-padding:52px 5px 0 5px;
-
-}
-.tuile h3.twoLines {
-padding-top: 60px;
-}
-a:focus, a:active, a:hover{
-outline:none;
-text-decoration:none;
-}
-/*---------------------------events-------------------------------*/
-.current_event_title{
-line-height:50px;
-margin-top: 0;
-}
-#upcomingEvents{
-margin-right:0;
-width:100%;
-}
-#oldEvents {
-width:100%;
-margin-left:0;
-}
-#event_detail{
-max-width:90%;
-margin-left:5%;
-margin-top: 5%;
-
-}
-.slot_event h3 {
-line-height: 40px;
-margin: 0;
-}
-.slot_event {
-float: left;
-width:250px;
-max-width:250px;
-line-height:30px;
-}
-#event_description{
-    width:inherit;
-    padding-right:0;
-}
-#actualParticipateButton, #current_event.button {
-float: none;
-height: 100px;
-margin: 0;
-width: 100%;
-display:none;
-}
-#actualParticipateButton a, #current_event.button a {
-text-align:center;
-width:auto;
-}
-#actualParticipateButton_smartphone {
-float: none;
-height: 100px;
-margin: 0;
-width: 100%;
-display:inherit;
-}
-
-.slot_event ol li {
-line-height: 30px;
-list-style: none outside none;
-}
-            /*-------table-------*/
-
-.programme_event, .desc_event{    
-margin-right: 0px;     
-}
-
-.zebra{
-background-color:#f0f0f0;
-border-top:2px solid #c9c9c9;
-}
-.table_title{
-height:50px;
-font-weight:bold;
-
-}
-td.title{
-padding-top:20px;
-padding-bottom:20px;
-}
-td.date{
-font-weight:bold;
-width:110px;
-}
-/*--------------------------about--------------------------------*/
-#about_more {
-margin-left:5%;
-max-width:90%;
-margin-top:5%;   
-}
-        
-/*---------------------------team-------------------------------*/
-#team{
-margin:5%;
-max-width:90%;
-margin-top:5%;
-}
-#team_more{
-margin-left:5%;
-max-width:90%;
-margin-top:5%;
-}
-/*---------------------------speakers-------------------------------*/
-#speaker_year{
-max-width:90%;
-margin-left:5%;
-margin-top:5%;
-}
-.speakers_photo{
-
-
-}
-#speaker_year .span3{
-font-size:1.5em;
-margin-bottom:5%;
-}
-/*-------------------------------Medias------------------------------*/
-.mediaWall div{
-height: auto;
-padding-left:0;
-padding-right:0;
-}
-.mediaWall {
- 
- padding-left: 0;
- padding-right: 0;
-}
-#videosWall{
-max-width:90%;
-margin-left:5%;
-margin-top:5%;   
-}    
-#videosWall .mediaWall img{
-    width:100%;
+    body {
+        font-size: 26px;
+        line-height: 1.5em;
+    }    
+    .box{
+        background-color:#f0f0f0;
+        padding-bottom: 20px;
+    }    
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1em;
+    }
+    h1 {
+        margin-top:0;
+        margin-bottom:15px;    
+    }       
+    .lastElement, section.lastElement {
+        margin-bottom:160px;
+    }    
+    div.button_back {
+        background-image: url("../img/back_big.png");
+        height: 100px;
+        line-height: 100px;
+        margin-bottom: 13px;
+        margin-top: 13px; 
+        width: 371px;
+        font-size:2em;
+        margin-left:5%;
+    }
+    .button_back a{
+        height: 100px;
+        width: 371px;  
+    }
+    .button_back:hover{
+        width:371px;
+        height:100px;
+        background-image:url(../img/back_hover_big.png);
+        background-repeat:no-repeat;
+    }
+    /*--------------------------menu-------------------------*/
+    nav ul li a {
+        font-size: 2em;   
+    }
+    /*-----------------------homepage-----------------------------------*/
+    #nextevent{        
+        max-width:95%;
+        padding-left:5%;
         margin-top:5%;
     }
-.span4.mediaWall a{
-font-size:1.5em;
-
-
-}    
-/*partners*/
-
-/*-----------------------------formular----------------------------*/
+    #nextevent img{
+        width:95%;
+        margin-bottom:5%;
+    }
+    #socialnet li .span1{
+        width:80%;
+    }
+    #videos_title{
+        padding-left:5%;
+    }
+    #socialnet .span1{
+        display:inline;
+    }
+    #socialnet ul li img{
+        width:20%;
+        height:20%;
+        margin-left:1.45%;
+        margin-right:1.45%;
+    }
+    #videos img{
+        display:inline;
+        margin-left:0;
+        width:95%;
+        max-height:95%;
+        margin-top:0;
+        margin-bottom: 5%;    
+    }    
+    #videos .span2{
+        margin-left:5%;
+        width:95%;
+    }
+    #videos li.span2 {
+        text-align:left;
+    }
+    .button, .button:hover{
+        width: 95%;
+        height:100px;
+    }
+    div.button a, div.button a:hover{
+        width: 100%;
+        height:100px;    
+        font-size:2em;
+        color:#ffffff;
+        line-height: 2em;
+    }
+    .actualEventAdress {
+        float: inherit;
+        margin: 0;
+        width:inherit;
+        padding-bottom: 30px;
+        text-align: left;
+    }
+    /*-------------------userbar-----------------------------------*/
+    footer form {    
+        text-align:center;   
+    }    
+    footer {
+        height:100px;
+        line-height:40px;
+    }
+    footer form label {
+        display:none;
+    }
+    footer form.log {
+        display:none;
+    }
+    #login_smartphone{
+        display:inherit;
+        background-color: #ff2b06;
+        width:90%;
+        height:70px;
+        margin-left: 5%;
+        margin-top:15px;
+        text-align: center;
+        line-height:70px;
+        color:#ffffff;
+    }
+    #login_smartphone.button a, #login_smartphone.button a:hover {
+        height: 70px;
+        padding-top: 0px;
+        width: 100%;
+        line-height: 1em;
+    }
+    footer #logged a {
+        float: left;
+        margin-top:5%;
+        margin-left:5%;
+    }
+    footer a#home_icon {
+        background-image: url("../img/home_big.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        margin-top: 5px;
+        width:100px;
+        margin-left:5%;        
+    }
+    a#home_icon:hover{
+        width:100px;
+        height:100px;
+        margin-top:5px;
+        background-image:url(../img/home_hover_big.png);
+    }
+    footer a#setting{
+        background-image: url("../img/setting_big.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        margin-top:5px;
+        margin-left:40px;
+        width: 100px;
+    }
+    a#setting:hover{
+        width:100px;
+        height:100px;
+        margin-top:5px;
+        background-image:url(../img/setting_hover_big.png);
+    }
+    footer #logged #logout{
+        background-image:url(../img/logout_big.png);
+        float: right;
+        line-height:0px;
+        margin-right:5%;
+        text-align: right;
+        margin-top:5px;
+        height:90px;
+        width:85px;        
+    }
+    footer #logged #logout:hover{
+        background-image:url(../img/logout_hover_big.png);
+        float: right;
+        line-height:0px;
+        margin-right:5%;
+        text-align: right;
+        margin-top:5px;
+        height:90px;
+        width:85px;        
+    }   
+    /*---------------------------tuiles---------------------------------*/
+    .tuile h3{
+        background-color:#f0f0f0;
+        width:100%;
+        text-align:center;
+        margin-top:5px;
+        margin-bottom: 5px;
+        color:#333333;
+        padding:52px 5px 0 5px;   
+    }
+    .tuile h3.twoLines {
+        padding-top: 60px;
+    }
+    a:focus, a:active, a:hover{
+        outline:none;
+        text-decoration:none;
+    }
+    /*---------------------------events-------------------------------*/
+    .current_event_title{
+        line-height:50px;
+        margin-top: 0;
+    }
+    #upcomingEvents{
+        margin-right:0;
+        width:100%;
+    }
+    #oldEvents {
+        width:100%;
+        margin-left:0;
+    }
+    #event_detail{
+        max-width:90%;
+        margin-left:5%;
+        margin-top: 5%;    
+    }
+    .slot_event h3 {
+        line-height: 40px;
+        margin: 0;
+    }
+    .slot_event {
+        float: left;
+        width:250px;
+        max-width:250px;
+        line-height:30px;
+    }
+    #event_description{
+        width:inherit;
+        padding-right:0;
+    }
+    #actualParticipateButton, #current_event.button {
+        float: none;
+        height: 100px;
+        margin: 0;
+        width: 100%;
+        display:none;
+    }
+    #actualParticipateButton a, #current_event.button a {
+        text-align:center;
+        width:auto;
+    }
+    #actualParticipateButton_smartphone {
+        float: none;
+        height: 100px;
+        margin: 0;
+        width: 100%;
+        display:inherit;
+    }    
+    .slot_event ol li {
+        line-height: 30px;
+        list-style: none outside none;
+    }
+                /*-------table-------*/    
+    .programme_event, .desc_event{    
+        margin-right: 0px;     
+    }
     
-label {
-    display:block;
-    padding-top:5%;
-    width: 100%;
-    font-size:1.5em;
-}
-.coordonees label {
-    width: 100%;
+    .zebra{
+        background-color:#f0f0f0;
+        border-top:2px solid #c9c9c9;
+    }
+    .table_title{
+        height:50px;
+        font-weight:bold;    
+    }
+    td.title{
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    td.date{
+        font-weight:bold;
+        width:110px;
+    }
+    /*--------------------------about--------------------------------*/
+    #about_more {
+        margin-left:5%;
+        max-width:90%;
+        margin-top:5%;   
+    }            
+    /*---------------------------team-------------------------------*/
+    #team{
+        margin:5%;
+        max-width:90%;
+        margin-top:5%;
+    }
+    #team_more{
+        margin-left:5%;
+        max-width:90%;
+        margin-top:5%;
+    }
+    /*---------------------------speakers-------------------------------*/
+    #speaker_year{
+        max-width:90%;
+        margin-left:5%;
+        margin-top:5%;
+    }
+    #speaker_year .span3{
+        font-size:1.5em;
+        margin-bottom:5%;
+    }
+    /*-------------------------------Medias------------------------------*/
+    .mediaWall div{
+        height: auto;
+        padding-left:0;
+        padding-right:0;
+    }
+    .mediaWall {         
+         padding-left: 0;
+         padding-right: 0;
+    }
+    #videosWall{
+        max-width:90%;
+        margin-left:5%;
+        margin-top:5%;   
+    }    
+    #videosWall .mediaWall img{
+        width:100%;
+        margin-top:5%;
+    }
+    .span4.mediaWall a{
+        font-size:1.5em;    
+    }    
+    /*partners*/
+    
+    /*-----------------------------formular----------------------------*/        
+    label {
+        display:block;
+        padding-top:5%;
+        width: 100%;
+        font-size:1.5em;
+    }
+    .coordonees label {
+        width: 100%;
         line-height:1.5em;
-}
-.profil label {
-    width: 100%;
-    
-}
-    
-.coordonees form input[type=password], input[type=text], input[type=date], input[type=email], input[type=tel] {
-    text-align: left;
-    width: 98%;
-    height:2.5em;
-    margin-top:10px;
-    font-size:1em;
-    padding-left:2%;
-    padding-top:10px;
+    }
+    .profil label {
+        width: 100%;        
+    }        
+    .coordonees form input[type=password], input[type=text], input[type=date], input[type=email], input[type=tel] {
+        text-align: left;
+        width: 98%;
+        height:2.5em;
+        margin-top:10px;
+        font-size:1em;
+        padding-left:2%;
+        padding-top:10px;
         margin-bottom:20px;
-}
-.password form input[type=password] {
-    margin: 20px 0;
-    width: 100%;
-    float:left;
-    padding: 0;
-    padding-left:5px;
-    height: 80px;
-    font-size:1.5em;
-    line-height:1.5em;
     }
-    
-.password label {
-    width: 100%;
-    
-    }
-    
-input[type=submit].modify:hover {
+    .password form input[type=password] {
+        margin: 20px 0;
+        width: 100%;
+        float:left;
+        padding: 0;
+        padding-left:5px;
+        height: 80px;
+        font-size:1.5em;
+        line-height:1.5em;
+    }        
+    .password label {
+        width: 100%;        
+    }        
+    input[type=submit].modify:hover {
         background-image: url(../img/modify_big.png);
-    height: 90px;
+        height: 90px;
         width:90px;
         margin: 0 auto;
+        }
+        
+    input[type=submit].modify {
+        background-image: url(../img/modify_big_hover.png);
+        height: 90px;
+        width:90px;
+        margin: 0 auto;
+    }        
+    #event_registration{
+        margin-left:5%;
+        width:90%;
+        margin-top:5%;
     }
-    
-input[type=submit].modify {
-    background-image: url(../img/modify_big_hover.png);
-    height: 90px;
-    width:90px;
-    margin: 0 auto;
-    }
-    
-#event_registration{
-    margin-left:5%;
-    width:90%;
-    margin-top:5%;
-}
-#event_registration h2{
-    font-size:2em;
-    margin-top:0;
-}   
-.coordonees input[type=password] {
-    text-align: left;
-    width: 46%;
-    height:2.5em;
-    font-size:1em;
-    padding-left:2%;
-}
-textarea {
-    height: 800px;
-    margin-bottom: 10px;
-    resize: none;
-    width: 98%;
-    font-size:1.5em;
-    padding-left:2%;
-    padding-top:2%;
-    line-height:1em;
-}
-.subtitle{
-font-size:1.5em;    
-margin-bottom: 10px;
-}
-#event_registration input[type=submit],#event_registration div.button a {        
-    height: 100px;
-    width: 49%;
-    font-size:1em;
-}
-#event_registration input[type=submit]:hover,#event_registration .button:hover{
-    height:100px;
-    width:49%;   
-}
-/*------------------------------partners----------------------------*/
-#partners{
-margin-left:5%;
-max-width:90%;
-margin-top:5%;       
-}
-#partners img{
-margin-bottom:2%;
-    
-}
-/*---------------------------login.php------------------------------*/
-
-#loginForm{
-margin-left:5%;
-max-width:90%;
-margin-top:5%;      
-}
-    
-#loginForm input {
-float: inherit;
-}
-
-    
-#loginForm input[type="text"], #loginForm input[type="password"], #loginForm input[type="submit"] {
-height: 90px;
-width: 100%;
+    #event_registration h2{
+        font-size:2em;
+        margin-top:0;
+    }   
+    .coordonees input[type=password] {
+        text-align: left;
+        width: 46%;
+        height:2.5em;
         font-size:1em;
-}
-/*----------------------user_inscription---------------------------*/
-#user_inscription{
-margin-left:5%;
-max-width:90%;
-margin-top:5%;     
-}
-    
-#user_inscription input[type="submit"],#user_inscription div.button a {
-    height: 100px;
-    width: 48%;
-        font-size:1.5em;
-}    
-.label{
-font-size:1.5em;
-font-weight: bold;
-margin-bottom: 5%;
-    }  
-#user_profile{
-margin-left:5%;
-max-width:90%;
-margin-top:5%;         
+        padding-left:2%;
     }
-/*------------end of @media------------------------------------------*/
+    textarea {
+        height: 800px;
+        margin-bottom: 10px;
+        resize: none;
+        width: 98%;
+        font-size:1.5em;
+        padding-left:2%;
+        padding-top:2%;
+        line-height:1em;
+    }
+    .subtitle{
+        font-size:1.5em;    
+        margin-bottom: 10px;
+    }
+    #event_registration input[type=submit],#event_registration div.button a {        
+        height: 100px;
+        width: 49%;
+        font-size:1em;
+    }
+    #event_registration input[type=submit]:hover,#event_registration .button:hover{
+        height:100px;
+        width:49%;   
+    }
+    /*------------------------------partners----------------------------*/
+    #partners{
+        margin-left:5%;
+        max-width:90%;
+        margin-top:5%;       
+    }
+    #partners img{
+        margin-bottom:2%;        
+    }
+    /*---------------------------login.php------------------------------*/    
+    #loginForm{
+        margin-left:5%;
+        max-width:90%;
+        margin-top:5%;      
+    }        
+    #loginForm input {
+        float: inherit;
+    }
+            
+    #loginForm input[type="text"], #loginForm input[type="password"], #loginForm input[type="submit"] {
+        height: 90px;
+        width: 100%;
+        font-size:1em;
+    }
+    /*----------------------user_inscription---------------------------*/
+    #user_inscription{
+        margin-left:5%;
+        max-width:90%;
+        margin-top:5%;     
+    }        
+    #user_inscription input[type="submit"],#user_inscription div.button a {
+        height: 100px;
+        width: 48%;
+        font-size:1.5em;
+    }    
+    .label{
+        font-size:1.5em;
+        font-weight: bold;
+        margin-bottom: 5%;
+        }  
+    #user_profile{
+        margin-left:5%;
+        max-width:90%;
+        margin-top:5%;         
+        }
+    /*------------end of @media------------------------------------------*/
 }

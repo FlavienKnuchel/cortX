@@ -3,8 +3,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:12px;
     background-image:url(../img/background.png);
-    margin:0 auto;
-    
+    margin:0 auto;    
 }
 a:active{
     outline:none;
@@ -24,7 +23,6 @@ body h2{
 body h3{
     font-size:1.5em;
 }
-
 body h4 {
     font-size:1.2em;
     color:black;
@@ -36,10 +34,9 @@ body h4 {
     max-height:100%;
 }
 .lastElement{
-margin-bottom:80px;
+    margin-bottom:80px;
 }
-#lightbox{
-   
+#lightbox{   
     padding-left:20px;
     padding-right:20px;
     width:95%;
@@ -48,19 +45,19 @@ margin-bottom:80px;
 
 /*main event*/
 #nextevent{
-height:auto;    
+    height:auto;    
 }
 #nextevent h1{
     margin-top:0;
 }
 #nextevent p{
-padding-right:10px;
+    padding-right:10px;
 }
 #nextevent ul{
-margin-left:0px;
+    margin-left:0px;
 }
 #nextevent img{
-padding-left:0px;
+    padding-left:0px;
 }
 #tedxDisclaimer p{
     line-height: 50px;
@@ -70,37 +67,26 @@ padding-left:0px;
 }
 #video_home_header{
     text-align: left;
-
     margin-top:20px;
 }
 #nextevent .span2,#nextevent .span5{
-padding-top:0;
-padding-left:10px;
-padding-right:10px;
-padding-bottom:10px;
-
-background-color:transparent;
+    padding-top:0;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+    background-color:transparent;
 }
-
-
 /*---------------------------------General Content---------------------------------*/
 /*no decoration on the lists*/
 ul li{
     list-style: none;
 }
-
 /*section elements take full page width*/
-
 section
 {
     width:100%;
     margin-bottom:40px;
 }
-
-/*article margins*/
-article{
-}
-
 /*---------------------------------Media---------------------------------*/
 #videos{
     background-color:#f0f0f0;
@@ -119,67 +105,55 @@ article{
 section#videos{
     margin-bottom: 20px;
 }
-
-
 .mediaWall{
     padding-left:5px;
     padding-right:5px;
     height:100%;
     margin-bottom: 20px;
 }
-
 .mediaWall div{
- height: 40px;
+    height: 40px;
 }
-
 .mediaWall a{
     color: #ff2b06;
     font-size: 1.1em;
     font-weight: bold;
     margin-top:0;
 }
-
 .mediaWall h2 {
     margin: 0;
 }
-
 /*---------------------------------Social Content---------------------------------*/
 #socialnet{
     /*height:135px;*/
     margin-bottom:20px;
-    text-align:center;
-    
+    text-align:center;    
 }
-
 #socialnet li a img{
     width:40px;
-    height:40px;
-    
+    height:40px;    
 }
-#socialnet li a:hover img{
-    
+#socialnet li a:hover img{    
     background-color:#ffffff;
 }
-/*partners*/
+/*---------------------------------------partners---------------------------------*/
 .partners img {
 margin: 0 auto;
 }
-
 .white {
-background:#ffffff;
-padding-top:10px;
+    background:#ffffff;
+    padding-top:10px;
     padding-bottom:10px;
     text-align:center
 }
 .black {
-background:#000000;
-padding-top:10px;
+    background:#000000;
+    padding-top:10px;
     padding-bottom:10px;
     text-align:center
 }
-
-.partners p {
-padding-left:5px;
+#partners p {
+    padding-left:10px;
 }
 /*---------------------------------Formular and buttons---------------------------------*/
 /*Login page*/
@@ -193,11 +167,9 @@ padding-left:5px;
     padding:10px;
     background-color:#f0f0f0;
 }
-
 .motivationBox{
     margin-bottom:30px;
 }
-
 input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
     border-radius:3px;
     background-color:#ffffff;
@@ -218,16 +190,14 @@ input[type=submit], .button {
     line-height:34px;
     text-align:center;
 }
-
 input[type=submit], div.button a {
-    
+    display:block;
     text-decoration:none;
     color:#e5e5e5;
     width:130px;
     height:34px;
     font-weight:bold;
 }
-
 input[type=submit]:hover, .button:hover{
     color:#e5e5e5;
     background-color:#626262;
@@ -241,7 +211,7 @@ input .form_closed{
 input .big{
 }
 .motivation{
-height:100%;
+    height:100%;
 }
 textarea{
     width:100%;
@@ -249,24 +219,20 @@ textarea{
     resize:none;
     margin-bottom:10px;
 }
-
-/*my profile*/
+/*-----------------------my profile------------------------*/
 .profil label {
     width:15%;
 }
-
 .profil form input[type=password], input[type=text], input[type=date], input[type=email], input[type=tel] {
     margin-right: 15px;
     /*width: 20%;*/
     text-align:left;
     padding-left: 5px;
 }
-
 .profil form textarea {
     margin-right: 10px;
     width: 95%;
 }
-
 .password {
     margin-top:20px;
 }
@@ -274,16 +240,14 @@ textarea{
     margin-right: 10px;
     width:30%;
 }
-
 .password form input {
     margin-right: 10px;
     width: 60%;
 }
-/*register to event*/
+/*--------------------------register to event------------------------------*/
 .coordonees label {
     width:15%;
 }
-
 .espace {
 margin-top: 20px;}
 
@@ -292,23 +256,17 @@ margin-top: 20px;}
     text-align:left;
     padding-left: 5px;
 }
-
 label.activity {
-width: 30%;}
-
-.coordonees input[type=password] {
-    
-    text-align:left;
-    
+    width: 30%;
+}
+.coordonees input[type=password] {    
+    text-align:left;    
 }
 input[type=password].margin {
-margin-left:15%;
-
+    margin-left:15%;
 }
-
 .coordonnes form textarea {
     margin-right: 10px;
-    /*width: 95%;*/
 }
 .inscription_button input[type=submit] {
     display: inline;
@@ -332,16 +290,14 @@ div.button_back{
     font-weight: bold;
     height: 35px;
     text-decoration: none;
-    width: 130px;
-    
+    width: 130px;    
 }
 .button_back:hover{
     color:#e5e5e5;    
     width:130px;
     height:35px;
     background-image:url(../img/back.png);
-    background-repeat:no-repeat;
-   
+    background-repeat:no-repeat;   
 }
 /*icon button*/
 /*button*/
@@ -354,7 +310,6 @@ a.modify {
     height: 20px;
     width: 20px;
 }
-
 a.modify:hover {
     float:right;
     margin-left:20px;
@@ -363,7 +318,6 @@ a.modify:hover {
     background-image:url(../img/modify.png);
     background-repeat:no-repeat;
 }
-
 a.delete {
     float:right;
     margin-left:20px;
@@ -372,7 +326,6 @@ a.delete {
     height: 20px;
     width: 20px;
 }
-
 a.delete:hover {
     float:right;
     margin-left:20px;
@@ -380,8 +333,7 @@ a.delete:hover {
     width: 20px;
     background-image:url(../img/delete.png);
     background-repeat:no-repeat;
-}
-    
+}    
 a.add {
     float:right;
     margin-left:20px;
@@ -390,7 +342,6 @@ a.add {
     height: 20px;
     width: 20px;
 }
-
 a.add:hover {
     float:right;
     margin-left:20px;
@@ -409,8 +360,6 @@ input[type=submit].modify {
     background-color: transparent;
     min-width:20px;
 }
-
-
 input[type=submit].modify:hover {
     height: 20px;
     width: 20px;
@@ -420,7 +369,6 @@ input[type=submit].modify:hover {
     background-image:url(../img/modify.png);
     background-repeat:no-repeat;
 }
-
 input[type=submit].delete {
     height: 20px;
     width: 20px;
@@ -429,9 +377,7 @@ input[type=submit].delete {
     min-width:20px;
     background-image:url(../img/delete_hover.png);
     background-repeat:no-repeat;
-
 }
-
 input[type=submit].delete:hover {
     height: 20px;
     width: 20px;
@@ -440,8 +386,7 @@ input[type=submit].delete:hover {
     min-width:20px;
     background-image:url(../img/delete.png);
     background-repeat:no-repeat;
-}
-    
+}   
 input[type=submit].add {
     height: 20px;
     width: 20px;
@@ -451,7 +396,6 @@ input[type=submit].add {
     background-image:url(../img/add_hover.png);
     background-repeat:no-repeat;
 }
-
 input[type=submit].add2 {
     height: 20px;
     width: 100px;
@@ -464,7 +408,6 @@ input[type=submit].add2 {
     background-repeat:no-repeat;
     float:right;
 }
-
 input[type=submit].add:hover {
     height: 20px;
     width: 20px;
@@ -474,7 +417,6 @@ input[type=submit].add:hover {
     background-image:url(../img/add.png);
     background-repeat:no-repeat;
 }
-
 input[type=submit].add2:hover {
     height: 20px;
     width: 100px;
@@ -485,7 +427,6 @@ input[type=submit].add2:hover {
     background-image:url(../img/add.png);
     background-repeat:no-repeat;
 }
-
 /*---------------------------------Tuiles---------------------------------*/
 .tuile about {height:150px; width: 40%;;}
 
@@ -506,22 +447,16 @@ input[type=submit].add2:hover {
 .tuile h3.twoLines {
     padding-top: 45px;
 }
-
-
 .tuile h3.bottom {
     margin-bottom: 60px;
 }
-
-
 .tuile h3:hover{
     background-color:#626262;
     color:#e5e5e5;
     text-decoration:none;
 }
-
 .tuile {margin-top:40px;}
 /*-----------------------------------page event---------------------------------*/
-
 .firstElement{
     margin-top:60px;
 }
@@ -541,17 +476,14 @@ input[type=submit].add2:hover {
     height: 50px;
     color:#e5e5e5;
 }
-
 #actualParticipateButton_smartphone {
     display:none;
 }
-
 .actualEventAdress{
     float:right;
     margin:0;
     width: 200px;
 }
-
 #current_event .button{
     float:right;
     
@@ -563,11 +495,9 @@ input[type=submit].add2:hover {
     line-height:50px;
     height: 50px;
 }
-
 ol li{
     list-style:none;
 }
-
 section .span8, section .span6, section .span2,section.span8{
     background-color:#f0f0f0;
     padding:10px;  
@@ -581,7 +511,6 @@ section .span8, section .span6, section .span2,section.span8{
 float:none;
     margin-top:10px;
 }
-
 .slot_event{
     max-width:150px;
     float:left;
@@ -596,45 +525,37 @@ float:none;
 .slot_event p{
     margin-left:10px;
 }
-
 .box p {
     margin-bottom:5px;
 }
-
 article a {
-text-decoration:none;
-color:#ff2b06;
+    text-decoration:none;
+    color:#ff2b06;
 }
-
 article a:hover {
-text-decoration:none;
-color:#333333;
+    text-decoration:none;
+    color:#333333;
 }
-
 #upcomingEvents {
     background-color:#f0f0f0;
     padding:10px 10px 10px 10px;
     margin-right:1.5%;
     width:31.83333333%;
 }
-
 #upcomingEvents a{
     text-decoration:none;
     color:#ff2b06;
 }
-
 #upcomingEvents a:hover {
     text-decoration:none;
     color:#333333;
 }
-
 #oldEvents {
     background-color:#f0f0f0;
     padding:10px 10px 10px 10px;
     margin-left:1.5%;
     width:31.83333333%;
 }
-
 #oldEvents a {
     text-decoration:none;
     color:#ff2b06;
@@ -643,15 +564,12 @@ color:#333333;
     text-decoration:none;
     color:#333333;
 }
-
 section article.goodMessage{
     text-align:center;
     padding:10px;
     padding-bottom:0px;
     background-color:#E7FFE0;
     border:1px solid #75FF72;
-
-
 }
 .goodMessage h1{
     color:black;
@@ -667,18 +585,15 @@ section article.badMessage{
 .badMessage h1{
     color:black;
 }
-
-
-            /*------------------------table--------------------------*/
+           /*------------------------table--------------------------*/
  .zebra{
     background-color:#f0f0f0;
     border-top:1px solid #c9c9c9;
-    }
+}
 .table_title{
     height:30px;
-    font-weight:bold;
-    
-    }
+    font-weight:bold;    
+}
 td.title{
     width: auto;
     padding-top:2px;
@@ -691,8 +606,8 @@ td.date{
 }
 /*--------------------------------- pages about ---------------------------------*/
 #about{
-  padding:0px;  
-  background-color:transparent;  
+    padding:0px;  
+    background-color:transparent;  
 }
 #about .span8,
 #about .span2 {
@@ -701,13 +616,12 @@ td.date{
     padding: 0;
 }
 #about a {
-    color: #ff2b06;}
-
-
+    color: #ff2b06;
+}
 #about h1 {
     color: #ff2b06;
     font-weight:bold;
-    }
+}
 /*--------------------------------- pages team ---------------------------------*/
 div.tuile ul.span8,
 div.tuile ul.span2,
@@ -716,15 +630,13 @@ div.tuile ul.twoLines{
     margin-top: 0;
     padding: 0;
 }
-
 #team a {
-    color: #ff2b06;}
-
-
+    color: #ff2b06;
+}
 #team h1 {
     color: #ff2b06;
     font-weight:bold;
-    }
+ }
 /*--------------------------------- 404 ---------------------------------*/
 
 .error h1 {
@@ -733,7 +645,6 @@ div.tuile ul.twoLines{
     font-weight:bold;
     text-transform :uppercase;
 }
-
 .x {
     color: #ff2b06;
     margin-left:20px;
@@ -745,7 +656,6 @@ div.tuile ul.twoLines{
     font-size: 1.2em;
     font-weight: bold;
 }
-
  .error a:hover{
     text-decoration:none;
     color:#ff2b06;
@@ -753,10 +663,6 @@ div.tuile ul.twoLines{
     font-weight:bold;
 }
 /*-----------------------------login.php---------------------------------*/
-
 #loginForm input {
-float:left;
+    float:left;
 }
-
-
-/*------------------@media smartphone-----------------*/
