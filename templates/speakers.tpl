@@ -9,7 +9,7 @@ Description : template of the speaker section
 -->
 <!-- do a loop on section-->
 
-<section id="speaker_year" class="firstElement end row">
+<section id="speaker_year" class="firstElement lastElement row">
     <article class="offset2 span8">
         <h1 class="title_year">Speakers</h1>    
         <article class="speakers_photo row">

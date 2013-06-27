@@ -60,6 +60,10 @@ height:100px;
 background-image:url(../img/back_hover_big.png);
 background-repeat:no-repeat;
 }
+/*--------------------------menu-------------------------*/
+nav ul li a {
+font-size: 2em;   
+}
 /*-----------------------homepage-----------------------------------*/
 #nextevent{        
 max-width:95%;
@@ -152,11 +156,11 @@ width: 100%;
 }
 footer #logged a {
 float: left;
-        margin-top:30px;
-        margin-left:3%;
+        margin-top:5px;
+        margin-left:5%;
 }
 a#home_icon {
-    background-image: url("../img/setting_big.png");
+    background-image: url("../img/home_big.png");
     background-repeat: no-repeat;
     height: 100px;
     margin-top: 5px;
@@ -168,13 +172,13 @@ a#home_icon:hover{
     width:100px;
     height:100px;
     margin-top:5px;
-    background-image:url(../img/setting_hover_big.png);
+    background-image:url(../img/home_hover_big.png);
 }
-a#setting {
+a#setting{
     background-image: url("../img/setting_big.png");
     background-repeat: no-repeat;
     height: 100px;
-    margin-top: 5px;
+    margin-top:5px;
     margin-left:40px;
     width: 100px;
 }
@@ -184,12 +188,26 @@ a#setting:hover{
     margin-top:5px;
     background-image:url(../img/setting_hover_big.png);
 }
-footer #logged #logout {
+footer #logged #logout{
+    background-image:url(../img/logout_big.png);
     float: right;
-    line-height: 40px;
-    margin-right: 3%;
+    line-height:0px;
+    margin-right:5%;
     text-align: right;
-    margin-top:30px;
+    margin-top:5px;
+    height:90px;
+    width:85px;
+        
+         background-image:url(../img/logout.png);
+    background-repeat:no-repeat;
+    float: left;
+    line-height:0px;
+    margin-right:0;
+    margin-left:55%;
+    text-align: right;
+    margin-top:5px;
+    height:30px;
+    width:28px;
 }
 /*---------------------------tuiles---------------------------------*/
 .tuile h3{
@@ -313,8 +331,12 @@ margin-left:5%;
 margin-top:5%;
 }
 .speakers_photo{
- padding-left:5%;
-text-align:center;
+
+
+}
+#speaker_year .span3{
+font-size:1.5em;
+margin-bottom:5%;
 }
 /*-------------------------------Medias------------------------------*/
 .mediaWall div{
