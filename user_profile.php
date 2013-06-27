@@ -37,20 +37,24 @@ if (isset($_POST['edit'])) {
 
 //gets the POST password  
 if (isset($_POST['changePSW'])) {
-    $username = $tedx_manager->getUsername();
-    if ($_POST['Password'] == $_POST['ConfirmPassword']) {
-        $argsPSW = array(
-            'ID' => $username, // String
-            'password' => $_POST['Password']  // String
-        );
-        $msgCPSW = $tedx_manager->changePassword($argsPSW);
-        if ($msgCPSW->getStatus()) {
-            $smarty->assign('success_password', 'The password was successully changed.');
+    if (strlen($_POST['Password']) > 0 && strlen($_POST['ConfirmPassword']) > 0) {
+        $username = $tedx_manager->getUsername();
+        if ($_POST['Password'] == $_POST['ConfirmPassword']) {
+            $argsPSW = array(
+                'ID' => $username, // String
+                'password' => $_POST['Password']  // String
+            );
+            $msgCPSW = $tedx_manager->changePassword($argsPSW);
+            if ($msgCPSW->getStatus()) {
+                $smarty->assign('success_password', 'The password was successully changed.');
+            } else {
+                $smarty->assign('error_password', $msgCPSW->getMessage());
+            }
         } else {
-            $smarty->assign('error_password', $msgCPSW->getMessage());
+            $smarty->assign('error_password', 'The passwords entered differ.');
         }
     } else {
-        $smarty->assign('error_password', 'The passwords entered differ.');
+        $smarty->assign('error_password', 'One (or maybe both) password was empty.');
     }
 }
 $person = $tedx_manager->getLoggedPerson()->getContent();
