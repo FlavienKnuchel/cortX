@@ -10,7 +10,7 @@ Description : Basic structure of the homepage
     <aside class="offset2 span3">
         <img src="http://www.tedxlausanne.org/wp-content/uploads/2012/10/Homepage_TEDxLausanne2.jpg"/>
     </aside>
-    <article class="span6">
+    <article class="span5">
         {if isset($upcomingEvents)}
             <h1>{$upcomingEvents[0]->getMainTopic()}</h1>
             <p class="subtitle">{$upcomingEvents[0]->getStartingDate()}</p>

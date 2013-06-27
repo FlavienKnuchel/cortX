@@ -9,6 +9,8 @@
  * Description : page to manage the speakers
  */
 include 'header.php';
+$_SESSION['ariane2']="Speakers";
+$_SESSION['ariane2url']=$_SERVER['SCRIPT_NAME'];
 include 'menu_backend.php';
 
 //if something is selected it appears on the right after the relaod

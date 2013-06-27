@@ -8,6 +8,8 @@
 * Description : page to manage all the account
 */
 include 'header.php';
+$_SESSION['ariane2']="Accounts";
+$_SESSION['ariane2url']=$_SERVER['SCRIPT_NAME'];
 include 'menu_backend.php';
 $error='';
 if(isset($_POST['update'])){ //process the edition

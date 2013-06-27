@@ -9,6 +9,8 @@
  * Description : page to manage the team and the roles
  */
 include 'header.php';
+$_SESSION['ariane2']="Team";
+$_SESSION['ariane2url']=$_SERVER['SCRIPT_NAME'];
 include 'menu_backend.php';
 if ($tedx_manager->isLogged()) {
 //gets the actions

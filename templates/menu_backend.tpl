@@ -11,19 +11,26 @@
     </head>
     <body>
     <div id="content">
-        <nav class="row menu_backend"> 
-            <div class="offset2 span3" >
+        <nav class="row menu_backend">
+            <div class="offset2 span3">
                 <a href="home.php" title="Home">
                     <img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />
                 </a>
             </div>
-            <ul class="ariane">
-                <li class="offset3 span2">
-                    <a href="backend_home.php">Management area</a>
-                </li>
-                <li></li>
-                <li></li>
-                <li></li>            
+            <ul class="span5">
+                {section loop=$menu name=ariane}
+                    {if $smarty.section.ariane.last}
+                        <li class="span2 active_backend"><a href="{$menu[ariane].url}">{$menu[ariane].name}</a></li>
+                    {else}
+                    {if $smarty.section.ariane.first}
+                        <li class="span3 ariane"><a href="{$menu[ariane].url}">{$menu[ariane].name}</a></li>
+                    {else}
+                        <li class="span2 ariane"><a href="{$menu[ariane].url}">{$menu[ariane].name}</a></li>
+                    {/if}
+                    {/if}
+
+                {/section}
+
             </ul>
         </nav>
             

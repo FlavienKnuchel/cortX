@@ -100,6 +100,7 @@ height:100px;
 padding-top:25px;
 font-size:2em;
 color:#ffffff;
+line-height: 2em;
 }
 .actualEventAdress {
     float: inherit;
@@ -138,6 +139,7 @@ color:#ffffff;
 height: 70px;
 padding-top: 0px;
 width: 100%;
+line-height: 1em;
 }
 footer #logged a {
 float: left;
@@ -445,5 +447,55 @@ margin-bottom: 10px;
     height:100px;
     width:49%;   
 }
+/*------------------------------partners----------------------------*/
+#partners{
+margin-left:5%;
+max-width:90%;
+margin-top:5%;       
+}
+#partners img{
+margin-bottom:2%;
+    
+}
+/*---------------------------login.php------------------------------*/
+
+#loginForm{
+margin-left:5%;
+max-width:90%;
+margin-top:5%;      
+}
+    
+#loginForm input {
+float: inherit;
+}
+
+    
+#loginForm input[type="text"], #loginForm input[type="password"], #loginForm input[type="submit"] {
+height: 90px;
+width: 100%;
+        font-size:1em;
+}
+/*----------------------user_inscription---------------------------*/
+#user_inscription{
+margin-left:5%;
+max-width:90%;
+margin-top:5%;     
+}
+    
+#user_inscription input[type="submit"],#user_inscription div.button a {
+    height: 100px;
+    width: 48%;
+        font-size:1.5em;
+}    
+.label{
+font-size:1.5em;
+font-weight: bold;
+margin-bottom: 5%;
+    }  
+#user_profile{
+margin-left:5%;
+max-width:90%;
+margin-top:5%;         
+    }
 /*------------end of @media------------------------------------------*/
 }

@@ -25,6 +25,6 @@
         <label class="span12" for="password" title="password">Password:</label>
         <input class="span12" type="password" name="password" placeholder="Password">
         </div>
-        <input class="span12" type="submit" name="Login" value="OK"/>
+        <input class="span12 button" type="submit" name="Login" value="OK"/>
     </form>
 </div>
