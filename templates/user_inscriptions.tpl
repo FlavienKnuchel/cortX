@@ -25,14 +25,12 @@ Description : template of the user inscription
             </article>
         </section>
     {/if}
-    <section class="offset2 span8">
         {if $loggedin}
             {if $participant->getStatus()}
                 {if !empty($arrayReg) }
                     {section name=loopReg loop=$arrayReg}
                         {if $arrayReg[loopReg]['registration']->getStatus() == 'Pending'}
-                            <article class="span12">
-
+                            <article class="offset2 span8 motivationBox">
                                 <h1>You are applying to </h1>
                                 <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
 
@@ -62,7 +60,7 @@ Description : template of the user inscription
                                 </form>
                             </article>
                         {else}
-                            <article class="span12">
+                            <article class="offset2 span8 motivationBox">
                                 <h1 class="subtitle">You applied to</h1> 
                                 <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
                                 <p class="subtitle">Satus of your registration : <strong>{$arrayReg[loopReg]['registration']->getStatus()}</strong></p>
@@ -106,7 +104,7 @@ Description : template of the user inscription
                     </section>
                 {/if}
                 {if !empty($arrayOldReg) }
-                    <article class="span12">
+                    <article class="offset2 span8 motivationBox">
                         <h1>Previous registrations</h1>
                         {section name=loopOldReg loop=$arrayOldReg}
                             <article class="form_closed">
@@ -165,5 +163,4 @@ Description : template of the user inscription
                 You are not logged in, you cannot access this content.
             </p>
         {/if}
-    </section>
 
