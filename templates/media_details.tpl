@@ -19,7 +19,7 @@
 {/if}
 {if isset($talk)}
     <section class="row">
-        <div class="offset2 span8">
+        <div class="offset2 span8 lastElement">
 
             <div class="span5">
                 <h1>{$talk->getVideoTitle()}</h1>

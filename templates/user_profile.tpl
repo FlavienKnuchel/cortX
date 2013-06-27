@@ -77,7 +77,7 @@ Description : template of the user profile
                         <input type="submit" name="edit" value="" alt="Edit my informations" class="modify">
                     </form>
                 </article>
-                <article class="password span4">
+                <article class="password span4 lastElement">
                     <h1>My password</h1>
                     <h3>Edit your password, leave blank if no changes</h3>
 

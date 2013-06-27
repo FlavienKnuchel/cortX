@@ -61,7 +61,7 @@ include 'userbar.php';
 //used to create the youtube image thumbnail url from refs
 function createImgUrl($ref){
     //create the good image url
-    $fullImgRef="http://img.youtube.com/vi/".$ref."/mqdefault.jpg";
+    $fullImgRef="http://img.youtube.com/vi/".$ref."/0.jpg";
     //return the image url
     return $fullImgRef;
 }//function

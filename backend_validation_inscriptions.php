@@ -44,6 +44,8 @@ if (isset($_REQUEST['noEvent'])) { //if an event is selected, it narrows the reg
     if ($allRegForEvent->getStatus()) {
         foreach ($allRegForEvent->getContent() as $registration) {//for each registrations, tests if 
             switch ($registration->getStatus()) {//the status of the registration
+                case 'Pending':
+                    break;
                 case 'Sent'://is sent or
                     $arraySentReg = array(
                         $tedx_manager->getEvent($registration->getEventNo())->getContent(),
