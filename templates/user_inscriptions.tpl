@@ -25,7 +25,7 @@ Description : template of the user inscription
             </article>
         </section>
     {/if}
-    <section class="firstElement">
+    <section>
         <article class="offset2 span8">
             {if $loggedin}
                 {if $participant->getStatus()}
