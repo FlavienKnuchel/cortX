@@ -30,6 +30,8 @@ Description : general navigation and
                     $(".inline").colorbox({inline:true, width:"50%"});
                     $('.html').colorbox({ iframe:true, width:"60%", height:500});
                 });
+                $('#delete').click(function display(){alert("Deleted")});
+
             </script>
 
         {/literal}
