@@ -6,7 +6,7 @@
  *
  * Description : video wall
  */  -->
-<section class="firstElement partners lastElement">    
+<section id="partners" class="firstElement lastElement">    
     <section class="row">
     <article class="offset2 span8">
         <h1>TEDxLausanne 2013 partners</h1>

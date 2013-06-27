@@ -8,7 +8,7 @@ Description : template of the user inscription
 
 -->
 
-<section class="firstElement row">
+<section class="firstElement row lastElement" id="user_inscription">
     {if isset($errorSendMotiv)}
         <section class="row">
             <article class="offset2 span8 badMessage">
@@ -36,17 +36,17 @@ Description : template of the user inscription
 
                             <form method="POST" action="">
                                 <div class="span3">
-                                    <label for="type">Your activity domain</label>
+                                    <label for="type">Your activity domain:</label>
                                     <p>{$arrayReg[loopReg]['registration']->getType()}</p>
-                                    <label for="typeDescription">Your role in this domain</label>
+                                    <label for="typeDescription">Your role in this domain:</label>
                                     <p>{$arrayReg[loopReg]['registration']->getTypeDescription()}</p>
                                 </div>
                                 <div class="span9">
-                                    <label for="motivation" class="subtitle">Explain us your motivations</label>
+                                    <label for="motivation" class="subtitle">Explain us your motivations:</label>
                                     <textarea name="motivation" title="motivation" class="big" spellcheck>{if isset($arrayReg[loopReg]['motivation'])}{$arrayReg[loopReg]['motivation']}{/if}</textarea>
                                 </div>
                                 <div class="row">
-                                    <label class="span3" for="Keyword" title="Describe youself in 3 words">Keywords that describes you the best</label>
+                                    <label class="span3" for="Keyword" title="Describe youself in 3 words">Keywords that describes you the best:</label>
 
                                     <input type="text" name="Keyword1" value="{if isset($arrayReg[loopReg]['arrayKW'][0])}{$arrayReg[loopReg]['arrayKW'][0]}{/if}" >
                                     <input type="text" name="Keyword2" value="{if isset($arrayReg[loopReg]['arrayKW'][1])}{$arrayReg[loopReg]['arrayKW'][1]}{/if}" >
@@ -61,13 +61,13 @@ Description : template of the user inscription
                         </article>
                     {else}
                         <article class="offset2 span8 motivationBox">
-                            <h1 class="subtitle">You applied to</h1>
+                            <h1 class="subtitle">You applied to:</h1>
                             <h2>{$arrayReg[loopReg]['event']->getMainTopic()}</h2>
-                            <p class="subtitle">Satus of your registration : <strong>{$arrayReg[loopReg]['registration']->getStatus()}</strong></p>
+                            <p class="label">Satus of your registration : <strong>{$arrayReg[loopReg]['registration']->getStatus()}</strong></p>
                             <div class="span3">
                                 <p class="label" >Your activity domain:</p>
                                 <p class="activitydomain">{$arrayReg[loopReg]['registration']->getType()}</p>
-                                <p class="label">Your role in this domain</p>
+                                <p class="label">Your role in this domain:</p>
                                 <p class="roledomain">{$arrayReg[loopReg]['registration']->getTypeDescription()}</p>
                             </div>
                             <div class="span9">

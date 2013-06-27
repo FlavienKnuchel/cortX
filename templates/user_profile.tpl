@@ -7,7 +7,7 @@ Date : 18.6.2013
 Description : template of the user profile
 
 -->
-<section class="firstElement row">
+<section class="firstElement row lastElement" id="user_profile">
     {if isset($success_profile)}
         <section class="row">
             <article class="offset2 span8 goodMessage">
