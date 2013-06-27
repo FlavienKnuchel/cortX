@@ -9,6 +9,7 @@
  * Description : page to create a new event, with slot and speaker
  */
 include 'header.php';
+$error='';
 if ($tedx_manager->isLogged() && ($tedx_manager->isOrganizer() || $tedx_manager->isValidator() || $tedx_manager->isAdministrator() || $tedx_manager->isSuperadmin())) {
   	$_SESSION['ariane3'] = "Update event";
     $_SESSION['ariane3url'] = $_SERVER['SCRIPT_NAME'];
@@ -20,26 +21,30 @@ if ($tedx_manager->isLogged() && ($tedx_manager->isOrganizer() || $tedx_manager-
 		if(isset($_REQUEST['eventNo'])){//get the event infos
 			$messageEvent=$tedx_manager->getEvent($_GET['eventNo']);
 			if($messageEvent->getStatus()){
-				$event=$messageEvent->getEvent();
+				$event=$messageEvent->getContent();
 				$smarty->assign('event',$event);
 				$messageSlots=$tedx_manager->getSlotsFromEvent($event);
 				if($messageSlots->getStatus()){
 					$slots=$messageSlots->getContent();
 					$smarty->assign('slots',$slots);
 					$_SESSION['iterationNumber']=sizeof($slots)-1;
-					$smarty->assign('iterationNumber',$_SESSION['iterationNumber']);
 					$eventUpdateArray=array();
-					for ($i = 0; $i <= $_SESSION['iterationNumber']; $i++) {
+					for($i = 0; $i <= $_SESSION['iterationNumber']; $i++){
 						$slotStartingTimeAlt = "slotStartingTime" . $i;
 						$slotEndingTimeAlt = "slotEndingTime" . $i;
 						$happeningDateAlt = "happeningDate" . $i;
-						if (isset($_POST[$slotStartingTimeAlt]))
-							$eventUpdateArray[$slotStartingTimeAlt] = $_POST[$slotStartingTimeAlt];
-						if (isset($_POST[$slotEndingTimeAlt]))
-							$eventUpdateArray[$slotEndingTimeAlt] = $_POST[$slotEndingTimeAlt];
-						if (isset($_POST[$happeningDateAlt]))
-							$eventUpdateArray[$happeningDateAlt] = $_POST[$happeningDateAlt];
+						$slotNoAlt = "slotNo" . $i;
+							$eventUpdateArray[$slotStartingTimeAlt] = $slots[$i]->getStartingTime();
+							$eventUpdateArray[$slotEndingTimeAlt] = $slots[$i]->getEndingTime();
+							$eventUpdateArray[$happeningDateAlt] = $slots[$i]->getHappeningDate();
+							$eventUpdateArray[$slotNoAlt] = $slots[$i]->getNo();
+
 					}
+						$arrayIterations=array();
+					for($i=0;$i<=$_SESSION['iterationNumber'];$i++){
+						array_push($arrayIterations,$i);
+					}
+						$smarty->assign('iterationNumber',$arrayIterations);
 					$smarty->assign('filledDatas',$eventUpdateArray);
 				}
 				else{
@@ -65,14 +70,10 @@ else{
                             if (!empty($_POST['startTime'])) {
                                 if (!empty($_POST['endTime'])) {
                                     if (!empty($_POST['description'])) {
-                                        if (isset($location)) {
-                                            for ($i = 0; $i <= $_SESSION['iterationNumber']; $i++) {
+                                                for ($i = 0; $i <= $_SESSION['iterationNumber']; $i++) {
                                                 $slotStartingTimeAlt = "slotStartingTime" . $i;
                                                 $slotEndingTimeAlt = "slotEndingTime" . $i;
                                                 $happeningDateAlt = "happeningDate" . $i;
-                                                var_dump($_POST[$slotStartingTimeAlt]);
-                                                var_dump($_POST[$slotEndingTimeAlt]);
-                                                var_dump($_POST[$happeningDateAlt]);
                                                 if (!empty($_POST[$slotStartingTimeAlt])) {
                                                     if (!empty($_POST[$slotEndingTimeAlt])) {
                                                         if (!empty($_POST[$happeningDateAlt])) {
@@ -87,9 +88,6 @@ else{
                                                     $error = "Please fill the slot " . $i . " starting time";
                                                 }
                                             }
-                                        } else {
-                                            $error = "Please fill the location field";
-                                        }
                                     } else {
                                         $error = "Please fill the description field";
                                     }
@@ -124,17 +122,36 @@ else{
 		if($messageUpdate->getStatus()){
 			$updatedEvent=$messageUpdate->getContent();
 			$goodMessage="The event has been updated!";
+			$updatedEvent=$messageUpdate->getContent();
+			$smarty->assign('updatedEvent',$updatedEvent);
 			$smarty->assign('goodMessage',$goodMessage);
+			for($i=0;$i<=$_SESSION['iterationNumber'];$i++){
+				$event=$tedx_manager->getEvent($_POST['eventNo'])->getContent();
+				 $args = array(
+                            'no'            => $_POST['slotNo'.$i],
+                            'event'       => $event,
+                            'happeningDate' => $_POST['happeningDate'.$i],
+                            'startingTime'  => $_POST['slotStartingTime'.$i],
+                            'endingTime'    => $_POST['slotEndingTime'.$i]
+                        );
+						$messageSlot=$tedx_manager->changeSlot($args);
+						if($messageSlot->getStatus()){
+							
+						}
+						else{
+							$error="The slot couldn't be updated: ".$messageSlot->getMessage();
+							}
+			}
 		}
 		else{
 			$error=$messageUpdate->getMessage();
 		}
 }
-	$sendFilledDatas();	
+	sendFilledDatas();	
 }
 	
 		
-	$smary->assign('error',$error);
+	$smarty->assign('error',$error);
     $smarty->display('backend_update_event.tpl');
     include 'userbar.php';
 } else {
@@ -163,6 +180,8 @@ function sendFilledDatas() {
         $eventAddForm['city'] = $_POST['city'];
     if (isset($_POST['address']))
         $eventAddForm['address'] = $_POST['address'];
+		if (isset($_POST['eventNo']))
+        $eventAddForm['eventNo'] = $_POST['eventNo'];
     if (isset($_POST['country']))
         $eventAddForm['country'] = $_POST['country'];
     //assign the array to smarty
@@ -170,13 +189,22 @@ function sendFilledDatas() {
         $slotStartingTimeAlt = "slotStartingTime" . $i;
         $slotEndingTimeAlt = "slotEndingTime" . $i;
         $happeningDateAlt = "happeningDate" . $i;
-        if (isset($_POST[$slotStartingTimeAlt]))
-            $eventAddForm[$slotStartingTimeAlt] = $_POST[$slotStartingTimeAlt];
+		$slotNoAlt= "slotNo" . $i;
+		
+        if (isset($_POST[$slotStartingTimeAlt])){
+            $eventAddForm[$slotStartingTimeAlt] = $_POST[$slotStartingTimeAlt];}
         if (isset($_POST[$slotEndingTimeAlt]))
             $eventAddForm[$slotEndingTimeAlt] = $_POST[$slotEndingTimeAlt];
         if (isset($_POST[$happeningDateAlt]))
             $eventAddForm[$happeningDateAlt] = $_POST[$happeningDateAlt];
+		 if (isset($_POST[$slotNoAlt]))
+		$eventAddForm[$slotNoAlt] = $_POST[$slotNoAlt];
     }
+	$arrayIterations=array();
+					for($i=0;$i<=$_SESSION['iterationNumber'];$i++){
+						array_push($arrayIterations,$i);
+					}
+	$smarty->assign('iterationNumber',$arrayIterations);
     $smarty->assign('filledDatas', $eventAddForm);
 }
 ?>
