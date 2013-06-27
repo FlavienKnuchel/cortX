@@ -72,7 +72,15 @@ ol li{
     background-color: #7c7c7c;
     padding: 5px 10px;
 }
+/*team*/
+.team th {
+    margin-top:30px;
+}
 
+.team td {
+    padding-top:10px;
+    padding-bottom:10px;
+}
 /*section elements take full page width*/
 section
 {
@@ -114,7 +122,6 @@ a.modify {
     height: 20px;
     width: 20px;
 }
-
 a.modify:hover {
     float:right;
     margin-left:20px;
@@ -122,6 +129,22 @@ a.modify:hover {
     width: 20px;
     background-image:url(../img/modify_hover.png);
     background-repeat:no-repeat;
+}
+td a.modify {
+    float:left;
+    margin-right:5px;
+    background-image:url(../img/modify.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
+}
+td a.modify:hover {
+    float:left;
+    margin-right:5px;
+    background-image:url(../img/modify_hover.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
 }
 
 a.delete {
@@ -141,6 +164,22 @@ a.delete:hover {
     background-image:url(../img/delete_hover.png);
     background-repeat:no-repeat;
 }
+td a.delete {
+    float:left;
+    margin-right:5px;
+    background-image:url(../img/delete.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
+}
+td a.delete:hover {
+    float:left;
+    margin-right:5px;
+    background-image:url(../img/delete_hover.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
+}
     
 a.add {
     float:right;
@@ -158,6 +197,22 @@ a.add:hover {
     width: 20px;
     background-image:url(../img/add_hover.png);
     background-repeat:no-repeat;
+}
+td a.add {
+    float:left;
+    margin-right:5px;
+    background-image:url(../img/add.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
+}
+td a.add:hover {
+    float:left;
+    margin-right:5px;
+    background-image:url(../img/add_hover.png);
+    background-repeat:no-repeat;
+    height: 20px;
+    width: 20px;
 }
 /* input */
 input[type=submit].modify {

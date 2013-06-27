@@ -6,10 +6,10 @@ Date : 18.6.2013
 
 Description : backend of the team page
 -->
-<section class="firstElement">
+<section class="firstElement lastElement">
     <section class="row">
-        <article class="offset2 span5">
-            <div id="members_of_the_team">
+        <article class="offset2 span5 team">
+            <div>
                 <h1>List of organizers</h1>
                 {if isset($organizers)}
                     <table>
