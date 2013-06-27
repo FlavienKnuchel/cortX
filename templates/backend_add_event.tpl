@@ -34,7 +34,7 @@ Description : backend of the page where we can add an event
                     <label for="description_event" class="span6">Description of the event</label>
                     <textarea class="desc" type="text" name="description" placeholder="Description of the event">{if isset($filledDatas.description)}{$filledDatas.description}{/if}</textarea>
 
-                    <label for="Date" class="span6">date Format:</label><p class="span6">YYYY-mm-dd</p>
+                    <label for="Date" class="span6">Date format:</label><p class="span6">YYYY-mm-dd</p>
 
                     <label for="Date" class="span6" placeholder="Starting date">Starting date:</label>
                     <input type="date" class="span6" name="startDate" {if isset($filledDatas.startDate)}value="{$filledDatas.startDate}"{/if}>
