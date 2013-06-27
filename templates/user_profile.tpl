@@ -42,33 +42,37 @@ Description : template of the user profile
                 <article class="profil span8">
                     <h1>My profile</h1>   
                     <h3>Edit your personnal informations</h3>
+                    
                     <form method="post" action="">
-                        <label for="Name">Name:</label>
-                        <input type="text" name="Lastname" value="{$person->getName()}" autofocus>
+                    <article class="profil span12">
+                        <label for="Name" class="span3">Name:</label>
+                        <input type="text" class="span3" name="Lastname" value="{$person->getName()}" autofocus>
 
-                        <label for="Firstname">First name:</label>
-                        <input type="text" name="Firstname" value="{$person->getFirstName()}" required>
+                        <label for="Firstname" class="span3">First name:</label>
+                        <input type="text" class="span3" name="Firstname" value="{$person->getFirstName()}" required></article>
+                        <article class="profil span12">
+                        <label for="Date" class="span7">Date of birth:</label>
+                        <input type="date" class="span3" name="Date" value="{$person->getDateOfBirth()}" required>
+</article>
+                        <article class="profil span12">
+                        <label for="Address" class="span3">Address:</label>
+                        <input type="text" class="span3" name="Address" value="{$person->getAddress()}" required>
 
-                        <label for="Date">Date of birth:</label>
-                        <input type="date" name="Date" value="{$person->getDateOfBirth()}" required>
+                        <label for="City" class="span3">City:</label>
+                        <input type="text" class="span3" name="City" value="{$person->getCity()}" required>
+</article>
+                        <article class="profil span12">
+                        <label for="Country" class="span3">Country:</label>
+                        <input type="text" class="span3" name="Country" value="{$person->getCountry()}" autocomplete required>
 
-                        <label for="Address">Address:</label>
-                        <input type="text" name="Address" value="{$person->getAddress()}" required>
-
-                        <label for="City">City:</label>
-                        <input type="text" name="City" value="{$person->getCity()}" required>
-
-                        <label for="Country">Country:</label>
-                        <input type="text" name="Country" value="{$person->getCountry()}" autocomplete required>
-
-                        <label for="Email">Email:</label>
-                        <input type="email" name="Email" value="{$person->getEmail()}" required autocomplete>
-
-                        <label for="Phone">Phone:</label>
-                        <input type="tel" name="Phone" value="{$person->getPhoneNumber()}" required >
-
-                        <label for="Description">Description:</label>
-                        <textarea type="text" name="Description" class="big" >{$person->getDescription()}</textarea>
+                        <label for="Email" class="span3">Email:</label>
+                        <input type="email" class="span3" name="Email" value="{$person->getEmail()}" required autocomplete></article>
+<article class="profil span12">
+                        <label for="Phone" class="span3">Phone:</label>
+                        <input type="tel" class="span3" name="Phone" value="{$person->getPhoneNumber()}" required ></article>
+                        <article class="profil span12">
+                        <label for="Description" class="span12">Description:</label>
+                        <textarea type="text" class="span12" name="Description" class="big" >{$person->getDescription()}</textarea></article>
 
                         <input type="submit" name="edit" value="" alt="Edit my informations" class="modify">
                     </form>
