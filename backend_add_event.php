@@ -6,22 +6,12 @@
 * Author : Andreane et Noemie
 * Date : 18.06.2013
 *
-* Description : page to create a new event, with slot and speaker
+* Description : page to create a new event, with slots
 */
 include 'header.php';
 include 'menu_backend.php';
 //initialize the error variable
 $error='';
-//get the speakers
-$messageSpeakers=$tedx_manager->getSpeakers();
-$speakers=$messageSpeakers->getContent();
-$speakersCustom=array();
-foreach($speakers as $speaker){
-    $speakersInfos=array('name'=>$speaker->getName(),'id'=>$speaker->getNo());
-    array_push($speakersCustom,$speakersInfos);
-}
-//stock them in smarty
-$smarty->assign('speakers',$speakersCustom);
 //if the + slot button has been pushed
 if(isset($_POST['addSlot'])){
     $iterationNumber=$_SESSION['iterationNumber'];
@@ -108,8 +98,21 @@ else{
                         if(!empty($_POST['startTime'])){
                             if(!empty($_POST['endTime'])){
                                 if(!empty($_POST['description'])){
-                                    if(isset($location)){}
-                                    else{}}
+                                    if(isset($location)){
+                                        for($i=0;$i<=$_SESSION['iterationNumber'];$i++){
+                                            $slotStartingTimeAlt="slotStartingTime".$i;
+                                            $slotEndingTimeAlt="slotEndingTime".$i;
+                                            $happeningDateAlt="happeningDate".$i;
+                                            var_dump($_POST[$slotStartingTimeAlt]);
+                                            var_dump($_POST[$slotEndingTimeAlt]);
+                                            var_dump($_POST[$happeningDateAlt]);
+                                            if(!empty($_POST[$slotStartingTimeAlt])){
+                                                if(!empty($_POST[$slotEndingTimeAlt])){
+                                                    if(!empty($_POST[$happeningDateAlt])){}
+                                                    else{$error="Please fill the slot ".$i." happening date";}
+                                                }else{$error="Please fill the slot ".$i." ending time";}
+                                            }else{$error="Please fill the slot ".$i." starting time";}}
+                                    }else{$error="Please fill the location field";}}
                                 else{$error="Please fill the description field";}}
                             else{$error="Please fill the ending Time field";}}
                         else{$error="Please fill the starting Time field";}}

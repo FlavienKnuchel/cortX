@@ -149,15 +149,6 @@ Description : backend of the page where we can add an event
                                     <input type="time" class="span1" name="slotStartingTime{$iterationNumber[slots]}" >
                                     <label for="time" class="span1">Ending time:</label>
                                     <input type="time" class="span1" name="slotEndingTime{$iterationNumber[slots]}" >
-                                    <label for="speaker" class="span1">Speaker:</label>
-                                    <select name="speaker{$iterationNumber[slots]}" class="span4">
-                                        {$speakers|@var_dump}
-                                        {section loop=$speakers name=speaker}
-                                            {capture name=speakerId}{$speakers[speaker]}->getNo(){/capture}
-                                            {capture name=speakerName}{$speakers[speaker]->getName()}{/capture}
-                                            <option value='{$smarty.section.speakers.speakerId}'>{$smarty.section.speakers.speakerName}</option>
-                                        {/section}
-                                    </select>
                                 </article>
                             {/section}
                         {/if}
