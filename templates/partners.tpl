@@ -98,17 +98,17 @@ If you are interesting in partnering with us, please contact us. We look forward
      </article>
 <article class="offset2 span8">
     <h3>Main partner</h3>
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/kudelski-security2.png"/></a>
     <p class="span7">Kudelski Security, a division of the Kudelski Group, is an innovative independent Swiss provider of tailored cyber security solutions and services to enterprises, financial institutions, government administrations and the media industry. Kudelski Security’s team of cyber security professionals offers extensive expertise in the delivery of end-to-end digital security solutions built upon real-life experiences in advanced threat intelligence, security assessments, asset and reputation protection, as well as piracy risk mitigation. The team’s global reach and multi-disciplinary incident response is reinforced by strategic international partnerships.</p>
     </article>
     <article class="offset2 span8">
     <h3>Video production partner</h3>
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/ANVPRODUCTION.png"/></a>
     <p class="span7">ANV Production is a creative production agency based in Geneva, Switzerland. They create and develop films, commercials, and corporate videos. ANV Production’s mission is to create compelling and inspiring stories. They look for the most creative and effective ideas, and use the best talent and resources available, within the means and budget, to transform these ideas into memorable films. ANV Production will create the videos for our TEDxLausanneChange 2013 event.</p>
     </article>
         <article class="offset2 span8">
     <h3>Special partners</h3>
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/REMARQ1.png"/></a>
     <p class="span7">The MoT MBA Alumni Association promotes the Executive MBA program in Management of Technology from Swiss Federal Institute of Technology (EPFL) and HEC Lausanne School of Business (a recognized program from both universities) fostering the MoT identity and enhancing networking between graduates, students and external entrepreneurs.The Alumni Association Committee endeavors to bring life to the MoTAA by organizing entrepreneurial events and partnering with select organizations, such as TEDxLausanneChange, to organize innovative and inspiring events.</p>
     </article>
         <article class="offset2 span8">
@@ -123,31 +123,31 @@ If you are interesting in partnering with us, please contact us. We look forward
             
             <article class="offset2 span8">
     <h3>Event registration and ticketing partner</h3>
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/amiando_logo_claim.png"/></a>
     <p class="span7">Amiando is a pioneer in online event registration and ticketing. Since its foundation in 2006, Amiando has become a leading software-as-a-service platform for professional events. Amiando’s products help event organizers to reach a professional level of event organization which, until now, was only reserved for large corporations and event agencies. All tools are online-based and immediately available for use, without the need for software installation. Over 180,000 event organizers worldwide use Amiando.</p>
     </article>
             
             <article class="offset2 span8">
     <h3>Further sponsors</h3>
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/logo-cavin_printers.png"/></a>
     <p class="span7">Artgraphic Cavin SA  is a small business established in 1928. Artgraphic Cavin SA offers art books, brochures, leaflets, city work, digital photos, CD sleeves, and more. Artgraphic Cavin SA printed our event programme for TEDxLausanneChange 2013.</p>
     </article>
             <article class="offset2 span8">
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HuliHealth-Logo.png"/></a>
     <p class="span7">Our goal in HuliHealth is to bring positive disruption to the global healthcare industry by providing transparency and efficiency. With HuliHealth you can search for a top doctor, read his or her profile, communicate, and book an appointment with ease. All the information you need is at your fingertips: your doctor’s credentials, the price of the care you need, reviews from previous patients, and more. At HuliHealth we’re doing everything we can to close the information gap, move towards total transparency in the health care industry, and get you to your best state of health.</p>
     </article>
             <article class="offset2 span8">
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/masaba-coffee.png"/></a>
     <p class="span7">Masaba Coffee helps small farmers in Uganda produce a coffee of excellence, in respect of fair trade and organic agriculture. They are supported by a Swiss NGO in the spirit of entrepreneurship, through investments in training, quality certification and infrastructure. Masaba Coffee will offer us their coffee of excellence during the apero.</p>
     </article>
             
             <article class="offset2 span8">
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/mterrill-graphic-design3.png"/></a>
     <p class="span7">Maureen Terrill is a graphic designer living in Lausanne, Switzerland. Maureen designed our invitation, printed programme, badges, posters, banners and the graphics on our website and Facebook page for TEDxLausanneChange 2013.</p>
     </article>
             
                 <article class="offset2 span8">
-    <a href="" alt="" class="span5"><img class="partners" src="img/partners/HIM_logo_Montreux_83.jpg"/></a>
+    <a href="" alt="" class="span5"><img class="partners" src="img/partners/WNG_logo.jpg"/></a>
     <p class="span7">A 360° web agency that provides innovative strategies and creative solutions for a truly explosive digital marketing approach. WnG Solutions has implemented our website design and provides ever-so-valuable technical support.</p>
     </article>
     </section>
