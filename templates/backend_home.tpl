@@ -18,7 +18,7 @@ Description : template of the backend home page
     <article class="offset2 span8">
         <ul>
             <li>
-                <a href="backend_speakers.php" title="Speakers"><h3 class="{$classUserLevel}">Speakers</h3></a>
+                <a href="backend_speaker.php" title="Speakers"><h3 class="{$classUserLevel}">Speakers</h3></a>
             </li>
             <li>
                 <a href="backend_events.php" title="Events"><h3 class="{$classUserLevel}">Events</h3></a>
