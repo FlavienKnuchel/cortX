@@ -64,6 +64,9 @@ ol li{
 .line {
     padding: 5px 10px;
 }
+.line p, .greyline p{
+    margin:0;
+}
 
 .greyline {
     background-color: #7c7c7c;
