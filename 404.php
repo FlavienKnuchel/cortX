@@ -1,4 +1,5 @@
 <?php
+
 /*
  * 404.php
  *
@@ -15,11 +16,10 @@ include 'menu_frontend.php';
 ?>
 
 <section class="row firstElement">
-	<article class="offset2 span8 error">
+    <article class="offset2 span8 error">
         <h1>error 4<span class="x">0</span>4</h1>
-            <p> We can't find the page you're looking for.</p>
-        <p>Or you don't have the access.</p>
-        <p>Go back to <a href="home.php" title="Home">Home</a>.</p>
+        <p> We can't find the page you're looking for or you don't have access to this page.</p>
+        <p>You may want to back to the <a href="home.php" title="Home">Homepage</a>.</p>
     </article>
 </section>
 

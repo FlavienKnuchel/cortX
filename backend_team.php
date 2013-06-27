@@ -9,10 +9,10 @@
  * Description : page to manage the team and the roles
  */
 include 'header.php';
-$_SESSION['ariane2']="Team";
-$_SESSION['ariane2url']=$_SERVER['SCRIPT_NAME'];
-include 'menu_backend.php';
-if ($tedx_manager->isLogged()) {
+if ($tedx_manager->isLogged() && ($tedx_manager->isAdministrator() || $tedx_manager->isSuperadmin()) ) {
+    $_SESSION['ariane2'] = "Team";
+    $_SESSION['ariane2url'] = $_SERVER['SCRIPT_NAME'];
+    include 'menu_backend.php';
 //gets the actions
     if (isset($_GET['action']) && $_GET['action'] == 'add') {
         //gets the selected person
@@ -43,7 +43,7 @@ if ($tedx_manager->isLogged()) {
             'phoneNumber' => $_POST['Phone'], // String
             'email' => $_POST['Email'], // String
         );
-        
+
         $msgCP = $tedx_manager->changeProfil($argsCP);
         if ($msgCP->getStatus()) {
             $smarty->assign('msg_CP', $msgCP->getMessage());
@@ -88,7 +88,6 @@ if ($tedx_manager->isLogged()) {
                         $msgRV->getContent()
                 );
                 if ($msgSetPersonAsOrg->getStatus()) { //success!
-
                     $teamRole = $tedx_manager->getTeamRole($_POST['teamRoles'])->getContent();
                     $organizer = $msgSetPersonAsOrg->getContent();
                     $argsTR = array(
@@ -99,7 +98,7 @@ if ($tedx_manager->isLogged()) {
                     $smarty->assign('msg_org', $msgSetPersonAsOrg->getMessage());
                     if (!$msgAffectTeamrole->getStatus()) {
                         $smarty->assign('msg_TR', $msgAffectTeamrole->getMessage());
-                    } 
+                    }
                 } else {
                     $smarty->assign('err_org', $msgSetPersonAsOrg->getMessage());
                 }
@@ -124,8 +123,8 @@ if ($tedx_manager->isLogged()) {
     $teamroles = $tedx_manager->getTeamRoles()->getContent();
     $smarty->assign('teamroles', $teamroles);
     $smarty->display('backend_team.tpl');
+    include 'userbar.php';
 } else {
     header('Location:404.php');
 }
-include 'userbar.php';
 ?>
