@@ -53,16 +53,18 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                     $arrayMotivation = $motivation->getContent();
                     //retrieves the text of the motivation
                     $textMotivation = $arrayMotivation[0]->getText();
-                } else {
+                } else {//replace it by nothing if no motivation is found
                     $textMotivation = '';
                 }
-                $argsKW = array(
+                $argsKW = array(//sets the arguments for the request
                     'person' => $tedx_manager->getLoggedPerson()->getContent(),
                     'event' => $event
                 );
+                //request the keywords
                 $msgKeywords = $tedx_manager->getKeywordsByPersonForEvent($argsKW);
                 $keywords = array();
-                if ( $msgKeywords->getStatus()){
+                //if KWs are found, assigns the value in the $keywords array
+                if ($msgKeywords->getStatus()) {
                     $arrayKW = $msgKeywords->getContent();
                     foreach ($arrayKW as $kw) {
                         $keywords[] = $kw->getValue();
@@ -111,11 +113,18 @@ if ($tedx_manager->isLogged()) { //test if user is logged otherwise he displays 
                 } else {
                     $textMotivation = '';
                 }
-                $keywords = $tedx_manager->getKeywordsByPersonForEvent(
-                                array(
-                                    'person' => $tedx_manager->getLoggedPerson()->getContent(),
-                                    'event' => $event
-                        ))->getContent();
+                $argsKW = array(
+                    'person' => $tedx_manager->getLoggedPerson()->getContent(),
+                    'event' => $event
+                );
+                $msgKeywords = $tedx_manager->getKeywordsByPersonForEvent($argsKW);
+                $keywords = array();
+                if ($msgKeywords->getStatus()) {
+                    $arrayKW = $msgKeywords->getContent();
+                    foreach ($arrayKW as $kw) {
+                        $keywords[] = $kw->getValue();
+                    }
+                }
 //Creates a table for the event and participant
 //-array( --------------------------------------------------------------
 // array ( aRegistration, aMotivation, keywords) -----------------------
