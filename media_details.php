@@ -58,10 +58,10 @@ else{
    header("Location: 404.php");
 }//else
 
-
-
-$smarty->display('media_details.tpl');
 include 'userbar.php';
+$smarty->display('media_details.tpl');
+
+
 
 /*------------------------------ functions ------------------------------*/
 //create a youtube embed  url from the ref

@@ -12,7 +12,6 @@
 
 include 'header.php';
 include 'menu_frontend.php';
-
 /*------------------------------------------------------*/
 
 /*--------------------- Check where the user comes from(back button) ---------------------*/
@@ -55,7 +54,6 @@ else{
 }
 //assign the inscription status value to smarty
 $smarty->assign('inscriptionStatus',$inscriptionStatus);
-
 /*------------------------------ event slots and speakers------------------------------*/
 //get the slots of the first event
 $messageSlots=$tedx_manager->getSlotsFromEvent($actualEvent);
