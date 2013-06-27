@@ -175,6 +175,18 @@ padding-top:10px;
 padding-left:5px;
 }
 /*---------------------------------Formular and buttons---------------------------------*/
+/*Login page*/
+#loginForm input[type='text'], #loginForm input[type='password'], #loginForm input[type='submit']{
+    width:100%;
+}
+#loginForm div.span12{
+    margin-bottom:30px;
+}
+#loginForm{
+    padding:10px;
+    background-color:#f0f0f0;
+}
+
 input[type=password], input[type=text], input[type=date], input[type=email] , input[type=tel]{
     border-radius:3px;
     background-color:#ffffff;
