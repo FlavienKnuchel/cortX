@@ -106,7 +106,7 @@ Description : template of the user inscription
                     </section>
                 {/if}
                 {if !empty($arrayOldReg) }
-                    <article class="offset2 span8">
+                    <article class="span12">
                         <h1>Previous registrations</h1>
                         {section name=loopOldReg loop=$arrayOldReg}
                             <article class="form_closed">
