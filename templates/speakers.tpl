@@ -14,16 +14,13 @@ Description : template of the speaker section
         <h1 class="title_year">Speakers</h1>    
         <article class="speakers_photo row">
             {if isset($speakers)}
-                <table>
+                <article class="span12">
                     {section name=listspeakers loop=$speakers step=-1}
-                            <td>
+                        <div class="span2">
                                 <a href="speaker_profil.php?No={$speakers[listspeakers]->getNo()}">
                                     {$speakers[listspeakers]->getName()} {$speakers[listspeakers]->getFirstName()}
                                 </a>
-                            </td>
-                        {if $smarty.section.listspeakers.iteration is div by 4}
-                            </tr><tr>
-                        {/if}
+                        </div>
                     {/section}
                 </table>
             {else}
