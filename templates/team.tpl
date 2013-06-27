@@ -24,7 +24,7 @@ Description : template of the general team page
                 </a>
             </li>
             <li>
-                <a href="team_designTeam.php" title="Design Team">
+                <a href="team_DesignTeam.php" title="Design Team">
                     <h3 class="span2 oneLine">Design Team</h3>
                 </a>
             </li>
