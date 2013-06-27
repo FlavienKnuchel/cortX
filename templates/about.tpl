@@ -12,7 +12,7 @@
                 </a>
             </li>
         </div>
-        <div class="offset2 span8">
+        <div class="offset2 span8 lastElement">
             <li>
                 <a href="about_TEDxLausanne.php" title="TEDxLausanne">
                     <h3 class="offset2 span4">TEDxLausanne</h3>
