@@ -15,22 +15,25 @@
                     <img src="./img/TEDx_logo.png" alt="logo TEDxLausanne" />
                 </a>
             </div>
-            <ul>
-                <li class="span1">
+            <ul class="span5">
+                <li class="span2">
                     <a href="events.php"  title="Events" {if $activePage=='events'}id="active"{/if}>Events</a>
                 </li>
-                <li class="span1">
+                <li class="span2">
                     <a href="medias.php" title="Medias" {if $activePage=='medias'}id="active"{/if}>Videos</a>
                 </li>
-                <li class="span1">
+                <li class="span2">
                     <a href="about.php" title="About" {if $activePage=='about'}id="active"{/if}>About</a>
                 </li>
-                <li class="span1">
-                    <a href="team.php" title="Team" {if $activePage=='team'}id="active"{/if}>Team</a>
-                </li>
-                <li class="span1">
+               <li class="span2 essai2">
                     <a href="speakers.php" title="Speakers" {if $activePage=='speakers'}id="active"{/if}>Speakers</a>
-                </li>    
+                </li> 
+                <li class="span2 essai">
+                    <a href="team.php" title="Team"  {if $activePage=='team'}id="active"{/if}>Team</a>
+                </li>
+                <li class="span2">
+                    <a href="partners.php" title="Partners" {if $activePage=='partners'}id="active"{/if}>Partners</a>
+                </li> 
             </ul>
         </nav>
         
@@ -62,6 +65,9 @@
                     </li>
                     <li class="smartphones-links">
                         <a href="speakers.php" title="speakers">Speakers</a>
+                    </li>
+                    <li class="smartphones-links">
+                        <a href="partners.php" title="partners">Partners</a>
                     </li>
                </ul>
             </nav>
