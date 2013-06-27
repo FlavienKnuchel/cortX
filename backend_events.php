@@ -20,16 +20,9 @@ else{
     $error=$messageEvents->getMessage();
 }
 
-if(isset($_GET['deleteEventNo'])){
-
-    $messageEventToDelete=$tedx_manager->getEvent($_GET['deleteEventNo']);
-    if($messageEventToDelete->getStatus()){
-        $eventToDelete=$messageEventToDelete->getContent();
-        //delete event
-    }
-    else{
-        $error=$messageEventToDelete->getMessage();
-    }
+if(isset($_GET['deleteNo'])){
+    $event=$tedx_manager->getEvent($_GET['deleteNo'])->getContent();
+    $smarty->assign('delete',$event);
 }
 
 
