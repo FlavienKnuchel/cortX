@@ -7,6 +7,48 @@ Date : 18.6.2013
 Description : backend of the team page
 -->
 <section class="firstElement lastElement">
+    {if isset($err_RV)}
+        <section class="row">
+            <article class="offset2 span8 badMessage">
+                <p>{$err_RV}</p>
+            </article>
+        </section>
+    {/if}
+    {if isset($msg_RV)}
+        <section class="row">
+            <article class="offset2 span8 goodMessage">
+                <p>{$msg_RV}</p>
+            </article>
+        </section>
+    {/if}
+    {if isset($msg_CP)}
+        <section class="row">
+            <article class="offset2 span8 goodMessage">
+                <p>{$msg_CP}</p>
+            </article>
+        </section>
+    {/if}
+    {if isset($msg_TR)}
+        <section class="row">
+            <article class="offset2 span8 goodMessage">
+                <p>{$msg_TR}</p>
+            </article>
+        </section>
+    {/if}
+    {if isset($msg_org)}
+        <section class="row">
+            <article class="offset2 span8 goodMessage">
+                <p>{$msg_org}</p>
+            </article>
+        </section>
+    {/if}
+    {if isset($err_org)}
+        <section class="row">
+            <article class="offset2 span8 badMessage">
+                <p>{$err_org}</p>
+            </article>
+        </section>
+    {/if}
     <section class="row">
         <article class="offset2 span5 team">
             <div>
@@ -52,44 +94,70 @@ Description : backend of the team page
             </div>
         </article>
         <article class="span3">
-            <h1>Add a collaborator</h1>
-            <h2>Infos</h2>
-            <form method="post" action="register.php">
-                <label class="span1" for="LastName">Last Name:</label>
-                <input class="span1" type="text" name="Lastname" placeholder="Name" autofocus required>
-
-                <label class="span1" for="FirstName">First Name:</label>
-                <input class="span1" type="text" name="Firstname" placeholder="Firstname" required>
-
-                <label class="span1" for="Date">Date of birth:</label>
-                <input class="span1" type="date" name="Date" required>
-
-                <label class="span1" for="Address">Address:</label>
-                <input class="span1" type="text" name="Adress" placeholder="Address" required>
-
-                <label class="span1" for="Town">Town:</label>
-                <input class="span1" type="text" name="Town" placeholder="Town" required>
-
-                <label class="span1" for="Country">Country:</label>
-                <input class="span1" type="text" name="Country" placeholder="Country" required>
-
-                <label class="span1" for="Email">Email:</label>
-                <input class="span1" type="email" name="Email" placeholder="Email" required autocomplete>
-
-                <label class="span1" for="Phone">Phone:</label>
-                <input class="span1" type="tel" name="Phone" placeholder="Phone number" required>
-
-                <label class="span1" for="Password">Password:</label>
-                <input class="span1" type="password" name="Password" placeholder="Password" required>
-
-                <label class="span1" for="Role">Role:</label>
-                <select name="teamRoles">
-                    {section name=teamrole loop=$teamroles}
-                        <option value="{$teamroles[teamrole]->getName()}">{$teamroles[teamrole]->getName()}</option>
-                    {/section}
-                </select>
-                <input type="submit" name="Add" value="Add" alt="Add the person">
-            </form>
+            {if isset($person)}
+                <h1>Modify a collaborator</h1>
+                <h2>Infos</h2>
+                <form method="post" action="">
+                    <label class="span1" for="LastName">Last Name:</label>
+                    <input class="span1" type="text" name="Lastname" value="{$person->getName()}" autofocus>
+                    <label class="span1" for="FirstName">First Name:</label>
+                    <input class="span1" type="text" name="Firstname" value="{$person->getFirstName()}">
+                    <label class="span1" for="Date">Date of birth:</label>
+                    <input class="span1" type="date" name="Date" value="{$person->getDateOfBirth()}">
+                    <label class="span1" for="Address">Address:</label>
+                    <input class="span1" type="text" name="Address" value="{$person->getAddress()}">
+                    <label class="span1" for="Town">City:</label>
+                    <input class="span1" type="text" name="City" value="{$person->getCity()}">
+                    <label class="span1" for="Country">Country:</label>
+                    <input class="span1" type="text" name="Country" value="{$person->getCountry()}">
+                    <label class="span1" for="Email">Email:</label>
+                    <input class="span1" type="email" name="Email" value="{$person->getEmail()}" autocomplete>
+                    <label class="span1" for="Phone">Phone:</label>
+                    <input class="span1" type="tel" name="Phone" value="{$person->getPhoneNumber()}">
+                    <label class="span1" for="Role">Role:</label>
+                    <select name="teamRoles">
+                        <option value="---">Select a Teamrole</option>
+                        {section name=teamrole loop=$teamroles}
+                            <option value="{$teamroles[teamrole]->getName()}">{$teamroles[teamrole]->getName()}</option>
+                        {/section}
+                    </select>
+                    <input type="hidden" name="personNo" value="{$person->getNo()}">
+                    <input type="submit" name="Modify" value="Modify" alt="Add the person">
+                </form>
+            {else}
+                <h1>Add a collaborator</h1>
+                <h2>Infos</h2>
+                <form method="post" action="">
+                    <label class="span1" for="LastName">Last Name:</label>
+                    <input class="span1" type="text" name="Lastname" value="" autofocus required>
+                    <label class="span1" for="FirstName">First Name:</label>
+                    <input class="span1" type="text" name="Firstname" value="" required>
+                    <label class="span1" for="Date">Date of birth:</label>
+                    <input class="span1" type="date" name="Date" required>
+                    <label class="span1" for="Address">Address:</label>
+                    <input class="span1" type="text" name="Adress" value="" required>
+                    <label class="span1" for="Town">Town:</label>
+                    <input class="span1" type="text" name="Town" value="" required>
+                    <label class="span1" for="Country">Country:</label>
+                    <input class="span1" type="text" name="Country" value="" required>
+                    <label class="span1" for="Email">Email:</label>
+                    <input class="span1" type="email" name="Email" value="" required autocomplete>
+                    <label class="span1" for="Phone">Phone:</label>
+                    <input class="span1" type="tel" name="Phone" value="" required>
+                    <label class="span1" for="idmember">Username:</label>
+                    <input class="span1" type="text" name="idmember" value="" required>
+                    <label class="span1" for="Password">Password:</label>
+                    <input class="span1" type="password" name="Password" value="" required>
+                    <label class="span1" for="Role">Role:</label>
+                    <select name="teamRoles">
+                        <option value="---">Select a Teamrole</option>
+                        {section name=teamrole loop=$teamroles}
+                            <option value="{$teamroles[teamrole]->getName()}">{$teamroles[teamrole]->getName()}</option>
+                        {/section}
+                    </select>
+                    <input type="submit" name="Add" value="Add" alt="Add the person">
+                </form>
+            {/if}
         </article>
     </section>
 </section>
