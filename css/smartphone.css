@@ -6,27 +6,12 @@ body {
 font-size: 26px;
 line-height: 1.5em;
 }
-    
-/* A EFFACER A LA FIN */
-/*nav ul li a{
-display:none;
-}*/
+
 .box{
 background-color:#f0f0f0;
 padding-bottom: 20px;
 }
-/*nav{
-height:100px;
-max-height:100px;
-line-height: 40px;
-background-color:#ffffff;    
-}
-nav a img{
-padding-top:0px;
-margin-left:0px;
-height:90px;
-max-height:inherit;
-}*/
+
 h1, h2, h3, h4, h5, h6 {
 line-height: 1em;
 }
@@ -373,15 +358,25 @@ label {
 }
 .coordonees label {
     width: 100%;
+        line-height:1.5em;
 }
-.coordonees form input[type="password"], input[type="text"], input[type="date"], input[type="email"], input[type="tel"] {
+.coordonees form input[type=password], input[type=text], input[type=date], input[type=email], input[type=tel] {
     text-align: left;
     width: 98%;
     height:2.5em;
     margin-top:10px;
-    font-size:1.5em;
+    font-size:1em;
     padding-left:2%;
+    padding-top:10px;
+        margin-bottom:20px;
 }
+.coordonees  input[type=password] {
+    margin-left:5px;
+    width: 100%;
+    float:left;
+    padding: 0;
+        height: 100px;
+    }
 #event_registration{
     margin-left:5%;
     width:90%;
@@ -391,7 +386,7 @@ label {
     font-size:2em;
     margin-top:0;
 }   
-.coordonees input[type="password"] {
+.coordonees input[type=password] {
     /*margin-left: 5%;*/
     text-align: left;
     width: 46%;
@@ -413,12 +408,12 @@ textarea {
 font-size:1.5em;    
 margin-bottom: 10px;
 }
-#event_registration input[type="submit"],#event_registration div.button a {        
+#event_registration input[type=submit],#event_registration div.button a {        
     height: 100px;
     width: 49%;
     font-size:1em;
 }
-#event_registration input[type="submit"]:hover,#event_registration .button:hover{
+#event_registration input[type=submit]:hover,#event_registration .button:hover{
     height:100px;
     width:49%;   
 }
