@@ -85,7 +85,6 @@ if (isset($_REQUEST['noEvent'])) { //if an event is selected, it narrows the reg
                 $arraySentReg = array(
                     $tedx_manager->getEvent($registration->getEventNo())->getContent(),
                     $tedx_manager->getParticipant($registration->getParticipantPersonNo())->getContent());
-                var_dump($registration->getParticipantPersonNo()->getContent());
                 $arrayOfSentReg[] = $arraySentReg;
                 $sentRegistrations[] = $registration;
                 break;
